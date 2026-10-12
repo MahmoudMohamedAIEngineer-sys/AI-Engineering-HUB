@@ -1,0 +1,1314 @@
+{
+  "work_id": "SRC-MML",
+  "numbered_objects": {
+    "figures": {
+      "total_unique": 143,
+      "per_chapter": {
+        "1": [
+          "1.1"
+        ],
+        "10": [
+          "10.1",
+          "10.2",
+          "10.3",
+          "10.4",
+          "10.5",
+          "10.6",
+          "10.7",
+          "10.8",
+          "10.9",
+          "10.10",
+          "10.11",
+          "10.12",
+          "10.13",
+          "10.14",
+          "10.15",
+          "10.16"
+        ],
+        "11": [
+          "11.1",
+          "11.2",
+          "11.3",
+          "11.4",
+          "11.5",
+          "11.6",
+          "11.7",
+          "11.8",
+          "11.9",
+          "11.10",
+          "11.11",
+          "11.12",
+          "11.13"
+        ],
+        "12": [
+          "12.1",
+          "12.2",
+          "12.3",
+          "12.4",
+          "12.5",
+          "12.6",
+          "12.7",
+          "12.8",
+          "12.9",
+          "12.10"
+        ],
+        "2": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.8",
+          "2.9",
+          "2.10",
+          "2.11",
+          "2.12",
+          "2.13"
+        ],
+        "3": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.8",
+          "3.9",
+          "3.10",
+          "3.11",
+          "3.12",
+          "3.13",
+          "3.14",
+          "3.15",
+          "3.16",
+          "3.17"
+        ],
+        "4": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.9",
+          "4.10",
+          "4.11",
+          "4.12",
+          "4.13"
+        ],
+        "5": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "5.6",
+          "5.7",
+          "5.8",
+          "5.9",
+          "5.10",
+          "5.11",
+          "5.12",
+          "5.13"
+        ],
+        "6": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.10",
+          "6.11"
+        ],
+        "7": [
+          "7.1",
+          "7.2",
+          "7.3",
+          "7.4",
+          "7.5",
+          "7.6",
+          "7.7",
+          "7.8",
+          "7.9"
+        ],
+        "8": [
+          "8.1",
+          "8.2",
+          "8.3",
+          "8.4",
+          "8.5",
+          "8.6",
+          "8.7",
+          "8.8",
+          "8.9",
+          "8.10",
+          "8.11",
+          "8.12",
+          "8.13",
+          "8.14",
+          "8.15"
+        ],
+        "9": [
+          "9.1",
+          "9.2",
+          "9.3",
+          "9.4",
+          "9.5",
+          "9.6",
+          "9.7",
+          "9.8",
+          "9.9",
+          "9.10",
+          "9.11",
+          "9.12"
+        ]
+      }
+    },
+    "tables": {
+      "total_unique": 4,
+      "per_chapter": {
+        "6": [
+          "6.1",
+          "6.2"
+        ],
+        "8": [
+          "8.1",
+          "8.2"
+        ]
+      }
+    },
+    "definitions": {
+      "total_unique": 67,
+      "per_chapter": {
+        "2": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.8",
+          "2.9",
+          "2.10",
+          "2.11",
+          "2.12",
+          "2.13",
+          "2.14",
+          "2.15",
+          "2.16",
+          "2.18",
+          "2.19",
+          "2.21",
+          "2.22",
+          "2.23",
+          "2.25",
+          "2.26"
+        ],
+        "3": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.6",
+          "3.7",
+          "3.8",
+          "3.9",
+          "3.10",
+          "3.11"
+        ],
+        "4": [
+          "4.4",
+          "4.5",
+          "4.6",
+          "4.7",
+          "4.9",
+          "4.10",
+          "4.11",
+          "4.13",
+          "4.19",
+          "4.23"
+        ],
+        "5": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "5.6",
+          "5.7",
+          "5.8"
+        ],
+        "6": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.10",
+          "6.11",
+          "6.13"
+        ],
+        "7": [
+          "7.1",
+          "7.2",
+          "7.3",
+          "7.4"
+        ]
+      }
+    },
+    "theorems": {
+      "total_unique": 32,
+      "per_chapter": {
+        "11": [
+          "11.1",
+          "11.2",
+          "11.3"
+        ],
+        "12": [
+          "12.1"
+        ],
+        "17": [
+          "17.2"
+        ],
+        "2": [
+          "2.1",
+          "2.17",
+          "2.20",
+          "2.24"
+        ],
+        "3": [
+          "3.5",
+          "3.59"
+        ],
+        "4": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.8",
+          "4.12",
+          "4.14",
+          "4.15",
+          "4.16",
+          "4.17",
+          "4.18",
+          "4.20",
+          "4.21",
+          "4.22",
+          "4.24",
+          "4.25"
+        ],
+        "6": [
+          "6.5",
+          "6.12",
+          "6.14",
+          "6.15",
+          "6.16"
+        ],
+        "9": [
+          "9.1"
+        ]
+      }
+    },
+    "examples": {
+      "total_unique": 121,
+      "per_chapter": {
+        "10": [
+          "10.1",
+          "10.2",
+          "10.3",
+          "10.4",
+          "10.5"
+        ],
+        "11": [
+          "11.1",
+          "11.2",
+          "11.3",
+          "11.4",
+          "11.5",
+          "11.6"
+        ],
+        "2": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.8",
+          "2.9",
+          "2.10",
+          "2.11",
+          "2.12",
+          "2.13",
+          "2.14",
+          "2.15",
+          "2.16",
+          "2.17",
+          "2.18",
+          "2.19",
+          "2.20",
+          "2.21",
+          "2.22",
+          "2.23",
+          "2.24",
+          "2.25",
+          "2.26"
+        ],
+        "3": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.8",
+          "3.9",
+          "3.10",
+          "3.11",
+          "3.12"
+        ],
+        "4": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.9",
+          "4.10",
+          "4.11",
+          "4.12",
+          "4.13",
+          "4.14",
+          "4.15"
+        ],
+        "5": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "5.6",
+          "5.7",
+          "5.8",
+          "5.9",
+          "5.10",
+          "5.11",
+          "5.12",
+          "5.13",
+          "5.14",
+          "5.15"
+        ],
+        "6": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.10",
+          "6.11",
+          "6.12",
+          "6.13",
+          "6.14",
+          "6.15",
+          "6.16",
+          "6.17"
+        ],
+        "7": [
+          "7.1",
+          "7.2",
+          "7.3",
+          "7.4",
+          "7.5",
+          "7.6",
+          "7.7",
+          "7.8"
+        ],
+        "8": [
+          "8.1",
+          "8.2",
+          "8.3",
+          "8.4",
+          "8.5",
+          "8.6",
+          "8.7",
+          "8.8",
+          "8.9"
+        ],
+        "9": [
+          "9.1",
+          "9.2",
+          "9.3",
+          "9.4",
+          "9.5",
+          "9.6",
+          "9.7",
+          "9.8"
+        ]
+      }
+    },
+    "equations": {
+      "total_unique": 290,
+      "per_chapter": {
+        "10": [
+          "10.1",
+          "10.3",
+          "10.7",
+          "10.8",
+          "10.10",
+          "10.13",
+          "10.20",
+          "10.21",
+          "10.26",
+          "10.27",
+          "10.29",
+          "10.44",
+          "10.48",
+          "10.53",
+          "10.58",
+          "10.59",
+          "10.60",
+          "10.64",
+          "10.72",
+          "10.73",
+          "10.77",
+          "10.78",
+          "10.79",
+          "10.80"
+        ],
+        "11": [
+          "11.3",
+          "11.9",
+          "11.10",
+          "11.12",
+          "11.14",
+          "11.15",
+          "11.16",
+          "11.17",
+          "11.20",
+          "11.24",
+          "11.25",
+          "11.30",
+          "11.31",
+          "11.41",
+          "11.42",
+          "11.46",
+          "11.47",
+          "11.58",
+          "11.59",
+          "11.60",
+          "11.62",
+          "11.63"
+        ],
+        "12": [
+          "12.3",
+          "12.5",
+          "12.6",
+          "12.7",
+          "12.8",
+          "12.9",
+          "12.10",
+          "12.11",
+          "12.15",
+          "12.16",
+          "12.18",
+          "12.20",
+          "12.22",
+          "12.23",
+          "12.28",
+          "12.29",
+          "12.31",
+          "12.33",
+          "12.34",
+          "12.35",
+          "12.36",
+          "12.37",
+          "12.38",
+          "12.39",
+          "12.40",
+          "12.41",
+          "12.44",
+          "12.45",
+          "12.46",
+          "12.47",
+          "12.48",
+          "12.50",
+          "12.52"
+        ],
+        "2": [
+          "2.3",
+          "2.4",
+          "2.10",
+          "2.13",
+          "2.14",
+          "2.24",
+          "2.27",
+          "2.38",
+          "2.44",
+          "2.45",
+          "2.49",
+          "2.50",
+          "2.52",
+          "2.58",
+          "2.59",
+          "2.61",
+          "2.65",
+          "2.71",
+          "2.87",
+          "2.97",
+          "2.108",
+          "2.116",
+          "2.134"
+        ],
+        "3": [
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.11",
+          "3.16",
+          "3.17",
+          "3.33",
+          "3.34",
+          "3.37",
+          "3.38",
+          "3.40",
+          "3.46",
+          "3.57",
+          "3.58",
+          "3.59",
+          "3.63",
+          "3.68",
+          "3.76"
+        ],
+        "4": [
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.13",
+          "4.18",
+          "4.19",
+          "4.25",
+          "4.36",
+          "4.45",
+          "4.46",
+          "4.50",
+          "4.64",
+          "4.71",
+          "4.73",
+          "4.74",
+          "4.75",
+          "4.78",
+          "4.79",
+          "4.90",
+          "4.91",
+          "4.93",
+          "4.94",
+          "4.95"
+        ],
+        "5": [
+          "5.4",
+          "5.32",
+          "5.34",
+          "5.37",
+          "5.39",
+          "5.40",
+          "5.46",
+          "5.48",
+          "5.55",
+          "5.57",
+          "5.58",
+          "5.59",
+          "5.62",
+          "5.66",
+          "5.72",
+          "5.77",
+          "5.87",
+          "5.91",
+          "5.94",
+          "5.98",
+          "5.99",
+          "5.102",
+          "5.109",
+          "5.113",
+          "5.120",
+          "5.121",
+          "5.143",
+          "5.145",
+          "5.147",
+          "5.148",
+          "5.151",
+          "5.152",
+          "5.161",
+          "5.171",
+          "5.181"
+        ],
+        "6": [
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.12",
+          "6.15",
+          "6.16",
+          "6.20",
+          "6.22",
+          "6.23",
+          "6.27",
+          "6.30",
+          "6.32",
+          "6.36",
+          "6.41",
+          "6.42",
+          "6.43",
+          "6.44",
+          "6.45",
+          "6.46",
+          "6.49",
+          "6.50",
+          "6.51",
+          "6.55",
+          "6.56",
+          "6.57",
+          "6.58",
+          "6.62",
+          "6.64",
+          "6.66",
+          "6.67",
+          "6.68",
+          "6.76",
+          "6.80",
+          "6.98",
+          "6.107",
+          "6.109",
+          "6.110",
+          "6.117",
+          "6.118",
+          "6.122",
+          "6.133",
+          "6.136",
+          "6.138",
+          "6.139",
+          "6.140",
+          "6.143",
+          "6.148",
+          "6.150"
+        ],
+        "7": [
+          "7.6",
+          "7.8",
+          "7.9",
+          "7.15",
+          "7.17",
+          "7.18",
+          "7.23",
+          "7.24",
+          "7.27",
+          "7.28",
+          "7.29",
+          "7.30",
+          "7.31",
+          "7.39",
+          "7.43",
+          "7.45",
+          "7.50",
+          "7.58",
+          "7.60"
+        ],
+        "8": [
+          "8.6",
+          "8.8",
+          "8.15",
+          "8.16",
+          "8.17",
+          "8.22",
+          "8.23",
+          "8.24",
+          "8.25",
+          "8.26",
+          "8.28",
+          "8.29",
+          "8.39",
+          "8.43",
+          "8.44",
+          "8.46"
+        ],
+        "9": [
+          "9.1",
+          "9.3",
+          "9.4",
+          "9.7",
+          "9.8",
+          "9.9",
+          "9.13",
+          "9.14",
+          "9.16",
+          "9.18",
+          "9.19",
+          "9.23",
+          "9.24",
+          "9.25",
+          "9.26",
+          "9.31",
+          "9.32",
+          "9.35",
+          "9.37",
+          "9.38",
+          "9.40",
+          "9.41",
+          "9.42",
+          "9.51",
+          "9.65",
+          "9.67",
+          "9.72"
+        ]
+      }
+    }
+  },
+  "exercises": {
+    "chapters_with_supplied_exercise_sets": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "chapters_without_supplied_exercise_sets": [
+      "1",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "total_items_located": 69,
+    "per_chapter": {
+      "2": {
+        "chapter": "2",
+        "anchor": {
+          "file": "Mathematics for ML part 1.md",
+          "line": 2149
+        },
+        "printed_page": 64,
+        "item_count": 19,
+        "items": [
+          {
+            "id": "2.1",
+            "prompt_excerpt": "We consider $( \\mathbb { R } \\backslash \\{ - 1 \\} , \\star )$ , where",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2151
+          },
+          {
+            "id": "2.2",
+            "prompt_excerpt": "Let n be in $\\mathbb { N } \\backslash \\{ 0 \\}$ . Let $k , x$ be in $\\mathbb { Z } .$ . We define the congruence class $\\bar { k }$ of the integer k as the set",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2167
+          },
+          {
+            "id": "2.3",
+            "prompt_excerpt": "Consider the set $\\mathcal { G }$ of $3 \\times 3$ matrices defined as follows:",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2203
+          },
+          {
+            "id": "2.4",
+            "prompt_excerpt": "Compute the following matrix products, if possible:",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2213
+          },
+          {
+            "id": "2.5",
+            "prompt_excerpt": "Find the set S of all solutions in x of the following inhomogeneous linear systems $\\mathbf { { A } } \\mathbf { { x } } = \\mathbf { { b } } ,$ where A and b are defined as follows:",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2247
+          },
+          {
+            "id": "2.6",
+            "prompt_excerpt": "Using Gaussian elimination, find all solutions of the inhomogeneous equation system $\\mathbf { A } { \\boldsymbol { \\mathbf { \\mathit { x } } } } = \\mathbf { \\mathit { b } }$ with",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2261
+          },
+          {
+            "id": "2.8",
+            "prompt_excerpt": "Determine the inverses of the following matrices if possible:",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2277
+          },
+          {
+            "id": "2.9",
+            "prompt_excerpt": "Which of the following sets are subspaces of $\\mathbb { R } ^ { 3 } ?$",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2289
+          },
+          {
+            "id": "2.10",
+            "prompt_excerpt": "Are the following sets of vectors linearly independent?",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2303
+          },
+          {
+            "id": "2.11",
+            "prompt_excerpt": "Write",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2315
+          },
+          {
+            "id": "2.12",
+            "prompt_excerpt": "Consider two subspaces of $\\mathbb { R } ^ { 4 }$ :",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2331
+          },
+          {
+            "id": "2.13",
+            "prompt_excerpt": "Consider two subspaces $U _ { 1 }$ and $U _ { 2 }$ , where $U _ { 1 }$ is the solution space of the homogeneous equation system $\\pmb { A } _ { 1 } \\pmb { x } = \\mathbf { 0 }$ and ",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2339
+          },
+          {
+            "id": "2.14",
+            "prompt_excerpt": "Consider two subspaces $U _ { 1 }$ and $U _ { 2 }$ , where $U _ { 1 }$ is spanned by the columns of $\\pmb { A } _ { 1 }$ and $U _ { 2 }$ is spanned by the columns of $A _ { 2 }$ wi",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2351
+          },
+          {
+            "id": "2.15",
+            "prompt_excerpt": "Let $F = \\{ ( x , y , z ) \\in \\mathbb { R } ^ { 3 } \\mid x + y - z = 0 \\}$ and $G = \\{ ( a - b , a + b , a - 3 b ) \\mid a , b \\in \\mathbb { R } \\}$",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2363
+          },
+          {
+            "id": "2.16",
+            "prompt_excerpt": "Are the following mappings linear?",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2371
+          },
+          {
+            "id": "2.17",
+            "prompt_excerpt": "Consider the linear mapping",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2415
+          },
+          {
+            "id": "2.18",
+            "prompt_excerpt": "Let $E$ be a vector space. Let $f$ and $g$ be two automorphisms on $E$ such that $f \\circ g = \\operatorname { i d } _ { E } ~ ( \\operatorname { i . e . , } ~ f \\circ g$ is the iden",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2431
+          },
+          {
+            "id": "2.19",
+            "prompt_excerpt": "Consider an endomorphism Φ : $\\mathbb { R } ^ { 3 } \\mathbb { R } ^ { 3 }$ whose transformation matrix (with respect to the standard basis in $\\mathbb { R } ^ { 3 } )$ is",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2433
+          },
+          {
+            "id": "2.20",
+            "prompt_excerpt": "Let us consider $b _ { 1 } , b _ { 2 } , b _ { 1 } ^ { \\prime } , b _ { 2 } ^ { \\prime }$ , 4 vectors of $\\mathbb { R } ^ { 2 }$ expressed in the standard basis of $\\mathbb { R } ^",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2449
+          }
+        ]
+      },
+      "3": {
+        "chapter": "3",
+        "anchor": {
+          "file": "Mathematics for ML part 1.md",
+          "line": 3484
+        },
+        "printed_page": 96,
+        "item_count": 10,
+        "items": [
+          {
+            "id": "3.1",
+            "prompt_excerpt": "Show that $\\langle \\cdot , \\cdot \\rangle$ defined for all $\\pmb { x } = [ x _ { 1 } , x _ { 2 } ] ^ { \\top } \\in \\mathbb { R } ^ { 2 }$ and $\\pmb { y } = [ y _ { 1 } , y _ { 2 } ] ",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3486
+          },
+          {
+            "id": "3.2",
+            "prompt_excerpt": "Consider $\\mathbb { R } ^ { 2 }$ with $\\langle \\cdot , \\cdot \\rangle$ defined for all x and $\\pmb { y }$ in $\\mathbb { R } ^ { 2 }$ as",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3494
+          },
+          {
+            "id": "3.3",
+            "prompt_excerpt": "Compute the distance between",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3502
+          },
+          {
+            "id": "3.4",
+            "prompt_excerpt": "Compute the angle between",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3514
+          },
+          {
+            "id": "3.5",
+            "prompt_excerpt": "Consider the Euclidean vector space $\\mathbb { R } ^ { 5 }$ with the dot product. A subspace $U \\subseteq \\mathbb { R } ^ { 5 }$ and $\\pmb { x } \\in \\mathbb { R } ^ { 5 }$ are give",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3528
+          },
+          {
+            "id": "3.6",
+            "prompt_excerpt": "Consider $\\mathbb { R } ^ { 3 }$ with the inner product",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3538
+          },
+          {
+            "id": "3.7",
+            "prompt_excerpt": "Let V be a vector space and π an endomorphism of V .",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3560
+          },
+          {
+            "id": "3.8",
+            "prompt_excerpt": "Using the Gram-Schmidt method, turn the basis $B ~ = ~ ( b _ { 1 } , b _ { 2 } )$ of a twodimensional subspace $U \\subseteq \\mathbb { R } ^ { 3 }$ into an ONB $C = ( c _ { 1 } , c ",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3566
+          },
+          {
+            "id": "3.9",
+            "prompt_excerpt": "Let $n \\in \\mathbb { N }$ and let $x _ { 1 } , \\ldots , x _ { n } > 0$ be n positive real numbers so that $x _ { 1 } +$ $\\ldots + x _ { n } = 1$ . Use the Cauchy-Schwarz inequality",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3572
+          },
+          {
+            "id": "3.10",
+            "prompt_excerpt": "Rotate the vectors",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3578
+          }
+        ]
+      },
+      "4": {
+        "chapter": "4",
+        "anchor": {
+          "file": "Mathematics for ML part 2.md",
+          "line": 44
+        },
+        "printed_page": 137,
+        "item_count": 12,
+        "items": [
+          {
+            "id": "4.1",
+            "prompt_excerpt": "Compute the determinant using the Laplace expansion (using the first row) and the Sarrus rule for",
+            "file": "Mathematics for ML part 2.md",
+            "line": 46
+          },
+          {
+            "id": "4.2",
+            "prompt_excerpt": "Compute the following determinant efficiently:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 52
+          },
+          {
+            "id": "4.3",
+            "prompt_excerpt": "Compute the eigenspaces of",
+            "file": "Mathematics for ML part 2.md",
+            "line": 58
+          },
+          {
+            "id": "4.4",
+            "prompt_excerpt": "Compute all eigenspaces of",
+            "file": "Mathematics for ML part 2.md",
+            "line": 72
+          },
+          {
+            "id": "4.5",
+            "prompt_excerpt": "Diagonalizability of a matrix is unrelated to its invertibility. Determine for the following four matrices whether they are diagonalizable and/or invertible",
+            "file": "Mathematics for ML part 2.md",
+            "line": 78
+          },
+          {
+            "id": "4.6",
+            "prompt_excerpt": "Compute the eigenspaces of the following transformation matrices. Are they diagonalizable?",
+            "file": "Mathematics for ML part 2.md",
+            "line": 84
+          },
+          {
+            "id": "4.7",
+            "prompt_excerpt": "Are the following matrices diagonalizable? If yes, determine their diagonal form and a basis with respect to which the transformation matrices are diagonal. If no, give reasons why",
+            "file": "Mathematics for ML part 2.md",
+            "line": 100
+          },
+          {
+            "id": "4.8",
+            "prompt_excerpt": "Find the SVD of the matrix",
+            "file": "Mathematics for ML part 2.md",
+            "line": 126
+          },
+          {
+            "id": "4.9",
+            "prompt_excerpt": "Find the singular value decomposition of",
+            "file": "Mathematics for ML part 2.md",
+            "line": 132
+          },
+          {
+            "id": "4.10",
+            "prompt_excerpt": "Find the rank-1 approximation of",
+            "file": "Mathematics for ML part 2.md",
+            "line": 138
+          },
+          {
+            "id": "4.11",
+            "prompt_excerpt": "Show that for any $\\pmb { A } \\in \\mathbb { R } ^ { m \\times n }$ the matrices $A ^ { \\top } A$ and $A A ^ { \\top }$ possess the same nonzero eigenvalues.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 144
+          },
+          {
+            "id": "4.12",
+            "prompt_excerpt": "Show that for x $\\neq \\mathbf { 0 }$ Theorem 4.24 holds, i.e., show that",
+            "file": "Mathematics for ML part 2.md",
+            "line": 146
+          }
+        ]
+      },
+      "5": {
+        "chapter": "5",
+        "anchor": {
+          "file": "Mathematics for ML part 2.md",
+          "line": 1698
+        },
+        "printed_page": 170,
+        "item_count": 8,
+        "items": [
+          {
+            "id": "5.1",
+            "prompt_excerpt": "Compute the derivative $f ^ { \\prime } ( x )$ for",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1700
+          },
+          {
+            "id": "5.2",
+            "prompt_excerpt": "Compute the derivative $f ^ { \\prime } ( x )$ of the logistic sigmoid",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1706
+          },
+          {
+            "id": "5.3",
+            "prompt_excerpt": "Compute the derivative $f ^ { \\prime } ( x )$ of the function",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1712
+          },
+          {
+            "id": "5.4",
+            "prompt_excerpt": "Compute the Taylor polynomials $T _ { n } , n = 0 , \\ldots , 5$ of $f ( x ) = \\sin ( x ) + \\cos ( x )$ at $x _ { 0 } = 0 .$",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1720
+          },
+          {
+            "id": "5.5",
+            "prompt_excerpt": "Consider the following functions:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1722
+          },
+          {
+            "id": "5.6",
+            "prompt_excerpt": "Differentiate f with respect to t and g with respect to X, where",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1742
+          },
+          {
+            "id": "5.8",
+            "prompt_excerpt": "Compute the derivatives $\\mathrm { d } f / \\mathrm { d } x$ of the following functions. Describe your steps in detail.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1766
+          },
+          {
+            "id": "5.9",
+            "prompt_excerpt": "We define",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1792
+          }
+        ]
+      },
+      "6": {
+        "chapter": "6",
+        "anchor": {
+          "file": "Mathematics for ML part 2.md",
+          "line": 3612
+        },
+        "printed_page": 222,
+        "item_count": 11,
+        "items": [
+          {
+            "id": "6.1",
+            "prompt_excerpt": "Consider the following bivariate distribution $p ( x , y )$ of two discrete random variables X and $Y$ .",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3614
+          },
+          {
+            "id": "6.2",
+            "prompt_excerpt": "Consider a mixture of two Gaussian distributions (illustrated in Figure 6.4),",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3624
+          },
+          {
+            "id": "6.5",
+            "prompt_excerpt": "Consider the time-series model",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3654
+          },
+          {
+            "id": "6.6",
+            "prompt_excerpt": "Prove the relationship in $_ { ( 6 . 4 4 ) }$ , which relates the standard definition of the variance to the raw-score expression for the variance.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3674
+          },
+          {
+            "id": "6.7",
+            "prompt_excerpt": "Prove the relationship in (6.45), which relates the pairwise difference between examples in a dataset with the raw-score expression for the variance.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3676
+          },
+          {
+            "id": "6.8",
+            "prompt_excerpt": "Express the Bernoulli distribution in the natural parameter form of the ex ponential family, see (6.107).",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3678
+          },
+          {
+            "id": "6.9",
+            "prompt_excerpt": "Express the Binomial distribution as an exponential family distribution. Also express the Beta distribution is an exponential family distribution. Show that the product of the Beta",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3680
+          },
+          {
+            "id": "6.10",
+            "prompt_excerpt": "Derive the relationship in Section 6.5.2 in two ways:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3682
+          },
+          {
+            "id": "6.11",
+            "prompt_excerpt": "Iterated Expectations.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3704,
+            "extraction_artefact": "exercise item emitted as a level-2 heading by the extraction"
+          },
+          {
+            "id": "6.12",
+            "prompt_excerpt": "Manipulation of Gaussian Random Variables.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3714,
+            "extraction_artefact": "exercise item emitted as a level-2 heading by the extraction"
+          },
+          {
+            "id": "6.13",
+            "prompt_excerpt": "Probability Integral Transformation",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3744,
+            "extraction_artefact": "exercise item emitted as a level-2 heading by the extraction"
+          }
+        ]
+      },
+      "7": {
+        "chapter": "7",
+        "anchor": {
+          "file": "Mathematics for ML part 2.md",
+          "line": 4518
+        },
+        "printed_page": 247,
+        "item_count": 9,
+        "items": [
+          {
+            "id": "7.1",
+            "prompt_excerpt": "Consider the univariate function",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4520,
+            "extraction_artefact": "exercise item emitted as a level-2 heading by the extraction"
+          },
+          {
+            "id": "7.2",
+            "prompt_excerpt": "Consider the update equation for stochastic gradient descent (Equation (7.15)).",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4528
+          },
+          {
+            "id": "7.3",
+            "prompt_excerpt": "Consider whether the following statements are true or false:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4532
+          },
+          {
+            "id": "7.4",
+            "prompt_excerpt": "Consider whether the following statements are true or false:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4540
+          },
+          {
+            "id": "7.5",
+            "prompt_excerpt": "Express the following optimization problem as a standard linear program in matrix notation",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4550
+          },
+          {
+            "id": "7.6",
+            "prompt_excerpt": "Consider the linear program illustrated in Figure 7.9,",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4558
+          },
+          {
+            "id": "7.7",
+            "prompt_excerpt": "Consider the quadratic program illustrated in Figure $7 . 4 _ { ; }$",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4572
+          },
+          {
+            "id": "7.8",
+            "prompt_excerpt": "Consider the following convex optimization problem",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4584
+          },
+          {
+            "id": "7.11",
+            "prompt_excerpt": "The hinge loss (which is the loss used by the support vector machine) is given by",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4614
+          }
+        ]
+      }
+    }
+  },
+  "images": {
+    "references": 243,
+    "distinct_urls": 243,
+    "hosts": {
+      "cdn-mineru.openxlab.org.cn": 243
+    },
+    "locally_available_assets": 0,
+    "note": "Every figure is referenced as an external CDN URL that is not part of this repository, so no figure bitmap is available offline. Captions and figure numbers are present and can be cited; the images themselves cannot be shipped."
+  },
+  "tables_as_html": {
+    "occurrences": 10,
+    "note": "Some tables were emitted as raw HTML <table> markup instead of markdown tables."
+  },
+  "code_fences": 0,
+  "counters": {
+    "draft_footers": 50,
+    "display_math_blocks": 1311,
+    "promoted_exercise_items": 4
+  }
+}

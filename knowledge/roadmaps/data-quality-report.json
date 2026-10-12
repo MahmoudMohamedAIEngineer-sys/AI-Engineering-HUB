@@ -1,0 +1,162 @@
+{
+  "generated_by": "tools/extract_roadmaps.py",
+  "generated_at": "2026-10-12",
+  "sources": [
+    {
+      "path": "perfect_resources_44_skills.html",
+      "sha256": "dd0fe2d9f72c05c265e4e0557b13c60009b43ed407e1247ae4009f2f05f621b9",
+      "bytes": 164606,
+      "role": "resource selection per skill (44 skills x 3 resources)"
+    },
+    {
+      "path": "study_timetable_8hrs.html",
+      "sha256": "a889c6ab45fd08722c8b7a5773c29823aab19899aca3519a929e3145ab41ded8",
+      "bytes": 139391,
+      "role": "sequencing, day counts and (partial) day-level plan"
+    }
+  ],
+  "extracted": {
+    "skills_in_resource_index": 44,
+    "schedule_entries_in_sidebar": 44,
+    "day_level_blocks": 18,
+    "consolidated_skills": 44,
+    "day_level_plan_entries": 116
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "declared-days-exceed-planned-days",
+      "detail": "SK-01 'Python Programming': badge declares 14 study days but 13 day cells carry a DAY number (days 1–14). Unplanned days: [6]."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-04: 'Probability & Statistics' (resource index) vs 'Probability & Stats' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-09: 'Design Patterns & SOLID' (resource index) vs 'Design Patterns' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-10: 'Web Frameworks (FastAPI / Django)' (resource index) vs 'Web Frameworks' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-14: 'Security (OWASP / Auth)' (resource index) vs 'Security / Auth' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-17: 'Apache Spark / PySpark' (resource index) vs 'Apache Spark' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-19: 'Data Warehouses (Snowflake / BigQuery / Redshift)' (resource index) vs 'Data Warehouses' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-22: 'dbt (data build tool)' (resource index) vs 'dbt' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-23: 'Dimensional Modeling (Kimball)' (resource index) vs 'Dimensional Modeling' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-25: 'Data Quality & Testing' (resource index) vs 'Data Quality' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-26: 'Cloud Platforms (AWS / GCP / Azure)' (resource index) vs 'Cloud Platforms' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-27: 'Classical Machine Learning' (resource index) vs 'Classical ML' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-28: 'Deep Learning Fundamentals' (resource index) vs 'Deep Learning' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-30: 'CNNs & Computer Vision' (resource index) vs 'CNNs & Vision' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-32: 'Model Evaluation & Metrics' (resource index) vs 'Model Evaluation' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-34: 'Experiment Tracking (MLflow / W&B)' (resource index) vs 'Experiment Tracking' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-35: 'HuggingFace Ecosystem' (resource index) vs 'HuggingFace' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-36: 'MLOps & Model Deployment' (resource index) vs 'MLOps & Deployment' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-37: 'LLMs & Fine-Tuning (LoRA / RLHF)' (resource index) vs 'LLMs & Fine-Tuning' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-38: 'RAG & Vector Databases' (resource index) vs 'RAG & Vector DBs' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-40: 'Distributed Systems (Advanced)' (resource index) vs 'Distributed Systems' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-41: 'Streaming Systems (Flink / Spark Streaming)' (resource index) vs 'Streaming Systems' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-42: 'Data Lakehouse (Iceberg / Delta Lake)' (resource index) vs 'Data Lakehouse' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-43: 'Observability & Monitoring' (resource index) vs 'Observability' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "skill-name-mismatch",
+      "detail": "SK-44: 'Kubernetes Advanced / Helm' (resource index) vs 'Kubernetes Advanced' (timetable sidebar)."
+    },
+    {
+      "severity": "warning",
+      "code": "header-vs-hero-hour-mismatch",
+      "detail": "The page header advertises 2,720 total hours while the stat row advertises 2,712."
+    },
+    {
+      "severity": "warning",
+      "code": "legend-counts-inconsistent-with-content",
+      "detail": "The resource index filter legend declares ['All 44', 'SWE (10)', 'Data Eng (10)', 'AI/ML (10)', 'Specialization (6)'] while the page contains 44 skill cards distributed as {'foundation': 8, 'swe': 8, 'de': 10, 'ml': 10, 'spec': 8}. Page content is treated as canonical."
+    }
+  ]
+}

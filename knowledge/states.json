@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "last_reviewed": "2026-10-12",
+  "purpose": "The single vocabulary of states used across the knowledge base. Two different things are tracked: how far a *curriculum item* (a topic, skill or competency) has been developed, and whether a *content artefact* (a lesson, exercise set or interactive) may be shown as verified. Mixing the two is how platforms end up presenting drafts as finished courses, so they are kept apart.",
+  "proficiency_levels": [
+    {
+      "id": "awareness",
+      "definition": "Can describe what the concept is, where it is used and why it exists.",
+      "evidence": "Short conceptual answer, no formal derivation."
+    },
+    {
+      "id": "working",
+      "definition": "Can apply the concept to standard problems with reference material available.",
+      "evidence": "Guided exercises, code that runs on supplied data."
+    },
+    {
+      "id": "applied",
+      "definition": "Can select and apply the concept independently to a new problem, and explain the choice.",
+      "evidence": "Independent exercises, implementation from scratch, comparison of alternatives."
+    },
+    {
+      "id": "deep",
+      "definition": "Can derive, justify, debug and critique the concept, including its limits and failure modes.",
+      "evidence": "Derivations, counterexamples, debugging, design review of trade-offs."
+    }
+  ],
+  "topic_status": {
+    "description": "State of a curriculum item (SK-*, competency, module). Every item in the knowledge base carries exactly one.",
+    "values": {
+      "identified": "Discovered in a roadmap or proposed by the competency audit. Nothing else has happened yet.",
+      "gap_under_review": "Believed to matter but not yet judged essential/recommended/optional, or its position in the path is unsettled.",
+      "awaiting_sources": "Scope, prerequisites and importance are recorded; no approved primary source has been supplied for it.",
+      "sources_indexed": "One or more supplied sources are identified, hashed and mapped to this item's sections.",
+      "content_in_development": "Lessons are being written against indexed sources.",
+      "in_verification": "A draft exists and is being checked for source fidelity, correctness, pedagogy and assessment quality.",
+      "verified": "Required checks have passed; remaining limitations are written down in a verification record.",
+      "published": "Verified and reachable in the learner-facing interface.",
+      "needs_revision": "A check failed or a reviewer raised an issue; the item is not to be shown as verified.",
+      "stale": "A source, prerequisite or competency changed after verification, so the earlier verification no longer applies.",
+      "out_of_scope": "Deliberately not part of the current learning path; the reason is recorded."
+    },
+    "allowed_transitions": {
+      "identified": ["gap_under_review", "awaiting_sources", "out_of_scope"],
+      "gap_under_review": ["awaiting_sources", "out_of_scope", "sources_indexed"],
+      "awaiting_sources": ["sources_indexed", "out_of_scope", "gap_under_review"],
+      "sources_indexed": ["content_in_development", "awaiting_sources", "stale"],
+      "content_in_development": ["in_verification", "needs_revision", "stale"],
+      "in_verification": ["verified", "needs_revision", "stale"],
+      "verified": ["published", "needs_revision", "stale"],
+      "published": ["needs_revision", "stale"],
+      "needs_revision": ["content_in_development", "in_verification", "stale"],
+      "stale": ["sources_indexed", "content_in_development", "in_verification"],
+      "out_of_scope": ["gap_under_review"]
+    },
+    "transition_rules": [
+      "sources_indexed requires: at least one source registered in knowledge/sources with a hash, and a section-level mapping for the item.",
+      "content_in_development requires: every lesson learning objective traceable to a mapped source section or an explicitly labelled supplemental reference.",
+      "in_verification requires: exercises have defined expected outcomes and solutions or rubrics.",
+      "verified requires: a verification record naming the checks that ran, their results, and the checks that did not run.",
+      "published requires: verified plus rendering and navigation checks on the live interface."
+    ]
+  },
+  "publication_state": {
+    "description": "State of a content artefact (lesson, exercise set, interactive) as it appears to the learner.",
+    "values": {
+      "draft": "Written but not checked. Must be labelled as unverified wherever it is visible.",
+      "in_verification": "Under active checking; not to be presented as verified.",
+      "needs_revision": "A check failed; the specific issue is recorded and visible.",
+      "verified": "Source fidelity, technical correctness, pedagogy and assessment checks passed, with the verification record attached.",
+      "published": "Verified and included in the learner-facing build.",
+      "stale": "An upstream source or competency changed after the last verification."
+    },
+    "display_rule": "The interface must derive its verification badge from this field. Unverified content must never render as verified, and a lesson with no verification record must render as draft."
+  },
+  "verification_status": {
+    "description": "Outcome of an individual check, so that partial verification is representable.",
+    "values": ["not_run", "passed", "failed", "not_applicable", "blocked"],
+    "blocked_examples": [
+      "Code execution unavailable in the checking environment.",
+      "A cited external source could not be retrieved; its content is not asserted."
+    ]
+  }
+}

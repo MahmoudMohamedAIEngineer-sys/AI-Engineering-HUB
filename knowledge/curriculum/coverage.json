@@ -1,0 +1,2903 @@
+{
+  "summary": {
+    "generated_by": "tools/build_coverage.py",
+    "generated_at": "2026-10-12",
+    "totals": {
+      "domains": 10,
+      "competencies": 82,
+      "roadmap_skills": 44,
+      "source_sections_mapped": 81,
+      "lessons": 0,
+      "verified_lessons": 0
+    },
+    "competency_coverage_counts": {
+      "sourced_no_lessons": 23,
+      "partially_sourced_no_lessons": 7,
+      "no_source_supplied": 52
+    },
+    "by_domain": {
+      "MATH": {
+        "competencies": 19,
+        "sourced": 18,
+        "partial": 1,
+        "none": 0
+      },
+      "PROG": {
+        "competencies": 8,
+        "sourced": 0,
+        "partial": 0,
+        "none": 8
+      },
+      "CS": {
+        "competencies": 4,
+        "sourced": 0,
+        "partial": 0,
+        "none": 4
+      },
+      "DATA": {
+        "competencies": 10,
+        "sourced": 0,
+        "partial": 1,
+        "none": 9
+      },
+      "SWE": {
+        "competencies": 7,
+        "sourced": 0,
+        "partial": 0,
+        "none": 7
+      },
+      "ML": {
+        "competencies": 8,
+        "sourced": 4,
+        "partial": 3,
+        "none": 1
+      },
+      "DL": {
+        "competencies": 8,
+        "sourced": 0,
+        "partial": 2,
+        "none": 6
+      },
+      "GEN": {
+        "competencies": 6,
+        "sourced": 0,
+        "partial": 0,
+        "none": 6
+      },
+      "PROD": {
+        "competencies": 7,
+        "sourced": 0,
+        "partial": 0,
+        "none": 7
+      },
+      "CAREER": {
+        "competencies": 5,
+        "sourced": 1,
+        "partial": 0,
+        "none": 4
+      }
+    }
+  },
+  "inputs": {
+    "curriculum/domains.json": "8a660407fe94d49ede35e132fd069947df10fb18ca7ab88cb7e18ee0a32e8476",
+    "curriculum/competencies.json": "4945dd3690f08e46d80e2f292267d707e2b97ca91d57ca9b162cee762f4a93f1",
+    "curriculum/skill-competency-map.json": "e6f299308d9aba48293d41257daf4cc0df68f555c605ec4a5ce9c23602909ac8",
+    "sources/mml/section-concept-map.json": "9a9e6cac5f09493dcbffdebd94b7df75d04dcefea13d45604699cbf205b5d16c",
+    "sources/mml/structure.json": "4afe6fe36f18de1401ac44b2b7e6ee246423ce4c7001511bd85bbd71a8da1c23",
+    "sources/mml/inventory.json": "086d02ff5d74f0d61766aa36f4e726da9df1e882d989baf653f5febbb3f8c726",
+    "lessons/registry.json": "4d9b91c10588b8f33715a76ab5ced6a84af8f9cc5b40e27e0df29a204a6bfa32"
+  },
+  "competencies": [
+    {
+      "competency_id": "MATH-01",
+      "name": "Vectors, vector spaces and linear independence",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7"
+      ],
+      "mml_sections_mapped": [
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-02",
+      "name": "Matrices as linear mappings",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "2.2",
+        "2.6",
+        "2.7",
+        "2.8",
+        "3.9"
+      ],
+      "mml_sections_mapped": [
+        "2.2",
+        "2.6",
+        "2.7",
+        "2.8",
+        "3.9"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-03",
+      "name": "Systems of linear equations and elimination",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "2.1",
+        "2.3"
+      ],
+      "mml_sections_mapped": [
+        "2.1",
+        "2.3"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Numerical stability of elimination and pivoting strategies beyond the book's brief remarks"
+      ]
+    },
+    {
+      "competency_id": "MATH-04",
+      "name": "Norms, inner products and orthogonality",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "3.7",
+        "3.9",
+        "12.4"
+      ],
+      "mml_sections_mapped": [
+        "12.4",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "3.7",
+        "3.9"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-05",
+      "name": "Orthogonal projection and least squares geometry",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "3.5",
+        "3.6",
+        "3.8",
+        "9.4",
+        "10.3",
+        "12.1"
+      ],
+      "mml_sections_mapped": [
+        "10.3",
+        "12.1",
+        "3.5",
+        "3.6",
+        "3.8",
+        "9.4"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "QR and iterative solvers as practical alternatives to the normal equations"
+      ]
+    },
+    {
+      "competency_id": "MATH-06",
+      "name": "Determinants, eigenvalues and eigenvectors",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "4.1",
+        "4.2"
+      ],
+      "mml_sections_mapped": [
+        "4.1",
+        "4.2"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-07",
+      "name": "Matrix decompositions",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.7",
+        "6.5"
+      ],
+      "mml_sections_mapped": [
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.7",
+        "6.5"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Cost and stability comparison of the algorithms that compute these decompositions"
+      ]
+    },
+    {
+      "competency_id": "MATH-08",
+      "name": "Low-rank approximation and compression",
+      "domain": "MATH",
+      "target_level": "applied",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "4.6",
+        "10.2",
+        "10.4"
+      ],
+      "mml_sections_mapped": [
+        "10.2",
+        "10.4",
+        "4.6"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-09",
+      "name": "Differentiation of scalar functions, gradients and linearisation",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "5.1",
+        "5.2",
+        "5.7",
+        "5.8"
+      ],
+      "mml_sections_mapped": [
+        "5.1",
+        "5.2",
+        "5.7",
+        "5.8"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03",
+        "SK-04"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-10",
+      "name": "Gradients of vector- and matrix-valued functions",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "5.3",
+        "5.4",
+        "5.5"
+      ],
+      "mml_sections_mapped": [
+        "5.3",
+        "5.4",
+        "5.5"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03",
+        "SK-04"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-11",
+      "name": "Backpropagation and automatic differentiation",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "5.6"
+      ],
+      "mml_sections_mapped": [
+        "5.6"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03",
+        "SK-28"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Reverse-mode implementation details in a modern framework, and memory/compute trade-offs of checkpointing"
+      ]
+    },
+    {
+      "competency_id": "MATH-12",
+      "name": "Probability spaces, random variables and distributions",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "6.1",
+        "6.2",
+        "6.7"
+      ],
+      "mml_sections_mapped": [
+        "6.1",
+        "6.2",
+        "6.7"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-04"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-13",
+      "name": "Conditioning, Bayes' theorem and independence",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "6.3",
+        "6.6",
+        "8.5"
+      ],
+      "mml_sections_mapped": [
+        "6.3",
+        "6.6",
+        "8.5"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-04"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-14",
+      "name": "Expectation, covariance and the Gaussian distribution",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "4.3",
+        "6.4",
+        "6.5",
+        "6.7"
+      ],
+      "mml_sections_mapped": [
+        "4.3",
+        "6.4",
+        "6.5",
+        "6.7"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-04"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "MATH-15",
+      "name": "Exponential family and conjugacy",
+      "domain": "MATH",
+      "target_level": "working",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "6.6",
+        "8.4",
+        "9.3"
+      ],
+      "mml_sections_mapped": [
+        "6.6",
+        "8.4",
+        "9.3"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-04"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Practical consequences for Bayesian model implementation, such as when closed forms disappear"
+      ]
+    },
+    {
+      "competency_id": "MATH-16",
+      "name": "Gradient-based optimisation",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "7.1"
+      ],
+      "mml_sections_mapped": [
+        "7.1"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03",
+        "SK-28"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Adaptive and momentum methods, which are the default in practice and are only referenced in the book"
+      ]
+    },
+    {
+      "competency_id": "MATH-17",
+      "name": "Convexity and constrained optimisation",
+      "domain": "MATH",
+      "target_level": "applied",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "5.7",
+        "7.2",
+        "7.3",
+        "12.2",
+        "12.3"
+      ],
+      "mml_sections_mapped": [
+        "12.2",
+        "12.3",
+        "5.7",
+        "7.2",
+        "7.3"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03",
+        "SK-27"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Interior-point and other solver families beyond the book's introductive treatment"
+      ]
+    },
+    {
+      "competency_id": "MATH-18",
+      "name": "Statistical estimation and model selection",
+      "domain": "MATH",
+      "target_level": "deep",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "8.2",
+        "8.3",
+        "8.4",
+        "8.6",
+        "9.2",
+        "9.3",
+        "11.2"
+      ],
+      "mml_sections_mapped": [
+        "11.2",
+        "8.2",
+        "8.3",
+        "8.4",
+        "8.6",
+        "9.2",
+        "9.3"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-04",
+        "SK-27"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Approximate inference methods named but not developed in the book (Laplace approximation, variational inference, MCMC)"
+      ]
+    },
+    {
+      "competency_id": "MATH-19",
+      "name": "Numerical stability, conditioning and floating-point behaviour",
+      "domain": "MATH",
+      "target_level": "applied",
+      "declared_source_status": "partial",
+      "mml_sections_declared": [
+        "2.3",
+        "4.3",
+        "10.4",
+        "10.5",
+        "12.5"
+      ],
+      "mml_sections_mapped": [
+        "10.4",
+        "10.5",
+        "12.5",
+        "2.3",
+        "4.3"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03",
+        "SK-08"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "partially_sourced_no_lessons",
+      "supplemental_needed": [
+        "A numerical-linear-algebra reference covering floating-point analysis, condition numbers, pivoting and the cost of decompositions"
+      ]
+    },
+    {
+      "competency_id": "PROG-01",
+      "name": "Python language fundamentals and idioms",
+      "domain": "PROG",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-01"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A programming source (roadmap nominates Python Crash Course; the free Harvard CS50P and one paid course are also recorded)"
+      ]
+    },
+    {
+      "competency_id": "PROG-02",
+      "name": "Modular design and the Python data model",
+      "domain": "PROG",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-09"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A design-patterns source for Python (object-oriented and functional styles)"
+      ]
+    },
+    {
+      "competency_id": "PROG-03",
+      "name": "Error handling, debugging and logging",
+      "domain": "PROG",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-01"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A source covering Python exception design, the standard debugger and structured logging"
+      ]
+    },
+    {
+      "competency_id": "PROG-04",
+      "name": "Environments, packaging and the shell",
+      "domain": "PROG",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-06"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Shell and Linux material, plus packaging tooling documentation"
+      ]
+    },
+    {
+      "competency_id": "PROG-05",
+      "name": "Testing and test-driven development",
+      "domain": "PROG",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-11"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A testing source covering pytest and property-based testing"
+      ]
+    },
+    {
+      "competency_id": "PROG-06",
+      "name": "Concurrency, parallelism and asynchrony",
+      "domain": "PROG",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-15"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Python concurrency material (asyncio, threading, multiprocessing) matching the current interpreter version"
+      ]
+    },
+    {
+      "competency_id": "PROG-07",
+      "name": "Version control and collaborative workflow",
+      "domain": "PROG",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-05"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A Git reference (the roadmap nominates Pro Git) plus the interactive branching tutorial"
+      ]
+    },
+    {
+      "competency_id": "PROG-08",
+      "name": "Functional programming tools in Python",
+      "domain": "PROG",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-01"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Python functional-programming material"
+      ]
+    },
+    {
+      "competency_id": "CS-01",
+      "name": "Core data structures and their complexity",
+      "domain": "CS",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-07"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A data-structures source, plus practice problems"
+      ]
+    },
+    {
+      "competency_id": "CS-02",
+      "name": "Algorithm design paradigms and complexity analysis",
+      "domain": "CS",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-08"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "An algorithms source and a problem-practice schedule"
+      ]
+    },
+    {
+      "competency_id": "CS-03",
+      "name": "Vectorised numeric computing",
+      "domain": "CS",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03",
+        "SK-29"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "NumPy documentation and exercises"
+      ]
+    },
+    {
+      "competency_id": "CS-04",
+      "name": "Implementing learning algorithms from first principles",
+      "domain": "CS",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-03",
+        "SK-27",
+        "SK-29"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "None for the mathematics; the exercises must be authored, since the source's own exercise sets have no supplied solutions"
+      ]
+    },
+    {
+      "competency_id": "DATA-01",
+      "name": "SQL and query reasoning",
+      "domain": "DATA",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-02"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A SQL source with real datasets (roadmap nominates Practical SQL, plus the SQLZoo and Mode tutorials)"
+      ]
+    },
+    {
+      "competency_id": "DATA-02",
+      "name": "Relational and dimensional data modelling",
+      "domain": "DATA",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-23",
+        "SK-19"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A dimensional-modelling source (the roadmap nominates Kimball-style material)"
+      ]
+    },
+    {
+      "competency_id": "DATA-03",
+      "name": "Batch pipelines and ETL/ELT design",
+      "domain": "DATA",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-20",
+        "SK-22"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "An ELT/ETL source and orchestration tooling documentation"
+      ]
+    },
+    {
+      "competency_id": "DATA-04",
+      "name": "Workflow orchestration and scheduling",
+      "domain": "DATA",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-21"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Airflow or equivalent orchestration documentation"
+      ]
+    },
+    {
+      "competency_id": "DATA-05",
+      "name": "Distributed batch processing",
+      "domain": "DATA",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-17"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Spark documentation and hands-on datasets"
+      ]
+    },
+    {
+      "competency_id": "DATA-06",
+      "name": "Streaming data systems",
+      "domain": "DATA",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-18",
+        "SK-41"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Streaming material covering event time, windowing and delivery guarantees"
+      ]
+    },
+    {
+      "competency_id": "DATA-07",
+      "name": "NoSQL and storage-engine selection",
+      "domain": "DATA",
+      "target_level": "awareness",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-24"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A source covering document, key-value, wide-column and graph stores"
+      ]
+    },
+    {
+      "competency_id": "DATA-08",
+      "name": "Data quality, validation and contracts",
+      "domain": "DATA",
+      "target_level": "applied",
+      "declared_source_status": "partial",
+      "mml_sections_declared": [
+        "8.1"
+      ],
+      "mml_sections_mapped": [
+        "8.1"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-25",
+        "SK-33"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "partially_sourced_no_lessons",
+      "supplemental_needed": [
+        "Data-validation tooling and drift-detection methods"
+      ]
+    },
+    {
+      "competency_id": "DATA-09",
+      "name": "Lakehouse and table formats",
+      "domain": "DATA",
+      "target_level": "awareness",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-42"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Documentation for an open table format and its concurrency model"
+      ]
+    },
+    {
+      "competency_id": "DATA-10",
+      "name": "Cloud platforms for data and ML",
+      "domain": "DATA",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-19",
+        "SK-26"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Official cloud documentation for one provider, dated, plus a cost-modelling exercise"
+      ]
+    },
+    {
+      "competency_id": "SWE-01",
+      "name": "Service and API design",
+      "domain": "SWE",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-10"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Web framework documentation (the roadmap nominates FastAPI or Django) and an API-design reference"
+      ]
+    },
+    {
+      "competency_id": "SWE-02",
+      "name": "Containers and reproducible runtime environments",
+      "domain": "SWE",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-12"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Docker documentation and an exercise on reproducing a training environment"
+      ]
+    },
+    {
+      "competency_id": "SWE-03",
+      "name": "Continuous integration and delivery",
+      "domain": "SWE",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-13"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "CI/CD documentation and a worked pipeline"
+      ]
+    },
+    {
+      "competency_id": "SWE-04",
+      "name": "Application security and authentication",
+      "domain": "SWE",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-14"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "OWASP material and framework authentication documentation"
+      ]
+    },
+    {
+      "competency_id": "SWE-05",
+      "name": "Distributed systems reasoning",
+      "domain": "SWE",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-16",
+        "SK-40"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A distributed-systems source; the roadmap places this in the specialisation phase"
+      ]
+    },
+    {
+      "competency_id": "SWE-06",
+      "name": "System design for AI applications",
+      "domain": "SWE",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-16",
+        "SK-40"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "System-design material plus AI-specific case studies"
+      ]
+    },
+    {
+      "competency_id": "SWE-07",
+      "name": "Container orchestration and deployment operations",
+      "domain": "SWE",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-12",
+        "SK-44"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Kubernetes documentation and a local-cluster exercise"
+      ]
+    },
+    {
+      "competency_id": "ML-01",
+      "name": "Problem formulation and baselines",
+      "domain": "ML",
+      "target_level": "applied",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "8.1",
+        "8.2"
+      ],
+      "mml_sections_mapped": [
+        "8.1",
+        "8.2"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-27",
+        "SK-32"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Business-objective translation and metric selection from an applied-ML source; the book is mathematical and stops at the loss function"
+      ]
+    },
+    {
+      "competency_id": "ML-02",
+      "name": "Supervised learning algorithms",
+      "domain": "ML",
+      "target_level": "applied",
+      "declared_source_status": "partial",
+      "mml_sections_declared": [
+        "9.1",
+        "9.2",
+        "9.4",
+        "12.1",
+        "12.2",
+        "12.3",
+        "12.4",
+        "12.5"
+      ],
+      "mml_sections_mapped": [
+        "12.1",
+        "12.2",
+        "12.3",
+        "12.4",
+        "12.5",
+        "9.1",
+        "9.2",
+        "9.4"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-27"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "partially_sourced_no_lessons",
+      "supplemental_needed": [
+        "Tree-based ensembles, nearest-neighbour methods, and the applied comparison of classifiers; the book covers regression and SVM only"
+      ]
+    },
+    {
+      "competency_id": "ML-03",
+      "name": "Evaluation metrics and their limitations",
+      "domain": "ML",
+      "target_level": "applied",
+      "declared_source_status": "partial",
+      "mml_sections_declared": [
+        "8.2",
+        "8.3"
+      ],
+      "mml_sections_mapped": [
+        "8.2",
+        "8.3"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-04",
+        "SK-32"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "partially_sourced_no_lessons",
+      "supplemental_needed": [
+        "Calibration, ranking metrics, imbalanced-data metrics and class-threshold selection"
+      ]
+    },
+    {
+      "competency_id": "ML-04",
+      "name": "Validation methodology and leakage",
+      "domain": "ML",
+      "target_level": "applied",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "8.6"
+      ],
+      "mml_sections_mapped": [
+        "8.6"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-32",
+        "SK-33"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Grouped, stratified and temporal splitting for real data structures"
+      ]
+    },
+    {
+      "competency_id": "ML-05",
+      "name": "Feature engineering and preprocessing",
+      "domain": "ML",
+      "target_level": "applied",
+      "declared_source_status": "partial",
+      "mml_sections_declared": [
+        "8.1",
+        "9.1",
+        "10.6"
+      ],
+      "mml_sections_mapped": [
+        "10.6",
+        "8.1",
+        "9.1"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-30",
+        "SK-33"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "partially_sourced_no_lessons",
+      "supplemental_needed": [
+        "Categorical encoding, scaling, text and time features; the book's treatment is mathematical rather than practical"
+      ]
+    },
+    {
+      "competency_id": "ML-06",
+      "name": "Generalisation, regularisation and the bias-variance trade-off",
+      "domain": "ML",
+      "target_level": "applied",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "8.2",
+        "8.3",
+        "9.2"
+      ],
+      "mml_sections_mapped": [
+        "8.2",
+        "8.3",
+        "9.2"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-27",
+        "SK-33"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": []
+    },
+    {
+      "competency_id": "ML-07",
+      "name": "Unsupervised learning and latent-variable models",
+      "domain": "ML",
+      "target_level": "applied",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "10.1",
+        "10.2",
+        "10.3",
+        "10.4",
+        "10.5",
+        "10.6",
+        "10.7",
+        "11.1",
+        "11.2",
+        "11.3",
+        "11.4"
+      ],
+      "mml_sections_mapped": [
+        "10.1",
+        "10.2",
+        "10.3",
+        "10.4",
+        "10.5",
+        "10.6",
+        "10.7",
+        "11.1",
+        "11.2",
+        "11.3",
+        "11.4"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-27"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Practical cluster validation and the operational use of dimensionality reduction"
+      ]
+    },
+    {
+      "competency_id": "ML-08",
+      "name": "Experiment tracking and reproducibility",
+      "domain": "ML",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-34"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Experiment-tracking tooling documentation and a reproducibility exercise"
+      ]
+    },
+    {
+      "competency_id": "DL-01",
+      "name": "Neural network fundamentals",
+      "domain": "DL",
+      "target_level": "deep",
+      "declared_source_status": "partial",
+      "mml_sections_declared": [
+        "5.6"
+      ],
+      "mml_sections_mapped": [
+        "5.6"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-28"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "partially_sourced_no_lessons",
+      "supplemental_needed": [
+        "A deep-learning source covering architecture, training practice, activations and regularisation for networks"
+      ]
+    },
+    {
+      "competency_id": "DL-02",
+      "name": "Training dynamics and optimisation for deep networks",
+      "domain": "DL",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-28"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A deep-learning source with an empirical treatment of optimisers, schedules and initialisation"
+      ]
+    },
+    {
+      "competency_id": "DL-03",
+      "name": "Deep learning frameworks and the training loop",
+      "domain": "DL",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-29",
+        "SK-35"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "PyTorch documentation and guided practice (the roadmap nominates PyTorch as a skill of its own)"
+      ]
+    },
+    {
+      "competency_id": "DL-04",
+      "name": "Convolutional networks and computer vision",
+      "domain": "DL",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-30"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "A computer-vision source covering convolutional architectures, augmentation and transfer learning"
+      ]
+    },
+    {
+      "competency_id": "DL-05",
+      "name": "Sequence modelling and attention",
+      "domain": "DL",
+      "target_level": "applied",
+      "declared_source_status": "partial",
+      "mml_sections_declared": [
+        "3.2",
+        "3.3"
+      ],
+      "mml_sections_mapped": [
+        "3.2",
+        "3.3"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-31"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "partially_sourced_no_lessons",
+      "supplemental_needed": [
+        "A transformer reference: the original attention paper and a reputable architectural walkthrough, dated"
+      ]
+    },
+    {
+      "competency_id": "DL-06",
+      "name": "Transformer architecture and language models",
+      "domain": "DL",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-31",
+        "SK-37"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Primary references for the transformer and for a current open model's configuration; both dated and version-recorded"
+      ]
+    },
+    {
+      "competency_id": "DL-07",
+      "name": "Pre-training, fine-tuning and parameter-efficient adaptation",
+      "domain": "DL",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-35",
+        "SK-37"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Parameter-efficient fine-tuning literature and framework documentation, dated"
+      ]
+    },
+    {
+      "competency_id": "DL-08",
+      "name": "Distributed and efficient training",
+      "domain": "DL",
+      "target_level": "awareness",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-39"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Distributed-training documentation and a memory-accounting exercise"
+      ]
+    },
+    {
+      "competency_id": "GEN-01",
+      "name": "How large language models behave",
+      "domain": "GEN",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-35",
+        "SK-37"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Model-behaviour documentation and empirical exercises against a stated model version"
+      ]
+    },
+    {
+      "competency_id": "GEN-02",
+      "name": "Prompting and context engineering",
+      "domain": "GEN",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-37"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Provider documentation current at the time of writing, plus evaluation harness practice"
+      ]
+    },
+    {
+      "competency_id": "GEN-03",
+      "name": "Retrieval-augmented generation and vector search",
+      "domain": "GEN",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-38"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Vector-search documentation, embedding-model documentation, and evaluation methods for retrieval"
+      ]
+    },
+    {
+      "competency_id": "GEN-04",
+      "name": "Evaluating and guarding generative systems",
+      "domain": "GEN",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-32",
+        "SK-38"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Evaluation methodology for free-form outputs, and safety guidance from a reputable source"
+      ]
+    },
+    {
+      "competency_id": "GEN-05",
+      "name": "Agents and tool use",
+      "domain": "GEN",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-38"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Tool-use documentation and case studies with explicit failure analysis"
+      ]
+    },
+    {
+      "competency_id": "GEN-06",
+      "name": "Cost, latency and context management",
+      "domain": "GEN",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-38",
+        "SK-36"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Current provider pricing and latency documentation, dated, plus a measurement exercise"
+      ]
+    },
+    {
+      "competency_id": "PROD-01",
+      "name": "ML lifecycle and MLOps principles",
+      "domain": "PROD",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-36",
+        "SK-43"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "MLOps principles and reference architecture, from a primary source such as the MLOps literature and current platform documentation"
+      ]
+    },
+    {
+      "competency_id": "PROD-02",
+      "name": "Model serving and deployment patterns",
+      "domain": "PROD",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-36"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Serving framework documentation and a latency/throughput measurement exercise"
+      ]
+    },
+    {
+      "competency_id": "PROD-03",
+      "name": "Monitoring, drift detection and observability",
+      "domain": "PROD",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-43"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Observability tooling documentation and drift-detection methods"
+      ]
+    },
+    {
+      "competency_id": "PROD-04",
+      "name": "Reliability, incident response and debugging in production",
+      "domain": "PROD",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-43",
+        "SK-36"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Site-reliability material and incident-review practice"
+      ]
+    },
+    {
+      "competency_id": "PROD-05",
+      "name": "Security, privacy and governance for AI systems",
+      "domain": "PROD",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-14"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "OWASP LLM guidance and current regulatory summaries, dated, with the caveat that this area changes"
+      ]
+    },
+    {
+      "competency_id": "PROD-06",
+      "name": "Cost and performance engineering",
+      "domain": "PROD",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-36",
+        "SK-43"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Hardware and serving performance material with measurement practice"
+      ]
+    },
+    {
+      "competency_id": "PROD-07",
+      "name": "Responsible AI, fairness and documentation",
+      "domain": "PROD",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Responsible-AI frameworks and model-card practice from reputable sources"
+      ]
+    },
+    {
+      "competency_id": "CAREER-01",
+      "name": "Technical writing and explanation",
+      "domain": "CAREER",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Writing guidance from a reputable engineering organization"
+      ]
+    },
+    {
+      "competency_id": "CAREER-02",
+      "name": "Code review and collaborative practice",
+      "domain": "CAREER",
+      "target_level": "working",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [
+        "SK-05"
+      ],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Review practice guidance from a reputable engineering organization"
+      ]
+    },
+    {
+      "competency_id": "CAREER-03",
+      "name": "Interview preparation and technical communication under constraint",
+      "domain": "CAREER",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "Practice problem sets with known sources; interview questions must never be fabricated and attributed to a real employer"
+      ]
+    },
+    {
+      "competency_id": "CAREER-04",
+      "name": "Project work and portfolio construction",
+      "domain": "CAREER",
+      "target_level": "applied",
+      "declared_source_status": "none",
+      "mml_sections_declared": [],
+      "mml_sections_mapped": [],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "no_source_supplied",
+      "supplemental_needed": [
+        "None; the projects are authored, with rubrics"
+      ]
+    },
+    {
+      "competency_id": "CAREER-05",
+      "name": "Reading technical material and research literacy",
+      "domain": "CAREER",
+      "target_level": "applied",
+      "declared_source_status": "sourced",
+      "mml_sections_declared": [
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "mml_sections_mapped": [
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "mml_sections_unknown": [],
+      "declared_but_not_mapped": [],
+      "mapped_but_not_declared": [],
+      "roadmap_skills": [],
+      "lessons": [],
+      "verified_lessons": [],
+      "computed_coverage": "sourced_no_lessons",
+      "supplemental_needed": [
+        "Guidance on reading research papers critically and on versioning fast-moving technical claims"
+      ]
+    }
+  ],
+  "issues": [],
+  "unmapped_source_sections": [
+    {
+      "id": "2.9",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "3.10",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "4.8",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "5.9",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "6.8",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "7.4",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "9.5",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "10.8",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "11.5",
+      "role": "bibliography",
+      "title": "Further Reading"
+    },
+    {
+      "id": "12.6",
+      "role": "bibliography",
+      "title": "Further Reading"
+    }
+  ],
+  "skills_awaiting_sources": [
+    {
+      "id": "SK-01",
+      "name": "Python Programming",
+      "status": "awaiting_sources",
+      "source_need": "The user's nominated book (Python Crash Course) and one of the two nominated courses; currently no programming source is in the repository."
+    },
+    {
+      "id": "SK-02",
+      "name": "SQL",
+      "status": "awaiting_sources",
+      "source_need": "The nominated SQL book and a practice environment with real datasets."
+    },
+    {
+      "id": "SK-05",
+      "name": "Git & Version Control",
+      "status": "awaiting_sources",
+      "source_need": "The nominated free Git reference and the interactive branching tutorial."
+    },
+    {
+      "id": "SK-06",
+      "name": "Linux / Command Line",
+      "status": "awaiting_sources",
+      "source_need": "A shell and Linux source matching the shell in use."
+    },
+    {
+      "id": "SK-07",
+      "name": "Data Structures",
+      "status": "awaiting_sources",
+      "source_need": "A data-structures source plus a practice schedule."
+    },
+    {
+      "id": "SK-08",
+      "name": "Algorithms & Big-O",
+      "status": "awaiting_sources",
+      "source_need": "An algorithms source plus a practice schedule."
+    },
+    {
+      "id": "SK-09",
+      "name": "Design Patterns & SOLID",
+      "status": "awaiting_sources",
+      "source_need": "A design source written for Python rather than for Java."
+    },
+    {
+      "id": "SK-10",
+      "name": "Web Frameworks (FastAPI / Django)",
+      "status": "awaiting_sources",
+      "source_need": "Framework documentation current at the time of teaching."
+    },
+    {
+      "id": "SK-11",
+      "name": "Testing & TDD",
+      "status": "awaiting_sources",
+      "source_need": "A pytest-centred testing source."
+    },
+    {
+      "id": "SK-12",
+      "name": "Docker & Kubernetes",
+      "status": "awaiting_sources",
+      "source_need": "Container documentation and a local-cluster exercise."
+    },
+    {
+      "id": "SK-13",
+      "name": "CI/CD Pipelines",
+      "status": "awaiting_sources",
+      "source_need": "Pipeline documentation plus a worked pipeline."
+    },
+    {
+      "id": "SK-14",
+      "name": "Security (OWASP / Auth)",
+      "status": "awaiting_sources",
+      "source_need": "OWASP material, authentication documentation, and AI-specific threat guidance."
+    },
+    {
+      "id": "SK-15",
+      "name": "Async Programming",
+      "status": "awaiting_sources",
+      "source_need": "Concurrency material for the Python version in use."
+    },
+    {
+      "id": "SK-16",
+      "name": "System Design",
+      "status": "awaiting_sources",
+      "source_need": "System-design material plus AI-specific case studies, which will be authored as original scenarios with rubrics."
+    },
+    {
+      "id": "SK-17",
+      "name": "Apache Spark / PySpark",
+      "status": "awaiting_sources",
+      "source_need": "Spark documentation and a dataset large enough to show partitioning effects."
+    },
+    {
+      "id": "SK-18",
+      "name": "Apache Kafka",
+      "status": "awaiting_sources",
+      "source_need": "Kafka documentation and an event-time exercise."
+    },
+    {
+      "id": "SK-19",
+      "name": "Data Warehouses",
+      "status": "awaiting_sources",
+      "source_need": "Warehouse documentation plus modelling material."
+    },
+    {
+      "id": "SK-20",
+      "name": "ETL / ELT Pipelines",
+      "status": "awaiting_sources",
+      "source_need": "An ELT source plus orchestration tooling."
+    },
+    {
+      "id": "SK-21",
+      "name": "Apache Airflow",
+      "status": "awaiting_sources",
+      "source_need": "Airflow documentation and a backfill exercise."
+    },
+    {
+      "id": "SK-22",
+      "name": "dbt",
+      "status": "awaiting_sources",
+      "source_need": "dbt documentation and a modelling exercise."
+    },
+    {
+      "id": "SK-23",
+      "name": "Dimensional Modeling",
+      "status": "awaiting_sources",
+      "source_need": "A dimensional-modelling source."
+    },
+    {
+      "id": "SK-24",
+      "name": "NoSQL Databases",
+      "status": "awaiting_sources",
+      "source_need": "Storage-engine material covering the main families."
+    },
+    {
+      "id": "SK-25",
+      "name": "Data Quality & Testing",
+      "status": "awaiting_sources",
+      "source_need": "Validation tooling plus drift-detection methods."
+    },
+    {
+      "id": "SK-26",
+      "name": "Cloud Platforms (AWS / GCP / Azure)",
+      "status": "awaiting_sources",
+      "source_need": "Official documentation for one provider, dated, plus a cost exercise."
+    },
+    {
+      "id": "SK-29",
+      "name": "PyTorch",
+      "status": "awaiting_sources",
+      "source_need": "Framework documentation for the version in use, plus exercises."
+    },
+    {
+      "id": "SK-30",
+      "name": "CNNs & Computer Vision",
+      "status": "awaiting_sources",
+      "source_need": "A computer-vision source and a dataset."
+    },
+    {
+      "id": "SK-31",
+      "name": "Transformers & NLP",
+      "status": "awaiting_sources",
+      "source_need": "Primary references for attention and the transformer, plus a current architectural walkthrough, both dated."
+    },
+    {
+      "id": "SK-34",
+      "name": "Experiment Tracking (MLflow / W&B)",
+      "status": "awaiting_sources",
+      "source_need": "Tooling documentation and a reproducibility exercise."
+    },
+    {
+      "id": "SK-35",
+      "name": "HuggingFace Ecosystem",
+      "status": "awaiting_sources",
+      "source_need": "Library documentation for the version in use."
+    },
+    {
+      "id": "SK-36",
+      "name": "MLOps & Model Deployment",
+      "status": "awaiting_sources",
+      "source_need": "MLOps principles from a primary source, serving-framework documentation, and a measurement exercise."
+    },
+    {
+      "id": "SK-37",
+      "name": "LLMs & Fine-Tuning (LoRA / RLHF)",
+      "status": "awaiting_sources",
+      "source_need": "Parameter-efficient fine-tuning literature, framework documentation and model cards, all dated and version-recorded."
+    },
+    {
+      "id": "SK-38",
+      "name": "RAG & Vector Databases",
+      "status": "awaiting_sources",
+      "source_need": "Vector-search and embedding documentation, retrieval evaluation methods, and a corpus to work on."
+    },
+    {
+      "id": "SK-39",
+      "name": "Distributed Training",
+      "status": "awaiting_sources",
+      "source_need": "Distributed-training documentation and a memory-accounting exercise."
+    },
+    {
+      "id": "SK-40",
+      "name": "Distributed Systems (Advanced)",
+      "status": "awaiting_sources",
+      "source_need": "A distributed-systems source and incident case studies."
+    },
+    {
+      "id": "SK-41",
+      "name": "Streaming Systems (Flink / Spark Streaming)",
+      "status": "awaiting_sources",
+      "source_need": "Stream-processing documentation."
+    },
+    {
+      "id": "SK-42",
+      "name": "Data Lakehouse (Iceberg / Delta Lake)",
+      "status": "awaiting_sources",
+      "source_need": "Table-format documentation for the version in use."
+    },
+    {
+      "id": "SK-43",
+      "name": "Observability & Monitoring",
+      "status": "awaiting_sources",
+      "source_need": "Observability tooling documentation, drift-detection methods, and incident-review practice."
+    },
+    {
+      "id": "SK-44",
+      "name": "Kubernetes Advanced / Helm",
+      "status": "awaiting_sources",
+      "source_need": "Kubernetes and packaging documentation, with a local cluster."
+    }
+  ],
+  "prerequisite_order_conflicts": [
+    {
+      "skill": "SK-10",
+      "requires": "SK-11",
+      "detail": "SK-10 (Web Frameworks (FastAPI / Django)) requires SK-11 (Testing & TDD), which the curriculum order places later."
+    },
+    {
+      "skill": "SK-17",
+      "requires": "SK-20",
+      "detail": "SK-17 (Apache Spark / PySpark) requires SK-20 (ETL / ELT Pipelines), which the curriculum order places later."
+    },
+    {
+      "skill": "SK-20",
+      "requires": "SK-25",
+      "detail": "SK-20 (ETL / ELT Pipelines) requires SK-25 (Data Quality & Testing), which the curriculum order places later."
+    }
+  ],
+  "source_exercise_inventory": {
+    "chapters_with_supplied_exercise_sets": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "chapters_without_supplied_exercise_sets": [
+      "1",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "total_items_located": 69,
+    "per_chapter": {
+      "2": {
+        "chapter": "2",
+        "anchor": {
+          "file": "Mathematics for ML part 1.md",
+          "line": 2149
+        },
+        "printed_page": 64,
+        "item_count": 19,
+        "items": [
+          {
+            "id": "2.1",
+            "prompt_excerpt": "We consider $( \\mathbb { R } \\backslash \\{ - 1 \\} , \\star )$ , where",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2151
+          },
+          {
+            "id": "2.2",
+            "prompt_excerpt": "Let n be in $\\mathbb { N } \\backslash \\{ 0 \\}$ . Let $k , x$ be in $\\mathbb { Z } .$ . We define the congruence class $\\bar { k }$ of the integer k as the set",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2167
+          },
+          {
+            "id": "2.3",
+            "prompt_excerpt": "Consider the set $\\mathcal { G }$ of $3 \\times 3$ matrices defined as follows:",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2203
+          },
+          {
+            "id": "2.4",
+            "prompt_excerpt": "Compute the following matrix products, if possible:",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2213
+          },
+          {
+            "id": "2.5",
+            "prompt_excerpt": "Find the set S of all solutions in x of the following inhomogeneous linear systems $\\mathbf { { A } } \\mathbf { { x } } = \\mathbf { { b } } ,$ where A and b are defined as follows:",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2247
+          },
+          {
+            "id": "2.6",
+            "prompt_excerpt": "Using Gaussian elimination, find all solutions of the inhomogeneous equation system $\\mathbf { A } { \\boldsymbol { \\mathbf { \\mathit { x } } } } = \\mathbf { \\mathit { b } }$ with",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2261
+          },
+          {
+            "id": "2.8",
+            "prompt_excerpt": "Determine the inverses of the following matrices if possible:",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2277
+          },
+          {
+            "id": "2.9",
+            "prompt_excerpt": "Which of the following sets are subspaces of $\\mathbb { R } ^ { 3 } ?$",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2289
+          },
+          {
+            "id": "2.10",
+            "prompt_excerpt": "Are the following sets of vectors linearly independent?",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2303
+          },
+          {
+            "id": "2.11",
+            "prompt_excerpt": "Write",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2315
+          },
+          {
+            "id": "2.12",
+            "prompt_excerpt": "Consider two subspaces of $\\mathbb { R } ^ { 4 }$ :",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2331
+          },
+          {
+            "id": "2.13",
+            "prompt_excerpt": "Consider two subspaces $U _ { 1 }$ and $U _ { 2 }$ , where $U _ { 1 }$ is the solution space of the homogeneous equation system $\\pmb { A } _ { 1 } \\pmb { x } = \\mathbf { 0 }$ and ",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2339
+          },
+          {
+            "id": "2.14",
+            "prompt_excerpt": "Consider two subspaces $U _ { 1 }$ and $U _ { 2 }$ , where $U _ { 1 }$ is spanned by the columns of $\\pmb { A } _ { 1 }$ and $U _ { 2 }$ is spanned by the columns of $A _ { 2 }$ wi",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2351
+          },
+          {
+            "id": "2.15",
+            "prompt_excerpt": "Let $F = \\{ ( x , y , z ) \\in \\mathbb { R } ^ { 3 } \\mid x + y - z = 0 \\}$ and $G = \\{ ( a - b , a + b , a - 3 b ) \\mid a , b \\in \\mathbb { R } \\}$",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2363
+          },
+          {
+            "id": "2.16",
+            "prompt_excerpt": "Are the following mappings linear?",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2371
+          },
+          {
+            "id": "2.17",
+            "prompt_excerpt": "Consider the linear mapping",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2415
+          },
+          {
+            "id": "2.18",
+            "prompt_excerpt": "Let $E$ be a vector space. Let $f$ and $g$ be two automorphisms on $E$ such that $f \\circ g = \\operatorname { i d } _ { E } ~ ( \\operatorname { i . e . , } ~ f \\circ g$ is the iden",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2431
+          },
+          {
+            "id": "2.19",
+            "prompt_excerpt": "Consider an endomorphism Φ : $\\mathbb { R } ^ { 3 } \\mathbb { R } ^ { 3 }$ whose transformation matrix (with respect to the standard basis in $\\mathbb { R } ^ { 3 } )$ is",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2433
+          },
+          {
+            "id": "2.20",
+            "prompt_excerpt": "Let us consider $b _ { 1 } , b _ { 2 } , b _ { 1 } ^ { \\prime } , b _ { 2 } ^ { \\prime }$ , 4 vectors of $\\mathbb { R } ^ { 2 }$ expressed in the standard basis of $\\mathbb { R } ^",
+            "file": "Mathematics for ML part 1.md",
+            "line": 2449
+          }
+        ]
+      },
+      "3": {
+        "chapter": "3",
+        "anchor": {
+          "file": "Mathematics for ML part 1.md",
+          "line": 3484
+        },
+        "printed_page": 96,
+        "item_count": 10,
+        "items": [
+          {
+            "id": "3.1",
+            "prompt_excerpt": "Show that $\\langle \\cdot , \\cdot \\rangle$ defined for all $\\pmb { x } = [ x _ { 1 } , x _ { 2 } ] ^ { \\top } \\in \\mathbb { R } ^ { 2 }$ and $\\pmb { y } = [ y _ { 1 } , y _ { 2 } ] ",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3486
+          },
+          {
+            "id": "3.2",
+            "prompt_excerpt": "Consider $\\mathbb { R } ^ { 2 }$ with $\\langle \\cdot , \\cdot \\rangle$ defined for all x and $\\pmb { y }$ in $\\mathbb { R } ^ { 2 }$ as",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3494
+          },
+          {
+            "id": "3.3",
+            "prompt_excerpt": "Compute the distance between",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3502
+          },
+          {
+            "id": "3.4",
+            "prompt_excerpt": "Compute the angle between",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3514
+          },
+          {
+            "id": "3.5",
+            "prompt_excerpt": "Consider the Euclidean vector space $\\mathbb { R } ^ { 5 }$ with the dot product. A subspace $U \\subseteq \\mathbb { R } ^ { 5 }$ and $\\pmb { x } \\in \\mathbb { R } ^ { 5 }$ are give",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3528
+          },
+          {
+            "id": "3.6",
+            "prompt_excerpt": "Consider $\\mathbb { R } ^ { 3 }$ with the inner product",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3538
+          },
+          {
+            "id": "3.7",
+            "prompt_excerpt": "Let V be a vector space and π an endomorphism of V .",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3560
+          },
+          {
+            "id": "3.8",
+            "prompt_excerpt": "Using the Gram-Schmidt method, turn the basis $B ~ = ~ ( b _ { 1 } , b _ { 2 } )$ of a twodimensional subspace $U \\subseteq \\mathbb { R } ^ { 3 }$ into an ONB $C = ( c _ { 1 } , c ",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3566
+          },
+          {
+            "id": "3.9",
+            "prompt_excerpt": "Let $n \\in \\mathbb { N }$ and let $x _ { 1 } , \\ldots , x _ { n } > 0$ be n positive real numbers so that $x _ { 1 } +$ $\\ldots + x _ { n } = 1$ . Use the Cauchy-Schwarz inequality",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3572
+          },
+          {
+            "id": "3.10",
+            "prompt_excerpt": "Rotate the vectors",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3578
+          }
+        ]
+      },
+      "4": {
+        "chapter": "4",
+        "anchor": {
+          "file": "Mathematics for ML part 2.md",
+          "line": 44
+        },
+        "printed_page": 137,
+        "item_count": 12,
+        "items": [
+          {
+            "id": "4.1",
+            "prompt_excerpt": "Compute the determinant using the Laplace expansion (using the first row) and the Sarrus rule for",
+            "file": "Mathematics for ML part 2.md",
+            "line": 46
+          },
+          {
+            "id": "4.2",
+            "prompt_excerpt": "Compute the following determinant efficiently:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 52
+          },
+          {
+            "id": "4.3",
+            "prompt_excerpt": "Compute the eigenspaces of",
+            "file": "Mathematics for ML part 2.md",
+            "line": 58
+          },
+          {
+            "id": "4.4",
+            "prompt_excerpt": "Compute all eigenspaces of",
+            "file": "Mathematics for ML part 2.md",
+            "line": 72
+          },
+          {
+            "id": "4.5",
+            "prompt_excerpt": "Diagonalizability of a matrix is unrelated to its invertibility. Determine for the following four matrices whether they are diagonalizable and/or invertible",
+            "file": "Mathematics for ML part 2.md",
+            "line": 78
+          },
+          {
+            "id": "4.6",
+            "prompt_excerpt": "Compute the eigenspaces of the following transformation matrices. Are they diagonalizable?",
+            "file": "Mathematics for ML part 2.md",
+            "line": 84
+          },
+          {
+            "id": "4.7",
+            "prompt_excerpt": "Are the following matrices diagonalizable? If yes, determine their diagonal form and a basis with respect to which the transformation matrices are diagonal. If no, give reasons why",
+            "file": "Mathematics for ML part 2.md",
+            "line": 100
+          },
+          {
+            "id": "4.8",
+            "prompt_excerpt": "Find the SVD of the matrix",
+            "file": "Mathematics for ML part 2.md",
+            "line": 126
+          },
+          {
+            "id": "4.9",
+            "prompt_excerpt": "Find the singular value decomposition of",
+            "file": "Mathematics for ML part 2.md",
+            "line": 132
+          },
+          {
+            "id": "4.10",
+            "prompt_excerpt": "Find the rank-1 approximation of",
+            "file": "Mathematics for ML part 2.md",
+            "line": 138
+          },
+          {
+            "id": "4.11",
+            "prompt_excerpt": "Show that for any $\\pmb { A } \\in \\mathbb { R } ^ { m \\times n }$ the matrices $A ^ { \\top } A$ and $A A ^ { \\top }$ possess the same nonzero eigenvalues.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 144
+          },
+          {
+            "id": "4.12",
+            "prompt_excerpt": "Show that for x $\\neq \\mathbf { 0 }$ Theorem 4.24 holds, i.e., show that",
+            "file": "Mathematics for ML part 2.md",
+            "line": 146
+          }
+        ]
+      },
+      "5": {
+        "chapter": "5",
+        "anchor": {
+          "file": "Mathematics for ML part 2.md",
+          "line": 1698
+        },
+        "printed_page": 170,
+        "item_count": 8,
+        "items": [
+          {
+            "id": "5.1",
+            "prompt_excerpt": "Compute the derivative $f ^ { \\prime } ( x )$ for",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1700
+          },
+          {
+            "id": "5.2",
+            "prompt_excerpt": "Compute the derivative $f ^ { \\prime } ( x )$ of the logistic sigmoid",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1706
+          },
+          {
+            "id": "5.3",
+            "prompt_excerpt": "Compute the derivative $f ^ { \\prime } ( x )$ of the function",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1712
+          },
+          {
+            "id": "5.4",
+            "prompt_excerpt": "Compute the Taylor polynomials $T _ { n } , n = 0 , \\ldots , 5$ of $f ( x ) = \\sin ( x ) + \\cos ( x )$ at $x _ { 0 } = 0 .$",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1720
+          },
+          {
+            "id": "5.5",
+            "prompt_excerpt": "Consider the following functions:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1722
+          },
+          {
+            "id": "5.6",
+            "prompt_excerpt": "Differentiate f with respect to t and g with respect to X, where",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1742
+          },
+          {
+            "id": "5.8",
+            "prompt_excerpt": "Compute the derivatives $\\mathrm { d } f / \\mathrm { d } x$ of the following functions. Describe your steps in detail.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1766
+          },
+          {
+            "id": "5.9",
+            "prompt_excerpt": "We define",
+            "file": "Mathematics for ML part 2.md",
+            "line": 1792
+          }
+        ]
+      },
+      "6": {
+        "chapter": "6",
+        "anchor": {
+          "file": "Mathematics for ML part 2.md",
+          "line": 3612
+        },
+        "printed_page": 222,
+        "item_count": 11,
+        "items": [
+          {
+            "id": "6.1",
+            "prompt_excerpt": "Consider the following bivariate distribution $p ( x , y )$ of two discrete random variables X and $Y$ .",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3614
+          },
+          {
+            "id": "6.2",
+            "prompt_excerpt": "Consider a mixture of two Gaussian distributions (illustrated in Figure 6.4),",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3624
+          },
+          {
+            "id": "6.5",
+            "prompt_excerpt": "Consider the time-series model",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3654
+          },
+          {
+            "id": "6.6",
+            "prompt_excerpt": "Prove the relationship in $_ { ( 6 . 4 4 ) }$ , which relates the standard definition of the variance to the raw-score expression for the variance.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3674
+          },
+          {
+            "id": "6.7",
+            "prompt_excerpt": "Prove the relationship in (6.45), which relates the pairwise difference between examples in a dataset with the raw-score expression for the variance.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3676
+          },
+          {
+            "id": "6.8",
+            "prompt_excerpt": "Express the Bernoulli distribution in the natural parameter form of the ex ponential family, see (6.107).",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3678
+          },
+          {
+            "id": "6.9",
+            "prompt_excerpt": "Express the Binomial distribution as an exponential family distribution. Also express the Beta distribution is an exponential family distribution. Show that the product of the Beta",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3680
+          },
+          {
+            "id": "6.10",
+            "prompt_excerpt": "Derive the relationship in Section 6.5.2 in two ways:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3682
+          },
+          {
+            "id": "6.11",
+            "prompt_excerpt": "Iterated Expectations.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3704,
+            "extraction_artefact": "exercise item emitted as a level-2 heading by the extraction"
+          },
+          {
+            "id": "6.12",
+            "prompt_excerpt": "Manipulation of Gaussian Random Variables.",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3714,
+            "extraction_artefact": "exercise item emitted as a level-2 heading by the extraction"
+          },
+          {
+            "id": "6.13",
+            "prompt_excerpt": "Probability Integral Transformation",
+            "file": "Mathematics for ML part 2.md",
+            "line": 3744,
+            "extraction_artefact": "exercise item emitted as a level-2 heading by the extraction"
+          }
+        ]
+      },
+      "7": {
+        "chapter": "7",
+        "anchor": {
+          "file": "Mathematics for ML part 2.md",
+          "line": 4518
+        },
+        "printed_page": 247,
+        "item_count": 9,
+        "items": [
+          {
+            "id": "7.1",
+            "prompt_excerpt": "Consider the univariate function",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4520,
+            "extraction_artefact": "exercise item emitted as a level-2 heading by the extraction"
+          },
+          {
+            "id": "7.2",
+            "prompt_excerpt": "Consider the update equation for stochastic gradient descent (Equation (7.15)).",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4528
+          },
+          {
+            "id": "7.3",
+            "prompt_excerpt": "Consider whether the following statements are true or false:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4532
+          },
+          {
+            "id": "7.4",
+            "prompt_excerpt": "Consider whether the following statements are true or false:",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4540
+          },
+          {
+            "id": "7.5",
+            "prompt_excerpt": "Express the following optimization problem as a standard linear program in matrix notation",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4550
+          },
+          {
+            "id": "7.6",
+            "prompt_excerpt": "Consider the linear program illustrated in Figure 7.9,",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4558
+          },
+          {
+            "id": "7.7",
+            "prompt_excerpt": "Consider the quadratic program illustrated in Figure $7 . 4 _ { ; }$",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4572
+          },
+          {
+            "id": "7.8",
+            "prompt_excerpt": "Consider the following convex optimization problem",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4584
+          },
+          {
+            "id": "7.11",
+            "prompt_excerpt": "The hinge loss (which is the loss used by the support vector machine) is given by",
+            "file": "Mathematics for ML part 2.md",
+            "line": 4614
+          }
+        ]
+      }
+    }
+  }
+}

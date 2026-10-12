@@ -1,0 +1,1233 @@
+{
+  "version": "1.0.0",
+  "last_reviewed": "2026-10-12",
+  "purpose": "Section-level mapping from the supplied source to the curriculum. This is the artefact that makes 'which source supports this lesson' answerable, in both directions. Section identifiers, titles and printed pages are taken from knowledge/sources/mml/structure.json (generated); the concept lists and competency links are authored and reviewed.",
+  "work_id": "SRC-MML",
+  "how_to_maintain": "When a source file changes, re-run tools/index_mml.py, then diff structure.json. Sections whose identifiers disappeared or moved must be re-reviewed here, and every lesson citing them becomes stale (see tools/build_coverage.py).",
+  "sections": [
+    {
+      "id": "1.1",
+      "role": "motivation",
+      "concepts": [
+        "why mathematics is studied separately from machine learning",
+        "the three components of a learning system: data, model, objective"
+      ],
+      "competencies": [
+        "CAREER-05"
+      ],
+      "notes": "Framing chapter. Useful for a course introduction, not assessed."
+    },
+    {
+      "id": "1.2",
+      "role": "study-guidance",
+      "concepts": [
+        "two reading paths through the book",
+        "exercises as part of the exposition",
+        "prerequisite relationships stated by the authors"
+      ],
+      "competencies": [
+        "CAREER-05"
+      ],
+      "notes": "The authors' own statement of how the material is meant to be studied, which is direct evidence for the reading-literacy competency."
+    },
+    {
+      "id": "1.3",
+      "role": "study-guidance",
+      "concepts": [
+        "feedback channels for the draft",
+        "errata practice"
+      ],
+      "competencies": [
+        "CAREER-05"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "2.1",
+      "role": "theory",
+      "concepts": [
+        "systems of linear equations",
+        "solution sets as intersections of hyperplanes",
+        "matrix form Ax=b",
+        "geometric reading of consistency"
+      ],
+      "competencies": [
+        "MATH-03"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "2.2",
+      "role": "theory",
+      "concepts": [
+        "matrix addition and multiplication",
+        "mapping composition reading of multiplication",
+        "inverse and transpose",
+        "symmetry",
+        "scalar multiplication",
+        "compact representation of systems"
+      ],
+      "competencies": [
+        "MATH-02"
+      ],
+      "notes": "The book states that matrix multiplication is defined so that it composes mappings; that statement is the anchor for teaching multiplication as composition rather than as a procedure."
+    },
+    {
+      "id": "2.3",
+      "role": "procedure",
+      "concepts": [
+        "particular and general solutions",
+        "elementary transformations",
+        "Gaussian elimination",
+        "reduced row echelon form",
+        "the minus-1 trick",
+        "computing inverses by elimination",
+        "algorithmic cost of solving a system"
+      ],
+      "competencies": [
+        "MATH-03",
+        "MATH-19"
+      ],
+      "notes": "Contains the book's brief algorithmic treatment; it is the only place numerical cost is discussed before Chapter 4."
+    },
+    {
+      "id": "2.4",
+      "role": "theory",
+      "concepts": [
+        "groups",
+        "vector spaces and their axioms",
+        "subspaces",
+        "why the axioms are chosen"
+      ],
+      "competencies": [
+        "MATH-01"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "2.5",
+      "role": "theory",
+      "concepts": [
+        "linear independence and dependence",
+        "testing independence",
+        "geometric meaning of dependence"
+      ],
+      "competencies": [
+        "MATH-01"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "2.6",
+      "role": "theory",
+      "concepts": [
+        "generating sets and span",
+        "basis",
+        "rank",
+        "rank-nullity relationship",
+        "basis of a solution space"
+      ],
+      "competencies": [
+        "MATH-01",
+        "MATH-02"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "2.7",
+      "role": "theory",
+      "concepts": [
+        "linear mappings and their properties",
+        "matrix representation relative to bases",
+        "basis change and similarity",
+        "image and kernel",
+        "rank-nullity theorem"
+      ],
+      "competencies": [
+        "MATH-01",
+        "MATH-02"
+      ],
+      "notes": "Basis change is the concept that makes attention and normalisation layers interpretable later."
+    },
+    {
+      "id": "2.8",
+      "role": "theory",
+      "concepts": [
+        "affine spaces and affine subspaces",
+        "hyperplanes",
+        "affine mappings"
+      ],
+      "competencies": [
+        "MATH-02"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "2.9",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": "Not taught."
+    },
+    {
+      "id": "3.1",
+      "role": "theory",
+      "concepts": [
+        "norm axioms",
+        "Manhattan and Euclidean norms",
+        "when a norm is not derived from an inner product"
+      ],
+      "competencies": [
+        "MATH-04"
+      ],
+      "notes": "Loss functions and distance metrics are chosen here."
+    },
+    {
+      "id": "3.2",
+      "role": "theory",
+      "concepts": [
+        "bilinearity and symmetry of inner products",
+        "positive definiteness",
+        "the dot product as a special case",
+        "general inner products",
+        "inner products of functions"
+      ],
+      "competencies": [
+        "DL-05",
+        "MATH-04"
+      ],
+      "notes": "The inner-product-of-functions material is the mathematical precursor to kernels in Section 12.4."
+    },
+    {
+      "id": "3.3",
+      "role": "theory",
+      "concepts": [
+        "length and distance induced by an inner product",
+        "distance between vectors",
+        "Cauchy-Schwarz inequality",
+        "metric properties"
+      ],
+      "competencies": [
+        "DL-05",
+        "MATH-04"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "3.4",
+      "role": "theory",
+      "concepts": [
+        "angle between vectors",
+        "orthogonality",
+        "orthogonal matrices and their properties",
+        "why orthogonal matrices preserve lengths"
+      ],
+      "competencies": [
+        "MATH-04"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "3.5",
+      "role": "theory",
+      "concepts": [
+        "orthonormal basis",
+        "coordinates in an orthonormal basis",
+        "Gram-Schmidt orthogonalisation"
+      ],
+      "competencies": [
+        "MATH-04",
+        "MATH-05"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "3.6",
+      "role": "theory",
+      "concepts": [
+        "orthogonal complement",
+        "decomposition of a vector space into a subspace and its complement",
+        "relationship between row space, column space and null space"
+      ],
+      "competencies": [
+        "MATH-04",
+        "MATH-05"
+      ],
+      "notes": "Directly used by the least-squares interpretation in Section 9.4."
+    },
+    {
+      "id": "3.7",
+      "role": "theory",
+      "concepts": [
+        "inner products of functions",
+        "symmetric positive definite kernels as inner products",
+        "the bridge to kernel methods"
+      ],
+      "competencies": [
+        "MATH-04"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "3.8",
+      "role": "derivation",
+      "concepts": [
+        "projection onto a line and onto a subspace",
+        "projection matrices and their properties",
+        "the projection theorem",
+        "Gram-Schmidt as repeated projection",
+        "projection as a rank-deficient operation with implications for solving systems"
+      ],
+      "competencies": [
+        "MATH-05"
+      ],
+      "notes": "One of the highest-value sections for building geometric intuition; carried forward by Sections 9.4 and 10.3."
+    },
+    {
+      "id": "3.9",
+      "role": "theory",
+      "concepts": [
+        "rotations in two and three dimensions",
+        "rotation matrices as orthogonal matrices with determinant one"
+      ],
+      "competencies": [
+        "MATH-02",
+        "MATH-04"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "3.10",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": "Not taught."
+    },
+    {
+      "id": "4.1",
+      "role": "theory",
+      "concepts": [
+        "determinant as a volume scaling factor",
+        "determinant and invertibility",
+        "properties and computation rules",
+        "trace and its relationship to eigenvalues"
+      ],
+      "competencies": [
+        "MATH-06"
+      ],
+      "notes": "The book emphasises geometric meaning over Laplace expansion, which should guide the teaching order."
+    },
+    {
+      "id": "4.2",
+      "role": "theory",
+      "concepts": [
+        "eigenvalues and eigenvectors",
+        "characteristic polynomial",
+        "algebraic and geometric multiplicity",
+        "defective matrices",
+        "eigenspaces",
+        "diagonalisation of symmetric matrices"
+      ],
+      "competencies": [
+        "MATH-06"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "4.3",
+      "role": "theory",
+      "concepts": [
+        "positive definite matrices",
+        "Cholesky decomposition and its existence condition",
+        "Cholesky as the matrix square root",
+        "applications to sampling and to the reparameterisation trick"
+      ],
+      "competencies": [
+        "MATH-07",
+        "MATH-14",
+        "MATH-19"
+      ],
+      "notes": "The reparameterisation-trick application is named in the book's further reading and is where this section becomes generative-modelling relevant."
+    },
+    {
+      "id": "4.4",
+      "role": "theory",
+      "concepts": [
+        "eigendecomposition",
+        "diagonalisation conditions",
+        "spectral theorem for symmetric matrices",
+        "repeated eigendecomposition applications"
+      ],
+      "competencies": [
+        "MATH-07"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "4.5",
+      "role": "theory",
+      "concepts": [
+        "singular value decomposition",
+        "singular values and vectors as two linked eigenproblems",
+        "SVD of a matrix as rotation-scaling-rotation",
+        "existence for every matrix",
+        "relationship to the eigendecomposition"
+      ],
+      "competencies": [
+        "MATH-07"
+      ],
+      "notes": "The book's construction from the eigendecompositions of A'A and AA' is the derivation to teach; it explains why the SVD exists for any shape."
+    },
+    {
+      "id": "4.6",
+      "role": "derivation",
+      "concepts": [
+        "best rank-k approximation and the Eckart-Young result",
+        "Frobenius-norm error of the truncation",
+        "low-rank approximation of a data matrix",
+        "compression as a trade-off between size and error"
+      ],
+      "competencies": [
+        "MATH-08"
+      ],
+      "notes": "Uses a worked movie-ratings example, which is a useful teaching case; our own example will be authored to avoid reproducing the book's tables."
+    },
+    {
+      "id": "4.7",
+      "role": "synthesis",
+      "concepts": [
+        "relationships between matrix classes",
+        "which decompositions exist under which conditions",
+        "regular versus non-defective matrices"
+      ],
+      "competencies": [
+        "MATH-07"
+      ],
+      "notes": "Excellent synthesis material for a summary lesson, since it makes the existence conditions comparable in one view."
+    },
+    {
+      "id": "4.8",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers",
+        "spectral methods and their applications"
+      ],
+      "competencies": [],
+      "notes": "The further reading names PCA, Fisher discriminant analysis, MDS, spectral clustering and tensor decompositions as downstream uses; useful for motivation, not for assessment."
+    },
+    {
+      "id": "5.1",
+      "role": "theory",
+      "concepts": [
+        "derivative as a local linear approximation",
+        "Taylor series",
+        "differentiation rules (chain, product, quotient)",
+        "higher-order derivatives of scalar functions"
+      ],
+      "competencies": [
+        "MATH-09"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "5.2",
+      "role": "theory",
+      "concepts": [
+        "partial derivatives",
+        "gradients",
+        "gradient as the direction of steepest local increase",
+        "rules of partial differentiation",
+        "chain rule in several variables"
+      ],
+      "competencies": [
+        "MATH-09"
+      ],
+      "notes": "The steepest-ascent statement here motivates the gradient-descent update developed in Chapter 7."
+    },
+    {
+      "id": "5.3",
+      "role": "theory",
+      "concepts": [
+        "vector-valued functions and Jacobians",
+        "gradients of vector-valued functions",
+        "shape conventions and the layout controversy",
+        "chain rule with matrices"
+      ],
+      "competencies": [
+        "MATH-10"
+      ],
+      "notes": "The book is explicit about its numerator layout convention. Lessons must state the convention in use, because mixing conventions is a common source of error."
+    },
+    {
+      "id": "5.4",
+      "role": "theory",
+      "concepts": [
+        "gradients with respect to matrices",
+        "derivatives of matrix expressions",
+        "differential form of matrix derivatives"
+      ],
+      "competencies": [
+        "MATH-10"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "5.5",
+      "role": "reference",
+      "concepts": [
+        "gradient identities",
+        "chain rule with Jacobians",
+        "gradients of common linear-algebraic expressions"
+      ],
+      "competencies": [
+        "MATH-10"
+      ],
+      "notes": "A reference table rather than exposition; suitable as an in-platform lookup with derivations linked from the identities."
+    },
+    {
+      "id": "5.6",
+      "role": "derivation",
+      "concepts": [
+        "backpropagation as reverse application of the chain rule",
+        "gradients in a deep network",
+        "computational graphs",
+        "automatic differentiation and its reverse mode",
+        "gradient checking by finite differences"
+      ],
+      "competencies": [
+        "DL-01",
+        "MATH-11"
+      ],
+      "notes": "The bridge from the mathematics to deep learning: the same content supports both competencies, and the lesson will make that connection explicit."
+    },
+    {
+      "id": "5.7",
+      "role": "theory",
+      "concepts": [
+        "second derivatives",
+        "Hessians",
+        "gradients of gradients"
+      ],
+      "competencies": [
+        "MATH-09",
+        "MATH-17"
+      ],
+      "notes": "Second-order conditions for convexity live here and are used by Chapter 7."
+    },
+    {
+      "id": "5.8",
+      "role": "derivation",
+      "concepts": [
+        "linearisation of a function at a point",
+        "multivariate Taylor series",
+        "the gradient and Hessian as first- and second-order terms"
+      ],
+      "competencies": [
+        "MATH-09"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "5.9",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": "Mentions symbolic differentiation, finite differences and automatic differentiation as the three practical approaches; useful for a comparison lesson."
+    },
+    {
+      "id": "6.1",
+      "role": "theory",
+      "concepts": [
+        "probability spaces and the Kolmogorov axioms",
+        "sample spaces, events and sigma-algebras",
+        "random variables",
+        "measurability as a technical condition",
+        "philosophical interpretations of probability"
+      ],
+      "competencies": [
+        "MATH-12"
+      ],
+      "notes": "The book flags measurability as skippable on a first read; lessons should preserve that guidance rather than bury the learner in measure theory."
+    },
+    {
+      "id": "6.2",
+      "role": "theory",
+      "concepts": [
+        "discrete probability mass functions",
+        "continuous densities",
+        "why a density is not a probability",
+        "mixed and multivariate cases",
+        "discrete-continuous contrast"
+      ],
+      "competencies": [
+        "MATH-12"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "6.3",
+      "role": "theory",
+      "concepts": [
+        "joint, marginal and conditional distributions",
+        "sum rule",
+        "product rule",
+        "Bayes' theorem",
+        "prior, likelihood and posterior"
+      ],
+      "competencies": [
+        "MATH-13"
+      ],
+      "notes": "The formal core of the whole second half of the book; the posterior computation reappears in Chapter 8 and Section 9.3."
+    },
+    {
+      "id": "6.4",
+      "role": "theory",
+      "concepts": [
+        "means and covariances",
+        "empirical estimates",
+        "three expressions for the variance",
+        "covariance of linear transformations",
+        "independence versus uncorrelatedness",
+        "inner products of random variables"
+      ],
+      "competencies": [
+        "MATH-14"
+      ],
+      "notes": "Independence implies zero covariance but not the converse; the book supplies counterexamples, which are worth using directly as teaching material."
+    },
+    {
+      "id": "6.5",
+      "role": "theory",
+      "concepts": [
+        "Gaussian distribution and its parameters",
+        "marginals and conditionals of Gaussians",
+        "linear transformations of Gaussian variables",
+        "sampling from a Gaussian via the Cholesky factor",
+        "why the Gaussian is analytically convenient"
+      ],
+      "competencies": [
+        "MATH-07",
+        "MATH-14"
+      ],
+      "notes": "Closure properties here are the reason the Gaussian dominates the book's later chapters."
+    },
+    {
+      "id": "6.6",
+      "role": "theory",
+      "concepts": [
+        "exponential family form",
+        "sufficient statistics",
+        "conjugate priors",
+        "the Beta-Binomial, Dirichlet-Multinomial and Gaussian-Gaussian pairs",
+        "why conjugacy yields closed-form updates"
+      ],
+      "competencies": [
+        "MATH-13",
+        "MATH-15"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "6.7",
+      "role": "derivation",
+      "concepts": [
+        "change of variables for random variables",
+        "the Jacobian determinant in the transformation formula",
+        "inverse transforms and the probability integral transform",
+        "rejection and transformation sampling"
+      ],
+      "competencies": [
+        "MATH-12",
+        "MATH-14"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "6.8",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": ""
+    },
+    {
+      "id": "7.1",
+      "role": "derivation",
+      "concepts": [
+        "gradient descent update rule",
+        "learning-rate effects including divergence",
+        "the direction of steepest descent",
+        "convergence behaviour on quadratics",
+        "stochastic gradients and their variance",
+        "ways gradient descent can fail"
+      ],
+      "competencies": [
+        "MATH-16"
+      ],
+      "notes": "The book discusses conditions under which the method fails; a lesson should demonstrate failure rather than assert it."
+    },
+    {
+      "id": "7.2",
+      "role": "derivation",
+      "concepts": [
+        "constrained optimisation",
+        "Lagrange multipliers",
+        "the Lagrangian",
+        "duality",
+        "slack variables"
+      ],
+      "competencies": [
+        "MATH-17"
+      ],
+      "notes": "Reused directly by the dual SVM derivation in Section 12.3."
+    },
+    {
+      "id": "7.3",
+      "role": "theory",
+      "concepts": [
+        "convex sets and convex functions",
+        "first- and second-order conditions for convexity",
+        "local minima being global under convexity",
+        "common convex functions and operations that preserve convexity",
+        "convex conjugate"
+      ],
+      "competencies": [
+        "MATH-17"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "7.4",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": ""
+    },
+    {
+      "id": "8.1",
+      "role": "theory",
+      "concepts": [
+        "data, models and learning as three components",
+        "empirical risk minimisation",
+        "maximum likelihood as a special case",
+        "estimating generalisation error",
+        "underfitting and overfitting",
+        "training, validation and test data"
+      ],
+      "competencies": [
+        "DATA-08",
+        "ML-01",
+        "ML-05"
+      ],
+      "notes": "The clearest statement in the supplied source of why held-out data exists. This is where the book turns from mathematics to machine learning."
+    },
+    {
+      "id": "8.2",
+      "role": "theory",
+      "concepts": [
+        "hypothesis class and loss function",
+        "empirical risk",
+        "regularised empirical risk minimisation",
+        "why regularisation is needed"
+      ],
+      "competencies": [
+        "MATH-18",
+        "ML-01",
+        "ML-03",
+        "ML-06"
+      ],
+      "notes": "Frames learning as optimisation of a loss over a hypothesis class, which is the shared vocabulary for every model in Chapters 9-12."
+    },
+    {
+      "id": "8.3",
+      "role": "theory",
+      "concepts": [
+        "maximum likelihood estimation",
+        "overfitting in linear regression",
+        "maximum a posteriori estimation",
+        "MAP as regularised least squares",
+        "when maximum likelihood is not possible"
+      ],
+      "competencies": [
+        "MATH-18",
+        "ML-03",
+        "ML-06"
+      ],
+      "notes": "The MAP-as-regularisation result is the single most useful bridge between the mathematical and practical halves of the book."
+    },
+    {
+      "id": "8.4",
+      "role": "theory",
+      "concepts": [
+        "probabilistic models and the joint distribution",
+        "Bayesian inference",
+        "prediction as an integral over parameters",
+        "marginal likelihood",
+        "latent-variable models",
+        "point estimation versus inference"
+      ],
+      "competencies": [
+        "MATH-15",
+        "MATH-18"
+      ],
+      "notes": "The book's own comparison of optimisation (point estimation) with integration (Bayesian inference) is the clearest available framing of the trade-off."
+    },
+    {
+      "id": "8.5",
+      "role": "theory",
+      "concepts": [
+        "directed graphical models",
+        "graph semantics and factorisation",
+        "conditional independence",
+        "d-separation",
+        "plate notation"
+      ],
+      "competencies": [
+        "MATH-13"
+      ],
+      "notes": "Readable as an application of independence; the d-separation rules are the assessed content."
+    },
+    {
+      "id": "8.6",
+      "role": "theory",
+      "concepts": [
+        "nested cross-validation",
+        "Bayesian model selection",
+        "Bayes factors",
+        "Occam's razor as a consequence of marginal likelihood"
+      ],
+      "competencies": [
+        "MATH-18",
+        "ML-04"
+      ],
+      "notes": "The book's derivation that the marginal likelihood automatically penalises complexity is worth teaching explicitly, because it is usually asserted rather than shown."
+    },
+    {
+      "id": "9.1",
+      "role": "theory",
+      "concepts": [
+        "linear regression as a probabilistic model",
+        "noise assumption and its consequences",
+        "least-squares from a likelihood"
+      ],
+      "competencies": [
+        "ML-02",
+        "ML-05"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "9.2",
+      "role": "derivation",
+      "concepts": [
+        "maximum-likelihood parameter estimates for linear regression",
+        "the normal equations",
+        "overfitting and polynomial feature expansion",
+        "MAP estimation as ridge regularisation",
+        "noise-variance estimation"
+      ],
+      "competencies": [
+        "MATH-18",
+        "ML-02",
+        "ML-06"
+      ],
+      "notes": "The polynomial-of-increasing-degree overfitting demonstration is a strong teaching case and will be reproduced with our own generated data."
+    },
+    {
+      "id": "9.3",
+      "role": "derivation",
+      "concepts": [
+        "Bayesian linear regression",
+        "prior and posterior over weights",
+        "posterior predictive distribution",
+        "predictive uncertainty",
+        "the marginal likelihood as evidence for model selection"
+      ],
+      "competencies": [
+        "MATH-15",
+        "MATH-18"
+      ],
+      "notes": "The clearest case in the book where uncertainty about parameters becomes uncertainty in predictions."
+    },
+    {
+      "id": "9.4",
+      "role": "derivation",
+      "concepts": [
+        "maximum-likelihood linear regression as an orthogonal projection",
+        "the geometric picture of fitting including the residual being orthogonal to the column space"
+      ],
+      "competencies": [
+        "MATH-05",
+        "ML-02"
+      ],
+      "notes": "Links Chapter 3 geometry to Chapter 9 learning, which makes it valuable for a connecting lesson."
+    },
+    {
+      "id": "9.5",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": ""
+    },
+    {
+      "id": "10.1",
+      "role": "theory",
+      "concepts": [
+        "problem setting for dimensionality reduction",
+        "the latent-variable reading of PCA",
+        "the two equivalent derivations that follow"
+      ],
+      "competencies": [
+        "ML-07"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "10.2",
+      "role": "derivation",
+      "concepts": [
+        "maximum-variance perspective on PCA",
+        "variance maximisation subject to orthonormality",
+        "why the leading eigenvectors are the solution",
+        "reconstruction error bound"
+      ],
+      "competencies": [
+        "MATH-08",
+        "ML-07"
+      ],
+      "notes": "The book proves equivalence between the variance and reconstruction formulations, which is exactly the kind of derivation the lesson should reproduce step by step."
+    },
+    {
+      "id": "10.3",
+      "role": "derivation",
+      "concepts": [
+        "projection perspective on PCA",
+        "optimal coordinates for a given subspace",
+        "finding the principal subspace",
+        "PCA as repeated orthogonal projection"
+      ],
+      "competencies": [
+        "MATH-05",
+        "ML-07"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "10.4",
+      "role": "procedure",
+      "concepts": [
+        "eigenvector computation for PCA",
+        "low-rank approximations",
+        "PCA computational cost",
+        "why the covariance eigendecomposition is not always the right computation"
+      ],
+      "competencies": [
+        "MATH-08",
+        "MATH-19",
+        "ML-07"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "10.5",
+      "role": "theory",
+      "concepts": [
+        "PCA when the number of dimensions exceeds the number of data points",
+        "the N-1 rank bound on the covariance",
+        "cost implications"
+      ],
+      "competencies": [
+        "MATH-19",
+        "ML-07"
+      ],
+      "notes": "This is the practical case in most text and image problems, and the book treats it explicitly."
+    },
+    {
+      "id": "10.6",
+      "role": "procedure",
+      "concepts": [
+        "standardisation before PCA",
+        "choosing the number of components",
+        "interpreting components",
+        "limitations of PCA"
+      ],
+      "competencies": [
+        "ML-05",
+        "ML-07"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "10.7",
+      "role": "theory",
+      "concepts": [
+        "latent-variable perspective on PCA",
+        "the generative view",
+        "relationship to probabilistic PCA"
+      ],
+      "competencies": [
+        "ML-07"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "10.8",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": ""
+    },
+    {
+      "id": "11.1",
+      "role": "theory",
+      "concepts": [
+        "mixture models",
+        "Gaussian mixture components and mixing coefficients",
+        "the role of latent assignment variables"
+      ],
+      "competencies": [
+        "ML-07"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "11.2",
+      "role": "derivation",
+      "concepts": [
+        "maximum-likelihood learning for mixtures",
+        "why the log-likelihood couples the components",
+        "responsibilities as soft assignments",
+        "the responsibility update equations"
+      ],
+      "competencies": [
+        "MATH-18",
+        "ML-07"
+      ],
+      "notes": "The book shows why the coupled log-likelihood blocks a closed-form solution, which is the motivation for EM."
+    },
+    {
+      "id": "11.3",
+      "role": "derivation",
+      "concepts": [
+        "expectation-maximisation algorithm",
+        "E-step and M-step",
+        "monotonic increase of the likelihood",
+        "local optima and initialisation sensitivity"
+      ],
+      "competencies": [
+        "ML-07"
+      ],
+      "notes": "A worked example with a numerical illustration accompanies the derivation; the lesson will compute our own iteration to avoid reproducing the book's table."
+    },
+    {
+      "id": "11.4",
+      "role": "theory",
+      "concepts": [
+        "latent-variable perspective on mixtures",
+        "EM revisited as a general algorithm",
+        "relationship between the mixture and its latent formulation"
+      ],
+      "competencies": [
+        "ML-07"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "11.5",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": ""
+    },
+    {
+      "id": "12.1",
+      "role": "theory",
+      "concepts": [
+        "separating hyperplanes",
+        "margin as a distance",
+        "the geometry of a linear classifier",
+        "hard margin conditions"
+      ],
+      "competencies": [
+        "MATH-05",
+        "ML-02"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "12.2",
+      "role": "derivation",
+      "concepts": [
+        "primal support vector machine",
+        "margin maximisation as a constrained problem",
+        "why the margin can be scaled to one",
+        "soft margin and slack variables",
+        "hinge loss as a loss-function view",
+        "support vectors"
+      ],
+      "competencies": [
+        "MATH-17",
+        "ML-02"
+      ],
+      "notes": "The book gives both the geometric and the loss-function derivations and shows they agree; teaching both is the point of the section."
+    },
+    {
+      "id": "12.3",
+      "role": "derivation",
+      "concepts": [
+        "Lagrangian dual of the SVM",
+        "dual problem and dual variables",
+        "convex hull view",
+        "strong duality for this problem",
+        "why the dual exposes the kernel trick"
+      ],
+      "competencies": [
+        "MATH-17",
+        "ML-02"
+      ],
+      "notes": "This is where duality from Chapter 7 becomes operationally important."
+    },
+    {
+      "id": "12.4",
+      "role": "theory",
+      "concepts": [
+        "kernel functions",
+        "the kernel trick",
+        "valid kernels and Mercer's condition",
+        "common kernels",
+        "kernelised inner products via feature maps"
+      ],
+      "competencies": [
+        "MATH-04",
+        "ML-02"
+      ],
+      "notes": "Connects back to inner products of functions in Section 3.7."
+    },
+    {
+      "id": "12.5",
+      "role": "procedure",
+      "concepts": [
+        "numerical solution of the SVM problem",
+        "why a quadratic program is solved rather than gradient descent",
+        "practical solver behaviour"
+      ],
+      "competencies": [
+        "MATH-19",
+        "ML-02"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "12.6",
+      "role": "bibliography",
+      "concepts": [
+        "further reading pointers"
+      ],
+      "competencies": [],
+      "notes": ""
+    }
+  ],
+  "exercise_sets": [
+    {
+      "chapter": "2",
+      "printed_page": 64,
+      "competencies": [
+        "MATH-01",
+        "MATH-02",
+        "MATH-03",
+        "MATH-04"
+      ],
+      "notes": "Includes group-axiom verification, matrix products, solving inhomogeneous systems, and rank questions.",
+      "items_in_source_pdf": 20,
+      "items_located_in_extraction": 19
+    },
+    {
+      "chapter": "3",
+      "printed_page": 96,
+      "competencies": [
+        "MATH-04",
+        "MATH-05"
+      ],
+      "notes": "Norm and inner-product verification, orthogonal projections, and rotation matrices.",
+      "items_in_source_pdf": 10,
+      "items_located_in_extraction": 10
+    },
+    {
+      "chapter": "4",
+      "printed_page": 137,
+      "competencies": [
+        "MATH-06",
+        "MATH-07",
+        "MATH-08"
+      ],
+      "notes": "Determinants, eigenspaces, diagonalisability, and an SVD-related item.",
+      "items_in_source_pdf": 12,
+      "items_located_in_extraction": 12
+    },
+    {
+      "chapter": "5",
+      "printed_page": 170,
+      "competencies": [
+        "MATH-09",
+        "MATH-10",
+        "MATH-11"
+      ],
+      "notes": "Derivative computation, gradients of matrix expressions, and chain-rule practice.",
+      "items_in_source_pdf": 9,
+      "items_located_in_extraction": 8
+    },
+    {
+      "chapter": "6",
+      "printed_page": 222,
+      "competencies": [
+        "MATH-12",
+        "MATH-13",
+        "MATH-14",
+        "MATH-15"
+      ],
+      "notes": "Includes a programming exercise set (items 6.11-6.13 in this draft) rather than pen-and-paper items.",
+      "items_in_source_pdf": 13,
+      "items_located_in_extraction": 11
+    },
+    {
+      "chapter": "7",
+      "printed_page": 247,
+      "competencies": [
+        "MATH-16",
+        "MATH-17"
+      ],
+      "notes": "Gradient descent, convexity statements to evaluate, and constrained problems.",
+      "items_in_source_pdf": 11,
+      "items_located_in_extraction": 9
+    }
+  ],
+  "known_limits": [
+    "The source's exercise sets carry no solutions in this draft. Using its exercises therefore means authoring our own worked solutions, which must be verified independently rather than presented as the authors' solutions.",
+    "Chapters 8-12 have no exercise sets in this draft (verified against the PDF; see knowledge/sources/mml/pdf-verification.json). Practice for those chapters must be authored or sourced elsewhere and labelled accordingly.",
+    "Six exercise identifiers are present in the PDF but were not detected as item starts in the extraction: 2.7, 5.7, 6.3, 6.4, 7.9, 7.10. For 6.3, 6.4 and 7.10 the wording survives in mangled form; for 2.7, 5.7 and 7.9 no matching wording was found. Any use of those items must be checked against the PDF page before the item is quoted or adapted."
+  ],
+  "reconciliation": {
+    "tool": "tools/sync_source_coverage.py",
+    "rule": "The section map is the fine-grained view and the union of the two directions is treated as correct; this file records that the union was applied rather than asserting that a human reviewed each link.",
+    "review_required": true
+  },
+  "exercise_set_field_notes": {
+    "items_in_source_pdf": "Count of exercise identifiers found in the supplied PDF by tools/verify_source_against_pdf.py. Regenerate rather than hand-edit.",
+    "items_located_in_extraction": "Count the markdown indexer could locate as item boundaries. Where these differ, the extraction lost an item boundary; the missing identifiers are listed in pdf-verification.json."
+  }
+}

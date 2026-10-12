@@ -1,0 +1,1614 @@
+{
+  "work_id": "SRC-MML",
+  "edition": "Draft (2024-01-15)",
+  "parts": [
+    {
+      "type": "part",
+      "id": "PART-I",
+      "title": "Mathematical Foundations",
+      "printed_page": 9,
+      "part": "Part I",
+      "chapter": null
+    },
+    {
+      "type": "part",
+      "id": "PART-II",
+      "title": "Central Machine Learning Problems",
+      "printed_page": 249,
+      "part": "Part II",
+      "chapter": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "1",
+      "title": "Introduction and Motivation",
+      "printed_page": 11,
+      "part": "Part I",
+      "anchor": {
+        "file": "Mathematics for ML part 1.md",
+        "line": 210,
+        "char_offset": 24341
+      },
+      "anchor_derivation": "inferred from the first located section (1.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 1.md",
+      "sections": [
+        {
+          "id": "1.1",
+          "title": "Finding Words for Intuitions",
+          "printed_page": 12,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 210,
+            "char_offset": 24341
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "1.2",
+          "title": "Two Ways to Read This Book",
+          "printed_page": 13,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 232,
+            "char_offset": 28046
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "1.3",
+          "title": "Exercises and Feedback",
+          "printed_page": 16,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 279,
+            "char_offset": 35296
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": null,
+      "subsection_headings_found": []
+    },
+    {
+      "id": "2",
+      "title": "Linear Algebra",
+      "printed_page": 17,
+      "part": "Part I",
+      "anchor": {
+        "file": "Mathematics for ML part 1.md",
+        "line": 347,
+        "char_offset": 42517
+      },
+      "anchor_derivation": "inferred from the first located section (2.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 1.md",
+      "sections": [
+        {
+          "id": "2.1",
+          "title": "Systems of Linear Equations",
+          "printed_page": 19,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 347,
+            "char_offset": 42517
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "2.2",
+          "title": "Matrices",
+          "printed_page": 22,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 458,
+            "char_offset": 49029
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "2.3",
+          "title": "Solving Systems of Linear Equations",
+          "printed_page": 27,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 756,
+            "char_offset": 63765
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 3
+        },
+        {
+          "id": "2.4",
+          "title": "Vector Spaces",
+          "printed_page": 35,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 1066,
+            "char_offset": 87804
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "2.5",
+          "title": "Linear Independence",
+          "printed_page": 40,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 1241,
+            "char_offset": 101381
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "2.6",
+          "title": "Basis and Rank",
+          "printed_page": 44,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 1382,
+            "char_offset": 113072
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "2.7",
+          "title": "Linear Mappings",
+          "printed_page": 48,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 1526,
+            "char_offset": 123460
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 3
+        },
+        {
+          "id": "2.8",
+          "title": "Affine Spaces",
+          "printed_page": 61,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2062,
+            "char_offset": 161668
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "2.9",
+          "title": "Further Reading",
+          "printed_page": 63,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2143,
+            "char_offset": 169137
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": 64,
+      "subsection_headings_found": [
+        "2.2.1",
+        "2.2.2",
+        "2.2.3",
+        "2.2.4",
+        "2.3.1",
+        "2.3.2",
+        "2.3.3",
+        "2.3.4",
+        "2.4.1",
+        "2.4.2",
+        "2.4.3",
+        "2.6.1",
+        "2.6.2",
+        "2.7.1",
+        "2.7.2",
+        "2.7.3",
+        "2.8.1",
+        "2.8.2"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Analytic Geometry",
+      "printed_page": 70,
+      "part": "Part I",
+      "anchor": {
+        "file": "Mathematics for ML part 1.md",
+        "line": 2518,
+        "char_offset": 188929
+      },
+      "anchor_derivation": "inferred from the first located section (3.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 1.md",
+      "sections": [
+        {
+          "id": "3.1",
+          "title": "Norms",
+          "printed_page": 71,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2518,
+            "char_offset": 188929
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "3.2",
+          "title": "Inner Products",
+          "printed_page": 72,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2583,
+            "char_offset": 192001
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "3.3",
+          "title": "Lengths and Distances",
+          "printed_page": 75,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2695,
+            "char_offset": 200265
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "3.4",
+          "title": "Angles and Orthogonality",
+          "printed_page": 76,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2770,
+            "char_offset": 204838
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "3.5",
+          "title": "Orthonormal Basis",
+          "printed_page": 78,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2870,
+            "char_offset": 211832
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "3.6",
+          "title": "Orthogonal Complement",
+          "printed_page": 79,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2874,
+            "char_offset": 212359
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "3.7",
+          "title": "Inner Product of Functions",
+          "printed_page": 80,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2929,
+            "char_offset": 216434
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "3.8",
+          "title": "Orthogonal Projections",
+          "printed_page": 81,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 2943,
+            "char_offset": 217552
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 3
+        },
+        {
+          "id": "3.9",
+          "title": "Rotations",
+          "printed_page": 91,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 3364,
+            "char_offset": 250429
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "3.10",
+          "title": "Further Reading",
+          "printed_page": 94,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 3474,
+            "char_offset": 258383
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": 96,
+      "subsection_headings_found": [
+        "3.2.1",
+        "3.2.2",
+        "3.2.3",
+        "3.8.1",
+        "3.8.2",
+        "3.8.3",
+        "3.8.4",
+        "3.9.2",
+        "3.9.3",
+        "3.9.4"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Matrix Decompositions",
+      "printed_page": 98,
+      "part": "Part I",
+      "anchor": {
+        "file": "Mathematics for ML part 1.md",
+        "line": 3614,
+        "char_offset": 268739
+      },
+      "anchor_derivation": "inferred from the first located section (4.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 1.md",
+      "sections": [
+        {
+          "id": "4.1",
+          "title": "Determinant and Trace",
+          "printed_page": 99,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 3614,
+            "char_offset": 268739
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "4.2",
+          "title": "Eigenvalues and Eigenvectors",
+          "printed_page": 105,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 3878,
+            "char_offset": 285490
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "4.3",
+          "title": "Cholesky Decomposition",
+          "printed_page": 114,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 4216,
+            "char_offset": 314256
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "4.4",
+          "title": "Eigendecomposition and Diagonalization",
+          "printed_page": 115,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 4264,
+            "char_offset": 319145
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "4.5",
+          "title": "Singular Value Decomposition",
+          "printed_page": 119,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 4423,
+            "char_offset": 329163
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 2
+        },
+        {
+          "id": "4.6",
+          "title": "Matrix Approximation",
+          "printed_page": 129,
+          "anchor": {
+            "file": "Mathematics for ML part 1.md",
+            "line": 4763,
+            "char_offset": 360142
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "4.7",
+          "title": "Matrix Phylogeny",
+          "printed_page": 134,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 6,
+            "char_offset": 253
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "4.8",
+          "title": "Further Reading",
+          "printed_page": 135,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 20,
+            "char_offset": 3225
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": 137,
+      "subsection_headings_found": [
+        "4.5.1",
+        "4.5.2",
+        "4.5.3"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Vector Calculus",
+      "printed_page": 139,
+      "part": "Part I",
+      "anchor": {
+        "file": "Mathematics for ML part 2.md",
+        "line": 229,
+        "char_offset": 16190
+      },
+      "anchor_derivation": "inferred from the first located section (5.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 2.md",
+      "sections": [
+        {
+          "id": "5.1",
+          "title": "Differentiation of Univariate Functions",
+          "printed_page": 141,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 229,
+            "char_offset": 16190
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "5.2",
+          "title": "Partial Differentiation and Gradients",
+          "printed_page": 146,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 546,
+            "char_offset": 25954
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "5.3",
+          "title": "Gradients of Vector-Valued Functions",
+          "printed_page": 149,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 692,
+            "char_offset": 34879
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "5.4",
+          "title": "Gradients of Matrices",
+          "printed_page": 155,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 956,
+            "char_offset": 54308
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "5.5",
+          "title": "Useful Identities for Computing Gradients",
+          "printed_page": 158,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 1092,
+            "char_offset": 62436
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "5.6",
+          "title": "Backpropagation and Automatic Differentiation",
+          "printed_page": 159,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 1138,
+            "char_offset": 65662
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "5.7",
+          "title": "Higher-Order Derivatives",
+          "printed_page": 164,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 1397,
+            "char_offset": 81055
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "5.8",
+          "title": "Linearization and Multivariate Taylor Series",
+          "printed_page": 165,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 1440,
+            "char_offset": 83971
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "5.9",
+          "title": "Further Reading",
+          "printed_page": 170,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 1686,
+            "char_offset": 97720
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": 170,
+      "subsection_headings_found": [
+        "5.1.1",
+        "5.1.2",
+        "5.2.1",
+        "5.2.2",
+        "5.6.1",
+        "5.6.2"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Probability and Distributions",
+      "printed_page": 172,
+      "part": "Part I",
+      "anchor": {
+        "file": "Mathematics for ML part 2.md",
+        "line": 1819,
+        "char_offset": 105408
+      },
+      "anchor_derivation": "inferred from the first located section (6.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 2.md",
+      "sections": [
+        {
+          "id": "6.1",
+          "title": "Construction of a Probability Space",
+          "printed_page": 172,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 1819,
+            "char_offset": 105408
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 2
+        },
+        {
+          "id": "6.2",
+          "title": "Discrete and Continuous Probabilities",
+          "printed_page": 178,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 1946,
+            "char_offset": 119688
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "6.3",
+          "title": "Sum Rule, Product Rule, and Bayes' Theorem",
+          "printed_page": 183,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 2119,
+            "char_offset": 135174
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "6.4",
+          "title": "Summary Statistics and Independence",
+          "printed_page": 186,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 2199,
+            "char_offset": 144359
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "6.5",
+          "title": "Gaussian Distribution",
+          "printed_page": 197,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 2604,
+            "char_offset": 173614
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "6.6",
+          "title": "Conjugacy and the Exponential Family",
+          "printed_page": 205,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 2947,
+            "char_offset": 196681
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "6.7",
+          "title": "Change of Variables/Inverse Transform",
+          "printed_page": 214,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 3316,
+            "char_offset": 221700
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "6.8",
+          "title": "Further Reading",
+          "printed_page": 221,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 3600,
+            "char_offset": 239415
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": 222,
+      "subsection_headings_found": [
+        "6.1.1",
+        "6.1.2",
+        "6.1.3",
+        "6.2.1",
+        "6.2.2",
+        "6.2.3",
+        "6.4.1",
+        "6.4.2",
+        "6.4.3",
+        "6.4.4",
+        "6.4.5",
+        "6.4.6",
+        "6.5.1",
+        "6.5.2",
+        "6.5.3",
+        "6.5.4",
+        "6.6.1",
+        "6.6.2",
+        "6.6.3",
+        "6.7.1",
+        "6.7.2"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Continuous Optimization",
+      "printed_page": 225,
+      "part": "Part I",
+      "anchor": {
+        "file": "Mathematics for ML part 2.md",
+        "line": 3807,
+        "char_offset": 256579
+      },
+      "anchor_derivation": "inferred from the first located section (7.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 2.md",
+      "sections": [
+        {
+          "id": "7.1",
+          "title": "Optimization Using Gradient Descent",
+          "printed_page": 227,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 3807,
+            "char_offset": 256579
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "7.2",
+          "title": "Constrained Optimization and Lagrange Multipliers",
+          "printed_page": 233,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 3959,
+            "char_offset": 272500
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "7.3",
+          "title": "Convex Optimization",
+          "printed_page": 236,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 4075,
+            "char_offset": 281458
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "7.4",
+          "title": "Further Reading",
+          "printed_page": 246,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 4506,
+            "char_offset": 309441
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": 247,
+      "subsection_headings_found": [
+        "7.1.1",
+        "7.1.2",
+        "7.1.3",
+        "7.3.1",
+        "7.3.2",
+        "7.3.3"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "When Models Meet Data",
+      "printed_page": 251,
+      "part": "Part II",
+      "anchor": {
+        "file": "Mathematics for ML part 2.md",
+        "line": 4647,
+        "char_offset": 318096
+      },
+      "anchor_derivation": "inferred from the first located section (8.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 2.md",
+      "sections": [
+        {
+          "id": "8.1",
+          "title": "Data, Models, and Learning",
+          "printed_page": 251,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 4647,
+            "char_offset": 318096
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "8.2",
+          "title": "Empirical Risk Minimization",
+          "printed_page": 258,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 4764,
+            "char_offset": 336922
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "8.3",
+          "title": "Parameter Estimation",
+          "printed_page": 265,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 4927,
+            "char_offset": 357295
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 3
+        },
+        {
+          "id": "8.4",
+          "title": "Probabilistic Modeling and Inference",
+          "printed_page": 272,
+          "anchor": {
+            "file": "Mathematics for ML part 2.md",
+            "line": 5125,
+            "char_offset": 377988
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "8.5",
+          "title": "Directed Graphical Models",
+          "printed_page": 278,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 111,
+            "char_offset": 15849
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "8.6",
+          "title": "Model Selection",
+          "printed_page": 283,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 324,
+            "char_offset": 28822
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": null,
+      "subsection_headings_found": [
+        "8.1.1",
+        "8.1.2",
+        "8.1.3",
+        "8.1.4",
+        "8.2.1",
+        "8.2.2",
+        "8.2.3",
+        "8.2.4",
+        "8.2.5",
+        "8.3.1",
+        "8.3.2",
+        "8.3.3",
+        "8.3.4",
+        "8.4.1",
+        "8.4.2",
+        "8.4.3",
+        "8.4.4",
+        "8.5.1",
+        "8.5.2",
+        "8.5.3",
+        "8.6.1",
+        "8.6.2",
+        "8.6.3",
+        "8.6.4"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Linear Regression",
+      "printed_page": 289,
+      "part": "Part II",
+      "anchor": {
+        "file": "Mathematics for ML part 3.md",
+        "line": 520,
+        "char_offset": 49485
+      },
+      "anchor_derivation": "inferred from the first located section (9.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 3.md",
+      "sections": [
+        {
+          "id": "9.1",
+          "title": "Problem Formulation",
+          "printed_page": 291,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 520,
+            "char_offset": 49485
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "9.2",
+          "title": "Parameter Estimation",
+          "printed_page": 292,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 585,
+            "char_offset": 53679
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 2
+        },
+        {
+          "id": "9.3",
+          "title": "Bayesian Linear Regression",
+          "printed_page": 303,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 1039,
+            "char_offset": 91411
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "9.4",
+          "title": "Maximum Likelihood as Orthogonal Projection",
+          "printed_page": 313,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 1439,
+            "char_offset": 123752
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "9.5",
+          "title": "Further Reading",
+          "printed_page": 315,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 1527,
+            "char_offset": 130253
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        }
+      ],
+      "exercises_printed_page": null,
+      "subsection_headings_found": [
+        "9.2.1",
+        "9.2.2",
+        "9.2.3",
+        "9.2.4",
+        "9.3.1",
+        "9.3.2",
+        "9.3.3",
+        "9.3.4",
+        "9.3.5"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Dimensionality Reduction with Principal Component Analysis",
+      "printed_page": 317,
+      "part": "Part II",
+      "anchor": {
+        "file": "Mathematics for ML part 3.md",
+        "line": 1578,
+        "char_offset": 139943
+      },
+      "anchor_derivation": "inferred from the first located section (10.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 3.md",
+      "sections": [
+        {
+          "id": "10.1",
+          "title": "Problem Setting",
+          "printed_page": 318,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 1578,
+            "char_offset": 139943
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "10.2",
+          "title": "Maximum Variance Perspective",
+          "printed_page": 320,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 1639,
+            "char_offset": 145189
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "10.3",
+          "title": "Projection Perspective",
+          "printed_page": 325,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 1837,
+            "char_offset": 163010
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "10.4",
+          "title": "Eigenvector Computation and Low-Rank Approximations",
+          "printed_page": 333,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 2105,
+            "char_offset": 186225
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "10.5",
+          "title": "PCA in High Dimensions",
+          "printed_page": 335,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 2171,
+            "char_offset": 192608
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "10.6",
+          "title": "Key Steps of PCA in Practice",
+          "printed_page": 336,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 2215,
+            "char_offset": 197100
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "10.7",
+          "title": "Latent Variable Perspective",
+          "printed_page": 339,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 2331,
+            "char_offset": 204745
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "10.8",
+          "title": "Further Reading",
+          "printed_page": 343,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 2483,
+            "char_offset": 216913
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": null,
+      "subsection_headings_found": [
+        "10.2.2",
+        "10.3.1",
+        "10.3.2",
+        "10.3.3",
+        "10.4.1",
+        "10.4.2",
+        "10.7.1",
+        "10.7.2",
+        "10.7.3"
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Density Estimation with Gaussian Mixture Models",
+      "printed_page": 348,
+      "part": "Part II",
+      "anchor": {
+        "file": "Mathematics for ML part 3.md",
+        "line": 2584,
+        "char_offset": 233505
+      },
+      "anchor_derivation": "inferred from the first located section (11.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 3.md",
+      "sections": [
+        {
+          "id": "11.1",
+          "title": "Gaussian Mixture Model",
+          "printed_page": 349,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 2584,
+            "char_offset": 233505
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "11.2",
+          "title": "Parameter Learning via Maximum Likelihood",
+          "printed_page": 350,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 2611,
+            "char_offset": 235096
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "11.3",
+          "title": "EM Algorithm",
+          "printed_page": 360,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 3059,
+            "char_offset": 266502
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "11.4",
+          "title": "Latent-Variable Perspective",
+          "printed_page": 363,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 3171,
+            "char_offset": 272080
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 2
+        },
+        {
+          "id": "11.5",
+          "title": "Further Reading",
+          "printed_page": 368,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 3371,
+            "char_offset": 286407
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        }
+      ],
+      "exercises_printed_page": null,
+      "subsection_headings_found": [
+        "11.2.1",
+        "11.2.2",
+        "11.2.3",
+        "11.2.4",
+        "11.4.1",
+        "11.4.2",
+        "11.4.3",
+        "11.4.4",
+        "11.4.5"
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Classification with Support Vector Machines",
+      "printed_page": 370,
+      "part": "Part II",
+      "anchor": {
+        "file": "Mathematics for ML part 3.md",
+        "line": 3452,
+        "char_offset": 298333
+      },
+      "anchor_derivation": "inferred from the first located section (12.1); the body prints this chapter's title without its number",
+      "source_file": "Mathematics for ML part 3.md",
+      "sections": [
+        {
+          "id": "12.1",
+          "title": "Separating Hyperplanes",
+          "printed_page": 372,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 3452,
+            "char_offset": 298333
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "12.2",
+          "title": "Primal Support Vector Machine",
+          "printed_page": 374,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 3528,
+            "char_offset": 304044
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 1
+        },
+        {
+          "id": "12.3",
+          "title": "Dual Support Vector Machine",
+          "printed_page": 383,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 3806,
+            "char_offset": 329029
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "12.4",
+          "title": "Kernels",
+          "printed_page": 388,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 3965,
+            "char_offset": 343996
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "12.5",
+          "title": "Numerical Solution",
+          "printed_page": 390,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 4023,
+            "char_offset": 351010
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        },
+        {
+          "id": "12.6",
+          "title": "Further Reading",
+          "printed_page": 392,
+          "anchor": {
+            "file": "Mathematics for ML part 3.md",
+            "line": 4073,
+            "char_offset": 357640
+          },
+          "status": "located",
+          "duplicate_heading_occurrences": 0
+        }
+      ],
+      "exercises_printed_page": null,
+      "subsection_headings_found": [
+        "12.2.1",
+        "12.2.2",
+        "12.2.3",
+        "12.2.4",
+        "12.2.5",
+        "12.3.1",
+        "12.3.2"
+      ]
+    }
+  ],
+  "exercises_index": {
+    "2": 64,
+    "3": 96,
+    "4": 137,
+    "5": 170,
+    "6": 222,
+    "7": 247
+  },
+  "specials": [
+    {
+      "type": "special",
+      "id": "Foreword",
+      "title": "Foreword",
+      "printed_page": 1,
+      "part": null,
+      "chapter": null
+    },
+    {
+      "type": "special",
+      "id": "2:Exercises",
+      "title": "Exercises",
+      "printed_page": 64,
+      "part": "Part I",
+      "chapter": "2"
+    },
+    {
+      "type": "special",
+      "id": "3:Exercises",
+      "title": "Exercises",
+      "printed_page": 96,
+      "part": "Part I",
+      "chapter": "3"
+    },
+    {
+      "type": "special",
+      "id": "4:Exercises",
+      "title": "Exercises",
+      "printed_page": 137,
+      "part": "Part I",
+      "chapter": "4"
+    },
+    {
+      "type": "special",
+      "id": "5:Exercises",
+      "title": "Exercises",
+      "printed_page": 170,
+      "part": "Part I",
+      "chapter": "5"
+    },
+    {
+      "type": "special",
+      "id": "6:Exercises",
+      "title": "Exercises",
+      "printed_page": 222,
+      "part": "Part I",
+      "chapter": "6"
+    },
+    {
+      "type": "special",
+      "id": "7:Exercises",
+      "title": "Exercises",
+      "printed_page": 247,
+      "part": "Part I",
+      "chapter": "7"
+    },
+    {
+      "type": "special",
+      "id": "12:References",
+      "title": "References",
+      "printed_page": 395,
+      "part": "Part II",
+      "chapter": "12"
+    },
+    {
+      "type": "special",
+      "id": "12:Index",
+      "title": "Index",
+      "printed_page": 407,
+      "part": "Part II",
+      "chapter": "12"
+    }
+  ],
+  "totals": {
+    "chapters": 12,
+    "toc_sections": 81,
+    "sections_located": 81,
+    "sections_not_found": 0,
+    "subsection_headings_found": 122,
+    "duplicate_heading_occurrences": 34
+  },
+  "missing_sections": [],
+  "duplicate_headings": {
+    "11.4": [
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 3193
+      },
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 3335
+      }
+    ],
+    "11.5": [
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 3389
+      }
+    ],
+    "12.2": [
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 3672
+      }
+    ],
+    "2.1": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 423
+      }
+    ],
+    "2.3": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 828
+      },
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 910
+      },
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 976
+      }
+    ],
+    "2.6": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 1394
+      }
+    ],
+    "2.7": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 1556
+      },
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 1632
+      },
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 1977
+      }
+    ],
+    "3.6": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 2906
+      }
+    ],
+    "3.8": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 2966
+      },
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 2983
+      },
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 3079
+      }
+    ],
+    "3.9": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 3411
+      }
+    ],
+    "4.1": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 3676
+      }
+    ],
+    "4.5": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 4516
+      },
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 4610
+      }
+    ],
+    "4.6": [
+      {
+        "file": "Mathematics for ML part 1.md",
+        "line": 4845
+      }
+    ],
+    "5.3": [
+      {
+        "file": "Mathematics for ML part 2.md",
+        "line": 704
+      }
+    ],
+    "5.4": [
+      {
+        "file": "Mathematics for ML part 2.md",
+        "line": 982
+      }
+    ],
+    "6.1": [
+      {
+        "file": "Mathematics for ML part 2.md",
+        "line": 1866
+      },
+      {
+        "file": "Mathematics for ML part 2.md",
+        "line": 1928
+      }
+    ],
+    "6.5": [
+      {
+        "file": "Mathematics for ML part 2.md",
+        "line": 2863
+      }
+    ],
+    "8.3": [
+      {
+        "file": "Mathematics for ML part 2.md",
+        "line": 4961
+      },
+      {
+        "file": "Mathematics for ML part 2.md",
+        "line": 5023
+      },
+      {
+        "file": "Mathematics for ML part 2.md",
+        "line": 5072
+      }
+    ],
+    "9.2": [
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 762
+      },
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 840
+      }
+    ],
+    "9.3": [
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 1343
+      }
+    ],
+    "9.4": [
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 1465
+      }
+    ],
+    "9.5": [
+      {
+        "file": "Mathematics for ML part 3.md",
+        "line": 1531
+      }
+    ]
+  },
+  "unparsed_toc_lines": [
+    {
+      "type": "unparsed",
+      "raw": "ii Contents",
+      "part": "Part I",
+      "chapter": "4"
+    }
+  ]
+}

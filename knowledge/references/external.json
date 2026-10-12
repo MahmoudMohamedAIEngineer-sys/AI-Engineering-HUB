@@ -1,0 +1,152 @@
+{
+  "version": "1.0.0",
+  "last_reviewed": "2026-10-12",
+  "purpose": "External sources consulted while auditing the curriculum. Each entry records what it was used for, how authoritative it is, and whether it was actually retrieved. Nothing here is cited in a lesson unless the lesson cites it explicitly.",
+  "authority_scale": {
+    "primary": "Original research, official specification, or the organisation responsible for the thing described.",
+    "institutional": "Documentation or guidance from an established institution or project with named maintainers.",
+    "secondary": "Reputable summary, survey or textbook treatment.",
+    "vendor-content": "Published by a company with a commercial interest in the topic. Used only for orientation, never as the sole support for a factual claim."
+  },
+  "references": [
+    {
+      "id": "REF-001",
+      "title": "MLOps Principles",
+      "publisher": "ml-ops.org (INNOQ)",
+      "url": "https://ml-ops.org/content/mlops-principles",
+      "authority": "institutional",
+      "retrieved": true,
+      "retrieved_on": "2026-10-12",
+      "used_for": "The vocabulary of production ML concerns: versioning, testing, automation, reproducibility, deployment and monitoring, broken down across data, model and code.",
+      "supports_findings": ["AF-01"],
+      "notes": "Page states a 2020 date in the retrieved copy; the concepts are stable, and no numerical claim from it is used."
+    },
+    {
+      "id": "REF-002",
+      "title": "Machine Learning Operations (MLOps): Overview, Definition, and Architecture",
+      "publisher": "arXiv preprint 2205.02302 (Kreuzberger, Kühl, Hirschl)",
+      "url": "https://arxiv.org/pdf/2205.02302",
+      "authority": "primary",
+      "retrieved": true,
+      "retrieved_on": "2026-10-12",
+      "used_for": "A literature-based definition of MLOps principles, components and roles, used to justify treating production concerns as a first-class part of the curriculum rather than a late add-on.",
+      "supports_findings": ["AF-01", "AF-05"],
+      "notes": "Preprint; used for structure and terminology rather than for empirical claims."
+    },
+    {
+      "id": "REF-003",
+      "title": "Hidden Technical Debt in Machine Learning Systems",
+      "publisher": "Advances in Neural Information Processing Systems (NIPS 2015), pp. 2503-2511",
+      "url": "https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems",
+      "authority": "primary",
+      "retrieved": false,
+      "retrieved_on": null,
+      "verified_via": "Bibliographic record cross-checked against dblp (dblp.org/rec/conf/nips/SculleyHGDPECYC15) and an archived copy record on 2026-10-12.",
+      "used_for": "The canonical argument that the maintenance cost of a machine-learning system lies mostly outside the model code. Used to justify the production competencies and the emphasis on data dependencies, configuration debt and coupling.",
+      "supports_findings": ["AF-01"],
+      "notes": "The paper's bibliographic details were verified; its full text was not retrieved in this session, so no quotation or specific figure from it may be used until that is done."
+    },
+    {
+      "id": "REF-004",
+      "title": "OWASP Top 10 for Large Language Model Applications (GenAI Security Project)",
+      "publisher": "OWASP Foundation",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "authority": "institutional",
+      "retrieved": true,
+      "retrieved_on": "2026-10-12",
+      "used_for": "The list of LLM-specific risk categories used to justify the AI security and privacy competency (PROD-05), which neither roadmap names.",
+      "supports_findings": ["AF-05"],
+      "notes": "Explicitly versioned by year (2024, 2025 and a 2026 edition exist). Any lesson drawing on it must name the edition it describes."
+    },
+    {
+      "id": "REF-005",
+      "title": "How to become a machine learning engineer: skills, salary and career path",
+      "publisher": "Robert Half (recruitment firm)",
+      "url": "https://www.roberthalf.com/us/en/insights/research/how-to-become-a-machine-learning-engineer",
+      "authority": "vendor-content",
+      "retrieved": true,
+      "retrieved_on": "2026-10-12",
+      "used_for": "Directional evidence that employer expectations cluster around production ML systems, deployment and MLOps tooling.",
+      "supports_findings": ["AF-01"],
+      "notes": "A recruitment firm's market commentary. Salary figures in the source are not used anywhere in this project, and no employer expectation is asserted on this reference alone."
+    },
+    {
+      "id": "REF-006",
+      "title": "AI Machine Learning Engineer Jobs: Pay, Skills, Reality (2026 career guide)",
+      "publisher": "Consultadd",
+      "url": "https://consultadd.com/blog/ai-machine-learning-engineer-jobs-career-guide",
+      "authority": "vendor-content",
+      "retrieved": true,
+      "retrieved_on": "2026-10-12",
+      "used_for": "Its claim about the emphasis of postings (production engineering over research methods; shipped systems over certifications). Recorded as the source's claim, not as an established fact.",
+      "supports_findings": ["AF-01", "AF-05"],
+      "notes": "No posting sample, method or date range is given in the retrieved text, so the claim is not treated as evidence about the labour market in general. If the curriculum later depends on posting-level statistics, a primary dataset must replace this."
+    },
+    {
+      "id": "REF-007",
+      "title": "AI Engineer vs Machine Learning Engineer: Roles, Skills and Responsibilities",
+      "publisher": "Howdy (vendor) and Rockstar Developer University (career site)",
+      "url": "https://www.howdy.com/blog/ai-engineer-vs-ml-engineer",
+      "authority": "vendor-content",
+      "retrieved": true,
+      "retrieved_on": "2026-10-12",
+      "used_for": "Orientation on how the two role titles are being used differently in current practice, specifically the split between application-layer AI engineering and model-layer ML engineering.",
+      "supports_findings": ["AF-05"],
+      "notes": "Two vendor/career sources whose claims agree with each other and with the institutional sources above on the direction of the split. This agreement is the reason the direction is recorded; the specifics are not."
+    },
+    {
+      "id": "REF-008",
+      "title": "Mathematics for Machine Learning (free draft)",
+      "publisher": "Deisenroth, Faisal and Ong; Cambridge University Press",
+      "url": "https://mml-book.com",
+      "authority": "primary",
+      "retrieved": true,
+      "retrieved_on": "2026-10-12",
+      "used_for": "The primary supplied source for this phase. The repository copy is the draft dated 2024-01-15, extracted to markdown and cross-checked against the supplied PDF (see knowledge/sources/mml/pdf-verification.json).",
+      "supports_findings": ["AF-03", "AF-04", "AF-09"],
+      "notes": "Copyright remains with the authors and publisher. Lessons cite it and teach from it; they do not reproduce its text or figures."
+    },
+    {
+      "id": "REF-009",
+      "title": "Essence of Linear Algebra (video series) and Mathematics for Machine Learning: Linear Algebra (course)",
+      "publisher": "3Blue1Brown (Grant Sanderson); Imperial College London on Coursera",
+      "url": "https://www.3blue1brown.com/topics/linear-algebra",
+      "authority": "secondary",
+      "retrieved": false,
+      "retrieved_on": null,
+      "used_for": "Nominated by the user's own roadmap as supporting material for linear algebra (SK-03).",
+      "supports_findings": [],
+      "notes": "Recorded because the roadmap names them. Not yet inspected; the platform links to them and does not depend on them."
+    },
+    {
+      "id": "REF-010",
+      "title": "StatQuest with Josh Starmer",
+      "publisher": "YouTube",
+      "url": "https://www.youtube.com/@statquest",
+      "authority": "secondary",
+      "retrieved": false,
+      "retrieved_on": null,
+      "used_for": "Nominated by the user's own roadmap as supporting material for probability and statistics (SK-04).",
+      "supports_findings": [],
+      "notes": "Recorded because the roadmap names it. Not yet inspected."
+    },
+    {
+      "id": "REF-011",
+      "title": "Pro Git (2nd edition, free online)",
+      "publisher": "Scott Chacon and Ben Straub",
+      "url": "https://git-scm.com/book",
+      "authority": "institutional",
+      "retrieved": false,
+      "retrieved_on": null,
+      "used_for": "Nominated by the roadmap for version control (SK-05); the natural reference for the platform's own git workflow documentation.",
+      "supports_findings": [],
+      "notes": "Not yet inspected in this session."
+    }
+  ],
+  "citation_rules": [
+    "A reference may be used in a lesson only for the specific purpose recorded in `used_for`.",
+    "Vendor content may establish that a practice exists; it may not establish that the practice is correct or widely held.",
+    "Any figure, price, benchmark or version number taken from an external source must carry the date it was retrieved and the version it describes.",
+    "Unretrieved references are listed as bibliographic records only; nothing may be quoted from them until they are retrieved and the retrieval recorded here."
+  ]
+}

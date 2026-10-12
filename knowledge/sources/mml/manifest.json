@@ -1,0 +1,50 @@
+{
+  "work_id": "SRC-MML",
+  "title": "Mathematics for Machine Learning",
+  "authors": [
+    "Marc Peter Deisenroth",
+    "A. Aldo Faisal",
+    "Cheng Soon Ong"
+  ],
+  "edition": "Draft (2024-01-15)",
+  "publisher": "Cambridge University Press (2020); free draft revision used here",
+  "canonical_web": "https://mml-book.com",
+  "supplied_representation": "markdown extracted from the authors' PDF draft",
+  "note_on_identity": "The work was identified from its own title page, running draft footer ('Draft (2024-01-15) of \"Mathematics for Machine Learning\"'), author line, and table of contents, not from the directory name.",
+  "license_note": "The book is free to download but remains under the authors' and publisher's copyright. Lessons therefore cite it and teach from it without reproducing its text or figures. Original explanatory prose, worked examples and diagrams are authored for this platform.",
+  "files": [
+    {
+      "path": "Mathematics for ML/Mathematics for ML part 1.md",
+      "sha256": "fee96f026917dee2fd7dca6857c95e0331cd5b700b7f021a2d7daa6e04385817",
+      "bytes": 375359,
+      "lines": 4971
+    },
+    {
+      "path": "Mathematics for ML/Mathematics for ML part 2.md",
+      "sha256": "f6930f904f34e96b8891fb0e856127046ce35a5faa3cc4cf29b1983cfc527292",
+      "bytes": 379002,
+      "lines": 5127
+    },
+    {
+      "path": "Mathematics for ML/Mathematics for ML part 3.md",
+      "sha256": "b5acba4e7229183528c746d204334d3ffd7f63bfcea49e1c4f84e825a8a26f2a",
+      "bytes": 410938,
+      "lines": 5695
+    }
+  ],
+  "pdf": {
+    "path": "mml-book.pdf",
+    "sha256": "3f87b70c64a35d30ec4e565b4d5cfd18fe913002d3b3bed44691c7d0838911bc",
+    "bytes": 17565898,
+    "role": "original supplied PDF; retained as the authoritative artefact but not parsed"
+  },
+  "structure_snapshot": {
+    "parts": 2,
+    "chapters": 12,
+    "toc_sections": 81,
+    "sections_located_in_markdown": 81
+  },
+  "processing_status": "indexed",
+  "generated_by": "tools/index_mml.py",
+  "generated_at": "2026-10-12"
+}

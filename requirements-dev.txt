@@ -1,0 +1,10 @@
+# Development-only tooling. Nothing here is a runtime dependency of the learning platform.
+#
+# Setup:
+#   python3 -m venv .venv
+#   .venv/bin/pip install -r requirements-dev.txt
+#
+# pypdf is used only by tools/verify_source_against_pdf.py, which cross-checks the markdown
+# extraction against the supplied original PDF. That script degrades gracefully if pypdf is
+# absent: it writes a report saying the check was not performed rather than pretending it ran.
+pypdf==6.20.0

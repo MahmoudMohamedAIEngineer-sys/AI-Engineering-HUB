@@ -1,0 +1,25 @@
+# Development virtualenv (recreate with: python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Node / front-end (used from phase 3 onwards)
+node_modules/
+.next/
+out/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Test and tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+playwright-report/
+test-results/
+
+# Local environment
+.env
+.env.local
+.DS_Store

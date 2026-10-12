@@ -1,0 +1,2744 @@
+{
+  "site": "study_timetable_8hrs.html",
+  "title": "Master Study Timetable — 8hrs/day · 44 Skills",
+  "purpose": "Scheduling layer over the same 44 skills: phase order, weeks, study days, hours, and a day-by-day plan with resource references.",
+  "header_stats": [
+    {
+      "text": "44 SKILLS"
+    },
+    {
+      "text": "2,720 TOTAL HRS"
+    },
+    {
+      "text": "~14 MONTHS"
+    },
+    {
+      "text": "8 HRS/DAY"
+    }
+  ],
+  "hero_stats": [
+    {
+      "value": "339",
+      "label": "Study Days"
+    },
+    {
+      "value": "2,712",
+      "label": "Total Hours"
+    },
+    {
+      "value": "57",
+      "label": "Study Weeks"
+    },
+    {
+      "value": "~14",
+      "label": "Months Total"
+    },
+    {
+      "value": "44",
+      "label": "Skills Mastered"
+    },
+    {
+      "value": "5",
+      "label": "Phases"
+    }
+  ],
+  "phase_labels": [
+    "All Phases",
+    "Foundation (Wks 1–12)",
+    "SWE Core (Wks 13–21)",
+    "Data Eng (Wks 22–33)",
+    "AI/ML (Wks 34–46)",
+    "Specialization (Wks 47–57)"
+  ],
+  "sidebar": [
+    {
+      "number": "01",
+      "name": "Python Programming",
+      "days_text": "14d",
+      "group": "Foundation Phase",
+      "target": "jump('sk1')",
+      "is_sprint": false
+    },
+    {
+      "number": "02",
+      "name": "SQL",
+      "days_text": "10d",
+      "group": "Foundation Phase",
+      "target": "jump('sk2')",
+      "is_sprint": false
+    },
+    {
+      "number": "03",
+      "name": "Linear Algebra",
+      "days_text": "7d",
+      "group": "Foundation Phase",
+      "target": "jump('sk3')",
+      "is_sprint": false
+    },
+    {
+      "number": "04",
+      "name": "Probability & Stats",
+      "days_text": "7d",
+      "group": "Foundation Phase",
+      "target": "jump('sk4')",
+      "is_sprint": false
+    },
+    {
+      "number": "05",
+      "name": "Git & Version Control",
+      "days_text": "3d",
+      "group": "Foundation Phase",
+      "target": "jump('sk5')",
+      "is_sprint": false
+    },
+    {
+      "number": "06",
+      "name": "Linux / Command Line",
+      "days_text": "4d",
+      "group": "Foundation Phase",
+      "target": "jump('sk6')",
+      "is_sprint": false
+    },
+    {
+      "number": "07",
+      "name": "Data Structures",
+      "days_text": "10d",
+      "group": "Foundation Phase",
+      "target": "jump('sk7')",
+      "is_sprint": false
+    },
+    {
+      "number": "08",
+      "name": "Algorithms & Big-O",
+      "days_text": "12d",
+      "group": "Foundation Phase",
+      "target": "jump('sk8')",
+      "is_sprint": false
+    },
+    {
+      "number": "★",
+      "name": "Foundation Sprint",
+      "days_text": "3d",
+      "group": "Foundation Phase",
+      "target": "jump('sk8s')",
+      "is_sprint": true
+    },
+    {
+      "number": "09",
+      "name": "Design Patterns",
+      "days_text": "6d",
+      "group": "SWE Core",
+      "target": "jump('sk9')",
+      "is_sprint": false
+    },
+    {
+      "number": "10",
+      "name": "Web Frameworks",
+      "days_text": "8d",
+      "group": "SWE Core",
+      "target": "jump('sk10')",
+      "is_sprint": false
+    },
+    {
+      "number": "11",
+      "name": "Testing & TDD",
+      "days_text": "5d",
+      "group": "SWE Core",
+      "target": "jump('sk11')",
+      "is_sprint": false
+    },
+    {
+      "number": "12",
+      "name": "Docker & Kubernetes",
+      "days_text": "7d",
+      "group": "SWE Core",
+      "target": "jump('sk12')",
+      "is_sprint": false
+    },
+    {
+      "number": "13",
+      "name": "CI/CD Pipelines",
+      "days_text": "4d",
+      "group": "SWE Core",
+      "target": "jump('sk13')",
+      "is_sprint": false
+    },
+    {
+      "number": "14",
+      "name": "Security / Auth",
+      "days_text": "5d",
+      "group": "SWE Core",
+      "target": "jump('sk14')",
+      "is_sprint": false
+    },
+    {
+      "number": "15",
+      "name": "Async Programming",
+      "days_text": "5d",
+      "group": "SWE Core",
+      "target": "jump('sk15')",
+      "is_sprint": false
+    },
+    {
+      "number": "16",
+      "name": "System Design",
+      "days_text": "10d",
+      "group": "SWE Core",
+      "target": "jump('sk16')",
+      "is_sprint": false
+    },
+    {
+      "number": "★",
+      "name": "SWE Sprint",
+      "days_text": "4d",
+      "group": "SWE Core",
+      "target": "jump('sk16s')",
+      "is_sprint": true
+    },
+    {
+      "number": "17",
+      "name": "Apache Spark",
+      "days_text": "10d",
+      "group": "Data Engineering",
+      "target": "jump('sk17')",
+      "is_sprint": false
+    },
+    {
+      "number": "18",
+      "name": "Apache Kafka",
+      "days_text": "8d",
+      "group": "Data Engineering",
+      "target": "jump('sk18')",
+      "is_sprint": false
+    },
+    {
+      "number": "19",
+      "name": "Data Warehouses",
+      "days_text": "7d",
+      "group": "Data Engineering",
+      "target": "jump('sk19')",
+      "is_sprint": false
+    },
+    {
+      "number": "20",
+      "name": "ETL / ELT Pipelines",
+      "days_text": "6d",
+      "group": "Data Engineering",
+      "target": "jump('sk20')",
+      "is_sprint": false
+    },
+    {
+      "number": "21",
+      "name": "Apache Airflow",
+      "days_text": "7d",
+      "group": "Data Engineering",
+      "target": "jump('sk21')",
+      "is_sprint": false
+    },
+    {
+      "number": "22",
+      "name": "dbt",
+      "days_text": "5d",
+      "group": "Data Engineering",
+      "target": "jump('sk22')",
+      "is_sprint": false
+    },
+    {
+      "number": "23",
+      "name": "Dimensional Modeling",
+      "days_text": "6d",
+      "group": "Data Engineering",
+      "target": "jump('sk23')",
+      "is_sprint": false
+    },
+    {
+      "number": "24",
+      "name": "NoSQL Databases",
+      "days_text": "6d",
+      "group": "Data Engineering",
+      "target": "jump('sk24')",
+      "is_sprint": false
+    },
+    {
+      "number": "25",
+      "name": "Data Quality",
+      "days_text": "4d",
+      "group": "Data Engineering",
+      "target": "jump('sk25')",
+      "is_sprint": false
+    },
+    {
+      "number": "26",
+      "name": "Cloud Platforms",
+      "days_text": "8d",
+      "group": "Data Engineering",
+      "target": "jump('sk26')",
+      "is_sprint": false
+    },
+    {
+      "number": "★",
+      "name": "DE Sprint",
+      "days_text": "5d",
+      "group": "Data Engineering",
+      "target": "jump('sk26s')",
+      "is_sprint": true
+    },
+    {
+      "number": "27",
+      "name": "Classical ML",
+      "days_text": "10d",
+      "group": "AI / ML Core",
+      "target": "jump('sk27')",
+      "is_sprint": false
+    },
+    {
+      "number": "28",
+      "name": "Deep Learning",
+      "days_text": "10d",
+      "group": "AI / ML Core",
+      "target": "jump('sk28')",
+      "is_sprint": false
+    },
+    {
+      "number": "29",
+      "name": "PyTorch",
+      "days_text": "8d",
+      "group": "AI / ML Core",
+      "target": "jump('sk29')",
+      "is_sprint": false
+    },
+    {
+      "number": "30",
+      "name": "CNNs & Vision",
+      "days_text": "7d",
+      "group": "AI / ML Core",
+      "target": "jump('sk30')",
+      "is_sprint": false
+    },
+    {
+      "number": "31",
+      "name": "Transformers & NLP",
+      "days_text": "8d",
+      "group": "AI / ML Core",
+      "target": "jump('sk31')",
+      "is_sprint": false
+    },
+    {
+      "number": "32",
+      "name": "Model Evaluation",
+      "days_text": "4d",
+      "group": "AI / ML Core",
+      "target": "jump('sk32')",
+      "is_sprint": false
+    },
+    {
+      "number": "33",
+      "name": "Feature Engineering",
+      "days_text": "5d",
+      "group": "AI / ML Core",
+      "target": "jump('sk33')",
+      "is_sprint": false
+    },
+    {
+      "number": "34",
+      "name": "Experiment Tracking",
+      "days_text": "3d",
+      "group": "AI / ML Core",
+      "target": "jump('sk34')",
+      "is_sprint": false
+    },
+    {
+      "number": "35",
+      "name": "HuggingFace",
+      "days_text": "5d",
+      "group": "AI / ML Core",
+      "target": "jump('sk35')",
+      "is_sprint": false
+    },
+    {
+      "number": "36",
+      "name": "MLOps & Deployment",
+      "days_text": "8d",
+      "group": "AI / ML Core",
+      "target": "jump('sk36')",
+      "is_sprint": false
+    },
+    {
+      "number": "★",
+      "name": "ML Sprint",
+      "days_text": "5d",
+      "group": "AI / ML Core",
+      "target": "jump('sk36s')",
+      "is_sprint": true
+    },
+    {
+      "number": "37",
+      "name": "LLMs & Fine-Tuning",
+      "days_text": "10d",
+      "group": "Specialization",
+      "target": "jump('sk37')",
+      "is_sprint": false
+    },
+    {
+      "number": "38",
+      "name": "RAG & Vector DBs",
+      "days_text": "7d",
+      "group": "Specialization",
+      "target": "jump('sk38')",
+      "is_sprint": false
+    },
+    {
+      "number": "39",
+      "name": "Distributed Training",
+      "days_text": "7d",
+      "group": "Specialization",
+      "target": "jump('sk39')",
+      "is_sprint": false
+    },
+    {
+      "number": "40",
+      "name": "Distributed Systems",
+      "days_text": "10d",
+      "group": "Specialization",
+      "target": "jump('sk40')",
+      "is_sprint": false
+    },
+    {
+      "number": "41",
+      "name": "Streaming Systems",
+      "days_text": "8d",
+      "group": "Specialization",
+      "target": "jump('sk41')",
+      "is_sprint": false
+    },
+    {
+      "number": "42",
+      "name": "Data Lakehouse",
+      "days_text": "6d",
+      "group": "Specialization",
+      "target": "jump('sk42')",
+      "is_sprint": false
+    },
+    {
+      "number": "43",
+      "name": "Observability",
+      "days_text": "5d",
+      "group": "Specialization",
+      "target": "jump('sk43')",
+      "is_sprint": false
+    },
+    {
+      "number": "44",
+      "name": "Kubernetes Advanced",
+      "days_text": "7d",
+      "group": "Specialization",
+      "target": "jump('sk44')",
+      "is_sprint": false
+    },
+    {
+      "number": "★",
+      "name": "Final Capstone",
+      "days_text": "10d",
+      "group": "Specialization",
+      "target": "jump('sk44s')",
+      "is_sprint": true
+    }
+  ],
+  "blocks": [
+    {
+      "dom_id": "sk1",
+      "roadmap_number": 1,
+      "is_sprint": false,
+      "name": "Python Programming",
+      "declared_phase": "foundation",
+      "week_badge": "WK 1–2",
+      "days_badge": "14 days",
+      "hours_badge": "112 hrs",
+      "weeks": [
+        {
+          "label": "WK 1Day 1–6",
+          "cells": [
+            {
+              "label": "DAY 1",
+              "topic": "Setup + Basics",
+              "detail": "Variables, types, operators, input/output, f-strings. Install Python, VSCode, venv.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 2",
+              "topic": "Control Flow",
+              "detail": "if/elif/else, for loops, while loops, break/continue. Build 5 small programs.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 3",
+              "topic": "Functions",
+              "detail": "def, args, kwargs, return, default params, scope, recursion basics, lambda.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 4",
+              "topic": "Data Structures",
+              "detail": "Lists, tuples, dicts, sets — methods, comprehensions, slicing, nested structures.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 5",
+              "topic": "OOP Part 1",
+              "detail": "Classes, __init__, attributes, methods, self. Build a Bank Account class.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": "Catch-up / Practice",
+              "detail": "Optional: review weak areas from Mon–Fri",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 2Day 7–12",
+          "cells": [
+            {
+              "label": "DAY 7",
+              "topic": "OOP Part 2",
+              "detail": "Inheritance, polymorphism, dunder methods, properties, class vs instance attrs.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 8",
+              "topic": "Modules & Packages",
+              "detail": "import, pip, venv, requirements.txt, __init__.py, building a package.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 9",
+              "topic": "File I/O & Errors",
+              "detail": "open(), read/write, with statement, try/except/finally, custom exceptions.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 10",
+              "topic": "Advanced Python",
+              "detail": "Generators, iterators, decorators, context managers, *args/**kwargs advanced.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 11",
+              "topic": "NumPy + pandas intro",
+              "detail": "Arrays, vectorized ops (NumPy). Series, DataFrame, read_csv, basic manipulation (pandas).",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 12",
+              "topic": "Project Day",
+              "detail": "Build: CLI inventory manager with CSV persistence, OOP design, full error handling.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            }
+          ]
+        },
+        {
+          "label": "WK 3Day 13–14",
+          "cells": [
+            {
+              "label": "DAY 13",
+              "topic": "Testing Python Code",
+              "detail": "pytest basics, assertions, fixtures. Write tests for your inventory manager project.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 14",
+              "topic": "Consolidation",
+              "detail": "Review all concepts. Refactor project. Solve 10 HackerRank Python challenges.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "WED→",
+              "topic": null,
+              "detail": "→ SQL begins Day 15",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "topic": "Setup + Basics",
+          "detail": "Variables, types, operators, input/output, f-strings. Install Python, VSCode, venv."
+        },
+        {
+          "day": 2,
+          "topic": "Control Flow",
+          "detail": "if/elif/else, for loops, while loops, break/continue. Build 5 small programs."
+        },
+        {
+          "day": 3,
+          "topic": "Functions",
+          "detail": "def, args, kwargs, return, default params, scope, recursion basics, lambda."
+        },
+        {
+          "day": 4,
+          "topic": "Data Structures",
+          "detail": "Lists, tuples, dicts, sets — methods, comprehensions, slicing, nested structures."
+        },
+        {
+          "day": 5,
+          "topic": "OOP Part 1",
+          "detail": "Classes, __init__, attributes, methods, self. Build a Bank Account class."
+        },
+        {
+          "day": 7,
+          "topic": "OOP Part 2",
+          "detail": "Inheritance, polymorphism, dunder methods, properties, class vs instance attrs."
+        },
+        {
+          "day": 8,
+          "topic": "Modules & Packages",
+          "detail": "import, pip, venv, requirements.txt, __init__.py, building a package."
+        },
+        {
+          "day": 9,
+          "topic": "File I/O & Errors",
+          "detail": "open(), read/write, with statement, try/except/finally, custom exceptions."
+        },
+        {
+          "day": 10,
+          "topic": "Advanced Python",
+          "detail": "Generators, iterators, decorators, context managers, *args/**kwargs advanced."
+        },
+        {
+          "day": 11,
+          "topic": "NumPy + pandas intro",
+          "detail": "Arrays, vectorized ops (NumPy). Series, DataFrame, read_csv, basic manipulation (pandas)."
+        },
+        {
+          "day": 12,
+          "topic": "Project Day",
+          "detail": "Build: CLI inventory manager with CSV persistence, OOP design, full error handling."
+        },
+        {
+          "day": 13,
+          "topic": "Testing Python Code",
+          "detail": "pytest basics, assertions, fixtures. Write tests for your inventory manager project."
+        },
+        {
+          "day": 14,
+          "topic": "Consolidation",
+          "detail": "Review all concepts. Refactor project. Solve 10 HackerRank Python challenges."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk2",
+      "roadmap_number": 2,
+      "is_sprint": false,
+      "name": "SQL",
+      "declared_phase": "foundation",
+      "week_badge": "WK 3–4",
+      "days_badge": "10 days",
+      "hours_badge": "80 hrs",
+      "weeks": [
+        {
+          "label": "WK 3Days 15–19",
+          "cells": [
+            {
+              "label": "DAY 15",
+              "topic": "SQL Basics",
+              "detail": "SELECT, FROM, WHERE, ORDER BY, LIMIT. Install PostgreSQL + pgAdmin. Load sample DB.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 16",
+              "topic": "Aggregations",
+              "detail": "COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING. Solve 20 SQLZoo exercises.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 17",
+              "topic": "JOINs",
+              "detail": "INNER, LEFT, RIGHT, FULL OUTER, CROSS, SELF JOINs. Design a 3-table schema.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 18",
+              "topic": "Subqueries & CTEs",
+              "detail": "Correlated subqueries, EXISTS, IN, NOT IN, WITH (CTEs), recursive CTEs.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 19",
+              "topic": "Window Functions",
+              "detail": "ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, PARTITION BY, running totals.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 4Days 20–24",
+          "cells": [
+            {
+              "label": "DAY 20",
+              "topic": "Indexes & Performance",
+              "detail": "B-tree indexes, composite indexes, EXPLAIN ANALYZE, query planning basics.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 21",
+              "topic": "Database Design",
+              "detail": "Normalization (1NF–3NF), primary/foreign keys, constraints, transactions (ACID).",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 22",
+              "topic": "Advanced Features",
+              "detail": "Views, materialized views, stored procedures, triggers, JSON in PostgreSQL.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 23",
+              "topic": "SQL + Python",
+              "detail": "psycopg2, SQLAlchemy ORM basics. Query a DB from Python. pandas read_sql().",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 24",
+              "topic": "Project + Review",
+              "detail": "Build: analytics report from a real Kaggle dataset. 20 complex queries. LeetCode SQL top-50.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 15,
+          "topic": "SQL Basics",
+          "detail": "SELECT, FROM, WHERE, ORDER BY, LIMIT. Install PostgreSQL + pgAdmin. Load sample DB."
+        },
+        {
+          "day": 16,
+          "topic": "Aggregations",
+          "detail": "COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING. Solve 20 SQLZoo exercises."
+        },
+        {
+          "day": 17,
+          "topic": "JOINs",
+          "detail": "INNER, LEFT, RIGHT, FULL OUTER, CROSS, SELF JOINs. Design a 3-table schema."
+        },
+        {
+          "day": 18,
+          "topic": "Subqueries & CTEs",
+          "detail": "Correlated subqueries, EXISTS, IN, NOT IN, WITH (CTEs), recursive CTEs."
+        },
+        {
+          "day": 19,
+          "topic": "Window Functions",
+          "detail": "ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, PARTITION BY, running totals."
+        },
+        {
+          "day": 20,
+          "topic": "Indexes & Performance",
+          "detail": "B-tree indexes, composite indexes, EXPLAIN ANALYZE, query planning basics."
+        },
+        {
+          "day": 21,
+          "topic": "Database Design",
+          "detail": "Normalization (1NF–3NF), primary/foreign keys, constraints, transactions (ACID)."
+        },
+        {
+          "day": 22,
+          "topic": "Advanced Features",
+          "detail": "Views, materialized views, stored procedures, triggers, JSON in PostgreSQL."
+        },
+        {
+          "day": 23,
+          "topic": "SQL + Python",
+          "detail": "psycopg2, SQLAlchemy ORM basics. Query a DB from Python. pandas read_sql()."
+        },
+        {
+          "day": 24,
+          "topic": "Project + Review",
+          "detail": "Build: analytics report from a real Kaggle dataset. 20 complex queries. LeetCode SQL top-50."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk3",
+      "roadmap_number": 3,
+      "is_sprint": false,
+      "name": "Linear Algebra",
+      "declared_phase": "foundation",
+      "week_badge": "WK 5",
+      "days_badge": "7 days",
+      "hours_badge": "56 hrs",
+      "weeks": [
+        {
+          "label": "WK 5Days 25–31",
+          "cells": [
+            {
+              "label": "DAY 25",
+              "topic": "Vectors",
+              "detail": "Vector spaces, operations, dot product, norms. 3B1B videos Ch.1–3. NumPy implementation.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 26",
+              "topic": "Matrices",
+              "detail": "Matrix addition, multiplication, transpose. 3B1B Ch.4–5. Implement matrix multiply from scratch.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 27",
+              "topic": "Linear Transformations",
+              "detail": "Geometric meaning of matrices, basis change, determinants. 3B1B Ch.6–7.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 28",
+              "topic": "Matrix Inversion & Systems",
+              "detail": "Solving Ax=b, Gaussian elimination, inverse matrices, rank, null space. MML Book Ch.2.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 29",
+              "topic": "Eigenvalues & Eigenvectors",
+              "detail": "Eigendecomposition, characteristic polynomial, diagonalization. 3B1B Ch.14.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 6 (first 2d)",
+          "cells": [
+            {
+              "label": "DAY 30",
+              "topic": "SVD & PCA",
+              "detail": "Singular Value Decomposition, PCA for dimensionality reduction. Implement PCA in NumPy.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 31",
+              "topic": "ML Applications",
+              "detail": "How linear algebra maps to neural nets, word embeddings, attention. Consolidation + review.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "WED→",
+              "topic": null,
+              "detail": "→ Probability & Stats begins",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 25,
+          "topic": "Vectors",
+          "detail": "Vector spaces, operations, dot product, norms. 3B1B videos Ch.1–3. NumPy implementation."
+        },
+        {
+          "day": 26,
+          "topic": "Matrices",
+          "detail": "Matrix addition, multiplication, transpose. 3B1B Ch.4–5. Implement matrix multiply from scratch."
+        },
+        {
+          "day": 27,
+          "topic": "Linear Transformations",
+          "detail": "Geometric meaning of matrices, basis change, determinants. 3B1B Ch.6–7."
+        },
+        {
+          "day": 28,
+          "topic": "Matrix Inversion & Systems",
+          "detail": "Solving Ax=b, Gaussian elimination, inverse matrices, rank, null space. MML Book Ch.2."
+        },
+        {
+          "day": 29,
+          "topic": "Eigenvalues & Eigenvectors",
+          "detail": "Eigendecomposition, characteristic polynomial, diagonalization. 3B1B Ch.14."
+        },
+        {
+          "day": 30,
+          "topic": "SVD & PCA",
+          "detail": "Singular Value Decomposition, PCA for dimensionality reduction. Implement PCA in NumPy."
+        },
+        {
+          "day": 31,
+          "topic": "ML Applications",
+          "detail": "How linear algebra maps to neural nets, word embeddings, attention. Consolidation + review."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk4",
+      "roadmap_number": 4,
+      "is_sprint": false,
+      "name": "Probability & Statistics",
+      "declared_phase": "foundation",
+      "week_badge": "WK 6–7",
+      "days_badge": "7 days",
+      "hours_badge": "56 hrs",
+      "weeks": [
+        {
+          "label": "WK 6–7Days 32–38",
+          "cells": [
+            {
+              "label": "DAY 32",
+              "topic": "Probability Basics",
+              "detail": "Sample spaces, events, addition rule, multiplication rule, independence. StatQuest: Probability videos.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 33",
+              "topic": "Bayes & Conditional",
+              "detail": "Conditional probability, Bayes theorem, prior/posterior/likelihood, naive Bayes intuition.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 34",
+              "topic": "Distributions",
+              "detail": "Normal, Bernoulli, Binomial, Poisson, Exponential. Plot each with SciPy. Understand CLT.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 35",
+              "topic": "Descriptive Stats",
+              "detail": "Mean, median, mode, variance, std dev, skewness, kurtosis, quartiles, box plots.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 36",
+              "topic": "Hypothesis Testing",
+              "detail": "t-tests, p-values, significance levels, Type I/II errors, confidence intervals. StatQuest series.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 7 (2d)",
+          "cells": [
+            {
+              "label": "DAY 37",
+              "topic": "MLE & MAP",
+              "detail": "Maximum Likelihood Estimation, Maximum A Posteriori, how these underlie ML training.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 38",
+              "topic": "Project + Review",
+              "detail": "Exploratory data analysis on a real dataset. Apply all stats concepts. StatQuest final review.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "WED→",
+              "topic": null,
+              "detail": "→ Git begins Day 39",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 32,
+          "topic": "Probability Basics",
+          "detail": "Sample spaces, events, addition rule, multiplication rule, independence. StatQuest: Probability videos."
+        },
+        {
+          "day": 33,
+          "topic": "Bayes & Conditional",
+          "detail": "Conditional probability, Bayes theorem, prior/posterior/likelihood, naive Bayes intuition."
+        },
+        {
+          "day": 34,
+          "topic": "Distributions",
+          "detail": "Normal, Bernoulli, Binomial, Poisson, Exponential. Plot each with SciPy. Understand CLT."
+        },
+        {
+          "day": 35,
+          "topic": "Descriptive Stats",
+          "detail": "Mean, median, mode, variance, std dev, skewness, kurtosis, quartiles, box plots."
+        },
+        {
+          "day": 36,
+          "topic": "Hypothesis Testing",
+          "detail": "t-tests, p-values, significance levels, Type I/II errors, confidence intervals. StatQuest series."
+        },
+        {
+          "day": 37,
+          "topic": "MLE & MAP",
+          "detail": "Maximum Likelihood Estimation, Maximum A Posteriori, how these underlie ML training."
+        },
+        {
+          "day": 38,
+          "topic": "Project + Review",
+          "detail": "Exploratory data analysis on a real dataset. Apply all stats concepts. StatQuest final review."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk5",
+      "roadmap_number": 5,
+      "is_sprint": false,
+      "name": "Git & Version Control",
+      "declared_phase": "foundation",
+      "week_badge": "WK 7",
+      "days_badge": "3 days",
+      "hours_badge": "24 hrs",
+      "weeks": [
+        {
+          "label": "WK 7Days 39–41",
+          "cells": [
+            {
+              "label": "DAY 39",
+              "topic": "Git Core",
+              "detail": "init, add, commit, log, diff, stash, .gitignore. Learn Git Branching (all basic levels).",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 40",
+              "topic": "Branching & Merging",
+              "detail": "Branch, merge, rebase, cherry-pick, conflict resolution. Finish Learn Git Branching advanced levels.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 41",
+              "topic": "GitHub Workflows",
+              "detail": "Fork, PR, code review, GitHub flow, semantic commits, tagging releases. Push all prior projects.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "THU→",
+              "topic": null,
+              "detail": "→ Linux begins Day 42",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 39,
+          "topic": "Git Core",
+          "detail": "init, add, commit, log, diff, stash, .gitignore. Learn Git Branching (all basic levels)."
+        },
+        {
+          "day": 40,
+          "topic": "Branching & Merging",
+          "detail": "Branch, merge, rebase, cherry-pick, conflict resolution. Finish Learn Git Branching advanced levels."
+        },
+        {
+          "day": 41,
+          "topic": "GitHub Workflows",
+          "detail": "Fork, PR, code review, GitHub flow, semantic commits, tagging releases. Push all prior projects."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk6",
+      "roadmap_number": 6,
+      "is_sprint": false,
+      "name": "Linux / Command Line",
+      "declared_phase": "foundation",
+      "week_badge": "WK 7–8",
+      "days_badge": "4 days",
+      "hours_badge": "32 hrs",
+      "weeks": [
+        {
+          "label": "WK 7–8Days 42–45",
+          "cells": [
+            {
+              "label": "DAY 42",
+              "topic": "Navigation & Files",
+              "detail": "pwd, ls, cd, mkdir, rm, cp, mv, find, chmod, chown. MIT Missing Semester Lectures 1–2.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 43",
+              "topic": "Pipes & Text Tools",
+              "detail": "pipe |, redirect >, grep, awk, sed, sort, uniq, wc, cut, xargs. Process 3 real CSV files.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 44",
+              "topic": "Bash Scripting",
+              "detail": "Variables, loops, conditions, functions in bash. Write 5 automation scripts. cron jobs.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 45",
+              "topic": "SSH & Processes",
+              "detail": "SSH keygen, remote login, tmux, ps, kill, top, htop, env vars, systemd basics.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "FRI→",
+              "topic": null,
+              "detail": "→ Data Structures starts WK 8",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 42,
+          "topic": "Navigation & Files",
+          "detail": "pwd, ls, cd, mkdir, rm, cp, mv, find, chmod, chown. MIT Missing Semester Lectures 1–2."
+        },
+        {
+          "day": 43,
+          "topic": "Pipes & Text Tools",
+          "detail": "pipe |, redirect >, grep, awk, sed, sort, uniq, wc, cut, xargs. Process 3 real CSV files."
+        },
+        {
+          "day": 44,
+          "topic": "Bash Scripting",
+          "detail": "Variables, loops, conditions, functions in bash. Write 5 automation scripts. cron jobs."
+        },
+        {
+          "day": 45,
+          "topic": "SSH & Processes",
+          "detail": "SSH keygen, remote login, tmux, ps, kill, top, htop, env vars, systemd basics."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk7",
+      "roadmap_number": 7,
+      "is_sprint": false,
+      "name": "Data Structures",
+      "declared_phase": "foundation",
+      "week_badge": "WK 8–9",
+      "days_badge": "10 days",
+      "hours_badge": "80 hrs",
+      "weeks": [
+        {
+          "label": "WK 8Days 46–51",
+          "cells": [
+            {
+              "label": "DAY 46",
+              "topic": "Arrays & Strings",
+              "detail": "Dynamic arrays, amortized cost, string immutability. Implement ArrayList in Python. 5 LeetCode Easy.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 47",
+              "topic": "Linked Lists",
+              "detail": "Singly + doubly linked lists from scratch. Insertion, deletion, reversal. 5 LeetCode problems.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 48",
+              "topic": "Stacks & Queues",
+              "detail": "Stack (LIFO), Queue (FIFO), Deque, implement with linked list and array. 5 LeetCode problems.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 49",
+              "topic": "Hash Maps & Sets",
+              "detail": "Hash functions, collision handling (chaining/open addressing), implement HashMap. 5 LeetCode.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 50",
+              "topic": "Trees Part 1",
+              "detail": "Binary trees, BST insert/delete/search, in/pre/post-order traversal. 5 LeetCode tree problems.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest + LeetCode optional",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 9Days 51–55",
+          "cells": [
+            {
+              "label": "DAY 51",
+              "topic": "Trees Part 2 + Heaps",
+              "detail": "AVL trees concept, Red-Black trees concept, Min/Max Heap, heap operations, heapq. 5 LeetCode.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 52",
+              "topic": "Graphs",
+              "detail": "Adjacency list/matrix, directed/undirected, weighted graphs. Implement graph class. 5 LeetCode.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 53",
+              "topic": "Tries",
+              "detail": "Trie implementation, insert/search/startsWith. Use cases (autocomplete). 3 LeetCode Trie problems.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 54",
+              "topic": "Review & Patterns",
+              "detail": "When to use which structure. Time/space complexity table. Solve 10 mixed LeetCode Easy.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 55",
+              "topic": "Mock Interview Day",
+              "detail": "2 timed problems (45 min each). Practice explaining your approach out loud.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 46,
+          "topic": "Arrays & Strings",
+          "detail": "Dynamic arrays, amortized cost, string immutability. Implement ArrayList in Python. 5 LeetCode Easy."
+        },
+        {
+          "day": 47,
+          "topic": "Linked Lists",
+          "detail": "Singly + doubly linked lists from scratch. Insertion, deletion, reversal. 5 LeetCode problems."
+        },
+        {
+          "day": 48,
+          "topic": "Stacks & Queues",
+          "detail": "Stack (LIFO), Queue (FIFO), Deque, implement with linked list and array. 5 LeetCode problems."
+        },
+        {
+          "day": 49,
+          "topic": "Hash Maps & Sets",
+          "detail": "Hash functions, collision handling (chaining/open addressing), implement HashMap. 5 LeetCode."
+        },
+        {
+          "day": 50,
+          "topic": "Trees Part 1",
+          "detail": "Binary trees, BST insert/delete/search, in/pre/post-order traversal. 5 LeetCode tree problems."
+        },
+        {
+          "day": 51,
+          "topic": "Trees Part 2 + Heaps",
+          "detail": "AVL trees concept, Red-Black trees concept, Min/Max Heap, heap operations, heapq. 5 LeetCode."
+        },
+        {
+          "day": 52,
+          "topic": "Graphs",
+          "detail": "Adjacency list/matrix, directed/undirected, weighted graphs. Implement graph class. 5 LeetCode."
+        },
+        {
+          "day": 53,
+          "topic": "Tries",
+          "detail": "Trie implementation, insert/search/startsWith. Use cases (autocomplete). 3 LeetCode Trie problems."
+        },
+        {
+          "day": 54,
+          "topic": "Review & Patterns",
+          "detail": "When to use which structure. Time/space complexity table. Solve 10 mixed LeetCode Easy."
+        },
+        {
+          "day": 55,
+          "topic": "Mock Interview Day",
+          "detail": "2 timed problems (45 min each). Practice explaining your approach out loud."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk8",
+      "roadmap_number": 8,
+      "is_sprint": false,
+      "name": "Algorithms & Big-O",
+      "declared_phase": "foundation",
+      "week_badge": "WK 10–11",
+      "days_badge": "12 days",
+      "hours_badge": "96 hrs",
+      "weeks": [
+        {
+          "label": "WK 10Days 56–61",
+          "cells": [
+            {
+              "label": "DAY 56",
+              "topic": "Big-O Analysis",
+              "detail": "Time/space complexity, O(1)/O(log n)/O(n)/O(n log n)/O(n²). Analyze 20 code snippets.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 57",
+              "topic": "Sorting Algorithms",
+              "detail": "Bubble, Selection, Insertion, Merge Sort, Quick Sort. Implement all 5 in Python. Compare.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 58",
+              "topic": "Binary Search",
+              "detail": "Iterative + recursive binary search, search on answer concept. 8 LeetCode binary search problems.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 59",
+              "topic": "BFS & DFS",
+              "detail": "BFS (queue-based), DFS (stack/recursive), level-order traversal. 8 LeetCode graph problems.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 60",
+              "topic": "Two Pointers & Sliding Window",
+              "detail": "Two-pointer technique, fixed/variable sliding window. 8 LeetCode Medium problems using patterns.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 11Days 61–67",
+          "cells": [
+            {
+              "label": "DAY 61",
+              "topic": "Greedy Algorithms",
+              "detail": "Greedy choice property, interval scheduling, activity selection. 6 LeetCode Greedy.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 62",
+              "topic": "Recursion & Backtracking",
+              "detail": "Recursion trees, memoization intro, backtracking template. N-Queens, permutations, subsets.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 63",
+              "topic": "Dynamic Programming 1",
+              "detail": "Memoization vs tabulation, 1D DP problems: Fibonacci, climbing stairs, coin change.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 64",
+              "topic": "Dynamic Programming 2",
+              "detail": "2D DP: longest common subsequence, edit distance, knapsack. Recognize DP patterns.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 65",
+              "topic": "Graph Algorithms",
+              "detail": "Dijkstra's (shortest path), Bellman-Ford, Topological sort, Union-Find (DSU). 6 LeetCode.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 12Days 66–67",
+          "cells": [
+            {
+              "label": "DAY 66",
+              "topic": "Pattern Recognition",
+              "detail": "Categorize 50 LeetCode problems by pattern. Build a personal cheat sheet.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 67",
+              "topic": "Mock Interview Day",
+              "detail": "3 timed LeetCode Medium problems. Record yourself explaining. Simulate FAANG conditions.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "→",
+              "topic": null,
+              "detail": "Foundation Sprint next",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 56,
+          "topic": "Big-O Analysis",
+          "detail": "Time/space complexity, O(1)/O(log n)/O(n)/O(n log n)/O(n²). Analyze 20 code snippets."
+        },
+        {
+          "day": 57,
+          "topic": "Sorting Algorithms",
+          "detail": "Bubble, Selection, Insertion, Merge Sort, Quick Sort. Implement all 5 in Python. Compare."
+        },
+        {
+          "day": 58,
+          "topic": "Binary Search",
+          "detail": "Iterative + recursive binary search, search on answer concept. 8 LeetCode binary search problems."
+        },
+        {
+          "day": 59,
+          "topic": "BFS & DFS",
+          "detail": "BFS (queue-based), DFS (stack/recursive), level-order traversal. 8 LeetCode graph problems."
+        },
+        {
+          "day": 60,
+          "topic": "Two Pointers & Sliding Window",
+          "detail": "Two-pointer technique, fixed/variable sliding window. 8 LeetCode Medium problems using patterns."
+        },
+        {
+          "day": 61,
+          "topic": "Greedy Algorithms",
+          "detail": "Greedy choice property, interval scheduling, activity selection. 6 LeetCode Greedy."
+        },
+        {
+          "day": 62,
+          "topic": "Recursion & Backtracking",
+          "detail": "Recursion trees, memoization intro, backtracking template. N-Queens, permutations, subsets."
+        },
+        {
+          "day": 63,
+          "topic": "Dynamic Programming 1",
+          "detail": "Memoization vs tabulation, 1D DP problems: Fibonacci, climbing stairs, coin change."
+        },
+        {
+          "day": 64,
+          "topic": "Dynamic Programming 2",
+          "detail": "2D DP: longest common subsequence, edit distance, knapsack. Recognize DP patterns."
+        },
+        {
+          "day": 65,
+          "topic": "Graph Algorithms",
+          "detail": "Dijkstra's (shortest path), Bellman-Ford, Topological sort, Union-Find (DSU). 6 LeetCode."
+        },
+        {
+          "day": 66,
+          "topic": "Pattern Recognition",
+          "detail": "Categorize 50 LeetCode problems by pattern. Build a personal cheat sheet."
+        },
+        {
+          "day": 67,
+          "topic": "Mock Interview Day",
+          "detail": "3 timed LeetCode Medium problems. Record yourself explaining. Simulate FAANG conditions."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk8s",
+      "roadmap_number": null,
+      "is_sprint": true,
+      "name": "Foundation Project Sprint",
+      "declared_phase": "foundation",
+      "week_badge": "WK 12",
+      "days_badge": "3 days",
+      "hours_badge": "24 hrs",
+      "weeks": [
+        {
+          "label": "WK 12Days 68–70",
+          "cells": [
+            {
+              "label": "DAY 68",
+              "topic": "🏗 Sprint Day 1",
+              "detail": "Build: Python CLI tool that reads a CSV, runs SQLite queries, computes statistics (NumPy), outputs a visualization (matplotlib). Design + core functionality.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 69",
+              "topic": "🏗 Sprint Day 2",
+              "detail": "Add: proper error handling, unit tests (pytest), Git commits with meaningful messages, README documentation.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 70",
+              "topic": "🏗 Sprint Day 3",
+              "detail": "Polish + push to GitHub. Write a 1-page reflection: what you know, what's fuzzy, what's solid. Foundation COMPLETE.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "THU",
+              "topic": null,
+              "detail": "Rest. Phase 1 complete!",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 68,
+          "topic": "🏗 Sprint Day 1",
+          "detail": "Build: Python CLI tool that reads a CSV, runs SQLite queries, computes statistics (NumPy), outputs a visualization (matplotlib). Design + core functionality."
+        },
+        {
+          "day": 69,
+          "topic": "🏗 Sprint Day 2",
+          "detail": "Add: proper error handling, unit tests (pytest), Git commits with meaningful messages, README documentation."
+        },
+        {
+          "day": 70,
+          "topic": "🏗 Sprint Day 3",
+          "detail": "Polish + push to GitHub. Write a 1-page reflection: what you know, what's fuzzy, what's solid. Foundation COMPLETE."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk9",
+      "roadmap_number": 9,
+      "is_sprint": false,
+      "name": "Design Patterns & SOLID Principles",
+      "declared_phase": "swe",
+      "week_badge": "WK 13",
+      "days_badge": "6 days",
+      "hours_badge": "48 hrs",
+      "weeks": [
+        {
+          "label": "WK 13Days 71–76",
+          "cells": [
+            {
+              "label": "DAY 71",
+              "topic": "SOLID Principles",
+              "detail": "SRP, OCP, LSP, ISP, DIP — one principle per 1.5 hrs with before/after code examples.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 72",
+              "topic": "Creational Patterns",
+              "detail": "Factory Method, Abstract Factory, Builder, Singleton, Prototype. Implement each in Python.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 73",
+              "topic": "Structural Patterns",
+              "detail": "Adapter, Facade, Decorator, Composite, Bridge, Proxy, Flyweight. Real-world examples.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 74",
+              "topic": "Behavioral Patterns",
+              "detail": "Observer, Strategy, Command, Iterator, State, Template Method, Chain of Responsibility.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 75",
+              "topic": "Refactoring Practice",
+              "detail": "Take 3 \"bad code\" examples, identify smells, apply patterns to fix. ArjanCodes exercises.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 14 (1d)",
+          "cells": [
+            {
+              "label": "DAY 76",
+              "topic": "Review + Mini Project",
+              "detail": "Build a plugin system using Strategy + Factory + Observer patterns combined.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "→",
+              "topic": null,
+              "detail": "Web Frameworks next",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 71,
+          "topic": "SOLID Principles",
+          "detail": "SRP, OCP, LSP, ISP, DIP — one principle per 1.5 hrs with before/after code examples."
+        },
+        {
+          "day": 72,
+          "topic": "Creational Patterns",
+          "detail": "Factory Method, Abstract Factory, Builder, Singleton, Prototype. Implement each in Python."
+        },
+        {
+          "day": 73,
+          "topic": "Structural Patterns",
+          "detail": "Adapter, Facade, Decorator, Composite, Bridge, Proxy, Flyweight. Real-world examples."
+        },
+        {
+          "day": 74,
+          "topic": "Behavioral Patterns",
+          "detail": "Observer, Strategy, Command, Iterator, State, Template Method, Chain of Responsibility."
+        },
+        {
+          "day": 75,
+          "topic": "Refactoring Practice",
+          "detail": "Take 3 \"bad code\" examples, identify smells, apply patterns to fix. ArjanCodes exercises."
+        },
+        {
+          "day": 76,
+          "topic": "Review + Mini Project",
+          "detail": "Build a plugin system using Strategy + Factory + Observer patterns combined."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk10",
+      "roadmap_number": 10,
+      "is_sprint": false,
+      "name": "Web Frameworks (FastAPI)",
+      "declared_phase": "swe",
+      "week_badge": "WK 14–15",
+      "days_badge": "8 days",
+      "hours_badge": "64 hrs",
+      "weeks": [
+        {
+          "label": "WK 14Days 77–82",
+          "cells": [
+            {
+              "label": "DAY 77",
+              "topic": "FastAPI Basics",
+              "detail": "Routes, path/query params, request bodies (Pydantic models), response models, status codes.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 78",
+              "topic": "Database Integration",
+              "detail": "SQLAlchemy + FastAPI, async sessions, CRUD operations, migration with Alembic.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 79",
+              "topic": "Authentication",
+              "detail": "JWT tokens, OAuth2 password flow, password hashing (bcrypt), protected endpoints.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 80",
+              "topic": "Middleware & Background Tasks",
+              "detail": "CORS, custom middleware, background tasks, WebSockets intro, lifespan events.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 81",
+              "topic": "Testing APIs",
+              "detail": "TestClient, pytest for FastAPI, mocking DB, test fixtures, 100% coverage on a small API.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 15Days 82–84",
+          "cells": [
+            {
+              "label": "DAY 82",
+              "topic": "Project: Build a REST API",
+              "detail": "Full CRUD API: users, items, auth, DB, tests. Like a mini e-commerce backend.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 83",
+              "topic": "API Deployment",
+              "detail": "Dockerize the API. Deploy to Railway/Fly.io/Render. Add health check endpoint.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 84",
+              "topic": "Advanced FastAPI",
+              "detail": "Dependency injection, custom exception handlers, OpenAPI docs, versioning. Review.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "→",
+              "topic": null,
+              "detail": "Testing & TDD next",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 77,
+          "topic": "FastAPI Basics",
+          "detail": "Routes, path/query params, request bodies (Pydantic models), response models, status codes."
+        },
+        {
+          "day": 78,
+          "topic": "Database Integration",
+          "detail": "SQLAlchemy + FastAPI, async sessions, CRUD operations, migration with Alembic."
+        },
+        {
+          "day": 79,
+          "topic": "Authentication",
+          "detail": "JWT tokens, OAuth2 password flow, password hashing (bcrypt), protected endpoints."
+        },
+        {
+          "day": 80,
+          "topic": "Middleware & Background Tasks",
+          "detail": "CORS, custom middleware, background tasks, WebSockets intro, lifespan events."
+        },
+        {
+          "day": 81,
+          "topic": "Testing APIs",
+          "detail": "TestClient, pytest for FastAPI, mocking DB, test fixtures, 100% coverage on a small API."
+        },
+        {
+          "day": 82,
+          "topic": "Project: Build a REST API",
+          "detail": "Full CRUD API: users, items, auth, DB, tests. Like a mini e-commerce backend."
+        },
+        {
+          "day": 83,
+          "topic": "API Deployment",
+          "detail": "Dockerize the API. Deploy to Railway/Fly.io/Render. Add health check endpoint."
+        },
+        {
+          "day": 84,
+          "topic": "Advanced FastAPI",
+          "detail": "Dependency injection, custom exception handlers, OpenAPI docs, versioning. Review."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk11",
+      "roadmap_number": 11,
+      "is_sprint": false,
+      "name": "Testing & TDD",
+      "declared_phase": "swe",
+      "week_badge": "WK 15–16",
+      "days_badge": "5 days",
+      "hours_badge": "40 hrs",
+      "weeks": [
+        {
+          "label": "WK 15–16Days 85–89",
+          "cells": [
+            {
+              "label": "DAY 85",
+              "topic": "pytest Mastery",
+              "detail": "Fixtures, parametrize, markers, conftest.py, temp files, capsys. 20 testing exercises.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 86",
+              "topic": "Mocking",
+              "detail": "unittest.mock, MagicMock, patch decorators, mocking HTTP calls, mocking DB.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 87",
+              "topic": "TDD Red-Green-Refactor",
+              "detail": "Full TDD cycle on a new feature. Write failing test first, implement, refactor. 3 complete cycles.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 88",
+              "topic": "Integration Tests",
+              "detail": "Testing database interactions, API integration tests with real DB, test containers.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 89",
+              "topic": "Coverage & CI",
+              "detail": "pytest-cov for coverage, add tests to GitHub Actions CI pipeline. Aim 90%+ coverage.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 85,
+          "topic": "pytest Mastery",
+          "detail": "Fixtures, parametrize, markers, conftest.py, temp files, capsys. 20 testing exercises."
+        },
+        {
+          "day": 86,
+          "topic": "Mocking",
+          "detail": "unittest.mock, MagicMock, patch decorators, mocking HTTP calls, mocking DB."
+        },
+        {
+          "day": 87,
+          "topic": "TDD Red-Green-Refactor",
+          "detail": "Full TDD cycle on a new feature. Write failing test first, implement, refactor. 3 complete cycles."
+        },
+        {
+          "day": 88,
+          "topic": "Integration Tests",
+          "detail": "Testing database interactions, API integration tests with real DB, test containers."
+        },
+        {
+          "day": 89,
+          "topic": "Coverage & CI",
+          "detail": "pytest-cov for coverage, add tests to GitHub Actions CI pipeline. Aim 90%+ coverage."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk12",
+      "roadmap_number": 12,
+      "is_sprint": false,
+      "name": "Docker & Kubernetes",
+      "declared_phase": "swe",
+      "week_badge": "WK 16–17",
+      "days_badge": "7 days",
+      "hours_badge": "56 hrs",
+      "weeks": [
+        {
+          "label": "WK 16–17Days 90–96",
+          "cells": [
+            {
+              "label": "DAY 90",
+              "topic": "Docker Fundamentals",
+              "detail": "Images, containers, Dockerfile, layers, CMD vs ENTRYPOINT. Containerize your FastAPI app.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 91",
+              "topic": "Docker Compose",
+              "detail": "Multi-service apps: API + DB + Redis. Networking, volumes, env files, health checks.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 92",
+              "topic": "Docker Registry & Best Practices",
+              "detail": "Multi-stage builds, image optimization, push to Docker Hub / GitHub Container Registry.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 93",
+              "topic": "Kubernetes Core",
+              "detail": "Pods, ReplicaSets, Deployments, Services (ClusterIP/NodePort/LoadBalancer). minikube setup.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 94",
+              "topic": "K8s Config & Storage",
+              "detail": "ConfigMaps, Secrets, PersistentVolumes, StatefulSets. Deploy FastAPI + PostgreSQL on K8s.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 17 (2d)",
+          "cells": [
+            {
+              "label": "DAY 95",
+              "topic": "K8s Networking & Ingress",
+              "detail": "Ingress controllers (NGINX), HPA (Horizontal Pod Autoscaler), resource limits, liveness probes.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 96",
+              "topic": "Full Stack Deploy",
+              "detail": "Deploy complete app (API + DB + frontend) to K8s. Write YAML manifests from scratch.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 90,
+          "topic": "Docker Fundamentals",
+          "detail": "Images, containers, Dockerfile, layers, CMD vs ENTRYPOINT. Containerize your FastAPI app."
+        },
+        {
+          "day": 91,
+          "topic": "Docker Compose",
+          "detail": "Multi-service apps: API + DB + Redis. Networking, volumes, env files, health checks."
+        },
+        {
+          "day": 92,
+          "topic": "Docker Registry & Best Practices",
+          "detail": "Multi-stage builds, image optimization, push to Docker Hub / GitHub Container Registry."
+        },
+        {
+          "day": 93,
+          "topic": "Kubernetes Core",
+          "detail": "Pods, ReplicaSets, Deployments, Services (ClusterIP/NodePort/LoadBalancer). minikube setup."
+        },
+        {
+          "day": 94,
+          "topic": "K8s Config & Storage",
+          "detail": "ConfigMaps, Secrets, PersistentVolumes, StatefulSets. Deploy FastAPI + PostgreSQL on K8s."
+        },
+        {
+          "day": 95,
+          "topic": "K8s Networking & Ingress",
+          "detail": "Ingress controllers (NGINX), HPA (Horizontal Pod Autoscaler), resource limits, liveness probes."
+        },
+        {
+          "day": 96,
+          "topic": "Full Stack Deploy",
+          "detail": "Deploy complete app (API + DB + frontend) to K8s. Write YAML manifests from scratch."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk13",
+      "roadmap_number": 13,
+      "is_sprint": false,
+      "name": "CI/CD Pipelines",
+      "declared_phase": "swe",
+      "week_badge": "WK 17",
+      "days_badge": "4 days",
+      "hours_badge": "32 hrs",
+      "weeks": [
+        {
+          "label": "WK 17–18Days 97–100",
+          "cells": [
+            {
+              "label": "DAY 97",
+              "topic": "GitHub Actions Basics",
+              "detail": "Workflow YAML, triggers, jobs, steps, runners. Build lint + test pipeline for your API project.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 98",
+              "topic": "Advanced Workflows",
+              "detail": "Matrix builds, caching (pip/npm), secrets management, environment-specific deployments.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 99",
+              "topic": "Docker + CI",
+              "detail": "Build Docker image in CI, push to registry, deploy to staging on PR merge.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 100",
+              "topic": "Complete Pipeline",
+              "detail": "Full pipeline: lint → test → build → push → deploy → notify. Add to existing project.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 97,
+          "topic": "GitHub Actions Basics",
+          "detail": "Workflow YAML, triggers, jobs, steps, runners. Build lint + test pipeline for your API project."
+        },
+        {
+          "day": 98,
+          "topic": "Advanced Workflows",
+          "detail": "Matrix builds, caching (pip/npm), secrets management, environment-specific deployments."
+        },
+        {
+          "day": 99,
+          "topic": "Docker + CI",
+          "detail": "Build Docker image in CI, push to registry, deploy to staging on PR merge."
+        },
+        {
+          "day": 100,
+          "topic": "Complete Pipeline",
+          "detail": "Full pipeline: lint → test → build → push → deploy → notify. Add to existing project."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk14",
+      "roadmap_number": 14,
+      "is_sprint": false,
+      "name": "Security (OWASP / Auth)",
+      "declared_phase": "swe",
+      "week_badge": "WK 18",
+      "days_badge": "5 days",
+      "hours_badge": "40 hrs",
+      "weeks": [
+        {
+          "label": "WK 18Days 101–105",
+          "cells": [
+            {
+              "label": "DAY 101",
+              "topic": "OWASP Top 10",
+              "detail": "SQL injection, XSS, CSRF, SSRF, broken auth. PortSwigger labs for each. Exploit then patch.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 102",
+              "topic": "Authentication Deep Dive",
+              "detail": "Session vs JWT vs OAuth2. bcrypt/argon2. Refresh tokens. Implement from scratch in FastAPI.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 103",
+              "topic": "API Security",
+              "detail": "Rate limiting, API keys, CORS, HTTPS/TLS, input validation, parameterized queries.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 104",
+              "topic": "OAuth2 & SSO",
+              "detail": "OAuth2 flows (code, implicit, client credentials). Add \"Login with Google\" to FastAPI app.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 105",
+              "topic": "Security Audit",
+              "detail": "Audit your existing projects for vulnerabilities. Run bandit (Python security linter). Fix all issues.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 101,
+          "topic": "OWASP Top 10",
+          "detail": "SQL injection, XSS, CSRF, SSRF, broken auth. PortSwigger labs for each. Exploit then patch."
+        },
+        {
+          "day": 102,
+          "topic": "Authentication Deep Dive",
+          "detail": "Session vs JWT vs OAuth2. bcrypt/argon2. Refresh tokens. Implement from scratch in FastAPI."
+        },
+        {
+          "day": 103,
+          "topic": "API Security",
+          "detail": "Rate limiting, API keys, CORS, HTTPS/TLS, input validation, parameterized queries."
+        },
+        {
+          "day": 104,
+          "topic": "OAuth2 & SSO",
+          "detail": "OAuth2 flows (code, implicit, client credentials). Add \"Login with Google\" to FastAPI app."
+        },
+        {
+          "day": 105,
+          "topic": "Security Audit",
+          "detail": "Audit your existing projects for vulnerabilities. Run bandit (Python security linter). Fix all issues."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk15",
+      "roadmap_number": 15,
+      "is_sprint": false,
+      "name": "Async Programming",
+      "declared_phase": "swe",
+      "week_badge": "WK 19",
+      "days_badge": "5 days",
+      "hours_badge": "40 hrs",
+      "weeks": [
+        {
+          "label": "WK 19Days 106–110",
+          "cells": [
+            {
+              "label": "DAY 106",
+              "topic": "Async/Await Model",
+              "detail": "Event loop, coroutines, tasks, futures. asyncio.run(), gather(), create_task(). mCoding videos.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 107",
+              "topic": "Async HTTP & DB",
+              "detail": "aiohttp for async HTTP calls, asyncpg for async PostgreSQL. Build async data fetcher.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 108",
+              "topic": "Threading vs Multiprocessing",
+              "detail": "GIL limitations, threading for I/O-bound, multiprocessing for CPU-bound. concurrent.futures.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 109",
+              "topic": "Message Queues",
+              "detail": "Celery + Redis for async task queues. Background jobs, retries, monitoring with Flower.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 110",
+              "topic": "Async FastAPI",
+              "detail": "Fully async FastAPI with async DB, async external calls, WebSocket endpoint. Benchmark vs sync.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 106,
+          "topic": "Async/Await Model",
+          "detail": "Event loop, coroutines, tasks, futures. asyncio.run(), gather(), create_task(). mCoding videos."
+        },
+        {
+          "day": 107,
+          "topic": "Async HTTP & DB",
+          "detail": "aiohttp for async HTTP calls, asyncpg for async PostgreSQL. Build async data fetcher."
+        },
+        {
+          "day": 108,
+          "topic": "Threading vs Multiprocessing",
+          "detail": "GIL limitations, threading for I/O-bound, multiprocessing for CPU-bound. concurrent.futures."
+        },
+        {
+          "day": 109,
+          "topic": "Message Queues",
+          "detail": "Celery + Redis for async task queues. Background jobs, retries, monitoring with Flower."
+        },
+        {
+          "day": 110,
+          "topic": "Async FastAPI",
+          "detail": "Fully async FastAPI with async DB, async external calls, WebSocket endpoint. Benchmark vs sync."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk16",
+      "roadmap_number": 16,
+      "is_sprint": false,
+      "name": "System Design",
+      "declared_phase": "swe",
+      "week_badge": "WK 19–21",
+      "days_badge": "10 days",
+      "hours_badge": "80 hrs",
+      "weeks": [
+        {
+          "label": "WK 19–20Days 111–117",
+          "cells": [
+            {
+              "label": "DAY 111",
+              "topic": "Scale Fundamentals",
+              "detail": "Vertical vs horizontal scaling, load balancers (L4/L7), stateless services, CAP theorem.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 112",
+              "topic": "Caching",
+              "detail": "Cache aside, write-through, write-back, CDN, Redis caching, cache invalidation strategies.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 113",
+              "topic": "Databases at Scale",
+              "detail": "Read replicas, sharding, consistent hashing, connection pooling, SQL vs NoSQL decisions.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 114",
+              "topic": "Design: URL Shortener",
+              "detail": "Full design session (1.5hr): requirements → API → DB → scale → deep dive. System Design Primer.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 115",
+              "topic": "Design: Instagram Feed",
+              "detail": "Photo storage, feed generation (push/pull model), notification system, CDN strategy.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        },
+        {
+          "label": "WK 21Days 116–120",
+          "cells": [
+            {
+              "label": "DAY 116",
+              "topic": "Design: Chat System",
+              "detail": "WebSockets, message storage, presence service, group chats. Alex Xu Vol.1 Ch.12.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 117",
+              "topic": "Design: YouTube",
+              "detail": "Video upload pipeline, transcoding, CDN, view counting at scale, recommendation hooks.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 118",
+              "topic": "Design: Rate Limiter",
+              "detail": "Token bucket, leaky bucket, sliding window algorithms. Distributed rate limiting with Redis.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 119",
+              "topic": "Microservices vs Monolith",
+              "detail": "When to split, service mesh, API gateway patterns, event-driven architecture, CQRS basics.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 120",
+              "topic": "Mock Interview Day",
+              "detail": "2 full 45-min design sessions with timer. Record and review. Write post-mortem.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "SAT",
+              "topic": null,
+              "detail": "Rest",
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 111,
+          "topic": "Scale Fundamentals",
+          "detail": "Vertical vs horizontal scaling, load balancers (L4/L7), stateless services, CAP theorem."
+        },
+        {
+          "day": 112,
+          "topic": "Caching",
+          "detail": "Cache aside, write-through, write-back, CDN, Redis caching, cache invalidation strategies."
+        },
+        {
+          "day": 113,
+          "topic": "Databases at Scale",
+          "detail": "Read replicas, sharding, consistent hashing, connection pooling, SQL vs NoSQL decisions."
+        },
+        {
+          "day": 114,
+          "topic": "Design: URL Shortener",
+          "detail": "Full design session (1.5hr): requirements → API → DB → scale → deep dive. System Design Primer."
+        },
+        {
+          "day": 115,
+          "topic": "Design: Instagram Feed",
+          "detail": "Photo storage, feed generation (push/pull model), notification system, CDN strategy."
+        },
+        {
+          "day": 116,
+          "topic": "Design: Chat System",
+          "detail": "WebSockets, message storage, presence service, group chats. Alex Xu Vol.1 Ch.12."
+        },
+        {
+          "day": 117,
+          "topic": "Design: YouTube",
+          "detail": "Video upload pipeline, transcoding, CDN, view counting at scale, recommendation hooks."
+        },
+        {
+          "day": 118,
+          "topic": "Design: Rate Limiter",
+          "detail": "Token bucket, leaky bucket, sliding window algorithms. Distributed rate limiting with Redis."
+        },
+        {
+          "day": 119,
+          "topic": "Microservices vs Monolith",
+          "detail": "When to split, service mesh, API gateway patterns, event-driven architecture, CQRS basics."
+        },
+        {
+          "day": 120,
+          "topic": "Mock Interview Day",
+          "detail": "2 full 45-min design sessions with timer. Record and review. Write post-mortem."
+        }
+      ],
+      "has_day_level_plan": true
+    },
+    {
+      "dom_id": "sk16s",
+      "roadmap_number": null,
+      "is_sprint": true,
+      "name": "SWE Project Sprint — Production REST API",
+      "declared_phase": "swe",
+      "week_badge": "WK 21",
+      "days_badge": "4 days",
+      "hours_badge": "32 hrs",
+      "weeks": [
+        {
+          "label": "WK 21Days 121–124",
+          "cells": [
+            {
+              "label": "DAY 121",
+              "topic": "🏗 Sprint: Design",
+              "detail": "Design a production REST API service: ERD, API spec (OpenAPI), auth flow, deployment plan.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 122",
+              "topic": "🏗 Sprint: Build",
+              "detail": "FastAPI + PostgreSQL + Redis. Full auth, CRUD, async. Tests passing. Docker ready.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 123",
+              "topic": "🏗 Sprint: CI/CD",
+              "detail": "GitHub Actions pipeline: test → build → push → deploy to cloud. Monitoring with logs.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "DAY 124",
+              "topic": "🏗 Sprint: Polish",
+              "detail": "Documentation, README, OpenAPI docs, security audit, performance test. Push to GitHub. Done.",
+              "hours_text": "8 hrs",
+              "is_rest": false
+            },
+            {
+              "label": "FRI",
+              "topic": null,
+              "detail": "Rest. SWE Phase complete!",
+              "hours_text": null,
+              "is_rest": true
+            },
+            {
+              "label": null,
+              "topic": null,
+              "detail": null,
+              "hours_text": null,
+              "is_rest": true
+            }
+          ]
+        }
+      ],
+      "days": [
+        {
+          "day": 121,
+          "topic": "🏗 Sprint: Design",
+          "detail": "Design a production REST API service: ERD, API spec (OpenAPI), auth flow, deployment plan."
+        },
+        {
+          "day": 122,
+          "topic": "🏗 Sprint: Build",
+          "detail": "FastAPI + PostgreSQL + Redis. Full auth, CRUD, async. Tests passing. Docker ready."
+        },
+        {
+          "day": 123,
+          "topic": "🏗 Sprint: CI/CD",
+          "detail": "GitHub Actions pipeline: test → build → push → deploy to cloud. Monitoring with logs."
+        },
+        {
+          "day": 124,
+          "topic": "🏗 Sprint: Polish",
+          "detail": "Documentation, README, OpenAPI docs, security audit, performance test. Push to GitHub. Done."
+        }
+      ],
+      "has_day_level_plan": true
+    }
+  ]
+}

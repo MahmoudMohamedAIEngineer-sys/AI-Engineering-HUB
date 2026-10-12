@@ -1,0 +1,108 @@
+{
+  "work_id": "SRC-MML",
+  "generated_by": "tools/index_mml.py",
+  "generated_at": "2026-10-12",
+  "summary": {
+    "errors": 0,
+    "warnings": 10,
+    "info": 6
+  },
+  "defects": [
+    {
+      "code": "figures-not-available-offline",
+      "severity": "warning",
+      "detail": "243 figure references point at 243 external CDN URLs (cdn-mineru.openxlab.org.cn). No image file exists in the repository, so lessons cannot rely on the original figures being present."
+    },
+    {
+      "code": "latex-token-corruption",
+      "severity": "warning",
+      "detail": "6 occurrence(s) of a mangled macro such as '\\ b { S }' where '\\mathbf' or '\\boldsymbol' was intended. Such tokens must be repaired in the lesson's quotation of the source, or the formula paraphrased in correct notation."
+    },
+    {
+      "code": "latex-token-corruption",
+      "severity": "warning",
+      "detail": "1 occurrence(s) of '\\stackrel{\\cdot}' where the book prints '\\stackrel{!}'. Such tokens must be repaired in the lesson's quotation of the source, or the formula paraphrased in correct notation."
+    },
+    {
+      "code": "latex-token-corruption",
+      "severity": "warning",
+      "detail": "1 occurrence(s) of a corruption near an equality annotation. Such tokens must be repaired in the lesson's quotation of the source, or the formula paraphrased in correct notation."
+    },
+    {
+      "code": "latex-token-corruption",
+      "severity": "warning",
+      "detail": "33 occurrence(s) of broken roman-text runs inside math ('\\mathrm{i.e.}' split across tokens). Such tokens must be repaired in the lesson's quotation of the source, or the formula paraphrased in correct notation."
+    },
+    {
+      "code": "page-number-emitted-as-heading",
+      "severity": "warning",
+      "file": "Mathematics for ML part 2.md",
+      "line": 1827,
+      "detail": "Printed page number '172' was emitted as a level-2 heading."
+    },
+    {
+      "code": "page-number-emitted-as-heading",
+      "severity": "warning",
+      "file": "Mathematics for ML part 3.md",
+      "line": 3433,
+      "detail": "Printed page number '370' was emitted as a level-2 heading."
+    },
+    {
+      "code": "page-number-emitted-as-heading",
+      "severity": "warning",
+      "file": "Mathematics for ML part 3.md",
+      "line": 5671,
+      "detail": "Printed page number '407' was emitted as a level-2 heading."
+    },
+    {
+      "code": "source-supplies-exercise-sets-only-for-chapters-2-3-4-5-6-7",
+      "severity": "warning",
+      "detail": "The supplied source contains exercise sets for chapters 2, 3, 4, 5, 6, 7 (69 items located), and none for chapters 1, 8, 9, 10, 11, 12. Practice material for the chapters without sets must be sourced elsewhere or authored, and must be labelled accordingly. Verified independently against the supplied PDF: the string 'Exercises' occurs in the PDF only on the table-of-contents pages and on printed pages 64, 96, 137, 170, 222 and 247, matching the located sets."
+    },
+    {
+      "code": "stray-barcode-or-isbn-artifact",
+      "severity": "warning",
+      "file": "Mathematics for ML part 3.md",
+      "line": 1635,
+      "detail": "Line 1635 emits the bare digit string '0123956389' as a heading; it is an extraction artefact."
+    },
+    {
+      "code": "chapter-heading-without-number",
+      "severity": "info",
+      "file": "Mathematics for ML part 1.md",
+      "line": 2498,
+      "detail": "Chapter heading 'Analytic Geometry' appears in the running text without its chapter number; numbering is recovered from the table of contents."
+    },
+    {
+      "code": "chapter-heading-without-number",
+      "severity": "info",
+      "file": "Mathematics for ML part 2.md",
+      "line": 2623,
+      "detail": "Chapter heading 'Probability and Distributions' appears in the running text without its chapter number; numbering is recovered from the table of contents."
+    },
+    {
+      "code": "chapter-heading-without-number",
+      "severity": "info",
+      "file": "Mathematics for ML part 3.md",
+      "line": 1545,
+      "detail": "Chapter heading 'Dimensionality Reduction with Principal Component Analysis' appears in the running text without its chapter number; numbering is recovered from the table of contents."
+    },
+    {
+      "code": "chapter-heading-without-number",
+      "severity": "info",
+      "file": "Mathematics for ML part 3.md",
+      "line": 2553,
+      "detail": "Chapter heading 'Density Estimation with Gaussian Mixture Models' appears in the running text without its chapter number; numbering is recovered from the table of contents."
+    },
+    {
+      "code": "page-mapping-is-section-level-only",
+      "severity": "info",
+      "detail": "The markdown carries no page markers (only occasional stray page numbers and the authors' draft footer). Printed page numbers therefore survive only where the table of contents supplies them, i.e. at section granularity. Sub-section citations use markdown anchors (file + line) instead of page numbers."
+    },
+    {
+      "code": "running-headings-duplicated-in-body",
+      "severity": "info",
+      "detail": "34 heading occurrences repeat an earlier identical heading. The extraction interleaves the printed running header into the body text, so a naive heading scan counts a section more than once. Affected (worst first): 2.3 x4; 2.7 x4; 3.8 x4; 8.3 x4; 11.4 x3."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "last_reviewed": "2026-10-12",
+  "purpose": "The registry of authored learning content. It is intentionally empty at this stage: the repository has indexed sources and a curriculum model, but no lesson has been written, so no lesson is claimed. Everything the platform displays about a lesson is meant to be derived from this file, including whether it is verified.",
+  "lesson_schema": {
+    "id": "LSN-<COMPETENCY-ID>-<NN>, e.g. LSN-MATH-07-01",
+    "title": "string",
+    "competencies": ["competency ids, at least one"],
+    "covers_outcomes": ["the exact outcome strings from the competency that this lesson assesses"],
+    "sources": [{"work_id": "SRC-MML", "sections": ["4.5"], "role": "primary | supporting", "pages": "printed page range where known"}],
+    "supplemental_references": ["reference ids from knowledge/references/external.json, or null"],
+    "prerequisites": ["competency or lesson ids the learner must have completed"],
+    "exercise_ids": ["EX-... ids, all defined in the exercises array"],
+    "estimated_effort": {"reading_minutes": 0, "exercise_minutes": 0},
+    "content_path": "relative path in the repository once written",
+    "publication_state": "one of the publication_state values in knowledge/states.json",
+    "verification_record_id": "null until a verification record exists",
+    "last_verified": null,
+    "provenance_note": "states explicitly which claims come from the source, which are established theory, and which examples are originally authored"
+  },
+  "exercise_schema": {
+    "id": "EX-<LESSON-ID>-<NN>",
+    "lesson_id": "string",
+    "competencies": ["competency ids assessed"],
+    "origin": "source | adapted | original | external",
+    "origin_detail": {
+      "work_id": "required when origin is source or adapted",
+      "section": "source section the item comes from",
+      "printed_page": "integer where known",
+      "source_item_id": "the source's own numbering, preserved rather than renumbered",
+      "external_url": "required when origin is external",
+      "licence_note": "required when origin is external"
+    },
+    "difficulty": "recognition | guided | independent | multi_step | transfer | open_ended",
+    "prompt_path": "relative path",
+    "expected_outcome": "what a correct answer demonstrates",
+    "solution_path": "null until a solution exists; an exercise without one may not be marked verified",
+    "solution_verified_by": "verification method actually used (independent computation, execution, cross-check against a reference)",
+    "rubric": "required for open-ended items instead of a single solution"
+  },
+  "verification_record_schema": {
+    "id": "VER-<LESSON-ID>-<NN>",
+    "lesson_id": "string",
+    "checks": [
+      {"name": "source_fidelity | technical_correctness | mathematical_validity | pedagogical_completeness | prerequisite_integrity | assessment_integrity | citation_integrity | interactive_correctness | publication_integrity", "status": "not_run | passed | failed | not_applicable | blocked", "method": "what was actually done", "evidence": "what the check produced", "not_checked": "what the method cannot establish"}
+    ],
+    "outcome": "verified | needs_revision",
+    "unresolved_issues": ["each with an owner-action and a next step"],
+    "reviewed_on": "date"
+  },
+  "lessons": [],
+  "exercises": [],
+  "verification_records": [],
+  "current_state": {
+    "lessons_authored": 0,
+    "exercises_authored": 0,
+    "lessons_verified": 0,
+    "note": "No lesson has been written. Any interface built in the next phase must render this state honestly rather than presenting the curriculum model as if it were course content."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "last_reviewed": "2026-10-12",
+  "id_scheme": "DOMAIN-NN, where DOMAIN is a stable four-to-five letter code and NN is a two-digit sequence within that domain.",
+  "domains": [
+    {
+      "id": "MATH",
+      "name": "Mathematical Foundations for Machine Learning",
+      "purpose": "Provide the linear algebra, calculus, probability and optimisation that machine learning methods are built from, taught with the derivations and geometric interpretations needed to reason rather than memorise.",
+      "primary_source": "SRC-MML",
+      "roadmap_skills": ["SK-03", "SK-04"],
+      "notes": "The supplied book covers this domain directly for chapters 2-7 and indirectly through its machine-learning chapters 8-12. Numerical linear algebra and floating-point behaviour are touched on but not taught systematically; that is recorded as a supplemental need rather than assumed."
+    },
+    {
+      "id": "PROG",
+      "name": "Programming and Software Craft",
+      "purpose": "Write, structure, debug, test and version Python programs to a professional standard, which is the substrate for every later domain.",
+      "primary_source": null,
+      "roadmap_skills": ["SK-01", "SK-05", "SK-06", "SK-11", "SK-15"],
+      "notes": "No source supplied yet. The roadmap nominates a book and two courses per skill; those are recorded as intended sources pending the user's own copies."
+    },
+    {
+      "id": "CS",
+      "name": "Algorithms, Data Structures and Numeric Computing",
+      "purpose": "Choose and analyse data structures and algorithms, and use vectorised numeric computing correctly, including knowing when vectorisation changes the result.",
+      "primary_source": null,
+      "roadmap_skills": ["SK-07", "SK-08"],
+      "notes": "No source supplied yet."
+    },
+    {
+      "id": "DATA",
+      "name": "Data Engineering",
+      "purpose": "Move, store, model, transform and validate data reliably, which determines whether any downstream model can be trusted.",
+      "primary_source": null,
+      "roadmap_skills": ["SK-02", "SK-17", "SK-18", "SK-19", "SK-20", "SK-21", "SK-22", "SK-23", "SK-24", "SK-25", "SK-26"],
+      "notes": "No source supplied yet. SQL is exercised indirectly by the supplied book's modelling chapters, but query language competence itself is not taught there."
+    },
+    {
+      "id": "SWE",
+      "name": "Software and Systems Engineering",
+      "purpose": "Design, containerise, secure, deploy and operate services, including the distributed-systems reasoning that production AI systems depend on.",
+      "primary_source": null,
+      "roadmap_skills": ["SK-09", "SK-10", "SK-12", "SK-13", "SK-14", "SK-16", "SK-40", "SK-44"],
+      "notes": "No source supplied yet."
+    },
+    {
+      "id": "ML",
+      "name": "Classical Machine Learning",
+      "purpose": "Formulate learning problems, choose baselines, train and validate models, and evaluate them honestly.",
+      "primary_source": "SRC-MML",
+      "roadmap_skills": ["SK-27", "SK-32", "SK-33", "SK-34"],
+      "notes": "The supplied book covers linear regression, PCA, Gaussian mixture models, support vector machines and the estimation/evaluation theory that connects them (chapters 8-12). It does not cover tree ensembles, gradient boosting, or the practical tooling ecosystem."
+    },
+    {
+      "id": "DL",
+      "name": "Deep Learning",
+      "purpose": "Build, train, diagnose and scale neural networks, including the transformer architecture that current language and vision systems rely on.",
+      "primary_source": null,
+      "roadmap_skills": ["SK-28", "SK-29", "SK-30", "SK-31", "SK-39"],
+      "notes": "The supplied book supplies the mathematics of backpropagation and the linear-algebraic machinery transformers are built from, but not the architectures, training practice or frameworks. Supplemental sources required."
+    },
+    {
+      "id": "GEN",
+      "name": "Generative AI and LLM Applications",
+      "purpose": "Build applications on top of large models: prompting, retrieval, adaptation, agents, and the evaluation needed to know whether any of it works.",
+      "primary_source": null,
+      "roadmap_skills": ["SK-37", "SK-38"],
+      "notes": "No source supplied yet. This is the fastest-moving domain in the roadmap, so version-sensitive claims will be dated and re-checked rather than stated once."
+    },
+    {
+      "id": "PROD",
+      "name": "Production AI Engineering, Reliability and Responsibility",
+      "purpose": "Run AI systems in production: deployment, monitoring, cost, incident response, security, privacy and responsible-AI obligations.",
+      "primary_source": null,
+      "roadmap_skills": ["SK-36", "SK-43"],
+      "notes": "No source supplied yet. The roadmap treats this as two skills; the competency audit treats it as the largest gap between the roadmap and what employers screen for, so it is held as one domain with several uncovered competencies."
+    },
+    {
+      "id": "CAREER",
+      "name": "Professional Practice and Career Development",
+      "purpose": "Communicate technical work, collaborate on code, prepare for interviews honestly, and keep knowledge current.",
+      "primary_source": null,
+      "roadmap_skills": [],
+      "notes": "Not represented as named skills in either roadmap beyond the two project sprints and the capstone. Recorded as a domain so that project and interview preparation are not silently dropped."
+    }
+  ]
+}

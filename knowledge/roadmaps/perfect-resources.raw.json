@@ -1,0 +1,1711 @@
+{
+  "site": "perfect_resources_44_skills.html",
+  "title": "The Perfect Resource — 44 Skills, 132 Resources",
+  "purpose": "Per-skill resource selection: one canonical book plus one free and one paid course/resource for each of the 44 roadmap skills.",
+  "declared_counts": {
+    "header_counter": "44 skills · 132 resources",
+    "hero_sub": "44 skills · 1 book · 1 free course · 1 paid course · each"
+  },
+  "legend_claims": [
+    "All 44",
+    "SWE (10)",
+    "Data Eng (10)",
+    "AI/ML (10)",
+    "Specialization (6)"
+  ],
+  "skills": [
+    {
+      "roadmap_number": 1,
+      "name": "Python Programming",
+      "declared_track": "foundation",
+      "declared_tags": [
+        "FOUNDATION",
+        "ALL TRACKS"
+      ],
+      "what_you_learn": "variables, loops, functions, OOP, file I/O, modules, error handling, list comprehensions, virtual environments, package management with pip. The goal is to write clean, idiomatic Python that runs correctly and can be read by others.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "No Starch Press",
+          "title": "Python Crash Course, 3rd Edition",
+          "author_year": "Eric Matthes · 2023",
+          "rationale": "The clearest beginner Python book in print. Covers all fundamentals through three complete projects (game, data viz, web app). Used in university intro CS courses worldwide. Don't substitute this."
+        },
+        {
+          "kind": "free",
+          "platform": "Harvard / edX",
+          "title": "CS50P — Introduction to Programming with Python",
+          "author_year": "David Malan · Harvard University",
+          "rationale": "Best free Python course that exists. Problem sets are genuinely hard, feedback is immediate. The pacing and rigor are university-grade. Available entirely free on cs50.harvard.edu."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "100 Days of Code: The Complete Python Pro Bootcamp",
+          "author_year": "Dr. Angela Yu · App Brewery",
+          "rationale": "Best paid Python course for project-based learners. 100 projects, builds habit through daily practice. Angela Yu's teaching style is exceptionally clear. ~$15–20 on Udemy sale."
+        }
+      ],
+      "dom_id": "s1"
+    },
+    {
+      "roadmap_number": 2,
+      "name": "SQL",
+      "declared_track": "foundation",
+      "declared_tags": [
+        "FOUNDATION",
+        "ALL TRACKS"
+      ],
+      "what_you_learn": "SELECT, filtering, JOINs (inner/left/right/full), GROUP BY, aggregations, subqueries, CTEs (WITH clauses), window functions (ROW_NUMBER, LAG, LEAD, RANK), query optimization basics, indexes, and EXPLAIN plans.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "No Starch Press",
+          "title": "Practical SQL, 2nd Edition",
+          "author_year": "Anthony DeBarros · 2022",
+          "rationale": "Uses real datasets (US census, crime data) to teach SQL through actual analysis. Covers PostgreSQL deeply including geospatial, full-text search, and performance tuning. The most practical SQL book in print."
+        },
+        {
+          "kind": "free",
+          "platform": "Mode / SQLZoo",
+          "title": "SQLZoo + Mode SQL Tutorial",
+          "author_year": "SQLZoo.net · Mode Analytics",
+          "rationale": "SQLZoo is the best interactive SQL practice environment for beginners. Mode's tutorial (mode.com/sql-tutorial) covers intermediate and advanced topics including window functions. Use both together."
+        },
+        {
+          "kind": "paid",
+          "platform": "DataCamp",
+          "title": "SQL Fundamentals Track",
+          "author_year": "DataCamp · Multiple instructors",
+          "rationale": "Covers beginner through advanced SQL including window functions, query optimization, and database design. DataCamp's in-browser SQL editor means zero setup friction. Best for structured, guided SQL learning."
+        }
+      ],
+      "dom_id": "s2"
+    },
+    {
+      "roadmap_number": 3,
+      "name": "Linear Algebra",
+      "declared_track": "foundation",
+      "declared_tags": [
+        "FOUNDATION",
+        "ML CRITICAL"
+      ],
+      "what_you_learn": "vectors and vector spaces, matrix operations (add, multiply, transpose), linear transformations, eigenvalues and eigenvectors, matrix decomposition (SVD, PCA), dot products, norms, and how these operations map to neural network computations.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Cambridge UP · FREE PDF",
+          "title": "Mathematics for Machine Learning",
+          "author_year": "Deisenroth, Faisal & Ong · 2020",
+          "rationale": "The only math book that connects linear algebra directly to ML algorithms. Chapters 2–4 cover everything needed. Free legally at mml-book.github.io. Used at Imperial College London and Cambridge."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / 3Blue1Brown",
+          "title": "Essence of Linear Algebra",
+          "author_year": "Grant Sanderson · 3Blue1Brown",
+          "rationale": "The best visual intuition for linear algebra ever made. 15 videos (~3hrs total). Every abstract concept is animated geometrically. Watch before reading the MML book — it makes the abstractions click immediately."
+        },
+        {
+          "kind": "paid",
+          "platform": "Coursera",
+          "title": "Mathematics for Machine Learning: Linear Algebra",
+          "author_year": "Imperial College London · Coursera",
+          "rationale": "Taught by David Dye of Imperial College. Builds directly toward ML applications. Includes programming assignments in Python/NumPy. Best structured paid course connecting math to ML code."
+        }
+      ],
+      "dom_id": "s3"
+    },
+    {
+      "roadmap_number": 4,
+      "name": "Probability & Statistics",
+      "declared_track": "foundation",
+      "declared_tags": [
+        "FOUNDATION",
+        "ML CRITICAL"
+      ],
+      "what_you_learn": "probability rules, conditional probability, Bayes' theorem, common distributions (Normal, Binomial, Poisson), expectation and variance, hypothesis testing, p-values, confidence intervals, maximum likelihood estimation, and statistical intuition for ML models.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Naked Statistics: Stripping the Dread from the Data",
+          "author_year": "Charles Wheelan · 2013",
+          "rationale": "Builds genuine statistical intuition without calculus. After Naked Statistics, pair with StatQuest's videos for the ML-specific depth. This book removes the fear of statistics before you need to formalize it."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / StatQuest",
+          "title": "StatQuest with Josh Starmer",
+          "author_year": "Josh Starmer · YouTube",
+          "rationale": "The single best free resource for statistics and ML concepts. Every video explains one concept from first principles with custom visuals. Covers Bayes, distributions, hypothesis testing, and all ML-relevant stats. Hundreds of free videos."
+        },
+        {
+          "kind": "paid",
+          "platform": "Coursera",
+          "title": "Statistics with Python Specialization",
+          "author_year": "University of Michigan · Coursera",
+          "rationale": "3-course specialization covering understanding, visualizing, and inferential statistics — all implemented in Python. Bridges statistical theory to Python code in a way most courses skip. Strong capstone project."
+        }
+      ],
+      "dom_id": "s4"
+    },
+    {
+      "roadmap_number": 5,
+      "name": "Git & Version Control",
+      "declared_track": "foundation",
+      "declared_tags": [
+        "FOUNDATION",
+        "ALL TRACKS"
+      ],
+      "what_you_learn": "init, add, commit, push/pull, branches, merge vs rebase, resolving conflicts, pull request workflow, cherry-pick, interactive rebase, stash, tags, GitHub/GitLab best practices, commit message conventions, and .gitignore strategies.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly · FREE online",
+          "title": "Pro Git, 2nd Edition",
+          "author_year": "Scott Chacon & Ben Straub · Free at git-scm.com",
+          "rationale": "The official, comprehensive Git reference. Written by GitHub co-founders. Covers everything from basics to Git internals. Completely free online at git-scm.com/book. Chapter 2 alone is worth more than most Git courses."
+        },
+        {
+          "kind": "free",
+          "platform": "learngitbranching.js.org",
+          "title": "Learn Git Branching (Interactive)",
+          "author_year": "Peter Cottle · learngitbranching.js.org",
+          "rationale": "Best interactive Git visualizer in existence. Every branch, merge, and rebase is animated in real-time. Builds muscle memory for complex workflows. Free. No install. 30 levels of increasing complexity."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Git & GitHub — The Complete Git Guide",
+          "author_year": "Maximilian Schwarzmüller · Academind",
+          "rationale": "Covers Git from zero to advanced workflows including rebase strategies, team workflows, GitHub Actions integration, and real project scenarios. Schwarzmüller's explanations are exceptionally structured. Best for learning team Git workflows."
+        }
+      ],
+      "dom_id": "s5"
+    },
+    {
+      "roadmap_number": 6,
+      "name": "Linux / Command Line",
+      "declared_track": "foundation",
+      "declared_tags": [
+        "FOUNDATION",
+        "ALL TRACKS"
+      ],
+      "what_you_learn": "filesystem navigation, file manipulation (cp/mv/rm/chmod), pipes and redirection, grep/awk/sed, environment variables, bash scripting (conditionals, loops, functions), process management (ps/kill/top), SSH, cron jobs, and package management (apt/brew).",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "No Starch Press",
+          "title": "The Linux Command Line, 2nd Edition",
+          "author_year": "William Shotts · Free at linuxcommand.org",
+          "rationale": "The most complete introduction to the Linux CLI. Covers shells, scripting, package management, and system administration. Completely free online at linuxcommand.org. Used as the standard reference in Linux sysadmin courses."
+        },
+        {
+          "kind": "free",
+          "platform": "MIT OpenCourseWare",
+          "title": "The Missing Semester of Your CS Education",
+          "author_year": "MIT CSAIL · missing.csail.mit.edu",
+          "rationale": "The most practical CS skills course that universities don't teach. Covers shell, Vim, Git, tmux, SSH, and debugging tools in 12 focused lectures. All free. Every professional engineer eventually finds this and wishes they had it earlier."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Linux Command Line Bootcamp: Beginner to Power User",
+          "author_year": "Colt Steele · Udemy",
+          "rationale": "Colt Steele's teaching clarity is exceptional. Covers all practical Linux skills with real-world exercises and a built-in terminal emulator. Best for learners who want structured progression with video explanation."
+        }
+      ],
+      "dom_id": "s6"
+    },
+    {
+      "roadmap_number": 7,
+      "name": "Data Structures",
+      "declared_track": "foundation",
+      "declared_tags": [
+        "FOUNDATION",
+        "SWE CRITICAL"
+      ],
+      "what_you_learn": "arrays, dynamic arrays, linked lists (single/double), stacks, queues, hash maps, sets, trees (binary, BST, AVL), heaps (min/max), graphs (adjacency list/matrix), tries, and when to use each. Implement from scratch in Python before using built-ins.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "MIT Press",
+          "title": "Introduction to Algorithms (CLRS), 4th Edition",
+          "author_year": "Cormen, Leiserson, Rivest & Stein",
+          "rationale": "The canonical algorithms textbook. Used at MIT, Stanford, CMU. Chapters 10–14 cover all fundamental data structures with full proofs. Don't read cover-to-cover — use it as a reference and study specific chapters."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / NeetCode",
+          "title": "NeetCode Data Structures & Algorithms for Beginners",
+          "author_year": "NeetCode · neetcode.io / YouTube",
+          "rationale": "Best free visual DSA course for interview preparation. Each video covers one structure with code implementation and complexity analysis. Pairs perfectly with LeetCode. NeetCode's animations make abstract structures concrete instantly."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Python Data Structures & Algorithms + LEETCODE Exercises",
+          "author_year": "Scott Barrett · Udemy",
+          "rationale": "The most complete paid DSA course using Python. Every data structure is implemented from scratch with full explanation. Includes 100+ LeetCode problems mapped to each structure. Best for building a complete, tested implementation library."
+        }
+      ],
+      "dom_id": "s7"
+    },
+    {
+      "roadmap_number": 8,
+      "name": "Algorithms & Big-O",
+      "declared_track": "foundation",
+      "declared_tags": [
+        "FOUNDATION",
+        "SWE CRITICAL"
+      ],
+      "what_you_learn": "time and space complexity analysis, O(1)/O(log n)/O(n)/O(n log n)/O(n²) intuition, sorting algorithms (merge, quick, heap), searching (binary search, BFS, DFS), dynamic programming, greedy algorithms, backtracking, and two-pointer / sliding window patterns.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Manning",
+          "title": "Grokking Algorithms, 2nd Edition",
+          "author_year": "Aditya Bhargava · 2024",
+          "rationale": "The most approachable algorithms book ever written. Every algorithm is illustrated with hand-drawn visuals. Covers Big-O, recursion, dynamic programming, and graphs. Read this before CLRS — it builds the right mental models first."
+        },
+        {
+          "kind": "free",
+          "platform": "MIT OpenCourseWare",
+          "title": "6.006 — Introduction to Algorithms",
+          "author_year": "MIT OpenCourseWare · ocw.mit.edu",
+          "rationale": "Free MIT algorithm lectures. Full lecture videos, problem sets, and exams. The most rigorous free algorithms course available. Taught by Erik Demaine (MIT). Covers sorting, hashing, dynamic programming, and graph algorithms with proofs."
+        },
+        {
+          "kind": "paid",
+          "platform": "AlgoExpert",
+          "title": "AlgoExpert — Algorithms & Coding Interview Prep",
+          "author_year": "Clement Mihailescu · AlgoExpert.io",
+          "rationale": "160+ curated algorithm problems with video explanations (not just solutions). Every problem comes with a walkthrough of the thought process. Best for systematically preparing for technical interviews while learning algorithms simultaneously."
+        }
+      ],
+      "dom_id": "s8"
+    },
+    {
+      "roadmap_number": 9,
+      "name": "Design Patterns & SOLID",
+      "declared_track": "swe",
+      "declared_tags": [
+        "SWE CORE"
+      ],
+      "what_you_learn": "SOLID principles (Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion), GoF patterns (Factory, Strategy, Observer, Decorator, Singleton, Command, Adapter, Facade), and when to apply or intentionally avoid each.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Prentice Hall",
+          "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+          "author_year": "Robert C. Martin (Uncle Bob) · 2008",
+          "rationale": "Sets the professional standard for code quality and SOLID principles. The SOLID chapter alone transforms how you write code. Read once, re-read every 2 years. Every senior engineer at FAANG references this implicitly in code reviews."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / ArjanCodes",
+          "title": "ArjanCodes — Design Patterns in Python",
+          "author_year": "Arjan Egges · ArjanCodes YouTube",
+          "rationale": "Best free Python-specific design patterns resource. Arjan implements every GoF pattern and SOLID principle in real Python projects, showing both the before and after refactor. Shows patterns in the context of realistic code, not toy examples."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Design Patterns in Python",
+          "author_year": "Dmitri Nesteruk · Udemy",
+          "rationale": "All 23 GoF patterns implemented in Python with real-world use cases. Nesteruk provides clear rationale for when to use each pattern and the anti-patterns to avoid. Most complete paid design patterns course for Python developers."
+        }
+      ],
+      "dom_id": "s9"
+    },
+    {
+      "roadmap_number": 10,
+      "name": "Web Frameworks (FastAPI / Django)",
+      "declared_track": "swe",
+      "declared_tags": [
+        "SWE CORE"
+      ],
+      "what_you_learn": "RESTful API design, routing, request/response lifecycle, middleware, dependency injection (FastAPI), ORM and database migrations, authentication/sessions, background tasks, OpenAPI/Swagger auto-docs, and deploying Python web apps to production.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "FastAPI: Modern Python Web Development",
+          "author_year": "Bill Lubanovic · O'Reilly · 2024",
+          "rationale": "FastAPI is the current industry standard for Python APIs (used at Uber, Netflix, Microsoft). This book covers async APIs, database integration, authentication, testing, and deployment end-to-end. FastAPI is the right default in 2024 — learn it over Django for new API projects."
+        },
+        {
+          "kind": "free",
+          "platform": "FastAPI Official Docs",
+          "title": "FastAPI Official Tutorial & Documentation",
+          "author_year": "Sebastián Ramírez · fastapi.tiangolo.com",
+          "rationale": "The FastAPI docs are so well-written they function as a course. Tiangolo (creator) wrote them to be tutorial-quality. The tutorial section alone covers 80% of what you need. Frequently cited as the best framework documentation in Python."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "FastAPI — The Complete Course 2024 (Beginner + Advanced)",
+          "author_year": "Eric Roby & Chad Darby · Udemy",
+          "rationale": "Full coverage from routing through JWT auth, PostgreSQL integration, Docker deployment, and testing. Builds a complete production-ready application. Best structured video course for FastAPI in a real production context."
+        }
+      ],
+      "dom_id": "s10"
+    },
+    {
+      "roadmap_number": 11,
+      "name": "Testing & TDD",
+      "declared_track": "swe",
+      "declared_tags": [
+        "SWE CORE"
+      ],
+      "what_you_learn": "unit vs integration vs end-to-end tests, pytest fixtures, parametrize, mocking with unittest.mock, test coverage, property-based testing with Hypothesis, TDD red-green-refactor cycle, testing FastAPI/Django endpoints, and writing tests that don't break with every refactor.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Python Testing with pytest, 2nd Edition",
+          "author_year": "Brian Okken · 2022",
+          "rationale": "The most complete pytest reference available. Covers fixtures, plugins, parametrization, mocking, and integration testing. Brian Okken created the Python Test Podcast. After this book, pytest has no surprises for you."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / ArjanCodes",
+          "title": "Unit Testing and TDD in Python — ArjanCodes",
+          "author_year": "Arjan Egges · YouTube",
+          "rationale": "Best free TDD tutorial for Python engineers. Arjan shows the full TDD cycle on real Python projects, demonstrates common pitfalls, and explains what makes a good test vs a brittle one. Several videos covering different testing patterns."
+        },
+        {
+          "kind": "paid",
+          "platform": "TestDriven.io",
+          "title": "Test-Driven Development with FastAPI and Docker",
+          "author_year": "Michael Herman · testdriven.io",
+          "rationale": "Builds a complete FastAPI application using strict TDD from the first line of code. Covers pytest, mocking, test containerization, and CI integration. Best paid resource for TDD in a production Python context. ~$40 one-time."
+        }
+      ],
+      "dom_id": "s11"
+    },
+    {
+      "roadmap_number": 12,
+      "name": "Docker & Kubernetes",
+      "declared_track": "swe",
+      "declared_tags": [
+        "SWE CORE"
+      ],
+      "what_you_learn": "Dockerfile authoring, image layers, docker-compose for multi-service apps, container networking, volumes, environment management, Kubernetes pods/deployments/services, ConfigMaps/Secrets, ingress controllers, resource limits, and basic cluster operations with kubectl.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Manning",
+          "title": "Docker Deep Dive",
+          "author_year": "Nigel Poulton · 2023 Edition",
+          "rationale": "The most concise, complete Docker book available. Poulton also wrote \"The Kubernetes Book\" — buy both. Clear explanations of images, containers, networking, and compose. Readable in a weekend, comprehensive enough to last years."
+        },
+        {
+          "kind": "free",
+          "platform": "KodeKloud / YouTube",
+          "title": "Docker Training Course for the Absolute Beginner",
+          "author_year": "Mumshad Mannambeth · KodeKloud (free tier)",
+          "rationale": "KodeKloud's free Docker course includes interactive labs in a real browser-based environment — no local Docker install needed. Best for hands-on learning without setup friction. Mumshad is known for the CKA Kubernetes certification course."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Docker & Kubernetes: The Practical Guide (2024)",
+          "author_year": "Maximilian Schwarzmüller · Academind",
+          "rationale": "Covers Docker and Kubernetes together in one course — the only pair that makes sense since Kubernetes orchestrates Docker containers. Builds a complete multi-service application. Most comprehensive paid course combining both tools with practical projects."
+        }
+      ],
+      "dom_id": "s12"
+    },
+    {
+      "roadmap_number": 13,
+      "name": "CI/CD Pipelines",
+      "declared_track": "swe",
+      "declared_tags": [
+        "SWE CORE"
+      ],
+      "what_you_learn": "GitHub Actions workflow YAML, triggers (push/PR/schedule), job dependencies, secrets management, build-test-deploy automation, Docker image build and push, environment-specific deployments, rollback strategies, and blue-green/canary deployment concepts.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Learning GitHub Actions",
+          "author_year": "Brent Laster · O'Reilly · 2023",
+          "rationale": "The most complete GitHub Actions reference. Covers workflows, runners, reusable actions, secrets, environments, and deployment automation. GitHub Actions is the dominant CI/CD tool for new projects. This book covers everything from basic pipelines to complex matrix builds."
+        },
+        {
+          "kind": "free",
+          "platform": "GitHub Docs / YouTube",
+          "title": "GitHub Actions Official Documentation + TechWorld with Nana",
+          "author_year": "GitHub · Nana Janashia (YouTube)",
+          "rationale": "GitHub's own docs are tutorial-quality. Pair with TechWorld with Nana's CI/CD YouTube series for visual walkthroughs. Nana covers GitHub Actions, Jenkins, and ArgoCD in the context of real DevOps workflows. Free and regularly updated."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "GitHub Actions — The Complete Guide",
+          "author_year": "Maximilian Schwarzmüller · Academind",
+          "rationale": "Builds real CI/CD pipelines for Node, Python, and Docker projects. Covers caching, reusable workflows, matrix strategies, and deployment to cloud providers. Best structured video course for GitHub Actions in production contexts."
+        }
+      ],
+      "dom_id": "s13"
+    },
+    {
+      "roadmap_number": 14,
+      "name": "Security (OWASP / Auth)",
+      "declared_track": "swe",
+      "declared_tags": [
+        "SWE CORE"
+      ],
+      "what_you_learn": "OWASP Top 10 (injection, XSS, broken auth, IDOR, etc.), JWT structure and validation, OAuth 2.0 flows, API key management, password hashing (bcrypt/argon2), HTTPS/TLS basics, CORS, input validation/sanitization, and secure coding practices.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "No Starch Press",
+          "title": "The Web Application Hacker's Handbook, 2nd Ed.",
+          "author_year": "Stuttard & Pinto · 2011 (still canonical)",
+          "rationale": "Understanding attacks is the prerequisite for defense. This book explains every web vulnerability from the attacker's perspective — teaching you exactly how SQL injection, XSS, and CSRF work so you can eliminate them. The most direct path to security thinking."
+        },
+        {
+          "kind": "free",
+          "platform": "OWASP / PortSwigger",
+          "title": "PortSwigger Web Security Academy",
+          "author_year": "PortSwigger · portswigger.net/web-security",
+          "rationale": "The best free web security training resource in existence. Built by the creators of Burp Suite. Covers every OWASP vulnerability with interactive labs where you actually exploit the vulnerability to understand how to prevent it. Completely free."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Web Security & Bug Bounty: Learn Penetration Testing",
+          "author_year": "Zaid Sabih · z-Security",
+          "rationale": "Practical offensive security course covering XSS, SQL injection, CSRF, file upload vulnerabilities, and authentication flaws — all in controlled lab environments. Best paid course for engineers who want to understand attacks before defending against them."
+        }
+      ],
+      "dom_id": "s14"
+    },
+    {
+      "roadmap_number": 15,
+      "name": "Async Programming",
+      "declared_track": "swe",
+      "declared_tags": [
+        "SWE CORE"
+      ],
+      "what_you_learn": "Python asyncio, async/await syntax, event loops, coroutines vs threads vs processes, concurrent.futures, aiohttp for async HTTP, async database drivers, task groups, semaphores for concurrency limiting, and when to use async vs threading vs multiprocessing.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Using Asyncio in Python",
+          "author_year": "Caleb Hattingh · O'Reilly · 2020",
+          "rationale": "The clearest explanation of Python's asyncio model. Hattingh removes the confusion around async/await, event loops, and coroutines. Short and focused — 150 pages that eliminate the fog around async Python better than any tutorial."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / mCoding",
+          "title": "Asyncio in Python — mCoding YouTube Series",
+          "author_year": "James Murphy · mCoding YouTube",
+          "rationale": "The most technically accurate free asyncio resource. James Murphy (PhD mathematician, senior engineer) explains Python's async model precisely, including the differences between coroutines, tasks, and futures. Zero hand-waving."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Concurrency & Multithreading in Python (threading, asyncio, multiprocessing)",
+          "author_year": "Artem Zaika · Udemy",
+          "rationale": "Covers threading, multiprocessing, and asyncio together — which is essential because the choice between them determines performance. Best paid course for understanding Python concurrency as a whole system, not just asyncio in isolation."
+        }
+      ],
+      "dom_id": "s15"
+    },
+    {
+      "roadmap_number": 16,
+      "name": "System Design",
+      "declared_track": "swe",
+      "declared_tags": [
+        "SWE CORE",
+        "INTERVIEW CRITICAL"
+      ],
+      "what_you_learn": "load balancing (L4/L7), horizontal vs vertical scaling, caching strategies (CDN, Redis, write-through/around/back), database sharding, consistent hashing, CAP theorem, SQL vs NoSQL trade-offs, message queues, rate limiting, and designing real systems (URL shortener, YouTube, Twitter).",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "ByteByteGo",
+          "title": "System Design Interview: An Insider's Guide (Vol 1 & 2)",
+          "author_year": "Alex Xu · ByteByteGo · 2020–2022",
+          "rationale": "The industry standard prep resource for system design interviews at FAANG. Vol 1 covers foundational patterns; Vol 2 covers advanced designs (Google Maps, Nearby Friends, distributed message queues). Buy both. Read before any senior SWE interview."
+        },
+        {
+          "kind": "free",
+          "platform": "GitHub",
+          "title": "System Design Primer",
+          "author_year": "Donne Martin · github.com/donnemartin/system-design-primer",
+          "rationale": "250k+ GitHub stars. The most comprehensive free system design resource. Covers every concept with diagrams, trade-off analysis, and links to source material. Used by engineers at every major company to prepare for system design rounds."
+        },
+        {
+          "kind": "paid",
+          "platform": "ByteByteGo / Educative",
+          "title": "Grokking Modern System Design Interview",
+          "author_year": "Design Gurus · educative.io",
+          "rationale": "Interactive text-based course with diagrams for 20+ real system designs. Includes mock interview scenarios and structured frameworks for the interview itself. Best paid resource for building a systematic, repeatable approach to system design interviews."
+        }
+      ],
+      "dom_id": "s16"
+    },
+    {
+      "roadmap_number": 17,
+      "name": "Apache Spark / PySpark",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "Spark architecture (driver/executors/DAG), RDDs vs DataFrames vs Datasets, transformations vs actions, lazy evaluation, PySpark DataFrame API, Spark SQL, partitioning strategies, shuffle optimization, reading/writing Parquet/Delta, and running Spark on YARN/Kubernetes.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly · FREE",
+          "title": "Learning Spark: Lightning-Fast Data Analytics, 2nd Ed.",
+          "author_year": "Damji, Wenig, Das & Lee · 2020 · Free PDF from Databricks",
+          "rationale": "Written by Databricks engineers (who built Spark). Covers Spark 3.0, DataFrames, Spark SQL, structured streaming, and Delta Lake. Free PDF available from databricks.com/resources/ebook/learning-spark-lightning-fast-data-analytics. The definitive Spark reference."
+        },
+        {
+          "kind": "free",
+          "platform": "DataTalks.Club",
+          "title": "Data Engineering Zoomcamp — Spark Module",
+          "author_year": "Alexey Grigorev · DataTalks.Club · GitHub",
+          "rationale": "Best free hands-on Spark course available. Part of the full Data Engineering Zoomcamp. Teaches PySpark through a real project pipeline. All materials, videos, and Jupyter notebooks are free on GitHub. Community Discord for Q&A."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Apache Spark 3 & Python 3 — Hands On with Big Data!",
+          "author_year": "Frank Kane · Sundog Education",
+          "rationale": "Frank Kane worked at Amazon building large-scale recommendation systems. This course covers Spark 3 from basics to MLlib and streaming. Best paid Spark course for engineers coming from a Python/data background. Practical focus throughout."
+        }
+      ],
+      "dom_id": "s17"
+    },
+    {
+      "roadmap_number": 18,
+      "name": "Apache Kafka",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "Kafka architecture (brokers, topics, partitions, offsets), producer/consumer APIs, consumer groups, replication and fault tolerance, Kafka Connect for source/sink connectors, Kafka Streams for lightweight stream processing, schema registry with Avro, and deploying Kafka with Docker.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Kafka: The Definitive Guide, 2nd Edition",
+          "author_year": "Shapira, Palino, Sivaram & Petty · 2021",
+          "rationale": "Written by Confluent engineers (who built commercial Kafka). Covers architecture, producers, consumers, streams, Connect, and operations. Free PDF available on Confluent's website. The authoritative reference for Kafka engineering."
+        },
+        {
+          "kind": "free",
+          "platform": "Confluent Developer",
+          "title": "Apache Kafka 101 — Confluent Developer Course",
+          "author_year": "Confluent · developer.confluent.io",
+          "rationale": "Official Kafka courses from the company that maintains it. \"Apache Kafka 101\" is the best starting point — covers all core concepts with short, focused video lessons and interactive exercises. Free. No registration required to access most content."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Apache Kafka Series — Learn Apache Kafka for Beginners v3",
+          "author_year": "Stéphane Maarek · Udemy",
+          "rationale": "Maarek is a Confluent Kafka Certified Engineer and the most trusted Kafka instructor on Udemy. His entire Kafka series (Beginners → Streams → Connect → Schema Registry) is the de facto learning path. Best-in-class paid Kafka curriculum, start with Beginners v3."
+        }
+      ],
+      "dom_id": "s18"
+    },
+    {
+      "roadmap_number": 19,
+      "name": "Data Warehouses (Snowflake / BigQuery / Redshift)",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "MPP (massively parallel processing) architecture, columnar storage, partitioning and clustering, query optimization for analytical workloads, virtual warehouses (Snowflake), materialized views, Time Travel, data sharing, cost optimization, and warehouse vs data lake trade-offs.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Snowflake: The Definitive Guide",
+          "author_year": "Joyce Kay Avila · O'Reilly · 2022",
+          "rationale": "Snowflake holds the largest market share in cloud data warehousing. Avila covers architecture, virtual warehouses, semi-structured data, performance tuning, and security. Snowflake proficiency is the most marketable DE skill in 2024 — this is the book to own it."
+        },
+        {
+          "kind": "free",
+          "platform": "Snowflake / Google",
+          "title": "Snowflake University + Google BigQuery free tier",
+          "author_year": "Snowflake Training · learn.snowflake.com",
+          "rationale": "Snowflake University offers free certification prep courses. \"Badge 1: Data Warehousing Workshop\" covers all core concepts. Pair with Google's BigQuery sandbox (free tier, no credit card needed) for hands-on practice. Both are free with account creation."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Complete Snowflake Masterclass: Zero to Hero",
+          "author_year": "Nikolai Schuler · Udemy",
+          "rationale": "Comprehensive Snowflake course covering architecture, SQL, performance optimization, dbt integration, and Snowpark (Python in Snowflake). Regularly updated for Snowflake's rapid feature releases. Best single paid resource for practical Snowflake engineering."
+        }
+      ],
+      "dom_id": "s19"
+    },
+    {
+      "roadmap_number": 20,
+      "name": "ETL / ELT Pipelines",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "ETL vs ELT architectural differences, incremental vs full-load strategies, idempotency and exactly-once semantics, CDC (change data capture), Airbyte and Fivetran for ingestion, data lineage, backfilling strategies, error handling and dead-letter queues, and pipeline observability.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Fundamentals of Data Engineering",
+          "author_year": "Joe Reis & Matt Housley · O'Reilly · 2022",
+          "rationale": "Chapters 8–9 cover the full data ingestion and transformation lifecycle in depth. This book defines the modern DE field. The pipeline design chapters are the best treatment of ETL/ELT patterns written for practitioners — not academics."
+        },
+        {
+          "kind": "free",
+          "platform": "DataTalks.Club",
+          "title": "Data Engineering Zoomcamp — Full Pipeline Module",
+          "author_year": "Alexey Grigorev · DataTalks.Club",
+          "rationale": "Best free end-to-end pipeline course. Builds a complete ETL pipeline from ingestion (Postgres → GCS/S3) through transformation (dbt) to serving (BigQuery). All code, videos, and homework on GitHub. Completely free."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "The Complete Hands-On Introduction to Apache Airflow",
+          "author_year": "Marc Lamberti · Udemy",
+          "rationale": "Covers the full pipeline orchestration picture: Airflow DAGs, sensors, hooks, XCom, TaskFlow API, and best practices for production pipelines. Lamberti is the most respected Airflow instructor. Best paid course for building orchestrated ETL pipelines end-to-end."
+        }
+      ],
+      "dom_id": "s20"
+    },
+    {
+      "roadmap_number": 21,
+      "name": "Apache Airflow",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "DAG structure (operators, tasks, dependencies), TaskFlow API, schedulers, sensors (FileSensor, HttpSensor), hooks (database connections), XCom for task communication, dynamic DAGs, testing DAGs with pytest, deploying on Docker/K8s, and Airflow 2.x best practices.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Manning",
+          "title": "Data Pipelines with Apache Airflow",
+          "author_year": "Harenslak & de Ruiter · Manning · 2021",
+          "rationale": "The only comprehensive Airflow book in print. Covers DAG design patterns, testing, scaling, and real production deployments. Includes chapters on Kubernetes executor and cloud deployment. The reference book for serious Airflow engineering."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / Astronomer",
+          "title": "Astronomer Academy — Airflow Fundamentals (Free)",
+          "author_year": "Astronomer · astronomer.io/events/webinars",
+          "rationale": "Astronomer is the commercial company behind Apache Airflow. Their free courses and webinars are authoritative. The \"Airflow Fundamentals\" certification prep course is free and covers everything from DAG basics to production deployment patterns."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "The Complete Hands-On Course to Master Apache Airflow",
+          "author_year": "Marc Lamberti · Udemy",
+          "rationale": "Marc Lamberti is the Airflow community's most recognized instructor. This course covers Airflow 2.x, TaskFlow API, custom operators, testing, and Kubernetes deployment. The de facto standard paid Airflow course — 50,000+ students."
+        }
+      ],
+      "dom_id": "s21"
+    },
+    {
+      "roadmap_number": 22,
+      "name": "dbt (data build tool)",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "dbt project structure, models (SQL SELECT statements as tables/views), ref() and source() macros, materializations (table/view/incremental/ephemeral), tests (unique, not_null, accepted_values, relationships), documentation, Jinja templating, seeds, snapshots, and dbt Cloud vs dbt Core.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Analytics Engineering with SQL and dbt",
+          "author_year": "Rui Machado & Hélder Russa · O'Reilly · 2023",
+          "rationale": "The most complete dbt book. Covers the full analytics engineering workflow from raw data to final BI models using dbt. Includes real project walkthroughs with Snowflake and BigQuery. The best resource for learning dbt in a production analytics context."
+        },
+        {
+          "kind": "free",
+          "platform": "dbt Learn",
+          "title": "dbt Fundamentals — Official dbt Course",
+          "author_year": "dbt Labs · learn.getdbt.com",
+          "rationale": "Official free course by dbt Labs (who built dbt). Covers models, sources, tests, documentation, and deployment. Includes hands-on exercises in dbt Cloud. The \"dbt Fundamentals\" certification from this course is recognized in job postings. Completely free."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Complete dbt (Data Build Tool) Bootcamp: Zero to Hero",
+          "author_year": "Zoltan Toth & Miklos Petridisz · Udemy",
+          "rationale": "Builds a complete dbt project on Snowflake from scratch, covering advanced features like packages, hooks, macros, and CI/CD integration. Best paid course for engineers building production-grade dbt projects end-to-end."
+        }
+      ],
+      "dom_id": "s22"
+    },
+    {
+      "roadmap_number": 23,
+      "name": "Dimensional Modeling (Kimball)",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "fact vs dimension tables, star schema vs snowflake schema, slowly changing dimensions (SCD Types 1/2/3), grain definition, degenerate dimensions, junk dimensions, date dimensions, bridge tables, factless fact tables, and the Kimball lifecycle methodology.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Wiley",
+          "title": "The Data Warehouse Toolkit, 3rd Edition",
+          "author_year": "Ralph Kimball & Margy Ross · 2013",
+          "rationale": "The Bible of dimensional modeling. 25 years old, still the definitive reference used by every data warehouse architect. Covers retail, procurement, HR, education, and healthcare schemas. Don't skim — every page is applicable to real projects."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube",
+          "title": "Kahan Data Solutions — Dimensional Modeling Series",
+          "author_year": "Kahan Data Solutions · YouTube",
+          "rationale": "Best free visual introduction to dimensional modeling and data vault. Clear explanations of star schemas, SCD types, and real modeling decisions with diagrams. Pairs perfectly with the Kimball book by visualizing concepts that the book describes in text."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Data Warehouse — The Ultimate Guide",
+          "author_year": "Nikolai Schuler · Udemy",
+          "rationale": "Covers dimensional modeling, data vault, and modern cloud warehouse implementation using Snowflake and dbt. Includes hands-on schema design exercises for multiple business domains. Best paid course connecting Kimball theory to modern cloud warehouse implementation."
+        }
+      ],
+      "dom_id": "s23"
+    },
+    {
+      "roadmap_number": 24,
+      "name": "NoSQL Databases",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "document stores (MongoDB — CRUD, aggregation pipeline, indexing), wide-column stores (Cassandra — CQL, partition key design, replication), key-value stores (Redis — data types, TTL, pub/sub, caching patterns), and the CAP theorem trade-offs that determine which to use.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Seven Databases in Seven Weeks, 2nd Edition",
+          "author_year": "Luc Perkins, Eric Redmond & Jim Wilson · 2018",
+          "rationale": "Covers PostgreSQL, Redis, HBase, MongoDB, CouchDB, Cassandra, and Neo4j in one book. The approach of comparing databases side-by-side teaches you when to use which — the most valuable NoSQL skill. No other book builds this comparative intuition."
+        },
+        {
+          "kind": "free",
+          "platform": "MongoDB University",
+          "title": "MongoDB for Developers — M101 (Free)",
+          "author_year": "MongoDB University · university.mongodb.com",
+          "rationale": "Official free MongoDB courses from MongoDB Inc. \"M001: MongoDB Basics\" and \"M101: MongoDB for Developers\" cover document model, CRUD, aggregation pipelines, and indexing. Pair with Redis University (redis.io/university) which is also free. Both are official certification prep."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "MongoDB — The Complete Developer's Guide 2024",
+          "author_year": "Maximilian Schwarzmüller · Academind",
+          "rationale": "Most comprehensive MongoDB course — covers CRUD, aggregation, indexing, transactions, Atlas, and integration with Node/Python apps. Best paid resource for MongoDB depth before adding Redis and Cassandra for the broader NoSQL picture."
+        }
+      ],
+      "dom_id": "s24"
+    },
+    {
+      "roadmap_number": 25,
+      "name": "Data Quality & Testing",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE"
+      ],
+      "what_you_learn": "data quality dimensions (completeness, accuracy, consistency, timeliness), Great Expectations (expectations, data docs, checkpoints), dbt tests, Soda Core for SQL-based quality checks, anomaly detection, data contracts, and building quality gates into pipelines before data reaches downstream consumers.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Fundamentals of Data Engineering (Ch. 9 — Data Quality)",
+          "author_year": "Joe Reis & Matt Housley · O'Reilly · 2022",
+          "rationale": "No standalone book covers data quality as well as Reis & Housley's treatment in Chapter 9. For tool-specific depth, pair with the Great Expectations documentation (docs.greatexpectations.io) which is tutorial-quality. Together these cover the theory and practice completely."
+        },
+        {
+          "kind": "free",
+          "platform": "Great Expectations Docs",
+          "title": "Great Expectations Official Documentation & Tutorials",
+          "author_year": "Superconductive · docs.greatexpectations.io",
+          "rationale": "GX documentation is written as a practical tutorial series. The \"Getting Started\" through \"How-to Guides\" sections cover everything from first expectations to production data docs. Completely free, maintained by the GX team, includes Spark and SQL engine integrations."
+        },
+        {
+          "kind": "paid",
+          "platform": "DataCamp",
+          "title": "Introduction to Data Quality in Python",
+          "author_year": "DataCamp · Multiple instructors",
+          "rationale": "Covers data quality assessment, profiling with pandas-profiling, validation with Great Expectations, and building quality pipelines. Best structured paid course for engineers new to data quality as a discipline rather than an afterthought."
+        }
+      ],
+      "dom_id": "s25"
+    },
+    {
+      "roadmap_number": 26,
+      "name": "Cloud Platforms (AWS / GCP / Azure)",
+      "declared_track": "de",
+      "declared_tags": [
+        "DE CORE",
+        "ALL TRACKS"
+      ],
+      "what_you_learn": "core compute (EC2/Cloud Run/VMs), object storage (S3/GCS/ADLS), IAM and permissions, networking (VPC, subnets, security groups), managed databases (RDS/Cloud SQL), serverless functions (Lambda/Cloud Functions), container registries, and cost management basics. Pick one cloud deeply.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "AWS Certified Solutions Architect Study Guide",
+          "author_year": "Ben Piper & David Clinton · Sybex · 2023",
+          "rationale": "AWS holds 31% cloud market share — learning AWS first maximizes job options. This study guide covers every core AWS service with architecture trade-offs. Even if you don't take the certification, this book gives you a complete mental model of cloud infrastructure."
+        },
+        {
+          "kind": "free",
+          "platform": "AWS / Google",
+          "title": "AWS Skill Builder + Google Cloud Skills Boost (Free Tier)",
+          "author_year": "AWS Training · Google Cloud",
+          "rationale": "Both AWS Skill Builder and Google Cloud Skills Boost offer free foundational courses. AWS has \"Cloud Practitioner Essentials\" free. Google offers free labs on core GCP services. Both include free tier sandbox environments to practice with real services."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Ultimate AWS Certified Solutions Architect Associate SAA-C03",
+          "author_year": "Stephane Maarek · Udemy",
+          "rationale": "Maarek is the top AWS instructor on Udemy with multiple AWS certifications. This course covers every AWS service with hands-on labs. Most engineers use this both to learn AWS and to pass the SAA-C03 exam — two outcomes for one course."
+        }
+      ],
+      "dom_id": "s26"
+    },
+    {
+      "roadmap_number": 27,
+      "name": "Classical Machine Learning",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "linear/logistic regression, decision trees, random forests, gradient boosting (XGBoost/LightGBM), SVMs, k-means clustering, PCA, cross-validation, regularization (L1/L2), hyperparameter tuning with Scikit-learn's Pipeline API, and when to reach for deep learning vs classical methods.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow, 3rd Ed.",
+          "author_year": "Aurélien Géron · O'Reilly · 2022",
+          "rationale": "The best ML book for practitioners. Part 1 covers all classical ML algorithms through Scikit-learn. Géron's intuitive explanations are why this book is used in Google AI residency prep. The only ML book you need for classical methods — comprehensive and practical."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / StatQuest",
+          "title": "StatQuest Machine Learning Series",
+          "author_year": "Josh Starmer · StatQuest YouTube",
+          "rationale": "Every classical ML algorithm explained from mathematical first principles with animations. Josh covers regression, decision trees, random forests, gradient boosting, SVMs, PCA, clustering — all free. Watch the video for each algorithm before the Géron chapter on it."
+        },
+        {
+          "kind": "paid",
+          "platform": "Coursera",
+          "title": "Machine Learning Specialization",
+          "author_year": "Andrew Ng · DeepLearning.AI · Stanford",
+          "rationale": "The most trusted ML course in the world. 3.6 million learners. Andrew Ng's intuition-first teaching style builds conceptual understanding before math. If you only take one paid ML course, this is it. Updated 2022 to include modern tools and Python."
+        }
+      ],
+      "dom_id": "s27"
+    },
+    {
+      "roadmap_number": 28,
+      "name": "Deep Learning Fundamentals",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "perceptrons, activation functions (ReLU, sigmoid, softmax), forward pass, loss functions (MSE, cross-entropy), backpropagation chain rule, gradient descent (SGD, momentum, Adam, RMSprop), batch normalization, dropout, learning rate scheduling, and vanishing/exploding gradients.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "MIT Press · FREE online",
+          "title": "Deep Learning",
+          "author_year": "Goodfellow, Bengio & Courville · 2016 · Free at deeplearningbook.org",
+          "rationale": "The academic foundation of deep learning. Dense and mathematical — use it as a reference, not a cover-to-cover read. Chapters 6–9 on feedforward networks, backprop, and regularization are the canonical source for these topics. Free online legally."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / Andrej Karpathy",
+          "title": "Neural Networks: Zero to Hero",
+          "author_year": "Andrej Karpathy · YouTube (karpathy.ai)",
+          "rationale": "The best free deep learning course ever created. Karpathy (former Tesla AI Director, OpenAI) builds neural networks from scratch in pure Python/NumPy, then PyTorch, including a GPT from scratch. Every video is dense with insights that take years to acquire otherwise."
+        },
+        {
+          "kind": "paid",
+          "platform": "Coursera",
+          "title": "Deep Learning Specialization",
+          "author_year": "Andrew Ng · DeepLearning.AI",
+          "rationale": "5 courses covering neural networks, optimization, hyperparameter tuning, CNNs, RNNs, and sequence models. 500,000+ completions. The most structured paid deep learning curriculum. Programming assignments in Python/NumPy build every component manually before using frameworks."
+        }
+      ],
+      "dom_id": "s28"
+    },
+    {
+      "roadmap_number": 29,
+      "name": "PyTorch",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "tensors (creation, manipulation, broadcasting), autograd and computational graphs, nn.Module and nn.Sequential, custom Dataset and DataLoader, training loops with optimizer.step(), model saving/loading, moving models to GPU, torchvision, and debugging PyTorch models.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Manning",
+          "title": "Deep Learning with PyTorch",
+          "author_year": "Stevens, Antiga & Viehmann · Manning · 2020 · Free PDF",
+          "rationale": "Written by PyTorch core contributors. Covers tensors, autograd, neural net construction, and real applications (image classification, NLP, generative models). Free PDF available from Manning's website with free account. The authoritative PyTorch book written by people who built it."
+        },
+        {
+          "kind": "free",
+          "platform": "learnpytorch.io",
+          "title": "Learn PyTorch for Deep Learning — Zero to Mastery",
+          "author_year": "Daniel Bourke · learnpytorch.io (free book + YouTube)",
+          "rationale": "The best free PyTorch course/book available. Bourke builds every PyTorch concept with runnable Colab notebooks and a companion YouTube video series. Covers tensors through transformers. Free, continually updated, and structured as a complete course."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "PyTorch for Deep Learning Bootcamp",
+          "author_year": "Jose Portilla · Pierian Training",
+          "rationale": "Covers PyTorch from tensors through CNNs, RNNs, and GANs with Jupyter notebooks for every section. Portilla's courses are known for clarity and depth. Best structured paid PyTorch course for engineers who learn best through video + notebooks."
+        }
+      ],
+      "dom_id": "s29"
+    },
+    {
+      "roadmap_number": 30,
+      "name": "CNNs & Computer Vision",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "convolution operation, filters/feature maps, pooling, CNN architectures (LeNet, VGG, ResNet, EfficientNet), transfer learning (freezing layers, fine-tuning), data augmentation with torchvision/albumentations, object detection (YOLO, Faster R-CNN), and image segmentation basics.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Programming PyTorch for Deep Learning (CV chapters)",
+          "author_year": "Ian Pointer · O'Reilly · 2019",
+          "rationale": "Chapters 3–6 cover CNNs and transfer learning in PyTorch with complete working code. Pair with Stanford's CS231n lecture notes for theoretical depth. For pure CV depth, the fast.ai book (free) is also excellent and goes further into practical techniques."
+        },
+        {
+          "kind": "free",
+          "platform": "Stanford / YouTube",
+          "title": "CS231n: Convolutional Neural Networks for Visual Recognition",
+          "author_year": "Fei-Fei Li, Andrej Karpathy et al. · Stanford · cs231n.github.io",
+          "rationale": "The most cited deep learning course for computer vision. Full lecture notes, slides, and assignments available free at cs231n.github.io. Covers CNNs, optimization, visualization, object detection, and segmentation. Written by the team that created ImageNet."
+        },
+        {
+          "kind": "paid",
+          "platform": "Coursera",
+          "title": "Convolutional Neural Networks (Course 4 of Deep Learning Specialization)",
+          "author_year": "Andrew Ng · DeepLearning.AI",
+          "rationale": "Covers CNN architectures, object detection (YOLO), face recognition, and neural style transfer with programming assignments in TensorFlow/Keras. Best structured paid CV course — practical assignments build real systems, not just train toy models."
+        }
+      ],
+      "dom_id": "s30"
+    },
+    {
+      "roadmap_number": 31,
+      "name": "Transformers & NLP",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "self-attention mechanism, positional encoding, encoder-decoder architecture, BERT (masked language modeling, next sentence prediction), GPT (causal language modeling, autoregressive generation), tokenization (BPE, WordPiece), and fine-tuning pretrained models with HuggingFace.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Natural Language Processing with Transformers (Revised Ed.)",
+          "author_year": "Tunstall, von Werra & Wolf · O'Reilly · 2022",
+          "rationale": "Written by HuggingFace engineers. Covers text classification, NER, QA, summarization, translation, and generation — all using the HuggingFace Transformers library. The definitive practical guide to transformers in production NLP pipelines."
+        },
+        {
+          "kind": "free",
+          "platform": "HuggingFace",
+          "title": "HuggingFace NLP Course",
+          "author_year": "HuggingFace · huggingface.co/learn/nlp-course",
+          "rationale": "Official free course from the team that built the Transformers library. Covers tokenizers, models, fine-tuning, and the HuggingFace Hub. Every chapter has free Colab notebooks. This is the most up-to-date free transformer resource because it's maintained by HuggingFace itself."
+        },
+        {
+          "kind": "paid",
+          "platform": "Coursera",
+          "title": "Natural Language Processing Specialization",
+          "author_year": "DeepLearning.AI · Coursera",
+          "rationale": "4 courses covering NLP with classification, probabilistic models, sequence models, and attention mechanisms. Builds from word vectors through transformers. Best structured paid curriculum for building NLP intuition before diving into HuggingFace."
+        }
+      ],
+      "dom_id": "s31"
+    },
+    {
+      "roadmap_number": 32,
+      "name": "Model Evaluation & Metrics",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "classification metrics (accuracy, precision, recall, F1, AUC-ROC, AUC-PR), regression metrics (MAE, MSE, RMSE, R²), confusion matrix, cross-validation strategies (k-fold, stratified, time-series), calibration, statistical significance testing for model comparisons, and offline vs online evaluation frameworks.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Hands-On Machine Learning (Ch. 3 — Classification) + Designing ML Systems (Ch. 6)",
+          "author_year": "Géron (O'Reilly) + Huyen (O'Reilly)",
+          "rationale": "No single book covers evaluation as well as these two chapters combined. Géron's Chapter 3 (Classification) is the best treatment of metrics for classical ML; Huyen's Chapter 6 covers evaluation for production ML systems including A/B testing and shadow deployment. Read both."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / StatQuest",
+          "title": "StatQuest — ROC and AUC, Precision/Recall, Confusion Matrices",
+          "author_year": "Josh Starmer · StatQuest YouTube",
+          "rationale": "Josh Starmer's videos on AUC-ROC and precision/recall are the clearest explanations of these concepts. His \"ROC and AUC, Clearly Explained!\" video (3M+ views) builds the geometric intuition that makes these metrics feel obvious rather than arbitrary."
+        },
+        {
+          "kind": "paid",
+          "platform": "Coursera",
+          "title": "Machine Learning in Production (MLOps Specialization — Course 1)",
+          "author_year": "Andrew Ng · DeepLearning.AI",
+          "rationale": "The first course of the MLOps specialization covers model evaluation in production — not just on a test set. Covers data drift, concept drift, slicing analysis, and evaluation infrastructure. Best paid resource for evaluation as a production engineering discipline."
+        }
+      ],
+      "dom_id": "s32"
+    },
+    {
+      "roadmap_number": 33,
+      "name": "Feature Engineering",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "encoding categoricals (one-hot, target, embedding), scaling (standard, min-max, robust), handling missing data strategies, creating interaction features, time-series features (lag, rolling, Fourier), feature selection (mutual information, RFE), and feature stores (Feast, Tecton) for online/offline consistency.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Feature Engineering for Machine Learning",
+          "author_year": "Alice Zheng & Amanda Casari · O'Reilly · 2018",
+          "rationale": "The only book entirely dedicated to feature engineering. Covers numerical, categorical, text, and image features with worked examples. Alice Zheng was a research scientist at Microsoft and Google. This skill determines model performance more than architecture choices — own it completely."
+        },
+        {
+          "kind": "free",
+          "platform": "Kaggle",
+          "title": "Feature Engineering Course — Kaggle Learn",
+          "author_year": "Ryan Holbrook · Kaggle.com/learn",
+          "rationale": "Kaggle's free feature engineering course is practical and immediately applicable. Covers mutual information, creating features from domain knowledge, target encoding, and principal component analysis. Interactive Jupyter notebooks. Completely free. 4 hours to complete."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Feature Engineering for Machine Learning",
+          "author_year": "Soledad Galli · Train in Data · Udemy",
+          "rationale": "Soledad Galli (former HSBC quantitative analyst) is the leading educator on feature engineering. Covers every encoding and imputation technique with Python. Most comprehensive paid feature engineering course, especially strong for tabular/financial data."
+        }
+      ],
+      "dom_id": "s33"
+    },
+    {
+      "roadmap_number": 34,
+      "name": "Experiment Tracking (MLflow / W&B)",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "logging hyperparameters, metrics, and artifacts, run comparison and visualization, model registry (MLflow), tagging and filtering experiments, integration with PyTorch/Scikit-learn training loops, hyperparameter sweeps (W&B Sweeps / MLflow Projects), and deploying a self-hosted MLflow tracking server.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Designing Machine Learning Systems (Ch. 6 — Model Development)",
+          "author_year": "Chip Huyen · O'Reilly · 2022",
+          "rationale": "Huyen's Chapter 6 is the most thorough treatment of experiment management as a production engineering discipline. No standalone book covers MLflow + W&B as well as DMLS Chapter 6 combined with the official MLflow documentation (mlflow.org/docs), which is tutorial-quality."
+        },
+        {
+          "kind": "free",
+          "platform": "Weights & Biases",
+          "title": "W&B Courses — Effective MLOps: Model Development",
+          "author_year": "Weights & Biases · wandb.ai/fully-connected",
+          "rationale": "Weights & Biases offers free courses built on their own platform. \"Effective MLOps: Model Development\" covers experiment tracking, model versioning, and sweeps using W&B. Best for engineers targeting companies that use W&B (OpenAI, NVIDIA, etc.). Completely free."
+        },
+        {
+          "kind": "paid",
+          "platform": "DataCamp",
+          "title": "MLflow for ML Experiment Tracking",
+          "author_year": "DataCamp · Multiple instructors",
+          "rationale": "Covers MLflow tracking, projects, models, and registry with hands-on Python exercises. Includes deployment patterns. Best paid structured course for MLflow specifically — used more than W&B in enterprise/open-source production environments."
+        }
+      ],
+      "dom_id": "s34"
+    },
+    {
+      "roadmap_number": 35,
+      "name": "HuggingFace Ecosystem",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE"
+      ],
+      "what_you_learn": "Transformers library (pipeline API, AutoModel/AutoTokenizer, Trainer API), Datasets library for efficient data loading, HuggingFace Hub (uploading/sharing models and datasets), PEFT library for efficient fine-tuning, Accelerate for distributed training, and Spaces for deploying Gradio/Streamlit ML demos.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Natural Language Processing with Transformers (Revised Ed.)",
+          "author_year": "Tunstall, von Werra & Wolf · O'Reilly · 2022",
+          "rationale": "Written by HuggingFace engineers. Every code example uses the HuggingFace ecosystem. Chapter code available free on GitHub (github.com/nlp-with-transformers). This book IS the HuggingFace ecosystem book — the authors built the library being taught."
+        },
+        {
+          "kind": "free",
+          "platform": "HuggingFace",
+          "title": "HuggingFace Deep RL Course + NLP Course",
+          "author_year": "HuggingFace · huggingface.co/learn",
+          "rationale": "HuggingFace's own learn.huggingface.co offers multiple free courses. The NLP course and Deep RL course both use the HuggingFace ecosystem throughout. Always up to date with the latest library versions. Free, with free GPU compute via Colab integration."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Complete Generative AI Course With Langchain and HuggingFace",
+          "author_year": "Krish Naik · Udemy",
+          "rationale": "Covers HuggingFace Transformers, PEFT fine-tuning, LangChain integration, and deployment. Naik is one of the most active AI educators in the community. Best paid course for applying the HuggingFace ecosystem to real LLM applications beyond basic NLP tasks."
+        }
+      ],
+      "dom_id": "s35"
+    },
+    {
+      "roadmap_number": 36,
+      "name": "MLOps & Model Deployment",
+      "declared_track": "ml",
+      "declared_tags": [
+        "ML CORE",
+        "CONVERGENCE"
+      ],
+      "what_you_learn": "model serialization (pickle, ONNX, TorchScript), serving frameworks (TorchServe, TF Serving, BentoML, FastAPI wrapper), containerizing models with Docker, monitoring predictions for drift, A/B testing model variants, shadow deployment, model registry workflows, and CI/CD for ML models.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Designing Machine Learning Systems",
+          "author_year": "Chip Huyen · O'Reilly · 2022",
+          "rationale": "The best book on taking ML from prototype to production. Covers data pipelines, feature stores, model development, deployment, monitoring, and infrastructure. Every ML engineer needs to read this book. Chip Huyen advised companies including Snorkel AI, NVIDIA, and Netflix on ML systems."
+        },
+        {
+          "kind": "free",
+          "platform": "Made With ML",
+          "title": "Made With ML — MLOps Course",
+          "author_year": "Goku Mohandas · madewithml.com",
+          "rationale": "The best free end-to-end MLOps course. Goku Mohandas (former Apple, Google) builds a complete ML service from data annotation through model serving, monitoring, and CI/CD — all free. Covers FastAPI serving, Docker, testing ML code, and GitHub Actions for ML. Over 40,000 students."
+        },
+        {
+          "kind": "paid",
+          "platform": "Coursera",
+          "title": "Machine Learning Engineering for Production (MLOps) Specialization",
+          "author_year": "Andrew Ng · DeepLearning.AI",
+          "rationale": "4 courses covering ML pipelines, feature engineering for production, model deployment, and model monitoring. Uses TFX (Google's production ML framework) with real industry patterns. The most systematic paid curriculum for ML production engineering."
+        }
+      ],
+      "dom_id": "s36"
+    },
+    {
+      "roadmap_number": 37,
+      "name": "LLMs & Fine-Tuning (LoRA / RLHF)",
+      "declared_track": "spec",
+      "declared_tags": [
+        "SPECIALIZATION",
+        "HIGHEST DEMAND"
+      ],
+      "what_you_learn": "LLM pretraining concepts (next-token prediction, tokenization, scaling laws), instruction fine-tuning, LoRA/QLoRA (low-rank adaptation for efficient fine-tuning), RLHF pipeline (reward model, PPO), PEFT library, quantization (4-bit, 8-bit), Axolotl/LLaMA-Factory for fine-tuning, and evaluating fine-tuned models.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Manning (2024)",
+          "title": "Build a Large Language Model (From Scratch)",
+          "author_year": "Sebastian Raschka · Manning · 2024",
+          "rationale": "Builds a GPT-style LLM from scratch in Python/PyTorch — pretraining, instruction fine-tuning, and RLHF. Raschka is a research scientist at Lightning AI. The most technically rigorous LLM book for engineers who want to understand the full stack, not just use the API."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / Andrej Karpathy",
+          "title": "Let's build GPT: from scratch, in code, spelled out",
+          "author_year": "Andrej Karpathy · YouTube · 2023",
+          "rationale": "The most watched and cited LLM tutorial. Karpathy builds a character-level GPT from scratch, explaining every line of code. Companion to his \"Neural Networks: Zero to Hero\" series. After this video, the Transformer architecture has no mystery. 3 hours, completely free."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Finetuning Large Language Models",
+          "author_year": "Sharon Zhou · DeepLearning.AI (short course, low cost)",
+          "rationale": "Covers full fine-tuning, LoRA, and RLHF concepts with hands-on Jupyter notebooks. Sharon Zhou (Stanford PhD, Lamini AI CEO) is the leading educator on LLM fine-tuning. Best paid practical course for LoRA/RLHF fine-tuning with working code. ~$49 on DeepLearning.AI."
+        }
+      ],
+      "dom_id": "s37"
+    },
+    {
+      "roadmap_number": 38,
+      "name": "RAG & Vector Databases",
+      "declared_track": "spec",
+      "declared_tags": [
+        "SPECIALIZATION",
+        "LLM APPS"
+      ],
+      "what_you_learn": "embedding models (sentence-transformers, OpenAI embeddings), vector similarity search (cosine, dot product, L2), chunking strategies, vector databases (Pinecone, Weaviate, Chroma, pgvector), RAG pipeline architecture (retrieve → augment → generate), reranking, hybrid search, and evaluating RAG quality (RAGAS framework).",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly · 2024",
+          "title": "Building LLM Apps: A Practitioner's Guide",
+          "author_year": "Valentina Alto · Packt · 2024",
+          "rationale": "Covers RAG architectures, vector stores, LangChain, LlamaIndex, and evaluation frameworks for LLM applications. Most complete practical book for RAG pipeline engineering in 2024. Pair with the LlamaIndex documentation (docs.llamaindex.ai) which is excellent and free."
+        },
+        {
+          "kind": "free",
+          "platform": "DeepLearning.AI",
+          "title": "Building and Evaluating Advanced RAG — DeepLearning.AI Short Course",
+          "author_year": "DeepLearning.AI + LlamaIndex · deeplearning.ai/short-courses",
+          "rationale": "Free short course from DeepLearning.AI covering advanced RAG patterns. Builds sentence window retrieval, auto-merging retrieval, and RAG evaluation with RAGAS. All short courses on DeepLearning.AI are free. This is one of the most practical immediately applicable."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "LangChain & Vector Databases in Production",
+          "author_year": "Activeloop Team · Udemy / learn.activeloop.ai",
+          "rationale": "Covers LangChain, vector databases (Deep Lake, Pinecone, Weaviate), embeddings, and building production RAG pipelines. Best paid course for end-to-end RAG application development with multiple vector DB options covered."
+        }
+      ],
+      "dom_id": "s38"
+    },
+    {
+      "roadmap_number": 39,
+      "name": "Distributed Training",
+      "declared_track": "spec",
+      "declared_tags": [
+        "SPECIALIZATION",
+        "ADVANCED ML"
+      ],
+      "what_you_learn": "data parallelism (DDP — DistributedDataParallel), model parallelism (tensor/pipeline parallelism), ZeRO optimization stages (DeepSpeed), FSDP (Fully Sharded Data Parallel), gradient accumulation, mixed precision training (FP16/BF16), checkpoint sharding, and multi-node training on GPU clusters.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Manning · 2024",
+          "title": "Build a Large Language Model (From Scratch) — Ch. on Training at Scale",
+          "author_year": "Sebastian Raschka · Manning · 2024",
+          "rationale": "Raschka's book includes dedicated sections on distributed training with PyTorch's DDP and FSDP. Pair with the DeepSpeed documentation (deepspeed.ai/docs) and PyTorch's official distributed training tutorials — together these three free/paid resources cover all distributed training scenarios."
+        },
+        {
+          "kind": "free",
+          "platform": "HuggingFace / PyTorch",
+          "title": "HuggingFace Accelerate Documentation + PyTorch DDP Tutorial",
+          "author_year": "HuggingFace · PyTorch Official Docs",
+          "rationale": "HuggingFace Accelerate abstracts DDP/FSDP/DeepSpeed into a unified API — it's what most engineers actually use. The Accelerate docs are tutorial-quality. Pair with PyTorch's official DDP tutorial (pytorch.org/tutorials) for the underlying mechanics. Both free."
+        },
+        {
+          "kind": "paid",
+          "platform": "Weights & Biases",
+          "title": "Training & Fine-tuning LLMs for Production (LLM Engineering)",
+          "author_year": "Weights & Biases · wandb.ai/courses",
+          "rationale": "Covers distributed fine-tuning of LLMs using DeepSpeed, FSDP, and QLoRA with W&B for tracking. Built by W&B engineers for production GPU cluster workflows. Best paid course for distributed training in the context of LLMs specifically."
+        }
+      ],
+      "dom_id": "s39"
+    },
+    {
+      "roadmap_number": 40,
+      "name": "Distributed Systems (Advanced)",
+      "declared_track": "spec",
+      "declared_tags": [
+        "SPECIALIZATION",
+        "SYSTEMS CRITICAL"
+      ],
+      "what_you_learn": "CAP theorem in practice, consistency models (linearizability, eventual, causal), distributed transactions (2PC, Saga), consensus algorithms (Raft, Paxos intuition), leader election, distributed clocks (vector clocks, Lamport timestamps), partition handling strategies, and designing for failure (circuit breakers, bulkheads, timeouts).",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Designing Data-Intensive Applications",
+          "author_year": "Martin Kleppmann · O'Reilly · 2017",
+          "rationale": "Part 2 (Chapters 5–9) is the best treatment of distributed systems for practitioners ever written. Covers replication, partitioning, transactions, consistency, and consensus with real-world examples. This book is mandatory for any engineer targeting staff-level roles at Google, Meta, or Amazon."
+        },
+        {
+          "kind": "free",
+          "platform": "MIT / CMU",
+          "title": "MIT 6.824: Distributed Systems",
+          "author_year": "Robert Morris et al. · MIT · pdos.csail.mit.edu/6.824",
+          "rationale": "The most rigorous free distributed systems course available. Lecture videos, reading list (GFS, MapReduce, Raft, Spanner papers), and Go programming labs that implement Raft from scratch. Used as reference by Google and Amazon engineers preparing for staff-level interviews."
+        },
+        {
+          "kind": "paid",
+          "platform": "Educative.io",
+          "title": "Grokking the Principles and Practices of Advanced System Design",
+          "author_year": "Design Gurus · educative.io",
+          "rationale": "Covers advanced distributed systems patterns — consistent hashing, distributed caching, coordination services, and real architectures (Dynamo, Cassandra, Spanner). Best paid resource for engineers transitioning from system design basics to distributed systems depth."
+        }
+      ],
+      "dom_id": "s40"
+    },
+    {
+      "roadmap_number": 41,
+      "name": "Streaming Systems (Flink / Spark Streaming)",
+      "declared_track": "spec",
+      "declared_tags": [
+        "SPECIALIZATION",
+        "DE ADVANCED"
+      ],
+      "what_you_learn": "streaming vs micro-batch architecture, event time vs processing time, watermarks and late data handling, windows (tumbling, sliding, session), stateful stream processing, Apache Flink (DataStream API, Table API), Spark Structured Streaming, exactly-once semantics, and stream-table join patterns.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly",
+          "title": "Streaming Systems",
+          "author_year": "Tyler Akidau, Slava Chernyak & Reuven Lax · O'Reilly · 2018",
+          "rationale": "Written by the Google Dataflow team — the people who invented the streaming model. Covers the Beam model (windows, watermarks, triggers, accumulation) in depth. This is the theoretical foundation for all streaming systems including Flink and Spark Structured Streaming."
+        },
+        {
+          "kind": "free",
+          "platform": "Apache Flink / YouTube",
+          "title": "Apache Flink Official Training + Flink Forward Talks",
+          "author_year": "Apache Flink · nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink",
+          "rationale": "Apache Flink's official training documentation is tutorial-quality and free. The \"Learn Flink\" section covers DataStream API from basics to stateful processing. Supplement with Flink Forward conference talks on YouTube for production patterns used at Uber, Netflix, and Alibaba."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Apache Flink — Real-Time Data Engineering",
+          "author_year": "Lior Gavish · Udemy",
+          "rationale": "Covers Flink DataStream API, Table API, Kafka integration, stateful processing, and deployment on Kubernetes. Best paid course for Flink specifically, covering the full stack from source to sink with real use cases (fraud detection, real-time analytics)."
+        }
+      ],
+      "dom_id": "s41"
+    },
+    {
+      "roadmap_number": 42,
+      "name": "Data Lakehouse (Iceberg / Delta Lake)",
+      "declared_track": "spec",
+      "declared_tags": [
+        "SPECIALIZATION",
+        "DE ADVANCED"
+      ],
+      "what_you_learn": "data lake vs data warehouse vs lakehouse architecture, open table formats (Apache Iceberg, Delta Lake, Apache Hudi), ACID transactions on object storage, schema evolution, time travel / table versioning, partition evolution, metadata management, and connecting lakehouse tables to Spark/Flink/Trino.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly · 2024",
+          "title": "Apache Iceberg: The Definitive Guide",
+          "author_year": "Tomer Shiran, Jason Hughes & Alex Merced · O'Reilly · 2024",
+          "rationale": "Written by Dremio engineers — the leading Iceberg contributors. Covers Iceberg architecture, table evolution, time travel, Spark/Flink integration, and comparison with Delta Lake and Hudi. Iceberg is winning the open table format war — this is the book to own it deeply."
+        },
+        {
+          "kind": "free",
+          "platform": "Databricks",
+          "title": "Delta Lake Documentation + Databricks Academy Free Courses",
+          "author_year": "Databricks · docs.delta.io / academy.databricks.com",
+          "rationale": "Delta Lake documentation is tutorial-quality and free. Databricks Academy offers free \"Data Engineering with Databricks\" modules that cover Delta Lake, Unity Catalog, and lakehouse architecture. Free with account registration. Regularly updated for new Databricks features."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Apache Iceberg Crash Course: Data Lakehouse with Dremio & Spark",
+          "author_year": "Alex Merced · Udemy",
+          "rationale": "Alex Merced is a Developer Advocate at Dremio — he's one of the primary Iceberg educators in the community. Covers Iceberg with Spark, Flink, and Dremio hands-on. Best practical paid course for Iceberg specifically, taught by someone who works on it professionally."
+        }
+      ],
+      "dom_id": "s42"
+    },
+    {
+      "roadmap_number": 43,
+      "name": "Observability & Monitoring",
+      "declared_track": "spec",
+      "declared_tags": [
+        "SPECIALIZATION",
+        "SRE / DEVOPS"
+      ],
+      "what_you_learn": "the three pillars (logs, metrics, traces), Prometheus metrics collection and PromQL, Grafana dashboards and alerting, structured logging with JSON, distributed tracing with Jaeger/Zipkin, OpenTelemetry instrumentation, SLOs and error budgets, on-call runbooks, and ML-specific monitoring (data drift, prediction drift, model performance degradation).",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "O'Reilly · FREE online",
+          "title": "Site Reliability Engineering (Google SRE Book)",
+          "author_year": "Beyer, Jones, Petoff & Murphy · Google · Free at sre.google/books",
+          "rationale": "The foundational text for monitoring, SLOs, and operational excellence. Chapters 4 (SLOs), 6 (Monitoring), and 12 (On-call) are the most referenced. Completely free at sre.google/books. How Google operates services at scale — monitoring is central to the entire SRE discipline."
+        },
+        {
+          "kind": "free",
+          "platform": "YouTube / TechWorld with Nana",
+          "title": "Prometheus & Grafana Complete Tutorial",
+          "author_year": "TechWorld with Nana · YouTube",
+          "rationale": "Best free video tutorial for setting up Prometheus + Grafana. Nana covers metrics collection, exporters, PromQL, alert rules, and dashboard creation in a Kubernetes environment. Her videos are exceptionally clear and practical. Pair with the OpenTelemetry documentation for distributed tracing."
+        },
+        {
+          "kind": "paid",
+          "platform": "Udemy",
+          "title": "Monitoring and Alerting with Prometheus",
+          "author_year": "James Spurin · Udemy",
+          "rationale": "Covers Prometheus architecture, exporters, alertmanager, PromQL, recording rules, and Grafana integration with a Docker/Kubernetes lab environment. Best paid course for building a complete Prometheus-based observability stack from scratch in a real environment."
+        }
+      ],
+      "dom_id": "s43"
+    },
+    {
+      "roadmap_number": 44,
+      "name": "Kubernetes Advanced / Helm",
+      "declared_track": "spec",
+      "declared_tags": [
+        "SPECIALIZATION",
+        "PLATFORM ENG"
+      ],
+      "what_you_learn": "Helm chart authoring, templating, values files, chart repositories, RBAC (service accounts, roles, cluster roles), network policies, StatefulSets, persistent volumes, HPA/VPA for autoscaling, Kubernetes operators, GitOps with ArgoCD/Flux, admission controllers, and securing production clusters.",
+      "intended_resources": [
+        {
+          "kind": "book",
+          "platform": "Manning",
+          "title": "The Kubernetes Book (2024 Edition)",
+          "author_year": "Nigel Poulton · 2024",
+          "rationale": "Updated annually. The most concise yet complete Kubernetes reference. Covers pods, deployments, services, storage, security, and Helm. Poulton's annual updates keep this the freshest Kubernetes book — critical in a fast-moving ecosystem. Pair with Helm's official documentation for chart authoring depth."
+        },
+        {
+          "kind": "free",
+          "platform": "KodeKloud",
+          "title": "Kubernetes for Beginners + CKA Course Preview (KodeKloud Free)",
+          "author_year": "Mumshad Mannambeth · KodeKloud.com",
+          "rationale": "KodeKloud has the best Kubernetes labs environment. The free tier includes Kubernetes fundamentals with a browser-based lab. Mumshad's CKA prep course is the most trusted Kubernetes certification resource. The lab environment simulates real cluster operations without any local setup."
+        },
+        {
+          "kind": "paid",
+          "platform": "KodeKloud / Udemy",
+          "title": "Certified Kubernetes Administrator (CKA) with Practice Tests",
+          "author_year": "Mumshad Mannambeth · KodeKloud",
+          "rationale": "The CKA is the most respected Kubernetes certification. Mumshad's prep course covers all exam objectives plus advanced topics (Helm, operators, GitOps). The CKA itself validates advanced Kubernetes skills — this course both teaches and certifies simultaneously. Best ROI of any DevOps paid course."
+        }
+      ],
+      "dom_id": "s44"
+    }
+  ],
+  "sidebar": [
+    {
+      "number": "01",
+      "name": "Python Programming",
+      "target": "scrollTo('s1')"
+    },
+    {
+      "number": "02",
+      "name": "SQL",
+      "target": "scrollTo('s2')"
+    },
+    {
+      "number": "03",
+      "name": "Linear Algebra",
+      "target": "scrollTo('s3')"
+    },
+    {
+      "number": "04",
+      "name": "Probability & Statistics",
+      "target": "scrollTo('s4')"
+    },
+    {
+      "number": "05",
+      "name": "Git & Version Control",
+      "target": "scrollTo('s5')"
+    },
+    {
+      "number": "06",
+      "name": "Linux / Command Line",
+      "target": "scrollTo('s6')"
+    },
+    {
+      "number": "07",
+      "name": "Data Structures",
+      "target": "scrollTo('s7')"
+    },
+    {
+      "number": "08",
+      "name": "Algorithms & Big-O",
+      "target": "scrollTo('s8')"
+    },
+    {
+      "number": "09",
+      "name": "Design Patterns",
+      "target": "scrollTo('s9')"
+    },
+    {
+      "number": "10",
+      "name": "Web Frameworks",
+      "target": "scrollTo('s10')"
+    },
+    {
+      "number": "11",
+      "name": "Testing & TDD",
+      "target": "scrollTo('s11')"
+    },
+    {
+      "number": "12",
+      "name": "Docker & Kubernetes",
+      "target": "scrollTo('s12')"
+    },
+    {
+      "number": "13",
+      "name": "CI/CD Pipelines",
+      "target": "scrollTo('s13')"
+    },
+    {
+      "number": "14",
+      "name": "Security (OWASP/Auth)",
+      "target": "scrollTo('s14')"
+    },
+    {
+      "number": "15",
+      "name": "Async Programming",
+      "target": "scrollTo('s15')"
+    },
+    {
+      "number": "16",
+      "name": "System Design",
+      "target": "scrollTo('s16')"
+    },
+    {
+      "number": "17",
+      "name": "Apache Spark / PySpark",
+      "target": "scrollTo('s17')"
+    },
+    {
+      "number": "18",
+      "name": "Apache Kafka",
+      "target": "scrollTo('s18')"
+    },
+    {
+      "number": "19",
+      "name": "Data Warehouses",
+      "target": "scrollTo('s19')"
+    },
+    {
+      "number": "20",
+      "name": "ETL / ELT Pipelines",
+      "target": "scrollTo('s20')"
+    },
+    {
+      "number": "21",
+      "name": "Apache Airflow",
+      "target": "scrollTo('s21')"
+    },
+    {
+      "number": "22",
+      "name": "dbt",
+      "target": "scrollTo('s22')"
+    },
+    {
+      "number": "23",
+      "name": "Dimensional Modeling",
+      "target": "scrollTo('s23')"
+    },
+    {
+      "number": "24",
+      "name": "NoSQL Databases",
+      "target": "scrollTo('s24')"
+    },
+    {
+      "number": "25",
+      "name": "Data Quality & Testing",
+      "target": "scrollTo('s25')"
+    },
+    {
+      "number": "26",
+      "name": "Cloud Platforms",
+      "target": "scrollTo('s26')"
+    },
+    {
+      "number": "27",
+      "name": "Classical ML",
+      "target": "scrollTo('s27')"
+    },
+    {
+      "number": "28",
+      "name": "Deep Learning Fundamentals",
+      "target": "scrollTo('s28')"
+    },
+    {
+      "number": "29",
+      "name": "PyTorch",
+      "target": "scrollTo('s29')"
+    },
+    {
+      "number": "30",
+      "name": "CNNs & Computer Vision",
+      "target": "scrollTo('s30')"
+    },
+    {
+      "number": "31",
+      "name": "Transformers & NLP",
+      "target": "scrollTo('s31')"
+    },
+    {
+      "number": "32",
+      "name": "Model Evaluation & Metrics",
+      "target": "scrollTo('s32')"
+    },
+    {
+      "number": "33",
+      "name": "Feature Engineering",
+      "target": "scrollTo('s33')"
+    },
+    {
+      "number": "34",
+      "name": "Experiment Tracking",
+      "target": "scrollTo('s34')"
+    },
+    {
+      "number": "35",
+      "name": "HuggingFace Ecosystem",
+      "target": "scrollTo('s35')"
+    },
+    {
+      "number": "36",
+      "name": "MLOps & Model Deployment",
+      "target": "scrollTo('s36')"
+    },
+    {
+      "number": "37",
+      "name": "LLMs & Fine-Tuning",
+      "target": "scrollTo('s37')"
+    },
+    {
+      "number": "38",
+      "name": "RAG & Vector Databases",
+      "target": "scrollTo('s38')"
+    },
+    {
+      "number": "39",
+      "name": "Distributed Training",
+      "target": "scrollTo('s39')"
+    },
+    {
+      "number": "40",
+      "name": "Distributed Systems",
+      "target": "scrollTo('s40')"
+    },
+    {
+      "number": "41",
+      "name": "Streaming Systems",
+      "target": "scrollTo('s41')"
+    },
+    {
+      "number": "42",
+      "name": "Data Lakehouse",
+      "target": "scrollTo('s42')"
+    },
+    {
+      "number": "43",
+      "name": "Observability & Monitoring",
+      "target": "scrollTo('s43')"
+    },
+    {
+      "number": "44",
+      "name": "Kubernetes Advanced",
+      "target": "scrollTo('s44')"
+    }
+  ]
+}

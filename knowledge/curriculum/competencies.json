@@ -1,0 +1,2702 @@
+{
+  "version": "1.0.0",
+  "last_reviewed": "2026-10-12",
+  "id_scheme": "DOMAIN-NN. Identifiers are stable: a competency keeps its id even if its title is refined.",
+  "field_notes": {
+    "outcomes": "Observable abilities. Each begins with a verb that can be demonstrated and assessed, not with 'understand'.",
+    "prerequisites": "Edges carry the reason for the dependency, because a prerequisite graph without justification is decoration.",
+    "source_coverage.status": "sourced | partial | none. 'sourced' means the supplied book teaches the competency at the target level; 'partial' means it contributes but does not complete it; 'none' means no supplied source covers it yet.",
+    "source_coverage.mml_sections": "Section identifiers from knowledge/sources/mml/structure.json, verified against the source index.",
+    "roadmap_skills": "SK identifiers from the user's roadmaps (knowledge/roadmaps/consolidated-inventory.json)."
+  },
+  "competencies": [
+    {
+      "id": "MATH-01",
+      "domain": "MATH",
+      "name": "Vectors, vector spaces and linear independence",
+      "why": "Every model parameter, activation and embedding is a vector in a space whose structure determines what operations are legal.",
+      "outcomes": [
+        "Decide whether a given set of vectors is linearly independent and justify the conclusion with a computation.",
+        "Explain what a subspace is and verify whether a given subset is one."
+      ],
+      "prerequisites": [],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7"
+        ],
+        "supplemental_needed": [],
+        "notes": "Groups, fields, subspaces, spanning sets, basis and rank are developed with proofs in the book."
+      }
+    },
+    {
+      "id": "MATH-02",
+      "domain": "MATH",
+      "name": "Matrices as linear mappings",
+      "why": "Matrix multiplication is composition of transformations; without that reading, neural network layers are just index arithmetic.",
+      "outcomes": [
+        "Given a linear mapping between specified spaces, write its matrix in a given basis and explain each entry.",
+        "Compute image and kernel of a mapping and interpret them geometrically.",
+        "Explain why the shape rules of matrix multiplication follow from function composition."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-01",
+          "because": "A mapping's matrix representation is defined relative to bases of the spaces it maps between."
+        },
+        {
+          "id": "MATH-03",
+          "because": "Treating Ax=b as a mapping is only meaningful once the solution behaviour of systems is understood."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "2.2",
+          "2.6",
+          "2.7",
+          "2.8",
+          "3.9"
+        ],
+        "supplemental_needed": [],
+        "notes": "Includes basis change and affine mappings, which are the prerequisite for understanding attention and normalisation layers."
+      }
+    },
+    {
+      "id": "MATH-03",
+      "domain": "MATH",
+      "name": "Systems of linear equations and elimination",
+      "why": "Solvability, uniqueness and numerical behaviour of linear systems decide whether a fitting procedure produces a usable answer.",
+      "outcomes": [
+        "Solve a system by Gaussian elimination, stating the row operations used and the resulting solution set.",
+        "Classify a system as having no, one, or infinitely many solutions from its reduced row echelon form.",
+        "Explain what pivoting does and why the naive order of operations can fail numerically."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-01",
+          "because": "The solution set of a consistent system is described in the language of spans and subspaces."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "2.1",
+          "2.3"
+        ],
+        "supplemental_needed": [
+          "Numerical stability of elimination and pivoting strategies beyond the book's brief remarks"
+        ],
+        "notes": "The book covers particular/general solutions, the minus-1 trick and algorithmic aspects; it does not develop floating-point analysis."
+      }
+    },
+    {
+      "id": "MATH-04",
+      "domain": "MATH",
+      "name": "Norms, inner products and orthogonality",
+      "why": "Loss functions, similarity measures and regularisation are all built from a choice of norm or inner product.",
+      "outcomes": [
+        "Show that a candidate function is or is not an inner product by checking the defining properties.",
+        "Choose an appropriate norm for a stated problem and explain the consequences of the choice.",
+        "Compute the angle between two vectors and decide orthogonality."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-01",
+          "because": "Inner products are defined on vector spaces and induce the metric structure used throughout."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.9",
+          "12.4"
+        ],
+        "supplemental_needed": [],
+        "notes": "Includes inner products of functions, which matters later for kernels."
+      }
+    },
+    {
+      "id": "MATH-05",
+      "domain": "MATH",
+      "name": "Orthogonal projection and least squares geometry",
+      "why": "Least squares, PCA and the attention mechanism are all projections onto subspaces; the geometry makes their properties visible.",
+      "outcomes": [
+        "Derive the projection of a vector onto a subspace given a basis of that subspace.",
+        "Explain in geometric terms why the residual of a least-squares fit is orthogonal to the column space.",
+        "Derive the normal equations and state when they are a bad idea numerically."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-04",
+          "because": "Orthogonal projection is defined through the inner product."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "3.5",
+          "3.6",
+          "3.8",
+          "9.4",
+          "10.3",
+          "12.1"
+        ],
+        "supplemental_needed": [
+          "QR and iterative solvers as practical alternatives to the normal equations"
+        ],
+        "notes": "The book derives projections in Chapter 3 and reuses them to interpret maximum-likelihood linear regression in Section 9.4."
+      }
+    },
+    {
+      "id": "MATH-06",
+      "domain": "MATH",
+      "name": "Determinants, eigenvalues and eigenvectors",
+      "why": "Eigenvalues describe how a transformation scales its invariant directions, which underpins stability, spectral methods and Hessian analysis.",
+      "outcomes": [
+        "Compute eigenvalues and eigenvectors of a small matrix by hand and verify the result by substitution.",
+        "Explain what the determinant says about invertibility and volume scaling, including its sign.",
+        "Determine whether a matrix is diagonalisable and explain what failure to be diagonalisable means."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-02",
+          "because": "Eigenvectors are the directions a linear mapping preserves, so the mapping reading of matrices comes first."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "4.1",
+          "4.2"
+        ],
+        "supplemental_needed": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "MATH-07",
+      "domain": "MATH",
+      "name": "Matrix decompositions",
+      "why": "Decompositions expose structure that makes computation stable and interpretation possible.",
+      "outcomes": [
+        "State the existence conditions of the Cholesky, eigendecomposition and SVD, and give an example that violates each condition.",
+        "Use the SVD to describe the action of a matrix as rotation, scaling and rotation.",
+        "Relate the eigendecomposition of a symmetric positive-definite matrix to its Cholesky factor."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-06",
+          "because": "Eigendecomposition is defined through eigenvalues and eigenvectors."
+        },
+        {
+          "id": "MATH-04",
+          "because": "The SVD and Cholesky are stated in terms of orthonormal bases and positivity conditions."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.7",
+          "6.5"
+        ],
+        "supplemental_needed": [
+          "Cost and stability comparison of the algorithms that compute these decompositions"
+        ],
+        "notes": "Section 4.7 (matrix phylogeny) is a synthesis of the conditions under which each decomposition exists."
+      }
+    },
+    {
+      "id": "MATH-08",
+      "domain": "MATH",
+      "name": "Low-rank approximation and compression",
+      "why": "Rank-truncated representations are how dimensionality reduction, model compression and latent-factor methods actually work.",
+      "outcomes": [
+        "Derive the best rank-k approximation in the Frobenius norm from the SVD and state the size of the error.",
+        "Apply rank truncation to a data matrix and interpret the retained components.",
+        "Explain the trade-off between representation size and reconstruction error."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-07",
+          "because": "The Eckart-Young result is expressed in terms of the SVD."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-03"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "4.6",
+          "10.2",
+          "10.4"
+        ],
+        "supplemental_needed": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "MATH-09",
+      "domain": "MATH",
+      "name": "Differentiation of scalar functions, gradients and linearisation",
+      "why": "Learning is defined as minimising an objective, and derivatives are the local information that makes minimisation possible.",
+      "outcomes": [
+        "Compute derivatives of composite scalar functions using the chain, product and quotient rules, showing intermediate steps.",
+        "Explain the derivative as a local linear approximation and use a Taylor expansion to bound the error of that approximation.",
+        "Compute the Hessian of a small function and classify its stationary points."
+      ],
+      "prerequisites": [],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03",
+        "SK-04"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "5.1",
+          "5.2",
+          "5.7",
+          "5.8"
+        ],
+        "supplemental_needed": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "MATH-10",
+      "domain": "MATH",
+      "name": "Gradients of vector- and matrix-valued functions",
+      "why": "Model parameters are collected into vectors and matrices, so derivatives must be taken with respect to those objects and their shapes must be tracked.",
+      "outcomes": [
+        "Given a function from matrices to vectors, write its Jacobian with correct shape and justify the layout convention used.",
+        "Apply the chain rule to a composition of matrix operations, tracking dimensions at each step.",
+        "Derive gradients of the standard least-squares and log-likelihood objectives from first principles."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-09",
+          "because": "The multivariate results are built on univariate differentiation and the chain rule."
+        },
+        {
+          "id": "MATH-02",
+          "because": "Gradients with respect to parameters are expressed in the algebra of the spaces those parameters live in."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03",
+        "SK-04"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "supplemental_needed": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "MATH-11",
+      "domain": "MATH",
+      "name": "Backpropagation and automatic differentiation",
+      "why": "Every deep-learning training run is executed by an automatic-differentiation engine; understanding it turns opaque failures into debuggable ones.",
+      "outcomes": [
+        "Derive the backpropagation recurrence for a small feed-forward network by hand and check it numerically against finite differences.",
+        "Explain forward- versus reverse-mode differentiation and when each is preferable for a given input/output shape.",
+        "Diagnose a vanishing or exploding gradient by inspecting the propagation of terms."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-10",
+          "because": "Backpropagation is the chain rule applied in a particular evaluation order."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03",
+        "SK-28"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "5.6"
+        ],
+        "supplemental_needed": [
+          "Reverse-mode implementation details in a modern framework, and memory/compute trade-offs of checkpointing"
+        ],
+        "notes": "The book derives gradients in a deep network and introduces automatic differentiation conceptually."
+      }
+    },
+    {
+      "id": "MATH-12",
+      "domain": "MATH",
+      "name": "Probability spaces, random variables and distributions",
+      "why": "Uncertainty is not an optional modelling choice; the axioms determine which claims about a model are well formed.",
+      "outcomes": [
+        "Construct a probability space for a described random experiment and verify that the axioms hold.",
+        "Derive the density of a transformed random variable and state the assumptions the method requires.",
+        "Distinguish discrete from continuous models and explain why a density is not a probability."
+      ],
+      "prerequisites": [],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-04"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "6.1",
+          "6.2",
+          "6.7"
+        ],
+        "supplemental_needed": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "MATH-13",
+      "domain": "MATH",
+      "name": "Conditioning, Bayes' theorem and independence",
+      "why": "Bayes' theorem is the formal rule for updating beliefs with evidence; conditioning errors are the most common probabilistic mistake in applied work.",
+      "outcomes": [
+        "Apply the sum and product rules to a joint distribution to obtain marginals and conditionals, showing each step.",
+        "Distinguish independence from conditional independence and produce a counterexample where the two differ.",
+        "Explain the base-rate fallacy using a stated prior and likelihood."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-12",
+          "because": "Conditional probability is defined in terms of a probability space and a conditioning event of non-zero measure."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-04"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "6.3",
+          "6.6",
+          "8.5"
+        ],
+        "supplemental_needed": [],
+        "notes": "Directed graphical models in Section 8.5 make conditional independence visible in a graph."
+      }
+    },
+    {
+      "id": "MATH-14",
+      "domain": "MATH",
+      "name": "Expectation, covariance and the Gaussian distribution",
+      "why": "Means, variances and covariance matrices are the summary statistics that most learning procedures operate on, and the Gaussian is the distribution they are usually derived from.",
+      "outcomes": [
+        "Compute marginal and conditional means and covariances from a joint Gaussian and explain the result.",
+        "Prove that linear transformations of a Gaussian remain Gaussian, stating the conditions.",
+        "Explain why the covariance matrix must be symmetric positive semi-definite and what the eigendecomposition of it means."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-12",
+          "because": "Expectation and covariance are defined as integrals or sums over a probability model."
+        },
+        {
+          "id": "MATH-13",
+          "because": "Marginals and conditionals of Gaussian vectors rely on the sum and product rules."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-04"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "4.3",
+          "6.4",
+          "6.5",
+          "6.7"
+        ],
+        "supplemental_needed": [],
+        "notes": "Links directly to the Cholesky decomposition in MATH-07 through sampling and to PCA in ML-07."
+      }
+    },
+    {
+      "id": "MATH-15",
+      "domain": "MATH",
+      "name": "Exponential family and conjugacy",
+      "why": "Conjugate priors are why closed-form Bayesian updates exist for the models used in practice, and the exponential family explains which models have them.",
+      "outcomes": [
+        "Write a given distribution in exponential-family form and identify its sufficient statistics.",
+        "Select a conjugate prior for a stated likelihood and derive the posterior parameters.",
+        "Explain what the posterior update is doing in terms of prior pseudo-observations."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-14",
+          "because": "Conjugate pairs are stated through the natural parameters of the family and are exercised on the Gaussian and categorical cases."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-04"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "6.6",
+          "8.4",
+          "9.3"
+        ],
+        "supplemental_needed": [
+          "Practical consequences for Bayesian model implementation, such as when closed forms disappear"
+        ],
+        "notes": "Marked working rather than deep: engineers need to recognise and use conjugacy, and to know its limits, more often than they need to re-derive the family's algebra."
+      }
+    },
+    {
+      "id": "MATH-16",
+      "domain": "MATH",
+      "name": "Gradient-based optimisation",
+      "why": "Training is optimisation; learning-rate behaviour, divergence and slow convergence are optimisation phenomena, not framework bugs.",
+      "outcomes": [
+        "Derive the gradient-descent update and explain why the negative gradient direction is the direction of steepest local decrease.",
+        "Demonstrate divergence by choosing a learning rate too large for a given objective, and explain the condition that governs it.",
+        "Compare batch, mini-batch and stochastic updates in terms of gradient variance and runtime."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-10",
+          "because": "The update rule requires the gradient of the objective with respect to the parameters."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-03",
+        "SK-28"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "7.1"
+        ],
+        "supplemental_needed": [
+          "Adaptive and momentum methods, which are the default in practice and are only referenced in the book"
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "MATH-17",
+      "domain": "MATH",
+      "name": "Convexity and constrained optimisation",
+      "why": "Convexity is the assumption behind the guarantee that a found minimum is global, and duality is the machinery behind support vector machines and much of applied optimisation.",
+      "outcomes": [
+        "Determine whether a stated function is convex using the definition and the first- or second-order conditions.",
+        "Form the Lagrangian of a constrained problem and interpret the KKT conditions and the meaning of the multipliers.",
+        "Explain weak and strong duality and the conditions under which they coincide."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-16",
+          "because": "Constrained optimisation is introduced as an extension of unconstrained gradient methods."
+        },
+        {
+          "id": "MATH-06",
+          "because": "Second-order convexity conditions are read off the Hessian's eigenvalues."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-03",
+        "SK-27"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "5.7",
+          "7.2",
+          "7.3",
+          "12.2",
+          "12.3"
+        ],
+        "supplemental_needed": [
+          "Interior-point and other solver families beyond the book's introductive treatment"
+        ],
+        "notes": "The dual SVM derivation in Section 12.3 is the applied payoff of this competency."
+      }
+    },
+    {
+      "id": "MATH-18",
+      "domain": "MATH",
+      "name": "Statistical estimation and model selection",
+      "why": "Maximum likelihood, maximum a posteriori and Bayesian inference are the three ways parameter estimates are produced, and each changes what you are entitled to claim.",
+      "outcomes": [
+        "Derive the maximum-likelihood estimate for a stated model and check the second-order condition for a maximum.",
+        "Show how a Gaussian prior on the parameters turns maximum a posteriori estimation into regularised least squares.",
+        "Compare point estimation with Bayesian inference in terms of computational cost and the information retained."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-14",
+          "because": "Estimation is posed over a probabilistic model with likelihoods built from the distributions studied there."
+        },
+        {
+          "id": "MATH-13",
+          "because": "Posterior computation is Bayes' theorem."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-04",
+        "SK-27"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "8.2",
+          "8.3",
+          "8.4",
+          "8.6",
+          "9.2",
+          "9.3",
+          "11.2"
+        ],
+        "supplemental_needed": [
+          "Approximate inference methods named but not developed in the book (Laplace approximation, variational inference, MCMC)"
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "MATH-19",
+      "domain": "MATH",
+      "name": "Numerical stability, conditioning and floating-point behaviour",
+      "why": "The difference between a method that works on paper and one that works on a computer is conditioning, precision and algorithm cost.",
+      "outcomes": [
+        "Estimate the cost of a stated matrix operation in floating-point operations and say when a factorised form is preferable.",
+        "Identify a numerically unstable formulation of a standard computation and replace it with a stable one.",
+        "Explain what the condition number of a matrix measures and the consequences for solving a system."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-03",
+          "because": "Error behaviour is studied on the elimination and least-squares procedures already understood."
+        },
+        {
+          "id": "MATH-07",
+          "because": "Stability arguments are made about factorisations."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-03",
+        "SK-08"
+      ],
+      "source_coverage": {
+        "status": "partial",
+        "mml_sections": [
+          "2.3",
+          "4.3",
+          "10.4",
+          "10.5",
+          "12.5"
+        ],
+        "supplemental_needed": [
+          "A numerical-linear-algebra reference covering floating-point analysis, condition numbers, pivoting and the cost of decompositions"
+        ],
+        "notes": "The supplied book mentions stability and complexity at several points but does not teach the analysis. Treat as a real gap rather than stretching the book's coverage."
+      }
+    },
+    {
+      "id": "PROG-01",
+      "domain": "PROG",
+      "name": "Python language fundamentals and idioms",
+      "why": "Python is the working language of nearly every AI role, and its idioms differ from those of the languages most learners arrive from.",
+      "outcomes": [
+        "Write a program of moderate size using functions, comprehensions, generators and context managers appropriately.",
+        "Explain Python's name binding and mutability rules and predict the output of a short snippet involving both.",
+        "Use virtual environments and a dependency manifest to make a project reproducible."
+      ],
+      "prerequisites": [],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-01"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A programming source (roadmap nominates Python Crash Course; the free Harvard CS50P and one paid course are also recorded)"
+        ],
+        "notes": "Awaiting the user's source material."
+      }
+    },
+    {
+      "id": "PROG-02",
+      "domain": "PROG",
+      "name": "Modular design and the Python data model",
+      "why": "Code that has to be read, tested and extended later needs explicit boundaries; design patterns are tools for that, not decoration.",
+      "outcomes": [
+        "Decompose a stated problem into modules with clear responsibilities and justify the boundaries.",
+        "Implement the same behaviour through composition and through inheritance and explain when each is preferable.",
+        "Apply a named design pattern to a concrete problem and justify why it fits."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-01",
+          "because": "Language features such as classes, protocols and dataclasses are the vocabulary design patterns are written in."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-09"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A design-patterns source for Python (object-oriented and functional styles)"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROG-03",
+      "domain": "PROG",
+      "name": "Error handling, debugging and logging",
+      "why": "Failing clearly and diagnosing quickly is a larger part of professional work than writing new code.",
+      "outcomes": [
+        "Distinguish recoverable from unrecoverable errors in a stated component and handle each accordingly.",
+        "Use a debugger to locate a defect and explain the state of the program at each step.",
+        "Instrument a program with structured logs that would let someone else diagnose a failure without reproducing it."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-01",
+          "because": "Exceptions, tracebacks and module structure are language-level material."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-01"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A source covering Python exception design, the standard debugger and structured logging"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROG-04",
+      "domain": "PROG",
+      "name": "Environments, packaging and the shell",
+      "why": "Reproducing your own results a month later depends on controlling interpreters, dependencies and the command line.",
+      "outcomes": [
+        "Create an isolated environment, pin dependencies and reproduce it from a lock file.",
+        "Use the shell to inspect, filter and combine files and processes, including pipes and exit codes.",
+        "Explain what happens at process startup, including how the interpreter finds imports."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-01",
+          "because": "The environment mechanics only matter once there is a program to run."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-06"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Shell and Linux material, plus packaging tooling documentation"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROG-05",
+      "domain": "PROG",
+      "name": "Testing and test-driven development",
+      "why": "Tests are the mechanism by which a claim about code becomes checkable, including for numerical code where correctness is not binary.",
+      "outcomes": [
+        "Write unit tests that fail for the right reason before the implementation exists.",
+        "Choose an assertion strategy for floating-point results and justify the tolerance.",
+        "Explain the difference between unit, integration and end-to-end tests and place a given test correctly."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-01",
+          "because": "Tests are written in the language being tested."
+        },
+        {
+          "id": "MATH-19",
+          "because": "Testing numerical code requires understanding tolerance and conditioning."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-11"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A testing source covering pytest and property-based testing"
+        ],
+        "notes": "Awaiting sources. Note that the supplied book's exercise sets have no solutions, which is a separate verification problem for our own exercises."
+      }
+    },
+    {
+      "id": "PROG-06",
+      "domain": "PROG",
+      "name": "Concurrency, parallelism and asynchrony",
+      "why": "Data loading, serving and evaluation are all dominated by waiting; the wrong concurrency model wastes most of the available throughput.",
+      "outcomes": [
+        "Choose between threads, processes and asynchronous I/O for a stated workload and justify the choice using the GIL and the shape of the work.",
+        "Write a program that bounds concurrency explicitly and handles partial failure.",
+        "Measure whether a concurrency change improved throughput and explain the result."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-01",
+          "because": "Concurrency constructs are language features."
+        },
+        {
+          "id": "PROG-03",
+          "because": "Concurrent work introduces failure modes that must be handled and observed."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-15"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Python concurrency material (asyncio, threading, multiprocessing) matching the current interpreter version"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROG-07",
+      "domain": "PROG",
+      "name": "Version control and collaborative workflow",
+      "why": "Every artefact of this platform, and of any real project, is managed through version control, including the reviewing of other people's changes.",
+      "outcomes": [
+        "Perform a branch, merge and rebase workflow and explain how the resulting history differs.",
+        "Resolve a merge conflict deliberately rather than by choosing one side wholesale.",
+        "Review a change and give feedback that distinguishes correctness, style and design concerns."
+      ],
+      "prerequisites": [],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-05"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A Git reference (the roadmap nominates Pro Git) plus the interactive branching tutorial"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROG-08",
+      "domain": "PROG",
+      "name": "Functional programming tools in Python",
+      "why": "Mapping, filtering, reducing and immutability reduce whole classes of bugs in data-processing code.",
+      "outcomes": [
+        "Rewrite a stated imperative loop as a generator pipeline and compare readability and memory behaviour.",
+        "Explain the trade-offs between mutation and returning new structures in a data pipeline.",
+        "Use a functional style where it clarifies the transformation and say where it does not."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-01",
+          "because": "Comprehensions, generators and closures are language features."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-01"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Python functional-programming material"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "CS-01",
+      "domain": "CS",
+      "name": "Core data structures and their complexity",
+      "why": "Choosing the wrong container is one of the most common causes of slow code, and it is a standard interview screen.",
+      "outcomes": [
+        "Select an appropriate data structure for a stated access pattern and justify it with complexity reasoning.",
+        "Implement a hash map and a balanced-tree-backed map conceptually and explain when each degrades.",
+        "Analyse the memory cost of a given structure at a stated scale."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-01",
+          "because": "The structures are implemented and used in Python."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-07"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A data-structures source, plus practice problems"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "CS-02",
+      "domain": "CS",
+      "name": "Algorithm design paradigms and complexity analysis",
+      "why": "Complexity analysis predicts whether a pipeline or training loop will finish, before it is run at scale.",
+      "outcomes": [
+        "Derive the time and space complexity of a stated algorithm, including the amortised case where relevant.",
+        "Choose between a greedy, divide-and-conquer and dynamic-programming formulation for a stated problem and justify the choice.",
+        "Identify the dominant cost in a data-processing pipeline by analysis and confirm it by measurement."
+      ],
+      "prerequisites": [
+        {
+          "id": "CS-01",
+          "because": "Complexity is analysed on concrete structures."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-08"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "An algorithms source and a problem-practice schedule"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "CS-03",
+      "domain": "CS",
+      "name": "Vectorised numeric computing",
+      "why": "Almost all machine-learning computation is expressed as array operations whose performance and correctness depend on shape and broadcasting rules.",
+      "outcomes": [
+        "Express a stated computation as array operations without Python loops and explain the broadcasting involved.",
+        "Predict the output shape of an expression involving broadcasting and catch a silent shape bug.",
+        "Measure the difference between a loop and a vectorised implementation and explain the cost model."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-02",
+          "because": "Array operations are matrix algebra; understanding the algebra is what makes them expressible."
+        },
+        {
+          "id": "MATH-19",
+          "because": "Floating-point behaviour and accumulation order matter in vectorised code."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-03",
+        "SK-29"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "NumPy documentation and exercises"
+        ],
+        "notes": "The supplied book uses array notation but does not teach the library. Awaiting sources for the tooling."
+      }
+    },
+    {
+      "id": "CS-04",
+      "domain": "CS",
+      "name": "Implementing learning algorithms from first principles",
+      "why": "Implementing an algorithm once from its mathematics is what converts a definition into understanding, and it is the fastest way to find out whether you actually followed the derivation.",
+      "outcomes": [
+        "Implement a stated algorithm from its mathematical description without consulting a library implementation, and verify it against a known result.",
+        "Validate the implementation by gradient checking and by comparison with a reference library.",
+        "Explain any deviation found between the implementation and the reference."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-10",
+          "because": "The derived gradients are the specification."
+        },
+        {
+          "id": "PROG-01",
+          "because": "The implementation is code."
+        },
+        {
+          "id": "PROG-05",
+          "because": "Verification against reference results is a testing skill."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-03",
+        "SK-27",
+        "SK-29"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "None for the mathematics; the exercises must be authored, since the source's own exercise sets have no supplied solutions"
+        ],
+        "notes": "This is where the supplied book's exercise sets (chapters 2-7) become usable as specifications for implementation work."
+      }
+    },
+    {
+      "id": "DATA-01",
+      "domain": "DATA",
+      "name": "SQL and query reasoning",
+      "why": "Almost all data access in a production system ends in a query, and query correctness is a reasoning skill rather than a syntax skill.",
+      "outcomes": [
+        "Write a query using joins, grouping and window functions and explain the evaluation order of the clauses.",
+        "Predict the effect of a join condition on row counts and detect an unintended duplication.",
+        "Read a query plan and identify the step that dominates cost."
+      ],
+      "prerequisites": [],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-02"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A SQL source with real datasets (roadmap nominates Practical SQL, plus the SQLZoo and Mode tutorials)"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "DATA-02",
+      "domain": "DATA",
+      "name": "Relational and dimensional data modelling",
+      "why": "The shape of the data model determines which questions can be answered cheaply and which become ambiguous.",
+      "outcomes": [
+        "Model a stated business process as facts and dimensions and justify the grain.",
+        "Explain slowly changing dimension handling and choose a strategy for a stated requirement.",
+        "Identify a normalisation anomaly in a proposed schema and propose a fix."
+      ],
+      "prerequisites": [
+        {
+          "id": "DATA-01",
+          "because": "Dimensional modelling is expressed as and evaluated through queries."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-23",
+        "SK-19"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A dimensional-modelling source (the roadmap nominates Kimball-style material)"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "DATA-03",
+      "domain": "DATA",
+      "name": "Batch pipelines and ETL/ELT design",
+      "why": "Most production data defects originate in the pipeline rather than in the model.",
+      "outcomes": [
+        "Design an incremental batch pipeline with explicit handling of late and duplicate data.",
+        "Explain the difference between transformation-in-warehouse and transformation-before-load and choose appropriately.",
+        "Make a pipeline rerunnable and idempotent and demonstrate that property with a test."
+      ],
+      "prerequisites": [
+        {
+          "id": "DATA-01",
+          "because": "Transformations are expressed as queries."
+        },
+        {
+          "id": "PROG-03",
+          "because": "Pipeline failures must be observable and recoverable."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-20",
+        "SK-22"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "An ELT/ETL source and orchestration tooling documentation"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "DATA-04",
+      "domain": "DATA",
+      "name": "Workflow orchestration and scheduling",
+      "why": "Production data work is a dependency graph running on a schedule, with failure and backfill as normal cases.",
+      "outcomes": [
+        "Express a stated workflow as a directed acyclic graph with explicit dependencies and retry policy.",
+        "Explain how a backfill is performed without corrupting already-produced results.",
+        "Diagnose a schedule that silently stopped producing data."
+      ],
+      "prerequisites": [
+        {
+          "id": "DATA-03",
+          "because": "Orchestration schedules the pipeline that already exists."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-21"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Airflow or equivalent orchestration documentation"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "DATA-05",
+      "domain": "DATA",
+      "name": "Distributed batch processing",
+      "why": "Data that does not fit on one machine requires reasoning about partitioning and shuffles rather than about Python.",
+      "outcomes": [
+        "Explain how a stated distributed transformation partitions data and where a shuffle occurs.",
+        "Diagnose a job whose runtime is dominated by a data skew rather than by volume.",
+        "Choose between the available partitioning and join strategies for a stated dataset shape."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-06",
+          "because": "Distribution introduces the same failure and scheduling issues as concurrency, at a larger scale."
+        },
+        {
+          "id": "DATA-03",
+          "because": "The distributed engine executes the pipeline being designed."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-17"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Spark documentation and hands-on datasets"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "DATA-06",
+      "domain": "DATA",
+      "name": "Streaming data systems",
+      "why": "Event-driven systems change the correctness question from 'is the batch complete' to 'how do I reason about time'.",
+      "outcomes": [
+        "Explain event time versus processing time and the consequence for a stated computation.",
+        "Describe how a stream processor maintains state and what happens to it after a restart.",
+        "Choose delivery semantics for a stated requirement and state the cost."
+      ],
+      "prerequisites": [
+        {
+          "id": "DATA-05",
+          "because": "Streaming systems reuse the partitioning and distribution model."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-18",
+        "SK-41"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Streaming material covering event time, windowing and delivery guarantees"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "DATA-07",
+      "domain": "DATA",
+      "name": "NoSQL and storage-engine selection",
+      "why": "Choosing a storage engine is choosing a consistency and access model, and the wrong choice cannot be fixed later.",
+      "outcomes": [
+        "Compare two storage families for a stated access pattern against the CAP-style trade-offs.",
+        "Design a document or key-value schema for a stated query workload and identify the queries it cannot serve.",
+        "Explain what the chosen consistency level means for a stated read path."
+      ],
+      "prerequisites": [
+        {
+          "id": "DATA-02",
+          "because": "The trade-off is only meaningful against one's modelling needs."
+        }
+      ],
+      "target_level": "awareness",
+      "roadmap_skills": [
+        "SK-24"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A source covering document, key-value, wide-column and graph stores"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "DATA-08",
+      "domain": "DATA",
+      "name": "Data quality, validation and contracts",
+      "why": "A model cannot be more trustworthy than the data it was fitted on, and silent data breaks are the most expensive failures in ML systems.",
+      "outcomes": [
+        "Specify the assumptions a dataset must satisfy for a stated use, as executable checks.",
+        "Detect distribution change between training and serving data and state whether it matters for the decision made.",
+        "Design a validation gate that blocks promotion of bad data and explain what it cannot catch."
+      ],
+      "prerequisites": [
+        {
+          "id": "DATA-01",
+          "because": "Validation is implemented as queries or dataframe assertions."
+        },
+        {
+          "id": "MATH-14",
+          "because": "Quantifying distribution change requires the summary statistics studied there."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-25",
+        "SK-33"
+      ],
+      "source_coverage": {
+        "status": "partial",
+        "mml_sections": [
+          "8.1"
+        ],
+        "supplemental_needed": [
+          "Data-validation tooling and drift-detection methods"
+        ],
+        "notes": "The supplied book discusses data and models conceptually in Section 8.1 but is not a data-engineering source; the honest classification is partial, and the tooling gap is real."
+      }
+    },
+    {
+      "id": "DATA-09",
+      "domain": "DATA",
+      "name": "Lakehouse and table formats",
+      "why": "Open table formats change what is possible on cheap storage: transactions, schema evolution and time travel on top of object stores.",
+      "outcomes": [
+        "Explain what a table format adds on top of Parquet files in a bucket.",
+        "Describe how time travel and schema evolution are supported and their cost.",
+        "Choose between a warehouse, a lake and a lakehouse table for a stated workload."
+      ],
+      "prerequisites": [
+        {
+          "id": "DATA-03",
+          "because": "The formats manage the tables the pipelines write."
+        },
+        {
+          "id": "DATA-05",
+          "because": "The query engines that read these tables are distributed."
+        }
+      ],
+      "target_level": "awareness",
+      "roadmap_skills": [
+        "SK-42"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Documentation for an open table format and its concurrency model"
+        ],
+        "notes": "Awaiting sources. Very version-sensitive: any lesson must record the format version it describes."
+      }
+    },
+    {
+      "id": "DATA-10",
+      "domain": "DATA",
+      "name": "Cloud platforms for data and ML",
+      "why": "The platform supplies identity, storage, compute and networking, and misconfiguring them is both a cost and a security problem.",
+      "outcomes": [
+        "Sketch the minimal infrastructure for a stated workload using managed services and identify the cost drivers.",
+        "Explain the identity model used to grant a service access to a data store.",
+        "Distinguish which failures are the platform's responsibility and which are the engineer's."
+      ],
+      "prerequisites": [
+        {
+          "id": "DATA-07",
+          "because": "Managed services are chosen against storage and access requirements."
+        },
+        {
+          "id": "SWE-05",
+          "because": "Cloud access control is application security in a different vocabulary."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-19",
+        "SK-26"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Official cloud documentation for one provider, dated, plus a cost-modelling exercise"
+        ],
+        "notes": "Awaiting sources. Roadmap lists this as a single skill covering three providers; the competency is deliberately provider-agnostic so that lessons can be written for whichever the user has access to."
+      }
+    },
+    {
+      "id": "SWE-01",
+      "domain": "SWE",
+      "name": "Service and API design",
+      "why": "An ML capability becomes useful only when another system can call it under load and get an answer it can act on.",
+      "outcomes": [
+        "Design a REST or RPC interface for a stated capability, including error semantics and idempotency.",
+        "Explain the difference between a synchronous and an asynchronous design for a stated latency budget.",
+        "Document an interface so that a consumer can use it without reading the implementation."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-02",
+          "because": "Service boundaries are a modular-design decision."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-10"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Web framework documentation (the roadmap nominates FastAPI or Django) and an API-design reference"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "SWE-02",
+      "domain": "SWE",
+      "name": "Containers and reproducible runtime environments",
+      "why": "A container is the unit in which a model, its dependencies and its runtime configuration travel together.",
+      "outcomes": [
+        "Write a container definition that builds deterministically and explain each layer's purpose.",
+        "Diagnose a mismatch between local and containerised behaviour.",
+        "State what a container does not isolate, and the consequence for security and resource limits."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-04",
+          "because": "Containerisation formalises the dependency-management problem."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-12"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Docker documentation and an exercise on reproducing a training environment"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "SWE-03",
+      "domain": "SWE",
+      "name": "Continuous integration and delivery",
+      "why": "Automatic checking is what makes it possible to keep changing a system without breaking it, including the educational content in this repository.",
+      "outcomes": [
+        "Design a pipeline that runs the relevant checks on each change and fails for the right reason.",
+        "Explain which checks belong before merge and which belong after, and why.",
+        "Make a change that requires a data migration deployable without downtime."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-05",
+          "because": "Continuous integration is the automated execution of the tests already written."
+        },
+        {
+          "id": "PROG-07",
+          "because": "The pipeline is triggered by the version-control workflow."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-13"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "CI/CD documentation and a worked pipeline"
+        ],
+        "notes": "Awaiting sources. The platform's own content pipeline is a legitimate exercise for this competency."
+      }
+    },
+    {
+      "id": "SWE-04",
+      "domain": "SWE",
+      "name": "Application security and authentication",
+      "why": "Every deployed AI capability is an attack surface, and the failure of the most common web vulnerabilities is not subtle.",
+      "outcomes": [
+        "Identify the OWASP-class vulnerability present in a given code sample and fix it.",
+        "Explain the difference between authentication and authorisation and implement an authorisation check on the server.",
+        "Describe how secrets should be supplied to a running service."
+      ],
+      "prerequisites": [
+        {
+          "id": "SWE-01",
+          "because": "The vulnerabilities are situated in the interface being built."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-14"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "OWASP material and framework authentication documentation"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "SWE-05",
+      "domain": "SWE",
+      "name": "Distributed systems reasoning",
+      "why": "Anything that has to survive a machine disappearing is a distributed system, whether or not it was designed as one.",
+      "outcomes": [
+        "Explain the failure models (crash, partition, latency) and how each changes a design.",
+        "Reason about consistency and availability trade-offs for a stated service.",
+        "Design retry, timeout and idempotency behaviour together rather than separately."
+      ],
+      "prerequisites": [
+        {
+          "id": "SWE-01",
+          "because": "The reasoning is applied to service interactions."
+        },
+        {
+          "id": "PROG-06",
+          "because": "Concurrency thinking is the local version of these problems."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-16",
+        "SK-40"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A distributed-systems source; the roadmap places this in the specialisation phase"
+        ],
+        "notes": "Awaiting sources. Classified as role-dependent rather than universal: essential for serving infrastructure, less so for application-layer AI engineering."
+      }
+    },
+    {
+      "id": "SWE-06",
+      "domain": "SWE",
+      "name": "System design for AI applications",
+      "why": "The interview and the job both ask for a defensible end-to-end design, not a list of components.",
+      "outcomes": [
+        "Produce a design for a stated AI feature covering data flow, failure handling, evaluation and cost, with the trade-offs stated explicitly.",
+        "Estimate the capacity requirements of a stated design and identify the binding constraint.",
+        "Critique a proposed design and name the assumption most likely to be wrong."
+      ],
+      "prerequisites": [
+        {
+          "id": "SWE-01",
+          "because": "Design work is expressed through interfaces."
+        },
+        {
+          "id": "PROD-01",
+          "because": "The design must include the operational lifecycle of whatever is built."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-16",
+        "SK-40"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "System-design material plus AI-specific case studies"
+        ],
+        "notes": "Awaiting sources; case studies will be authored as original scenarios with rubrics."
+      }
+    },
+    {
+      "id": "SWE-07",
+      "domain": "SWE",
+      "name": "Container orchestration and deployment operations",
+      "why": "Serving a model at varying load requires scheduling, scaling and rollout control that a single container cannot provide.",
+      "outcomes": [
+        "Deploy a service with declarative configuration and explain how the scheduler places it.",
+        "Configure resource requests and limits and predict the scheduling consequence of each.",
+        "Perform and roll back a versioned rollout."
+      ],
+      "prerequisites": [
+        {
+          "id": "SWE-02",
+          "because": "Orchestration schedules the containers already defined."
+        },
+        {
+          "id": "SWE-03",
+          "because": "Rollouts are triggered and gated by the delivery pipeline."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-12",
+        "SK-44"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Kubernetes documentation and a local-cluster exercise"
+        ],
+        "notes": "Awaiting sources. Role-dependent: important for platform-facing roles."
+      }
+    },
+    {
+      "id": "ML-01",
+      "domain": "ML",
+      "name": "Problem formulation and baselines",
+      "why": "A model is only meaningful relative to a decision, a loss and a baseline; without those, a metric is just a number.",
+      "outcomes": [
+        "Translate a stated business objective into a learning problem with an explicit target, loss and evaluation protocol.",
+        "Establish a trivial baseline and state what a model must beat to be worth deploying.",
+        "Identify the sampling unit and explain how it constrains validation."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-18",
+          "because": "Formulating a learning problem requires knowing what a model and its parameters are."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-27",
+        "SK-32"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "8.1",
+          "8.2"
+        ],
+        "supplemental_needed": [
+          "Business-objective translation and metric selection from an applied-ML source; the book is mathematical and stops at the loss function"
+        ],
+        "notes": "The empirical-risk framing in Section 8.2 is the mathematical core of this competency."
+      }
+    },
+    {
+      "id": "ML-02",
+      "domain": "ML",
+      "name": "Supervised learning algorithms",
+      "why": "Choosing between linear regression, a margin-based classifier, a tree ensemble or a network is a decision with consequences that must be reasoned about.",
+      "outcomes": [
+        "Derive the objective of a stated supervised method, state its assumptions, and solve a small instance by hand.",
+        "Compare two methods on a stated dataset and explain the difference in terms of the inductive bias of each.",
+        "Explain what a kernel does and when a linear method becomes a nonlinear one."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-18",
+          "because": "The methods are estimation procedures on a probabilistic or loss-based objective."
+        },
+        {
+          "id": "MATH-17",
+          "because": "Margin maximisation and regularisation are constrained-optimisation problems."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-27"
+      ],
+      "source_coverage": {
+        "status": "partial",
+        "mml_sections": [
+          "9.1",
+          "9.2",
+          "9.4",
+          "12.1",
+          "12.2",
+          "12.3",
+          "12.4",
+          "12.5"
+        ],
+        "supplemental_needed": [
+          "Tree-based ensembles, nearest-neighbour methods, and the applied comparison of classifiers; the book covers regression and SVM only"
+        ],
+        "notes": "The book's coverage is deep but narrow: linear regression and SVM are developed thoroughly, and everything else in the classical toolbox must come from another source."
+      }
+    },
+    {
+      "id": "ML-03",
+      "domain": "ML",
+      "name": "Evaluation metrics and their limitations",
+      "why": "Every metric encodes a value judgement, and an inappropriate metric produces a model that is good at the wrong thing.",
+      "outcomes": [
+        "Choose a metric for a stated error-cost structure and justify the choice against at least one alternative.",
+        "Construct a dataset on which a stated metric gives a misleading answer.",
+        "Explain the trade-off between precision and recall for a stated decision threshold."
+      ],
+      "prerequisites": [
+        {
+          "id": "ML-01",
+          "because": "Metrics only mean something relative to the decision they support."
+        },
+        {
+          "id": "MATH-12",
+          "because": "Probabilistic classification output requires conditional-probability reasoning."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-04",
+        "SK-32"
+      ],
+      "source_coverage": {
+        "status": "partial",
+        "mml_sections": [
+          "8.2",
+          "8.3"
+        ],
+        "supplemental_needed": [
+          "Calibration, ranking metrics, imbalanced-data metrics and class-threshold selection"
+        ],
+        "notes": "The book supplies the loss-function view (expected risk) but not the applied metric catalogue."
+      }
+    },
+    {
+      "id": "ML-04",
+      "domain": "ML",
+      "name": "Validation methodology and leakage",
+      "why": "Most reported improvements that do not survive deployment are caused by evaluation that leaked information.",
+      "outcomes": [
+        "Design a validation split appropriate to the data's structure and state what it protects against.",
+        "Identify a leakage path in a stated pipeline and demonstrate the inflated score it produces.",
+        "Explain nested cross-validation and when the extra loop is necessary."
+      ],
+      "prerequisites": [
+        {
+          "id": "ML-01",
+          "because": "Splitting is only definable once the sampling unit and objective are fixed."
+        },
+        {
+          "id": "MATH-18",
+          "because": "Model selection is framed as estimating generalisation performance."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-32",
+        "SK-33"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "8.6"
+        ],
+        "supplemental_needed": [
+          "Grouped, stratified and temporal splitting for real data structures"
+        ],
+        "notes": "Section 8.6 develops nested cross-validation and Bayesian model selection; the temporal and grouped cases are a genuine addition."
+      }
+    },
+    {
+      "id": "ML-05",
+      "domain": "ML",
+      "name": "Feature engineering and preprocessing",
+      "why": "The transformation applied to inputs often matters more than the choice of algorithm.",
+      "outcomes": [
+        "Design transformations for a stated feature type and justify each against alternatives.",
+        "Explain why a transformation must be fitted on training data only and demonstrate the failure when it is not.",
+        "Diagnose a preprocessing step that destroys information needed by the model."
+      ],
+      "prerequisites": [
+        {
+          "id": "ML-01",
+          "because": "Features are chosen for a defined learning problem."
+        },
+        {
+          "id": "DATA-08",
+          "because": "Preprocessing is where data-quality problems become model problems."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-30",
+        "SK-33"
+      ],
+      "source_coverage": {
+        "status": "partial",
+        "mml_sections": [
+          "8.1",
+          "9.1",
+          "10.6"
+        ],
+        "supplemental_needed": [
+          "Categorical encoding, scaling, text and time features; the book's treatment is mathematical rather than practical"
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "ML-06",
+      "domain": "ML",
+      "name": "Generalisation, regularisation and the bias-variance trade-off",
+      "why": "The difference between fitting data and learning from it is the central problem of the field.",
+      "outcomes": [
+        "Explain underfitting and overfitting in terms of the decomposition of expected error.",
+        "Derive how a prior on the parameters becomes a penalty term and predict its effect on the fitted solution.",
+        "Select a regularisation strength using validation evidence rather than intuition."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-18",
+          "because": "Regularisation is derived from maximum a posteriori estimation."
+        },
+        {
+          "id": "ML-04",
+          "because": "The effect of regularisation can only be measured on held-out data."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-27",
+        "SK-33"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "8.2",
+          "8.3",
+          "9.2"
+        ],
+        "supplemental_needed": [],
+        "notes": "Section 9.2.4 (MAP estimation as regularisation) is the explicit bridge from the mathematics to the practice."
+      }
+    },
+    {
+      "id": "ML-07",
+      "domain": "ML",
+      "name": "Unsupervised learning and latent-variable models",
+      "why": "Structure discovery, compression and density estimation are needed when there is no label to fit.",
+      "outcomes": [
+        "Derive PCA from the maximum-variance and reconstruction-error formulations and show that they agree.",
+        "Explain the expectation-maximisation algorithm for a mixture model and what it converges to.",
+        "Choose between dimensionality reduction and clustering for a stated exploratory question."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-08",
+          "because": "PCA is a low-rank approximation problem."
+        },
+        {
+          "id": "MATH-18",
+          "because": "Latent-variable models are fitted by maximum likelihood."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-27"
+      ],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "10.1",
+          "10.2",
+          "10.3",
+          "10.4",
+          "10.5",
+          "10.6",
+          "10.7",
+          "11.1",
+          "11.2",
+          "11.3",
+          "11.4"
+        ],
+        "supplemental_needed": [
+          "Practical cluster validation and the operational use of dimensionality reduction"
+        ],
+        "notes": "Two full chapters of the source are devoted to this competency, which makes it one of the best-supported topics for a first module."
+      }
+    },
+    {
+      "id": "ML-08",
+      "domain": "ML",
+      "name": "Experiment tracking and reproducibility",
+      "why": "An experiment that cannot be reproduced cannot be built upon, and 'it worked last week' is not evidence.",
+      "outcomes": [
+        "Record the inputs, configuration and outputs of an experiment such that it can be re-run exactly.",
+        "Explain which sources of nondeterminism exist in a stated training pipeline and how to control them.",
+        "Compare two experiment runs and attribute the difference to a specific change."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-07",
+          "because": "Reproducibility depends on versioning code and configuration."
+        },
+        {
+          "id": "ML-04",
+          "because": "The comparison is only meaningful with a valid evaluation protocol."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-34"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Experiment-tracking tooling documentation and a reproducibility exercise"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "DL-01",
+      "domain": "DL",
+      "name": "Neural network fundamentals",
+      "why": "A network is a composition of parameterised functions trained by gradient descent; without that reading, architecture diagrams are not interpretable.",
+      "outcomes": [
+        "Write the forward computation of a small network explicitly as matrix operations and derive its parameter gradients.",
+        "Explain why a nonlinearity is required and what each common activation does to the gradient.",
+        "Compute the parameter count and the forward-pass cost of a stated architecture."
+      ],
+      "prerequisites": [
+        {
+          "id": "MATH-11",
+          "because": "Training the network requires the backpropagation machinery."
+        },
+        {
+          "id": "MATH-16",
+          "because": "The parameters are updated by a gradient-based optimiser."
+        }
+      ],
+      "target_level": "deep",
+      "roadmap_skills": [
+        "SK-28"
+      ],
+      "source_coverage": {
+        "status": "partial",
+        "mml_sections": [
+          "5.6"
+        ],
+        "supplemental_needed": [
+          "A deep-learning source covering architecture, training practice, activations and regularisation for networks"
+        ],
+        "notes": "The book supplies the mathematics of gradients and the network notation in Section 5.6.1 but is deliberately not a deep-learning text; the classification of partial is therefore honest rather than generous."
+      }
+    },
+    {
+      "id": "DL-02",
+      "domain": "DL",
+      "name": "Training dynamics and optimisation for deep networks",
+      "why": "Whether a model trains is governed by learning rates, initialisation, batch size and the shape of the loss surface.",
+      "outcomes": [
+        "Diagnose a training run from its loss curves and name the most likely cause of the observed behaviour.",
+        "Explain what momentum and adaptive step sizes change relative to plain gradient descent.",
+        "Design a learning-rate schedule for a stated training budget and justify it."
+      ],
+      "prerequisites": [
+        {
+          "id": "DL-01",
+          "because": "The dynamics are the behaviour of the network's optimisation."
+        },
+        {
+          "id": "MATH-16",
+          "because": "The methods are extensions of the gradient-descent family."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-28"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A deep-learning source with an empirical treatment of optimisers, schedules and initialisation"
+        ],
+        "notes": "The supplied book's optimisation chapter is about continuous optimisation in general, not about training deep networks; claiming otherwise would be wrong."
+      }
+    },
+    {
+      "id": "DL-03",
+      "domain": "DL",
+      "name": "Deep learning frameworks and the training loop",
+      "why": "The framework is where the mathematics becomes a running system, including automatic differentiation, devices and data loading.",
+      "outcomes": [
+        "Implement and train a stated model in a framework, explaining what each part of the training loop does.",
+        "Explain how automatic differentiation in the framework relates to the backpropagation derivation.",
+        "Diagnose a runtime shape or device mismatch and fix it at the source."
+      ],
+      "prerequisites": [
+        {
+          "id": "DL-01",
+          "because": "The framework implements the model whose mathematics is already understood."
+        },
+        {
+          "id": "CS-03",
+          "because": "Framework tensors follow the same broadcasting and shape rules."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-29",
+        "SK-35"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "PyTorch documentation and guided practice (the roadmap nominates PyTorch as a skill of its own)"
+        ],
+        "notes": "Awaiting sources. Version-sensitive: lessons must record the framework version they were checked against."
+      }
+    },
+    {
+      "id": "DL-04",
+      "domain": "DL",
+      "name": "Convolutional networks and computer vision",
+      "why": "Vision models are the clearest case of architecture encoding an assumption about the data, which makes the inductive-bias reasoning transferable.",
+      "outcomes": [
+        "Explain how a convolution exploits spatial structure and compute the output shape for stated parameters.",
+        "Compare a convolutional architecture with a fully connected one on the same task and explain the difference in parameters and accuracy.",
+        "Diagnose a vision pipeline whose preprocessing differs between training and inference."
+      ],
+      "prerequisites": [
+        {
+          "id": "DL-01",
+          "because": "Convolutions are layers within the network formalism."
+        },
+        {
+          "id": "ML-05",
+          "because": "Image pipelines are preprocessing pipelines."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-30"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "A computer-vision source covering convolutional architectures, augmentation and transfer learning"
+        ],
+        "notes": "Awaiting sources. Classified as a specialisation: essential for vision roles, optional for language-focused paths."
+      }
+    },
+    {
+      "id": "DL-05",
+      "domain": "DL",
+      "name": "Sequence modelling and attention",
+      "why": "Attention is the mechanism behind current language systems, and it is a learned, differentiable lookup rather than a mystery.",
+      "outcomes": [
+        "Describe the recurrent approach to sequences and explain why it struggles with long-range dependencies.",
+        "Compute the attention output for a small set of queries, keys and values by hand.",
+        "Explain multi-head attention and the role of scaling in the softmax."
+      ],
+      "prerequisites": [
+        {
+          "id": "DL-01",
+          "because": "Attention is a composition of linear maps and softmax inside a network."
+        },
+        {
+          "id": "MATH-04",
+          "because": "Attention scores are inner products, and their interpretation is geometric."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-31"
+      ],
+      "source_coverage": {
+        "status": "partial",
+        "mml_sections": [
+          "3.2",
+          "3.3"
+        ],
+        "supplemental_needed": [
+          "A transformer reference: the original attention paper and a reputable architectural walkthrough, dated"
+        ],
+        "notes": "The book supplies the inner-product and projection machinery needed, and nothing about attention itself. The partial classification reflects that precisely."
+      }
+    },
+    {
+      "id": "DL-06",
+      "domain": "DL",
+      "name": "Transformer architecture and language models",
+      "why": "The transformer is the architecture current language systems are built on, and its components each exist for a reason that can be explained.",
+      "outcomes": [
+        "Describe the role of each component of a transformer block and what breaks when one is removed.",
+        "Explain positional encoding and why attention alone is permutation-equivariant.",
+        "Trace the shape of the data through a stated transformer configuration."
+      ],
+      "prerequisites": [
+        {
+          "id": "DL-05",
+          "because": "The transformer is assembled from attention, normalisation and feed-forward components."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-31",
+        "SK-37"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Primary references for the transformer and for a current open model's configuration; both dated and version-recorded"
+        ],
+        "notes": "No supplied source covers this. It is a first-class gap, not a minor one."
+      }
+    },
+    {
+      "id": "DL-07",
+      "domain": "DL",
+      "name": "Pre-training, fine-tuning and parameter-efficient adaptation",
+      "why": "Choosing between prompting, retrieval and weight updates is an engineering decision about cost, data and control.",
+      "outcomes": [
+        "Distinguish pre-training, supervised fine-tuning and parameter-efficient adaptation in terms of what changes and what it costs.",
+        "Select an adaptation strategy for a stated constraint set and justify it.",
+        "Explain what catastrophic forgetting is and how data mixture affects it."
+      ],
+      "prerequisites": [
+        {
+          "id": "DL-06",
+          "because": "Adaptation is performed on a transformer whose parts are understood."
+        },
+        {
+          "id": "MATH-16",
+          "because": "Whatever is adapted is adapted by gradient-based optimisation."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-35",
+        "SK-37"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Parameter-efficient fine-tuning literature and framework documentation, dated"
+        ],
+        "notes": "Awaiting sources. Fast-moving: lessons must state the model and library versions they describe and record when they were checked."
+      }
+    },
+    {
+      "id": "DL-08",
+      "domain": "DL",
+      "name": "Distributed and efficient training",
+      "why": "Model and data scale determine which parallelism strategy is even possible, and the constraint is memory before it is compute.",
+      "outcomes": [
+        "Explain the difference between data, tensor and pipeline parallelism in terms of what is communicated.",
+        "Estimate whether a stated model fits on stated hardware and identify the limiting resource.",
+        "Apply a memory-reduction technique and explain its effect on compute."
+      ],
+      "prerequisites": [
+        {
+          "id": "DL-02",
+          "because": "Distribution changes the optimisation dynamics and the meaning of batch size."
+        },
+        {
+          "id": "SWE-05",
+          "because": "Distributed training is a distributed-systems problem."
+        }
+      ],
+      "target_level": "awareness",
+      "roadmap_skills": [
+        "SK-39"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Distributed-training documentation and a memory-accounting exercise"
+        ],
+        "notes": "Classified as a specialisation with awareness as the initial target: most AI engineering roles consume the results of this work rather than perform it."
+      }
+    },
+    {
+      "id": "GEN-01",
+      "domain": "GEN",
+      "name": "How large language models behave",
+      "why": "Predicting the next token explains the characteristic failures, the cost structure and why evaluation is hard.",
+      "outcomes": [
+        "Explain tokenisation and its consequences for arithmetic, spelling and multilingual behaviour.",
+        "Describe the sampling parameters of a generation call and predict how each changes the output.",
+        "Identify a task that a next-token predictor structurally cannot perform reliably and explain why."
+      ],
+      "prerequisites": [
+        {
+          "id": "DL-06",
+          "because": "The behaviour follows from the architecture, training objective and decoding procedure."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-35",
+        "SK-37"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Model-behaviour documentation and empirical exercises against a stated model version"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "GEN-02",
+      "domain": "GEN",
+      "name": "Prompting and context engineering",
+      "why": "The context window is the only interface an application has to steer the model, and its allocation is an engineering budget.",
+      "outcomes": [
+        "Design a prompt for a stated task with explicit output contract, worked examples and failure handling.",
+        "Measure the effect of a prompt change on a held-out set rather than on inspection of one output.",
+        "Allocate a fixed context budget across instructions, retrieved evidence and history, and justify the allocation."
+      ],
+      "prerequisites": [
+        {
+          "id": "GEN-01",
+          "because": "Prompt effectiveness depends on how the model processes its input."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-37"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Provider documentation current at the time of writing, plus evaluation harness practice"
+        ],
+        "notes": "The roadmap lists no separate prompting skill; the audit adds this competency because it is what most 'AI engineer' postings screen for. Recorded as an addition with rationale rather than a roadmap topic."
+      }
+    },
+    {
+      "id": "GEN-03",
+      "domain": "GEN",
+      "name": "Retrieval-augmented generation and vector search",
+      "why": "Retrieval is how a system uses knowledge it was not trained on, and its failures are traceable to retrieval before generation.",
+      "outcomes": [
+        "Explain the components of a retrieval pipeline and the decision each one makes.",
+        "Diagnose whether a wrong answer came from retrieval or from generation, with evidence.",
+        "Compare embedding- and keyword-based retrieval for a stated query distribution and choose deliberately."
+      ],
+      "prerequisites": [
+        {
+          "id": "GEN-02",
+          "because": "Retrieved evidence has to be placed in the context to be used."
+        },
+        {
+          "id": "MATH-04",
+          "because": "Embedding similarity is an inner-product or distance computation in a vector space."
+        },
+        {
+          "id": "DATA-08",
+          "because": "Retrieval is only as good as the corpus and its validation."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-38"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Vector-search documentation, embedding-model documentation, and evaluation methods for retrieval"
+        ],
+        "notes": "Awaiting sources. The supplied book's inner-product and projection chapters give the mathematical foundation but not the system."
+      }
+    },
+    {
+      "id": "GEN-04",
+      "domain": "GEN",
+      "name": "Evaluating and guarding generative systems",
+      "why": "Generative outputs are not single labels, so evaluation must be designed rather than computed, and unsupported claims must be caught before a user sees them.",
+      "outcomes": [
+        "Design an evaluation for a stated generative task with a reference set and a stated agreement target between graders.",
+        "Explain the failure modes of model-as-judge evaluation and control for at least one.",
+        "Specify a guardrail for a named risk and state the false-positive cost it introduces."
+      ],
+      "prerequisites": [
+        {
+          "id": "GEN-01",
+          "because": "What is evaluated is model behaviour."
+        },
+        {
+          "id": "ML-03",
+          "because": "Metric design and its limitations are the same discipline applied to a new output type."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-32",
+        "SK-38"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Evaluation methodology for free-form outputs, and safety guidance from a reputable source"
+        ],
+        "notes": "Awaiting sources. This competency is the reason the platform's own verification design is documented so carefully: the same problem appears here."
+      }
+    },
+    {
+      "id": "GEN-05",
+      "domain": "GEN",
+      "name": "Agents and tool use",
+      "why": "Once a model can call tools, the engineering problem changes from text generation to control flow with unreliable components.",
+      "outcomes": [
+        "Design a control loop for a stated task and specify the termination and failure conditions.",
+        "Explain how tool schemas constrain model behaviour and where the loop can fail unboundedly.",
+        "Bound the cost and the blast radius of an agent acting on a stated system."
+      ],
+      "prerequisites": [
+        {
+          "id": "GEN-02",
+          "because": "Tool calls are produced through the same interface."
+        },
+        {
+          "id": "SWE-05",
+          "because": "Failures in a loop with external effects are distributed-systems and security problems."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-38"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Tool-use documentation and case studies with explicit failure analysis"
+        ],
+        "notes": "Awaiting sources. Kept at working level: the area is unsettled and lessons must not present one framework's style as settled practice."
+      }
+    },
+    {
+      "id": "GEN-06",
+      "domain": "GEN",
+      "name": "Cost, latency and context management",
+      "why": "For generative systems, unit economics and latency are product constraints as much as engineering ones.",
+      "outcomes": [
+        "Estimate the cost and latency of a stated pipeline from token counts and model pricing, with the assumptions written down.",
+        "Reduce the cost of a stated pipeline and demonstrate that quality was preserved.",
+        "Explain caching and batching opportunities and the correctness conditions each requires."
+      ],
+      "prerequisites": [
+        {
+          "id": "GEN-02",
+          "because": "Context size is the principal cost driver and is controlled by prompt design."
+        },
+        {
+          "id": "PROD-06",
+          "because": "This is the generative-AI instance of cost engineering."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-38",
+        "SK-36"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Current provider pricing and latency documentation, dated, plus a measurement exercise"
+        ],
+        "notes": "Awaiting sources. Any price figure in a lesson must be dated and treated as an example, never as a fact."
+      }
+    },
+    {
+      "id": "PROD-01",
+      "domain": "PROD",
+      "name": "ML lifecycle and MLOps principles",
+      "why": "The lifecycle, not the model, is what a team operates; without it, work is repeated and results are not comparable.",
+      "outcomes": [
+        "Describe the stages of the lifecycle for a stated system and name the artifact produced by each.",
+        "Explain versioning, automation and monitoring as separable concerns and how each fails.",
+        "Choose a maturity level appropriate to a stated team and justify not doing more."
+      ],
+      "prerequisites": [
+        {
+          "id": "ML-08",
+          "because": "Experiment tracking is the first lifecycle component, at the smallest scale."
+        },
+        {
+          "id": "SWE-03",
+          "because": "Automation of the lifecycle reuses the delivery pipeline."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-36",
+        "SK-43"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "MLOps principles and reference architecture, from a primary source such as the MLOps literature and current platform documentation"
+        ],
+        "notes": "Awaiting sources. The audit treats production engineering as the largest gap between the two roadmaps as written and what the roles described in the references actually screen for."
+      }
+    },
+    {
+      "id": "PROD-02",
+      "domain": "PROD",
+      "name": "Model serving and deployment patterns",
+      "why": "Deployment is where a model meets its latency budget, its batch size and its failure behaviour.",
+      "outcomes": [
+        "Choose between batch, real-time and streaming inference for a stated requirement and justify it.",
+        "Explain the trade-offs between constructing the request-time features and precomputing them.",
+        "Design a safe release process for a model change, including rollback."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROD-01",
+          "because": "Serving is one stage of the lifecycle."
+        },
+        {
+          "id": "SWE-01",
+          "because": "Serving is an interface with a latency contract."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-36"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Serving framework documentation and a latency/throughput measurement exercise"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROD-03",
+      "domain": "PROD",
+      "name": "Monitoring, drift detection and observability",
+      "why": "A deployed model degrades silently; only instrumentation makes degradation visible before users report it.",
+      "outcomes": [
+        "Define the signals that indicate a stated system is degrading, separating input, output and outcome signals.",
+        "Explain the difficulty of monitoring when labels arrive late or never, and propose a proxy with its limitation.",
+        "Design an alert with a threshold chosen from measured behaviour rather than intuition."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROD-02",
+          "because": "There is nothing to monitor until the system is served."
+        },
+        {
+          "id": "DATA-08",
+          "because": "Input-drift detection is data validation applied over time."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [
+        "SK-43"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Observability tooling documentation and drift-detection methods"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROD-04",
+      "domain": "PROD",
+      "name": "Reliability, incident response and debugging in production",
+      "why": "Systems fail in ways that local testing does not reproduce, and the response determines the cost of the failure.",
+      "outcomes": [
+        "Write a runbook for a stated failure mode that a colleague could follow without the author present.",
+        "Distinguish a symptom from a cause during a stated incident and describe the diagnostic sequence.",
+        "Produce a blameless post-mortem with actions that address the cause."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROD-03",
+          "because": "Diagnosis requires the signals monitoring provides."
+        },
+        {
+          "id": "SWE-05",
+          "because": "Most production failures are interaction failures between components."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-43",
+        "SK-36"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Site-reliability material and incident-review practice"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROD-05",
+      "domain": "PROD",
+      "name": "Security, privacy and governance for AI systems",
+      "why": "AI systems process data with legal and ethical constraints, and the failure modes include prompt injection as well as classic data exposure.",
+      "outcomes": [
+        "Identify the trust boundaries in a stated AI system and the data that crosses each.",
+        "Explain prompt injection and design a mitigation that does not rely on the model's cooperation.",
+        "State what a privacy regulation requires of a stated data flow, without overstating legal certainty."
+      ],
+      "prerequisites": [
+        {
+          "id": "SWE-04",
+          "because": "AI-specific threats sit on top of application security."
+        },
+        {
+          "id": "GEN-04",
+          "because": "Guardrails are where safety requirements become enforceable behaviour."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-14"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "OWASP LLM guidance and current regulatory summaries, dated, with the caveat that this area changes"
+        ],
+        "notes": "Awaiting sources. Lessons must not present legal advice; they state requirements as described by the cited sources and date them."
+      }
+    },
+    {
+      "id": "PROD-06",
+      "domain": "PROD",
+      "name": "Cost and performance engineering",
+      "why": "Inference and training cost is a product constraint, and measuring it is a distinct skill from optimising accuracy.",
+      "outcomes": [
+        "Measure the cost per prediction of a stated system and identify the dominant term.",
+        "Explain the memory hierarchy's effect on inference speed and how batching changes it.",
+        "Propose a cost reduction and demonstrate it with a measurement rather than an estimate."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROD-02",
+          "because": "Cost is measured on the serving path."
+        },
+        {
+          "id": "MATH-19",
+          "because": "Cost analysis is the accounting of numerical operations and their memory access."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-36",
+        "SK-43"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Hardware and serving performance material with measurement practice"
+        ],
+        "notes": "Awaiting sources."
+      }
+    },
+    {
+      "id": "PROD-07",
+      "domain": "PROD",
+      "name": "Responsible AI, fairness and documentation",
+      "why": "A model that is accurate can still be harmful or unusable in a regulated context, and the obligations are increasingly explicit.",
+      "outcomes": [
+        "Identify the stakeholders affected by a stated system and the harms that are plausible.",
+        "Measure a fairness property on a dataset and explain why the choice of metric is a value judgement.",
+        "Produce model documentation covering intended use, limitations and evaluation results."
+      ],
+      "prerequisites": [
+        {
+          "id": "ML-03",
+          "because": "Fairness measures are metrics with the same design questions."
+        },
+        {
+          "id": "PROD-01",
+          "because": "Documentation is a lifecycle artifact."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Responsible-AI frameworks and model-card practice from reputable sources"
+        ],
+        "notes": "Not present in either roadmap as a named skill. Recorded as an audit addition with rationale; classified recommended rather than essential, and role-dependent in regulated sectors."
+      }
+    },
+    {
+      "id": "CAREER-01",
+      "domain": "CAREER",
+      "name": "Technical writing and explanation",
+      "why": "Technical work that cannot be explained to a colleague or an interviewer has limited effect.",
+      "outcomes": [
+        "Write a document that lets a reader reproduce a stated result without contacting the author.",
+        "Explain a technical decision to a non-specialist audience without distortion.",
+        "Structure an explanation from problem to solution rather than chronologically."
+      ],
+      "prerequisites": [],
+      "target_level": "applied",
+      "roadmap_skills": [],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Writing guidance from a reputable engineering organization"
+        ],
+        "notes": "Implicit in both roadmap sprints and the capstone; made explicit here so it can be assessed."
+      }
+    },
+    {
+      "id": "CAREER-02",
+      "domain": "CAREER",
+      "name": "Code review and collaborative practice",
+      "why": "Most professional code is written in a review loop, and the review is where design and correctness errors are caught cheaply.",
+      "outcomes": [
+        "Review a change and separate blocking correctness issues from stylistic preferences.",
+        "Give feedback that states the problem rather than the preference.",
+        "Respond to review comments by reasoning about the change rather than complying automatically."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-07",
+          "because": "Reviews happen in the version-control workflow."
+        },
+        {
+          "id": "PROG-02",
+          "because": "Design judgement is what most review comments are about."
+        }
+      ],
+      "target_level": "working",
+      "roadmap_skills": [
+        "SK-05"
+      ],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Review practice guidance from a reputable engineering organization"
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "CAREER-03",
+      "domain": "CAREER",
+      "name": "Interview preparation and technical communication under constraint",
+      "why": "Interviews test a specific, time-boxed variant of the same competencies and are gated by an ability to reason aloud.",
+      "outcomes": [
+        "Solve a previously unseen algorithm problem while explaining the approach and its complexity.",
+        "Design a machine-learning system on a whiteboard covering data, serving, evaluation and failure.",
+        "Explain a project from one's own history and answer follow-up questions about its trade-offs."
+      ],
+      "prerequisites": [
+        {
+          "id": "CS-02",
+          "because": "Coding interviews assess algorithmic reasoning."
+        },
+        {
+          "id": "SWE-06",
+          "because": "System-design interviews assess the design competency."
+        },
+        {
+          "id": "CAREER-01",
+          "because": "The performance is an explanation under time pressure."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "Practice problem sets with known sources; interview questions must never be fabricated and attributed to a real employer"
+        ],
+        "notes": "Any question presented as having been asked in a real interview must name the verifiable source it came from; otherwise it is labelled as an original exercise."
+      }
+    },
+    {
+      "id": "CAREER-04",
+      "domain": "CAREER",
+      "name": "Project work and portfolio construction",
+      "why": "Employers screen on shipped work, and a project only demonstrates competence if its decisions are documented and its results are reproducible.",
+      "outcomes": [
+        "Scope a project so that it can be completed and evaluated within a stated budget.",
+        "Deliver a project with reproducible setup, tests and a written design rationale.",
+        "Evaluate one's own project honestly against its original objective."
+      ],
+      "prerequisites": [
+        {
+          "id": "PROG-05",
+          "because": "A portfolio project is expected to be tested."
+        },
+        {
+          "id": "PROD-01",
+          "because": "A project that cannot be run by someone else demonstrates little."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [],
+      "source_coverage": {
+        "status": "none",
+        "mml_sections": [],
+        "supplemental_needed": [
+          "None; the projects are authored, with rubrics"
+        ],
+        "notes": "The roadmap contains two project sprints and a final capstone, so project work exists in the plan but has no assessment criteria yet. This competency supplies them."
+      }
+    },
+    {
+      "id": "CAREER-05",
+      "domain": "CAREER",
+      "name": "Reading technical material and research literacy",
+      "why": "The field moves faster than any curriculum; the durable skill is the ability to extract and evaluate new material.",
+      "outcomes": [
+        "Read a technical paper and state its claim, its method, its evidence and its limitations.",
+        "Distinguish a result that has been replicated from one that has only been published once.",
+        "Decide whether a claim requires re-checking given its date and version, and record when it was checked."
+      ],
+      "prerequisites": [
+        {
+          "id": "CAREER-01",
+          "because": "Extracting a claim requires reading for structure."
+        }
+      ],
+      "target_level": "applied",
+      "roadmap_skills": [],
+      "source_coverage": {
+        "status": "sourced",
+        "mml_sections": [
+          "1.1",
+          "1.2",
+          "1.3"
+        ],
+        "supplemental_needed": [
+          "Guidance on reading research papers critically and on versioning fast-moving technical claims"
+        ],
+        "notes": "Section 1.2 of the supplied book discusses how to read the book and the role of exercises, which is directly on this competency at an introductory level."
+      }
+    }
+  ]
+}
