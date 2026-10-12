@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Study Timetable — 8hrs/day · 44 Skills</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f4ef;
+  --bg2: #edeae2;
+  --surface: #ffffff;
+  --ink: #1c1917;
+  --ink2: #44403c;
+  --muted: #78716c;
+  --dim: #a8a29e;
+  --rule: #d6d3cd;
+
+  --foundation: #2563eb;
+  --swe:        #16a34a;
+  --de:         #ea580c;
+  --ml:         #9333ea;
+  --spec:       #db2777;
+
+  --foundation-bg: #eff6ff;
+  --swe-bg:        #f0fdf4;
+  --de-bg:         #fff7ed;
+  --ml-bg:         #faf5ff;
+  --spec-bg:       #fdf2f8;
+
+  --sprint:     #0891b2;
+  --review:     #ca8a04;
+  --rest:       #e7e5e0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--ink);
+  color: #f7f4ef;
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.header-logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.05em;
+}
+
+.header-stats {
+  display: flex;
+  gap: 24px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #a8a29e;
+}
+
+.header-stats span { color: #fbbf24; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink);
+  color: #f7f4ef;
+  padding: 56px 40px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.015) 40px,
+    rgba(255,255,255,0.015) 80px
+  );
+}
+
+.hero-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: #fbbf24;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.hero h1 em {
+  color: #fbbf24;
+  font-style: normal;
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: #a8a29e;
+  margin-bottom: 32px;
+  line-height: 1.7;
+  max-width: 600px;
+  position: relative;
+}
+
+/* ── STAT BOXES ── */
+.stat-row {
+  display: flex;
+  gap: 1px;
+  background: #333;
+  border: 1px solid #333;
+  max-width: 900px;
+  position: relative;
+}
+
+.stat-box {
+  background: #1c1917;
+  padding: 16px 22px;
+  flex: 1;
+}
+
+.stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fbbf24;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #78716c;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── PHASE LEGEND ── */
+.phase-legend {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 40px;
+}
+
+.ph-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border-right: 1px solid var(--rule);
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.ph-item:hover { background: var(--surface); }
+.ph-item.active { border-bottom-color: currentColor; background: var(--surface); }
+
+.ph-item.ph-all       { color: var(--ink); }
+.ph-item.ph-found     { color: var(--foundation); }
+.ph-item.ph-swe       { color: var(--swe); }
+.ph-item.ph-de        { color: var(--de); }
+.ph-item.ph-ml        { color: var(--ml); }
+.ph-item.ph-spec      { color: var(--spec); }
+
+.ph-dot {
+  width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+}
+.ph-item.ph-all   .ph-dot { background: var(--ink); }
+.ph-item.ph-found .ph-dot { background: var(--foundation); }
+.ph-item.ph-swe   .ph-dot { background: var(--swe); }
+.ph-item.ph-de    .ph-dot { background: var(--de); }
+.ph-item.ph-ml    .ph-dot { background: var(--ml); }
+.ph-item.ph-spec  .ph-dot { background: var(--spec); }
+
+/* ── LAYOUT ── */
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 60px);
+  align-items: start;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  border-right: 1px solid var(--rule);
+  background: var(--surface);
+  padding: 0;
+  scrollbar-width: thin;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--rule); }
+
+.sb-section-head {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 14px 18px 6px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--rule);
+}
+
+.sb-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  font-size: 11.5px;
+  color: var(--muted);
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.1s;
+  line-height: 1.3;
+}
+
+.sb-link:hover { background: var(--bg); color: var(--ink); }
+.sb-link.active { background: var(--bg); color: var(--ink); font-weight: 600; }
+
+.sb-link .sb-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--dim);
+  flex-shrink: 0;
+  width: 22px;
+}
+
+.sb-link .sb-dot {
+  width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+}
+
+.sb-link.f-link  { border-left-color: transparent; }
+.sb-link.s-link  { border-left-color: transparent; }
+.sb-link.d-link  { border-left-color: transparent; }
+.sb-link.m-link  { border-left-color: transparent; }
+.sb-link.sp-link { border-left-color: transparent; }
+
+.sb-link.active.f-link  { border-left-color: var(--foundation); }
+.sb-link.active.s-link  { border-left-color: var(--swe); }
+.sb-link.active.d-link  { border-left-color: var(--de); }
+.sb-link.active.m-link  { border-left-color: var(--ml); }
+.sb-link.active.sp-link { border-left-color: var(--spec); }
+
+.sb-link.f-link  .sb-dot { background: var(--foundation); }
+.sb-link.s-link  .sb-dot { background: var(--swe); }
+.sb-link.d-link  .sb-dot { background: var(--de); }
+.sb-link.m-link  .sb-dot { background: var(--ml); }
+.sb-link.sp-link .sb-dot { background: var(--spec); }
+
+.sb-days {
+  margin-left: auto;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--dim);
+  flex-shrink: 0;
+}
+
+/* ── CONTENT ── */
+.content {
+  padding: 32px 36px 80px;
+}
+
+/* ── SKILL BLOCK ── */
+.skill-block {
+  margin-bottom: 28px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+  transition: box-shadow 0.2s;
+}
+
+.skill-block:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+
+.skill-block.hidden { display: none; }
+
+/* Phase color bar */
+.skill-block .phase-bar { height: 4px; }
+.phase-foundation .phase-bar { background: var(--foundation); }
+.phase-swe        .phase-bar { background: var(--swe); }
+.phase-de         .phase-bar { background: var(--de); }
+.phase-ml         .phase-bar { background: var(--ml); }
+.phase-spec       .phase-bar { background: var(--spec); }
+.phase-sprint     .phase-bar { background: var(--sprint); }
+.phase-review     .phase-bar { background: var(--review); }
+
+/* Skill header */
+.skill-head {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: background 0.12s;
+  user-select: none;
+}
+
+.skill-head:hover { background: var(--bg); }
+.skill-block.open .skill-head { border-bottom-color: var(--rule); background: var(--bg); }
+
+.sk-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--dim);
+  flex-shrink: 0;
+  width: 26px;
+}
+
+.sk-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.phase-foundation .sk-dot { background: var(--foundation); }
+.phase-swe        .sk-dot { background: var(--swe); }
+.phase-de         .sk-dot { background: var(--de); }
+.phase-ml         .sk-dot { background: var(--ml); }
+.phase-spec       .sk-dot { background: var(--spec); }
+.phase-sprint     .sk-dot { background: var(--sprint); }
+.phase-review     .sk-dot { background: var(--review); }
+
+.sk-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  flex: 1;
+}
+
+.sk-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sk-days-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.phase-foundation .sk-days-badge { background: var(--foundation-bg); color: var(--foundation); }
+.phase-swe        .sk-days-badge { background: var(--swe-bg);        color: var(--swe);        }
+.phase-de         .sk-days-badge { background: var(--de-bg);         color: var(--de);         }
+.phase-ml         .sk-days-badge { background: var(--ml-bg);         color: var(--ml);         }
+.phase-spec       .sk-days-badge { background: var(--spec-bg);       color: var(--spec);       }
+.phase-sprint     .sk-days-badge { background: #ecfeff;              color: var(--sprint);     }
+.phase-review     .sk-days-badge { background: #fefce8;              color: var(--review);     }
+
+.sk-hrs-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  background: var(--bg2);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.sk-week-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--ink);
+  color: #fbbf24;
+}
+
+.chevron {
+  color: var(--dim);
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+.skill-block.open .chevron { transform: rotate(180deg); }
+
+/* Skill body */
+.skill-body {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+}
+.skill-block.open .skill-body { display: flex; }
+
+/* ── WEEK ROWS ── */
+.week-row {
+  display: grid;
+  grid-template-columns: 80px repeat(6, 1fr);
+  border-bottom: 1px solid var(--rule);
+}
+.week-row:last-child { border-bottom: none; }
+
+.week-label {
+  padding: 10px 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  border-right: 1px solid var(--rule);
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.day-cell {
+  padding: 10px 12px;
+  border-right: 1px solid var(--rule);
+  font-size: 11.5px;
+  line-height: 1.5;
+  min-height: 64px;
+}
+.day-cell:last-child { border-right: none; }
+
+.day-cell.rest {
+  background: var(--rest);
+}
+
+.day-cell .day-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--dim);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.day-cell .day-topic {
+  font-weight: 600;
+  font-size: 11.5px;
+  margin-bottom: 2px;
+}
+
+.day-cell .day-detail {
+  font-size: 10.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.day-cell .day-hours {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--dim);
+  margin-top: 4px;
+}
+
+/* Phase color tints on day cells */
+.phase-foundation .day-cell:not(.rest) { background: rgba(37,99,235,0.03); }
+.phase-swe        .day-cell:not(.rest) { background: rgba(22,163,74,0.03);  }
+.phase-de         .day-cell:not(.rest) { background: rgba(234,88,12,0.03);  }
+.phase-ml         .day-cell:not(.rest) { background: rgba(147,51,234,0.03); }
+.phase-spec       .day-cell:not(.rest) { background: rgba(219,39,119,0.03); }
+.phase-sprint     .day-cell:not(.rest) { background: rgba(8,145,178,0.03);  }
+.phase-review     .day-cell:not(.rest) { background: rgba(202,138,4,0.03);  }
+
+.day-header-row {
+  display: grid;
+  grid-template-columns: 80px repeat(6, 1fr);
+  background: var(--ink);
+  color: #f7f4ef;
+}
+
+.dhr-cell {
+  padding: 8px 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-right: 1px solid #333;
+  text-align: center;
+}
+.dhr-cell:last-child { border-right: none; }
+.dhr-cell.rest-head { color: #555; }
+
+/* ── PHASE SECTION HEADERS ── */
+.phase-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--rule);
+}
+
+.phase-heading:first-child { margin-top: 0; }
+
+.ph-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.ph-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+}
+
+.ph-badge.found { background: var(--foundation-bg); color: var(--foundation); border: 1px solid var(--foundation); }
+.ph-badge.swe   { background: var(--swe-bg);        color: var(--swe);        border: 1px solid var(--swe);        }
+.ph-badge.de    { background: var(--de-bg);         color: var(--de);         border: 1px solid var(--de);         }
+.ph-badge.ml    { background: var(--ml-bg);         color: var(--ml);         border: 1px solid var(--ml);         }
+.ph-badge.spec  { background: var(--spec-bg);       color: var(--spec);       border: 1px solid var(--spec);       }
+
+.ph-total {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+/* ── DAILY SCHEDULE PANEL ── */
+.daily-schedule {
+  background: var(--ink);
+  color: #f7f4ef;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 0 0 28px 0;
+}
+
+.ds-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #fbbf24;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #333;
+  border: 1px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ds-slot {
+  background: #1c1917;
+  padding: 10px 14px;
+}
+
+.ds-time {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+
+.ds-activity {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.ds-note {
+  font-size: 10.5px;
+  color: #78716c;
+  line-height: 1.5;
+}
+
+/* ── SUMMARY TABLE ── */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 32px;
+  font-size: 12px;
+}
+
+.summary-table th {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 14px;
+  border-bottom: 2px solid var(--ink);
+  text-align: left;
+  background: var(--bg2);
+}
+
+.summary-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: middle;
+}
+
+.summary-table tr:hover td { background: var(--bg); }
+.summary-table tr:last-child td { border-bottom: none; }
+
+.st-skill { font-weight: 600; font-size: 12.5px; }
+.st-phase { font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; }
+.st-phase.f { color: var(--foundation); }
+.st-phase.s { color: var(--swe); }
+.st-phase.d { color: var(--de); }
+.st-phase.m { color: var(--ml); }
+.st-phase.p { color: var(--spec); }
+.st-sprint  { color: var(--sprint); }
+.st-review  { color: var(--review); }
+
+.st-days {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.st-bar-wrap {
+  width: 120px;
+  height: 6px;
+  background: var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.st-bar { height: 100%; border-radius: 3px; }
+.st-bar.f { background: var(--foundation); }
+.st-bar.s { background: var(--swe); }
+.st-bar.d { background: var(--de); }
+.st-bar.m { background: var(--ml); }
+.st-bar.p { background: var(--spec); }
+.st-bar.sp { background: var(--sprint); }
+.st-bar.rv { background: var(--review); }
+
+.st-week { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--muted); }
+
+/* ── CALENDAR PROGRESS BAR ── */
+.cal-progress {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+}
+
+.cp-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cp-track {
+  height: 16px;
+  background: var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  gap: 1px;
+}
+
+.cp-seg { height: 100%; transition: opacity 0.2s; }
+.cp-seg:hover { opacity: 0.8; }
+.cp-seg.f  { background: var(--foundation); }
+.cp-seg.s  { background: var(--swe); }
+.cp-seg.d  { background: var(--de); }
+.cp-seg.m  { background: var(--ml); }
+.cp-seg.p  { background: var(--spec); }
+.cp-seg.sp { background: var(--sprint); }
+.cp-seg.rv { background: var(--review); }
+
+/* ── TIPS BOX ── */
+.tips-box {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  background: var(--surface);
+}
+
+.tips-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.tip-item {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink2);
+  padding: 10px 14px;
+  background: var(--bg2);
+  border-radius: 4px;
+  border-left: 3px solid var(--rule);
+}
+
+.tip-item strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 2px; }
+
+/* ── BACK TO TOP ── */
+.btt {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink);
+  color: #fbbf24;
+  border: none;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 100;
+}
+.btt.vis { opacity: 1; }
+
+/* ── PROGRESS LINE ── */
+.prog-line {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: #fbbf24;
+  z-index: 999;
+  width: 0%;
+  transition: width 0.1s;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+  .ds-grid { grid-template-columns: repeat(2, 1fr); }
+  .content { padding: 20px; }
+  .hero, .stat-row { padding-left: 20px; padding-right: 20px; }
+  .phase-legend { padding: 0 16px; }
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: var(--rule); }
+</style>
+</head>
+<body>
+
+<div class="prog-line" id="pl"></div>
+
+<!-- HEADER -->
+<header class="header">
+  <span class="header-logo">// MASTER STUDY TIMETABLE</span>
+  <div class="header-stats">
+    <span>44 SKILLS</span>
+    <span><span>2,720</span> TOTAL HRS</span>
+    <span><span>~14</span> MONTHS</span>
+    <span><span>8</span> HRS/DAY</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">8 Hours/Day · 6 Days/Week · 44 Skills · Full Stack AI Engineer</div>
+  <h1>Your <em>Complete</em><br>Study Timetable.</h1>
+  <p class="hero-sub">
+    Every skill from the roadmap treated as a dedicated subject — with exact day counts,
+    weekly schedules, daily breakdowns, and project sprints. Sunday is always rest.
+    Study 8 hours a day, every other day is structured.
+  </p>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-num">339</div><div class="stat-label">Study Days</div></div>
+    <div class="stat-box"><div class="stat-num">2,712</div><div class="stat-label">Total Hours</div></div>
+    <div class="stat-box"><div class="stat-num">57</div><div class="stat-label">Study Weeks</div></div>
+    <div class="stat-box"><div class="stat-num">~14</div><div class="stat-label">Months Total</div></div>
+    <div class="stat-box"><div class="stat-num">44</div><div class="stat-label">Skills Mastered</div></div>
+    <div class="stat-box"><div class="stat-num">5</div><div class="stat-label">Phases</div></div>
+  </div>
+</div>
+
+<!-- PHASE LEGEND / FILTER -->
+<div class="phase-legend">
+  <div class="ph-item ph-all active"  onclick="filter('all',this)">  <span class="ph-dot"></span>All Phases</div>
+  <div class="ph-item ph-found"       onclick="filter('foundation',this)"><span class="ph-dot"></span>Foundation (Wks 1–12)</div>
+  <div class="ph-item ph-swe"         onclick="filter('swe',this)">  <span class="ph-dot"></span>SWE Core (Wks 13–21)</div>
+  <div class="ph-item ph-de"          onclick="filter('de',this)">   <span class="ph-dot"></span>Data Eng (Wks 22–33)</div>
+  <div class="ph-item ph-ml"          onclick="filter('ml',this)">   <span class="ph-dot"></span>AI/ML (Wks 34–46)</div>
+  <div class="ph-item ph-spec"        onclick="filter('spec',this)"> <span class="ph-dot"></span>Specialization (Wks 47–57)</div>
+</div>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-section-head">Foundation Phase</div>
+  <div class="sb-link f-link" onclick="jump('sk1')"> <span class="sb-num">01</span><span class="sb-dot"></span>Python Programming    <span class="sb-days">14d</span></div>
+  <div class="sb-link f-link" onclick="jump('sk2')"> <span class="sb-num">02</span><span class="sb-dot"></span>SQL                   <span class="sb-days">10d</span></div>
+  <div class="sb-link f-link" onclick="jump('sk3')"> <span class="sb-num">03</span><span class="sb-dot"></span>Linear Algebra        <span class="sb-days">7d</span></div>
+  <div class="sb-link f-link" onclick="jump('sk4')"> <span class="sb-num">04</span><span class="sb-dot"></span>Probability & Stats   <span class="sb-days">7d</span></div>
+  <div class="sb-link f-link" onclick="jump('sk5')"> <span class="sb-num">05</span><span class="sb-dot"></span>Git & Version Control <span class="sb-days">3d</span></div>
+  <div class="sb-link f-link" onclick="jump('sk6')"> <span class="sb-num">06</span><span class="sb-dot"></span>Linux / Command Line  <span class="sb-days">4d</span></div>
+  <div class="sb-link f-link" onclick="jump('sk7')"> <span class="sb-num">07</span><span class="sb-dot"></span>Data Structures       <span class="sb-days">10d</span></div>
+  <div class="sb-link f-link" onclick="jump('sk8')"> <span class="sb-num">08</span><span class="sb-dot"></span>Algorithms & Big-O   <span class="sb-days">12d</span></div>
+  <div class="sb-link f-link" onclick="jump('sk8s')"><span class="sb-num">★</span><span class="sb-dot" style="background:var(--sprint)"></span>Foundation Sprint     <span class="sb-days">3d</span></div>
+
+  <div class="sb-section-head">SWE Core</div>
+  <div class="sb-link s-link" onclick="jump('sk9')"> <span class="sb-num">09</span><span class="sb-dot"></span>Design Patterns       <span class="sb-days">6d</span></div>
+  <div class="sb-link s-link" onclick="jump('sk10')"><span class="sb-num">10</span><span class="sb-dot"></span>Web Frameworks        <span class="sb-days">8d</span></div>
+  <div class="sb-link s-link" onclick="jump('sk11')"><span class="sb-num">11</span><span class="sb-dot"></span>Testing & TDD         <span class="sb-days">5d</span></div>
+  <div class="sb-link s-link" onclick="jump('sk12')"><span class="sb-num">12</span><span class="sb-dot"></span>Docker & Kubernetes   <span class="sb-days">7d</span></div>
+  <div class="sb-link s-link" onclick="jump('sk13')"><span class="sb-num">13</span><span class="sb-dot"></span>CI/CD Pipelines       <span class="sb-days">4d</span></div>
+  <div class="sb-link s-link" onclick="jump('sk14')"><span class="sb-num">14</span><span class="sb-dot"></span>Security / Auth       <span class="sb-days">5d</span></div>
+  <div class="sb-link s-link" onclick="jump('sk15')"><span class="sb-num">15</span><span class="sb-dot"></span>Async Programming     <span class="sb-days">5d</span></div>
+  <div class="sb-link s-link" onclick="jump('sk16')"><span class="sb-num">16</span><span class="sb-dot"></span>System Design         <span class="sb-days">10d</span></div>
+  <div class="sb-link s-link" onclick="jump('sk16s')"><span class="sb-num">★</span><span class="sb-dot" style="background:var(--sprint)"></span>SWE Sprint            <span class="sb-days">4d</span></div>
+
+  <div class="sb-section-head">Data Engineering</div>
+  <div class="sb-link d-link" onclick="jump('sk17')"><span class="sb-num">17</span><span class="sb-dot"></span>Apache Spark          <span class="sb-days">10d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk18')"><span class="sb-num">18</span><span class="sb-dot"></span>Apache Kafka          <span class="sb-days">8d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk19')"><span class="sb-num">19</span><span class="sb-dot"></span>Data Warehouses       <span class="sb-days">7d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk20')"><span class="sb-num">20</span><span class="sb-dot"></span>ETL / ELT Pipelines   <span class="sb-days">6d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk21')"><span class="sb-num">21</span><span class="sb-dot"></span>Apache Airflow        <span class="sb-days">7d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk22')"><span class="sb-num">22</span><span class="sb-dot"></span>dbt                   <span class="sb-days">5d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk23')"><span class="sb-num">23</span><span class="sb-dot"></span>Dimensional Modeling  <span class="sb-days">6d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk24')"><span class="sb-num">24</span><span class="sb-dot"></span>NoSQL Databases       <span class="sb-days">6d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk25')"><span class="sb-num">25</span><span class="sb-dot"></span>Data Quality          <span class="sb-days">4d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk26')"><span class="sb-num">26</span><span class="sb-dot"></span>Cloud Platforms       <span class="sb-days">8d</span></div>
+  <div class="sb-link d-link" onclick="jump('sk26s')"><span class="sb-num">★</span><span class="sb-dot" style="background:var(--sprint)"></span>DE Sprint             <span class="sb-days">5d</span></div>
+
+  <div class="sb-section-head">AI / ML Core</div>
+  <div class="sb-link m-link" onclick="jump('sk27')"><span class="sb-num">27</span><span class="sb-dot"></span>Classical ML          <span class="sb-days">10d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk28')"><span class="sb-num">28</span><span class="sb-dot"></span>Deep Learning         <span class="sb-days">10d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk29')"><span class="sb-num">29</span><span class="sb-dot"></span>PyTorch               <span class="sb-days">8d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk30')"><span class="sb-num">30</span><span class="sb-dot"></span>CNNs & Vision         <span class="sb-days">7d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk31')"><span class="sb-num">31</span><span class="sb-dot"></span>Transformers & NLP    <span class="sb-days">8d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk32')"><span class="sb-num">32</span><span class="sb-dot"></span>Model Evaluation      <span class="sb-days">4d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk33')"><span class="sb-num">33</span><span class="sb-dot"></span>Feature Engineering   <span class="sb-days">5d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk34')"><span class="sb-num">34</span><span class="sb-dot"></span>Experiment Tracking   <span class="sb-days">3d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk35')"><span class="sb-num">35</span><span class="sb-dot"></span>HuggingFace           <span class="sb-days">5d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk36')"><span class="sb-num">36</span><span class="sb-dot"></span>MLOps & Deployment    <span class="sb-days">8d</span></div>
+  <div class="sb-link m-link" onclick="jump('sk36s')"><span class="sb-num">★</span><span class="sb-dot" style="background:var(--sprint)"></span>ML Sprint             <span class="sb-days">5d</span></div>
+
+  <div class="sb-section-head">Specialization</div>
+  <div class="sb-link sp-link" onclick="jump('sk37')"><span class="sb-num">37</span><span class="sb-dot"></span>LLMs & Fine-Tuning    <span class="sb-days">10d</span></div>
+  <div class="sb-link sp-link" onclick="jump('sk38')"><span class="sb-num">38</span><span class="sb-dot"></span>RAG & Vector DBs      <span class="sb-days">7d</span></div>
+  <div class="sb-link sp-link" onclick="jump('sk39')"><span class="sb-num">39</span><span class="sb-dot"></span>Distributed Training  <span class="sb-days">7d</span></div>
+  <div class="sb-link sp-link" onclick="jump('sk40')"><span class="sb-num">40</span><span class="sb-dot"></span>Distributed Systems   <span class="sb-days">10d</span></div>
+  <div class="sb-link sp-link" onclick="jump('sk41')"><span class="sb-num">41</span><span class="sb-dot"></span>Streaming Systems     <span class="sb-days">8d</span></div>
+  <div class="sb-link sp-link" onclick="jump('sk42')"><span class="sb-num">42</span><span class="sb-dot"></span>Data Lakehouse        <span class="sb-days">6d</span></div>
+  <div class="sb-link sp-link" onclick="jump('sk43')"><span class="sb-num">43</span><span class="sb-dot"></span>Observability         <span class="sb-days">5d</span></div>
+  <div class="sb-link sp-link" onclick="jump('sk44')"><span class="sb-num">44</span><span class="sb-dot"></span>Kubernetes Advanced   <span class="sb-days">7d</span></div>
+  <div class="sb-link sp-link" onclick="jump('sk44s')"><span class="sb-num">★</span><span class="sb-dot" style="background:var(--sprint)"></span>Final Capstone        <span class="sb-days">10d</span></div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="content">
+
+<!-- DAILY SCHEDULE -->
+<div class="daily-schedule">
+  <div class="ds-title">📅 Standard Daily Schedule — Every Study Day (8 Hours)</div>
+  <div class="ds-grid">
+    <div class="ds-slot">
+      <div class="ds-time">08:00 – 10:00</div>
+      <div class="ds-activity">📖 Read / Theory</div>
+      <div class="ds-note">Book chapter or documentation. Notes in your own words.</div>
+    </div>
+    <div class="ds-slot">
+      <div class="ds-time">10:00 – 12:00</div>
+      <div class="ds-activity">🎥 Video Course</div>
+      <div class="ds-note">Corresponding course section. Pause & reproduce every demo.</div>
+    </div>
+    <div class="ds-slot">
+      <div class="ds-time">13:00 – 16:00</div>
+      <div class="ds-activity">💻 Hands-On Coding</div>
+      <div class="ds-note">Implement concepts. Build the day's exercises from scratch.</div>
+    </div>
+    <div class="ds-slot">
+      <div class="ds-time">16:00 – 18:00</div>
+      <div class="ds-activity">🔁 Review & Problems</div>
+      <div class="ds-note">Flashcards, LeetCode (for algo skills), Anki review, mini-project.</div>
+    </div>
+  </div>
+</div>
+
+<!-- VISUAL PROGRESS BAR -->
+<div class="cal-progress">
+  <div class="cp-label">
+    <span>TOTAL TIMELINE — 339 STUDY DAYS (57 WEEKS)</span>
+    <span>Foundation → SWE → DE → ML → Specialization</span>
+  </div>
+  <div class="cp-track">
+    <div class="cp-seg f"  style="width:20.6%" title="Foundation: 70 days"></div>
+    <div class="cp-seg s"  style="width:15.9%" title="SWE Core: 54 days"></div>
+    <div class="cp-seg d"  style="width:21.2%" title="Data Engineering: 72 days"></div>
+    <div class="cp-seg m"  style="width:21.5%" title="AI/ML: 73 days"></div>
+    <div class="cp-seg p"  style="width:20.6%" title="Specialization: 70 days"></div>
+  </div>
+  <div style="display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;">
+    <span style="font-size:10px;font-family:'Space Mono',monospace;color:var(--foundation)">■ Foundation 70d (wks 1–12)</span>
+    <span style="font-size:10px;font-family:'Space Mono',monospace;color:var(--swe)">■ SWE 54d (wks 13–21)</span>
+    <span style="font-size:10px;font-family:'Space Mono',monospace;color:var(--de)">■ Data Eng 72d (wks 22–33)</span>
+    <span style="font-size:10px;font-family:'Space Mono',monospace;color:var(--ml)">■ AI/ML 73d (wks 34–46)</span>
+    <span style="font-size:10px;font-family:'Space Mono',monospace;color:var(--spec)">■ Spec 70d (wks 47–57)</span>
+  </div>
+</div>
+
+<!-- QUICK TIPS -->
+<div class="tips-box">
+  <div class="tips-title">⚡ Rules for This Timetable</div>
+  <div class="tips-grid">
+    <div class="tip-item"><strong>Sunday = Always Rest</strong>No studying. Walk, cook, sleep. Your brain consolidates during rest. Non-negotiable.</div>
+    <div class="tip-item"><strong>Project Sprints = Build, Don't Study</strong>Sprint days have no reading. You build something that uses the skills from that phase. Bugs are the teacher.</div>
+    <div class="tip-item"><strong>8 hrs = Deep Work, Not Screen Time</strong>Pomodoro: 50 min study / 10 min break. No phone. Track actual focused hours, not time-at-desk.</div>
+    <div class="tip-item"><strong>Skills Are Sequential Within Each Phase</strong>Don't jump ahead. Complete each skill fully before starting the next. The order is deliberate.</div>
+    <div class="tip-item"><strong>LeetCode is a Daily Habit (Skills 7–8)</strong>During Data Structures and Algorithms, solve 2 problems every day in addition to the main study plan.</div>
+    <div class="tip-item"><strong>One Phase at a Time</strong>Complete Foundation entirely before touching SWE, DE, or ML core tracks. The foundation is the floor everything else stands on.</div>
+  </div>
+</div>
+
+<!-- ═══ FULL SUMMARY TABLE ═══ -->
+<div class="phase-heading">
+  <span class="ph-title">Complete Schedule — All 44 Skills</span>
+  <span class="ph-total">339 study days · 2,712 hrs</span>
+</div>
+
+<table class="summary-table" id="summary-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Skill</th>
+      <th>Phase</th>
+      <th>Days</th>
+      <th>Hours</th>
+      <th>Week Start → End</th>
+      <th>Visual</th>
+    </tr>
+  </thead>
+  <tbody id="summary-body">
+  </tbody>
+</table>
+
+<!-- ═══ PHASE: FOUNDATION ═══ -->
+<div class="phase-heading" id="phase-foundation">
+  <span class="ph-title">Phase 1 — Foundation</span>
+  <span class="ph-badge found">WEEKS 1–12</span>
+  <span class="ph-total">70 days · 560 hrs</span>
+</div>
+
+<!-- SK01 PYTHON -->
+<div class="skill-block phase-foundation" id="sk1" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">01</span><span class="sk-dot"></span>
+    <span class="sk-name">Python Programming</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 1–2</span>
+      <span class="sk-days-badge">14 days</span>
+      <span class="sk-hrs-badge">112 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 1<br/>Day 1–6</div>
+      <div class="day-cell"><span class="day-num">DAY 1</span><div class="day-topic">Setup + Basics</div><div class="day-detail">Variables, types, operators, input/output, f-strings. Install Python, VSCode, venv.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 2</span><div class="day-topic">Control Flow</div><div class="day-detail">if/elif/else, for loops, while loops, break/continue. Build 5 small programs.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 3</span><div class="day-topic">Functions</div><div class="day-detail">def, args, kwargs, return, default params, scope, recursion basics, lambda.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 4</span><div class="day-topic">Data Structures</div><div class="day-detail">Lists, tuples, dicts, sets — methods, comprehensions, slicing, nested structures.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 5</span><div class="day-topic">OOP Part 1</div><div class="day-detail">Classes, __init__, attributes, methods, self. Build a Bank Account class.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-topic" style="color:var(--dim)">Catch-up / Practice</div><div class="day-detail" style="color:var(--dim)">Optional: review weak areas from Mon–Fri</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 2<br/>Day 7–12</div>
+      <div class="day-cell"><span class="day-num">DAY 7</span><div class="day-topic">OOP Part 2</div><div class="day-detail">Inheritance, polymorphism, dunder methods, properties, class vs instance attrs.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 8</span><div class="day-topic">Modules & Packages</div><div class="day-detail">import, pip, venv, requirements.txt, __init__.py, building a package.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 9</span><div class="day-topic">File I/O & Errors</div><div class="day-detail">open(), read/write, with statement, try/except/finally, custom exceptions.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 10</span><div class="day-topic">Advanced Python</div><div class="day-detail">Generators, iterators, decorators, context managers, *args/**kwargs advanced.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 11</span><div class="day-topic">NumPy + pandas intro</div><div class="day-detail">Arrays, vectorized ops (NumPy). Series, DataFrame, read_csv, basic manipulation (pandas).</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 12</span><div class="day-topic">Project Day</div><div class="day-detail">Build: CLI inventory manager with CSV persistence, OOP design, full error handling.</div><div class="day-hours">8 hrs</div></div>
+    </div>
+    <div class="week-row" style="border-top: 2px solid var(--foundation);">
+      <div class="week-label">WK 3<br/>Day 13–14</div>
+      <div class="day-cell"><span class="day-num">DAY 13</span><div class="day-topic">Testing Python Code</div><div class="day-detail">pytest basics, assertions, fixtures. Write tests for your inventory manager project.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 14</span><div class="day-topic">Consolidation</div><div class="day-detail">Review all concepts. Refactor project. Solve 10 HackerRank Python challenges.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">WED→</span><div class="day-detail" style="color:var(--dim)">→ SQL begins Day 15</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SK02 SQL -->
+<div class="skill-block phase-foundation" id="sk2" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">02</span><span class="sk-dot"></span>
+    <span class="sk-name">SQL</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 3–4</span>
+      <span class="sk-days-badge">10 days</span>
+      <span class="sk-hrs-badge">80 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 3<br/>Days 15–19</div>
+      <div class="day-cell"><span class="day-num">DAY 15</span><div class="day-topic">SQL Basics</div><div class="day-detail">SELECT, FROM, WHERE, ORDER BY, LIMIT. Install PostgreSQL + pgAdmin. Load sample DB.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 16</span><div class="day-topic">Aggregations</div><div class="day-detail">COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING. Solve 20 SQLZoo exercises.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 17</span><div class="day-topic">JOINs</div><div class="day-detail">INNER, LEFT, RIGHT, FULL OUTER, CROSS, SELF JOINs. Design a 3-table schema.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 18</span><div class="day-topic">Subqueries & CTEs</div><div class="day-detail">Correlated subqueries, EXISTS, IN, NOT IN, WITH (CTEs), recursive CTEs.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 19</span><div class="day-topic">Window Functions</div><div class="day-detail">ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, PARTITION BY, running totals.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 4<br/>Days 20–24</div>
+      <div class="day-cell"><span class="day-num">DAY 20</span><div class="day-topic">Indexes & Performance</div><div class="day-detail">B-tree indexes, composite indexes, EXPLAIN ANALYZE, query planning basics.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 21</span><div class="day-topic">Database Design</div><div class="day-detail">Normalization (1NF–3NF), primary/foreign keys, constraints, transactions (ACID).</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 22</span><div class="day-topic">Advanced Features</div><div class="day-detail">Views, materialized views, stored procedures, triggers, JSON in PostgreSQL.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 23</span><div class="day-topic">SQL + Python</div><div class="day-detail">psycopg2, SQLAlchemy ORM basics. Query a DB from Python. pandas read_sql().</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 24</span><div class="day-topic">Project + Review</div><div class="day-detail">Build: analytics report from a real Kaggle dataset. 20 complex queries. LeetCode SQL top-50.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SK03 LINEAR ALGEBRA -->
+<div class="skill-block phase-foundation" id="sk3" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">03</span><span class="sk-dot"></span>
+    <span class="sk-name">Linear Algebra</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 5</span>
+      <span class="sk-days-badge">7 days</span>
+      <span class="sk-hrs-badge">56 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 5<br/>Days 25–31</div>
+      <div class="day-cell"><span class="day-num">DAY 25</span><div class="day-topic">Vectors</div><div class="day-detail">Vector spaces, operations, dot product, norms. 3B1B videos Ch.1–3. NumPy implementation.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 26</span><div class="day-topic">Matrices</div><div class="day-detail">Matrix addition, multiplication, transpose. 3B1B Ch.4–5. Implement matrix multiply from scratch.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 27</span><div class="day-topic">Linear Transformations</div><div class="day-detail">Geometric meaning of matrices, basis change, determinants. 3B1B Ch.6–7.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 28</span><div class="day-topic">Matrix Inversion & Systems</div><div class="day-detail">Solving Ax=b, Gaussian elimination, inverse matrices, rank, null space. MML Book Ch.2.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 29</span><div class="day-topic">Eigenvalues & Eigenvectors</div><div class="day-detail">Eigendecomposition, characteristic polynomial, diagonalization. 3B1B Ch.14.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 6 (first 2d)</div>
+      <div class="day-cell"><span class="day-num">DAY 30</span><div class="day-topic">SVD & PCA</div><div class="day-detail">Singular Value Decomposition, PCA for dimensionality reduction. Implement PCA in NumPy.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 31</span><div class="day-topic">ML Applications</div><div class="day-detail">How linear algebra maps to neural nets, word embeddings, attention. Consolidation + review.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">WED→</span><div class="day-detail" style="color:var(--dim)">→ Probability & Stats begins</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SK04 PROB & STATS -->
+<div class="skill-block phase-foundation" id="sk4" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">04</span><span class="sk-dot"></span>
+    <span class="sk-name">Probability & Statistics</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 6–7</span>
+      <span class="sk-days-badge">7 days</span>
+      <span class="sk-hrs-badge">56 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 6–7<br/>Days 32–38</div>
+      <div class="day-cell"><span class="day-num">DAY 32</span><div class="day-topic">Probability Basics</div><div class="day-detail">Sample spaces, events, addition rule, multiplication rule, independence. StatQuest: Probability videos.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 33</span><div class="day-topic">Bayes & Conditional</div><div class="day-detail">Conditional probability, Bayes theorem, prior/posterior/likelihood, naive Bayes intuition.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 34</span><div class="day-topic">Distributions</div><div class="day-detail">Normal, Bernoulli, Binomial, Poisson, Exponential. Plot each with SciPy. Understand CLT.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 35</span><div class="day-topic">Descriptive Stats</div><div class="day-detail">Mean, median, mode, variance, std dev, skewness, kurtosis, quartiles, box plots.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 36</span><div class="day-topic">Hypothesis Testing</div><div class="day-detail">t-tests, p-values, significance levels, Type I/II errors, confidence intervals. StatQuest series.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 7 (2d)</div>
+      <div class="day-cell"><span class="day-num">DAY 37</span><div class="day-topic">MLE & MAP</div><div class="day-detail">Maximum Likelihood Estimation, Maximum A Posteriori, how these underlie ML training.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 38</span><div class="day-topic">Project + Review</div><div class="day-detail">Exploratory data analysis on a real dataset. Apply all stats concepts. StatQuest final review.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">WED→</span><div class="day-detail" style="color:var(--dim)">→ Git begins Day 39</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SK05 GIT -->
+<div class="skill-block phase-foundation" id="sk5" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">05</span><span class="sk-dot"></span>
+    <span class="sk-name">Git & Version Control</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 7</span>
+      <span class="sk-days-badge">3 days</span>
+      <span class="sk-hrs-badge">24 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 7<br/>Days 39–41</div>
+      <div class="day-cell"><span class="day-num">DAY 39</span><div class="day-topic">Git Core</div><div class="day-detail">init, add, commit, log, diff, stash, .gitignore. Learn Git Branching (all basic levels).</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 40</span><div class="day-topic">Branching & Merging</div><div class="day-detail">Branch, merge, rebase, cherry-pick, conflict resolution. Finish Learn Git Branching advanced levels.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 41</span><div class="day-topic">GitHub Workflows</div><div class="day-detail">Fork, PR, code review, GitHub flow, semantic commits, tagging releases. Push all prior projects.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">THU→</span><div class="day-detail" style="color:var(--dim)">→ Linux begins Day 42</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SK06 LINUX -->
+<div class="skill-block phase-foundation" id="sk6" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">06</span><span class="sk-dot"></span>
+    <span class="sk-name">Linux / Command Line</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 7–8</span>
+      <span class="sk-days-badge">4 days</span>
+      <span class="sk-hrs-badge">32 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 7–8<br/>Days 42–45</div>
+      <div class="day-cell"><span class="day-num">DAY 42</span><div class="day-topic">Navigation & Files</div><div class="day-detail">pwd, ls, cd, mkdir, rm, cp, mv, find, chmod, chown. MIT Missing Semester Lectures 1–2.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 43</span><div class="day-topic">Pipes & Text Tools</div><div class="day-detail">pipe |, redirect >, grep, awk, sed, sort, uniq, wc, cut, xargs. Process 3 real CSV files.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 44</span><div class="day-topic">Bash Scripting</div><div class="day-detail">Variables, loops, conditions, functions in bash. Write 5 automation scripts. cron jobs.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 45</span><div class="day-topic">SSH & Processes</div><div class="day-detail">SSH keygen, remote login, tmux, ps, kill, top, htop, env vars, systemd basics.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">FRI→</span><div class="day-detail" style="color:var(--dim)">→ Data Structures starts WK 8</div></div>
+      <div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SK07 DATA STRUCTURES -->
+<div class="skill-block phase-foundation" id="sk7" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">07</span><span class="sk-dot"></span>
+    <span class="sk-name">Data Structures</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 8–9</span>
+      <span class="sk-days-badge">10 days</span>
+      <span class="sk-hrs-badge">80 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 8<br/>Days 46–51</div>
+      <div class="day-cell"><span class="day-num">DAY 46</span><div class="day-topic">Arrays & Strings</div><div class="day-detail">Dynamic arrays, amortized cost, string immutability. Implement ArrayList in Python. 5 LeetCode Easy.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 47</span><div class="day-topic">Linked Lists</div><div class="day-detail">Singly + doubly linked lists from scratch. Insertion, deletion, reversal. 5 LeetCode problems.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 48</span><div class="day-topic">Stacks & Queues</div><div class="day-detail">Stack (LIFO), Queue (FIFO), Deque, implement with linked list and array. 5 LeetCode problems.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 49</span><div class="day-topic">Hash Maps & Sets</div><div class="day-detail">Hash functions, collision handling (chaining/open addressing), implement HashMap. 5 LeetCode.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 50</span><div class="day-topic">Trees Part 1</div><div class="day-detail">Binary trees, BST insert/delete/search, in/pre/post-order traversal. 5 LeetCode tree problems.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest + LeetCode optional</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 9<br/>Days 51–55</div>
+      <div class="day-cell"><span class="day-num">DAY 51</span><div class="day-topic">Trees Part 2 + Heaps</div><div class="day-detail">AVL trees concept, Red-Black trees concept, Min/Max Heap, heap operations, heapq. 5 LeetCode.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 52</span><div class="day-topic">Graphs</div><div class="day-detail">Adjacency list/matrix, directed/undirected, weighted graphs. Implement graph class. 5 LeetCode.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 53</span><div class="day-topic">Tries</div><div class="day-detail">Trie implementation, insert/search/startsWith. Use cases (autocomplete). 3 LeetCode Trie problems.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 54</span><div class="day-topic">Review & Patterns</div><div class="day-detail">When to use which structure. Time/space complexity table. Solve 10 mixed LeetCode Easy.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 55</span><div class="day-topic">Mock Interview Day</div><div class="day-detail">2 timed problems (45 min each). Practice explaining your approach out loud.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SK08 ALGORITHMS -->
+<div class="skill-block phase-foundation" id="sk8" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">08</span><span class="sk-dot"></span>
+    <span class="sk-name">Algorithms & Big-O</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 10–11</span>
+      <span class="sk-days-badge">12 days</span>
+      <span class="sk-hrs-badge">96 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 10<br/>Days 56–61</div>
+      <div class="day-cell"><span class="day-num">DAY 56</span><div class="day-topic">Big-O Analysis</div><div class="day-detail">Time/space complexity, O(1)/O(log n)/O(n)/O(n log n)/O(n²). Analyze 20 code snippets.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 57</span><div class="day-topic">Sorting Algorithms</div><div class="day-detail">Bubble, Selection, Insertion, Merge Sort, Quick Sort. Implement all 5 in Python. Compare.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 58</span><div class="day-topic">Binary Search</div><div class="day-detail">Iterative + recursive binary search, search on answer concept. 8 LeetCode binary search problems.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 59</span><div class="day-topic">BFS & DFS</div><div class="day-detail">BFS (queue-based), DFS (stack/recursive), level-order traversal. 8 LeetCode graph problems.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 60</span><div class="day-topic">Two Pointers & Sliding Window</div><div class="day-detail">Two-pointer technique, fixed/variable sliding window. 8 LeetCode Medium problems using patterns.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 11<br/>Days 61–67</div>
+      <div class="day-cell"><span class="day-num">DAY 61</span><div class="day-topic">Greedy Algorithms</div><div class="day-detail">Greedy choice property, interval scheduling, activity selection. 6 LeetCode Greedy.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 62</span><div class="day-topic">Recursion & Backtracking</div><div class="day-detail">Recursion trees, memoization intro, backtracking template. N-Queens, permutations, subsets.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 63</span><div class="day-topic">Dynamic Programming 1</div><div class="day-detail">Memoization vs tabulation, 1D DP problems: Fibonacci, climbing stairs, coin change.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 64</span><div class="day-topic">Dynamic Programming 2</div><div class="day-detail">2D DP: longest common subsequence, edit distance, knapsack. Recognize DP patterns.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 65</span><div class="day-topic">Graph Algorithms</div><div class="day-detail">Dijkstra's (shortest path), Bellman-Ford, Topological sort, Union-Find (DSU). 6 LeetCode.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 12<br/>Days 66–67</div>
+      <div class="day-cell"><span class="day-num">DAY 66</span><div class="day-topic">Pattern Recognition</div><div class="day-detail">Categorize 50 LeetCode problems by pattern. Build a personal cheat sheet.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 67</span><div class="day-topic">Mock Interview Day</div><div class="day-detail">3 timed LeetCode Medium problems. Record yourself explaining. Simulate FAANG conditions.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">→</span><div class="day-detail" style="color:var(--dim)">Foundation Sprint next</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOUNDATION SPRINT -->
+<div class="skill-block phase-sprint" id="sk8s" data-phase="foundation">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">★</span><span class="sk-dot"></span>
+    <span class="sk-name">Foundation Project Sprint</span>
+    <div class="sk-meta">
+      <span class="sk-week-badge">WK 12</span>
+      <span class="sk-days-badge">3 days</span>
+      <span class="sk-hrs-badge">24 hrs</span>
+    </div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div>
+      <div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div>
+      <div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 12<br/>Days 68–70</div>
+      <div class="day-cell"><span class="day-num">DAY 68</span><div class="day-topic">🏗 Sprint Day 1</div><div class="day-detail">Build: Python CLI tool that reads a CSV, runs SQLite queries, computes statistics (NumPy), outputs a visualization (matplotlib). Design + core functionality.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 69</span><div class="day-topic">🏗 Sprint Day 2</div><div class="day-detail">Add: proper error handling, unit tests (pytest), Git commits with meaningful messages, README documentation.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 70</span><div class="day-topic">🏗 Sprint Day 3</div><div class="day-detail">Polish + push to GitHub. Write a 1-page reflection: what you know, what's fuzzy, what's solid. Foundation COMPLETE.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">THU</span><div class="day-detail" style="color:var(--dim)">Rest. Phase 1 complete!</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PHASE: SWE CORE ═══ -->
+<div class="phase-heading" id="phase-swe">
+  <span class="ph-title">Phase 2 — Software Engineering Core</span>
+  <span class="ph-badge swe">WEEKS 13–21</span>
+  <span class="ph-total">54 days · 432 hrs</span>
+</div>
+
+<!-- Compact SWE skills (abbreviated daily detail for length) -->
+<div class="skill-block phase-swe" id="sk9" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">09</span><span class="sk-dot"></span>
+    <span class="sk-name">Design Patterns & SOLID Principles</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 13</span><span class="sk-days-badge">6 days</span><span class="sk-hrs-badge">48 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 13<br/>Days 71–76</div>
+      <div class="day-cell"><span class="day-num">DAY 71</span><div class="day-topic">SOLID Principles</div><div class="day-detail">SRP, OCP, LSP, ISP, DIP — one principle per 1.5 hrs with before/after code examples.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 72</span><div class="day-topic">Creational Patterns</div><div class="day-detail">Factory Method, Abstract Factory, Builder, Singleton, Prototype. Implement each in Python.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 73</span><div class="day-topic">Structural Patterns</div><div class="day-detail">Adapter, Facade, Decorator, Composite, Bridge, Proxy, Flyweight. Real-world examples.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 74</span><div class="day-topic">Behavioral Patterns</div><div class="day-detail">Observer, Strategy, Command, Iterator, State, Template Method, Chain of Responsibility.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 75</span><div class="day-topic">Refactoring Practice</div><div class="day-detail">Take 3 "bad code" examples, identify smells, apply patterns to fix. ArjanCodes exercises.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 14 (1d)</div>
+      <div class="day-cell"><span class="day-num">DAY 76</span><div class="day-topic">Review + Mini Project</div><div class="day-detail">Build a plugin system using Strategy + Factory + Observer patterns combined.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">→</span><div class="day-detail" style="color:var(--dim)">Web Frameworks next</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div><div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<div class="skill-block phase-swe" id="sk10" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">10</span><span class="sk-dot"></span>
+    <span class="sk-name">Web Frameworks (FastAPI)</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 14–15</span><span class="sk-days-badge">8 days</span><span class="sk-hrs-badge">64 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 14<br/>Days 77–82</div>
+      <div class="day-cell"><span class="day-num">DAY 77</span><div class="day-topic">FastAPI Basics</div><div class="day-detail">Routes, path/query params, request bodies (Pydantic models), response models, status codes.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 78</span><div class="day-topic">Database Integration</div><div class="day-detail">SQLAlchemy + FastAPI, async sessions, CRUD operations, migration with Alembic.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 79</span><div class="day-topic">Authentication</div><div class="day-detail">JWT tokens, OAuth2 password flow, password hashing (bcrypt), protected endpoints.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 80</span><div class="day-topic">Middleware & Background Tasks</div><div class="day-detail">CORS, custom middleware, background tasks, WebSockets intro, lifespan events.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 81</span><div class="day-topic">Testing APIs</div><div class="day-detail">TestClient, pytest for FastAPI, mocking DB, test fixtures, 100% coverage on a small API.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 15<br/>Days 82–84</div>
+      <div class="day-cell"><span class="day-num">DAY 82</span><div class="day-topic">Project: Build a REST API</div><div class="day-detail">Full CRUD API: users, items, auth, DB, tests. Like a mini e-commerce backend.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 83</span><div class="day-topic">API Deployment</div><div class="day-detail">Dockerize the API. Deploy to Railway/Fly.io/Render. Add health check endpoint.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 84</span><div class="day-topic">Advanced FastAPI</div><div class="day-detail">Dependency injection, custom exception handlers, OpenAPI docs, versioning. Review.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">→</span><div class="day-detail" style="color:var(--dim)">Testing & TDD next</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Skills 11–16 as compact blocks -->
+<div class="skill-block phase-swe" id="sk11" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">11</span><span class="sk-dot"></span>
+    <span class="sk-name">Testing & TDD</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 15–16</span><span class="sk-days-badge">5 days</span><span class="sk-hrs-badge">40 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 15–16<br/>Days 85–89</div>
+      <div class="day-cell"><span class="day-num">DAY 85</span><div class="day-topic">pytest Mastery</div><div class="day-detail">Fixtures, parametrize, markers, conftest.py, temp files, capsys. 20 testing exercises.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 86</span><div class="day-topic">Mocking</div><div class="day-detail">unittest.mock, MagicMock, patch decorators, mocking HTTP calls, mocking DB.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 87</span><div class="day-topic">TDD Red-Green-Refactor</div><div class="day-detail">Full TDD cycle on a new feature. Write failing test first, implement, refactor. 3 complete cycles.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 88</span><div class="day-topic">Integration Tests</div><div class="day-detail">Testing database interactions, API integration tests with real DB, test containers.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 89</span><div class="day-topic">Coverage & CI</div><div class="day-detail">pytest-cov for coverage, add tests to GitHub Actions CI pipeline. Aim 90%+ coverage.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="skill-block phase-swe" id="sk12" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">12</span><span class="sk-dot"></span>
+    <span class="sk-name">Docker & Kubernetes</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 16–17</span><span class="sk-days-badge">7 days</span><span class="sk-hrs-badge">56 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 16–17<br/>Days 90–96</div>
+      <div class="day-cell"><span class="day-num">DAY 90</span><div class="day-topic">Docker Fundamentals</div><div class="day-detail">Images, containers, Dockerfile, layers, CMD vs ENTRYPOINT. Containerize your FastAPI app.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 91</span><div class="day-topic">Docker Compose</div><div class="day-detail">Multi-service apps: API + DB + Redis. Networking, volumes, env files, health checks.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 92</span><div class="day-topic">Docker Registry & Best Practices</div><div class="day-detail">Multi-stage builds, image optimization, push to Docker Hub / GitHub Container Registry.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 93</span><div class="day-topic">Kubernetes Core</div><div class="day-detail">Pods, ReplicaSets, Deployments, Services (ClusterIP/NodePort/LoadBalancer). minikube setup.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 94</span><div class="day-topic">K8s Config & Storage</div><div class="day-detail">ConfigMaps, Secrets, PersistentVolumes, StatefulSets. Deploy FastAPI + PostgreSQL on K8s.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 17 (2d)</div>
+      <div class="day-cell"><span class="day-num">DAY 95</span><div class="day-topic">K8s Networking & Ingress</div><div class="day-detail">Ingress controllers (NGINX), HPA (Horizontal Pod Autoscaler), resource limits, liveness probes.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 96</span><div class="day-topic">Full Stack Deploy</div><div class="day-detail">Deploy complete app (API + DB + frontend) to K8s. Write YAML manifests from scratch.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div><div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<div class="skill-block phase-swe" id="sk13" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">13</span><span class="sk-dot"></span>
+    <span class="sk-name">CI/CD Pipelines</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 17</span><span class="sk-days-badge">4 days</span><span class="sk-hrs-badge">32 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 17–18<br/>Days 97–100</div>
+      <div class="day-cell"><span class="day-num">DAY 97</span><div class="day-topic">GitHub Actions Basics</div><div class="day-detail">Workflow YAML, triggers, jobs, steps, runners. Build lint + test pipeline for your API project.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 98</span><div class="day-topic">Advanced Workflows</div><div class="day-detail">Matrix builds, caching (pip/npm), secrets management, environment-specific deployments.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 99</span><div class="day-topic">Docker + CI</div><div class="day-detail">Build Docker image in CI, push to registry, deploy to staging on PR merge.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 100</span><div class="day-topic">Complete Pipeline</div><div class="day-detail">Full pipeline: lint → test → build → push → deploy → notify. Add to existing project.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"></div><div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<div class="skill-block phase-swe" id="sk14" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">14</span><span class="sk-dot"></span>
+    <span class="sk-name">Security (OWASP / Auth)</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 18</span><span class="sk-days-badge">5 days</span><span class="sk-hrs-badge">40 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 18<br/>Days 101–105</div>
+      <div class="day-cell"><span class="day-num">DAY 101</span><div class="day-topic">OWASP Top 10</div><div class="day-detail">SQL injection, XSS, CSRF, SSRF, broken auth. PortSwigger labs for each. Exploit then patch.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 102</span><div class="day-topic">Authentication Deep Dive</div><div class="day-detail">Session vs JWT vs OAuth2. bcrypt/argon2. Refresh tokens. Implement from scratch in FastAPI.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 103</span><div class="day-topic">API Security</div><div class="day-detail">Rate limiting, API keys, CORS, HTTPS/TLS, input validation, parameterized queries.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 104</span><div class="day-topic">OAuth2 & SSO</div><div class="day-detail">OAuth2 flows (code, implicit, client credentials). Add "Login with Google" to FastAPI app.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 105</span><div class="day-topic">Security Audit</div><div class="day-detail">Audit your existing projects for vulnerabilities. Run bandit (Python security linter). Fix all issues.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="skill-block phase-swe" id="sk15" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">15</span><span class="sk-dot"></span>
+    <span class="sk-name">Async Programming</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 19</span><span class="sk-days-badge">5 days</span><span class="sk-hrs-badge">40 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 19<br/>Days 106–110</div>
+      <div class="day-cell"><span class="day-num">DAY 106</span><div class="day-topic">Async/Await Model</div><div class="day-detail">Event loop, coroutines, tasks, futures. asyncio.run(), gather(), create_task(). mCoding videos.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 107</span><div class="day-topic">Async HTTP & DB</div><div class="day-detail">aiohttp for async HTTP calls, asyncpg for async PostgreSQL. Build async data fetcher.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 108</span><div class="day-topic">Threading vs Multiprocessing</div><div class="day-detail">GIL limitations, threading for I/O-bound, multiprocessing for CPU-bound. concurrent.futures.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 109</span><div class="day-topic">Message Queues</div><div class="day-detail">Celery + Redis for async task queues. Background jobs, retries, monitoring with Flower.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 110</span><div class="day-topic">Async FastAPI</div><div class="day-detail">Fully async FastAPI with async DB, async external calls, WebSocket endpoint. Benchmark vs sync.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="skill-block phase-swe" id="sk16" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">16</span><span class="sk-dot"></span>
+    <span class="sk-name">System Design</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 19–21</span><span class="sk-days-badge">10 days</span><span class="sk-hrs-badge">80 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 19–20<br/>Days 111–117</div>
+      <div class="day-cell"><span class="day-num">DAY 111</span><div class="day-topic">Scale Fundamentals</div><div class="day-detail">Vertical vs horizontal scaling, load balancers (L4/L7), stateless services, CAP theorem.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 112</span><div class="day-topic">Caching</div><div class="day-detail">Cache aside, write-through, write-back, CDN, Redis caching, cache invalidation strategies.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 113</span><div class="day-topic">Databases at Scale</div><div class="day-detail">Read replicas, sharding, consistent hashing, connection pooling, SQL vs NoSQL decisions.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 114</span><div class="day-topic">Design: URL Shortener</div><div class="day-detail">Full design session (1.5hr): requirements → API → DB → scale → deep dive. System Design Primer.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 115</span><div class="day-topic">Design: Instagram Feed</div><div class="day-detail">Photo storage, feed generation (push/pull model), notification system, CDN strategy.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 21<br/>Days 116–120</div>
+      <div class="day-cell"><span class="day-num">DAY 116</span><div class="day-topic">Design: Chat System</div><div class="day-detail">WebSockets, message storage, presence service, group chats. Alex Xu Vol.1 Ch.12.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 117</span><div class="day-topic">Design: YouTube</div><div class="day-detail">Video upload pipeline, transcoding, CDN, view counting at scale, recommendation hooks.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 118</span><div class="day-topic">Design: Rate Limiter</div><div class="day-detail">Token bucket, leaky bucket, sliding window algorithms. Distributed rate limiting with Redis.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 119</span><div class="day-topic">Microservices vs Monolith</div><div class="day-detail">When to split, service mesh, API gateway patterns, event-driven architecture, CQRS basics.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 120</span><div class="day-topic">Mock Interview Day</div><div class="day-detail">2 full 45-min design sessions with timer. Record and review. Write post-mortem.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SAT</span><div class="day-detail" style="color:var(--dim)">Rest</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SWE SPRINT -->
+<div class="skill-block phase-sprint" id="sk16s" data-phase="swe">
+  <div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">★</span><span class="sk-dot"></span>
+    <span class="sk-name">SWE Project Sprint — Production REST API</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 21</span><span class="sk-days-badge">4 days</span><span class="sk-hrs-badge">32 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row">
+      <div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SAT</div>
+    </div>
+    <div class="week-row">
+      <div class="week-label">WK 21<br/>Days 121–124</div>
+      <div class="day-cell"><span class="day-num">DAY 121</span><div class="day-topic">🏗 Sprint: Design</div><div class="day-detail">Design a production REST API service: ERD, API spec (OpenAPI), auth flow, deployment plan.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 122</span><div class="day-topic">🏗 Sprint: Build</div><div class="day-detail">FastAPI + PostgreSQL + Redis. Full auth, CRUD, async. Tests passing. Docker ready.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 123</span><div class="day-topic">🏗 Sprint: CI/CD</div><div class="day-detail">GitHub Actions pipeline: test → build → push → deploy to cloud. Monitoring with logs.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 124</span><div class="day-topic">🏗 Sprint: Polish</div><div class="day-detail">Documentation, README, OpenAPI docs, security audit, performance test. Push to GitHub. Done.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">FRI</span><div class="day-detail" style="color:var(--dim)">Rest. SWE Phase complete!</div></div>
+      <div class="day-cell rest"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ REMAINING PHASES: COMPACT BLOCKS ═══ -->
+<div class="phase-heading" id="phase-de">
+  <span class="ph-title">Phase 3 — Data Engineering Core</span>
+  <span class="ph-badge de">WEEKS 22–33</span>
+  <span class="ph-total">72 days · 576 hrs</span>
+</div>
+
+<!-- DE skills 17-26 as single-row compact blocks -->
+<script>
+const deSkills = [
+  {id:'sk17', num:'17', name:'Apache Spark / PySpark',  wk:'WK 22–23', days:10, hrs:80,  start:125,
+   schedule:[
+    ['DAY 125','Spark Architecture','Driver, executors, DAGs, lazy evaluation, transformations vs actions. Install PySpark locally.'],
+    ['DAY 126','DataFrames API','read/write Parquet, select, filter, groupBy, agg, join. 10 exercises.'],
+    ['DAY 127','Spark SQL','SparkSession, createTempView, SQL queries on DataFrames, query optimization.'],
+    ['DAY 128','Partitioning & Shuffle','repartition vs coalesce, broadcast joins, skew handling, partition pruning.'],
+    ['DAY 129','PySpark Project','ETL pipeline: read raw data → clean → aggregate → write Parquet. Profile & optimize.'],
+    ['DAY 130','UDFs & Window Functions','Python UDFs, pandas_udf (vectorized), window functions in Spark SQL.'],
+    ['DAY 131','Spark Streaming Intro','DStream vs Structured Streaming. Read from socket, process, sink to console.'],
+    ['DAY 132','Delta Lake with Spark','ACID on data lake, time travel, merge operations, schema evolution.'],
+    ['DAY 133','Spark on Cloud','EMR (AWS) or Dataproc (GCP) walkthrough. Submit a job to a cluster.'],
+    ['DAY 134','Review + Project','Build end-to-end: ingest CSV from S3 → Spark transform → write Parquet warehouse.'],
+   ]},
+  {id:'sk18', num:'18', name:'Apache Kafka',            wk:'WK 23–24', days:8,  hrs:64,  start:135,
+   schedule:[
+    ['DAY 135','Kafka Architecture','Brokers, topics, partitions, offsets, replication factor. Run Kafka with Docker Compose.'],
+    ['DAY 136','Producers & Consumers','Python kafka-python library. Produce/consume messages. Consumer groups.'],
+    ['DAY 137','Kafka Connect','Source connectors (Postgres CDC), sink connectors (Elasticsearch). Debezium setup.'],
+    ['DAY 138','Schema Registry & Avro','Confluent Schema Registry, Avro serialization, schema evolution rules.'],
+    ['DAY 139','Kafka Streams','Stateless transformations, stateful aggregations, KTable vs KStream join.'],
+    ['DAY 140','Monitoring Kafka','Consumer lag monitoring, JMX metrics, Kafka UI, Conduktor setup.'],
+    ['DAY 141','Kafka + Spark Integration','Read Kafka topic as Spark Structured Streaming source. Write checkpoints.'],
+    ['DAY 142','Project: Event Pipeline','User click events → Kafka → Spark Structured Streaming → aggregate → store.'],
+   ]},
+  {id:'sk19', num:'19', name:'Data Warehouses (Snowflake/BigQuery)',wk:'WK 25', days:7, hrs:56, start:143,
+   schedule:[
+    ['DAY 143','DWH Architecture','MPP, columnar storage, separation of compute/storage. Snowflake vs BigQuery vs Redshift.'],
+    ['DAY 144','Snowflake Core','Virtual warehouses, databases/schemas/tables, Time Travel, Fail-safe.'],
+    ['DAY 145','Snowflake SQL Advanced','VARIANT (JSON), FLATTEN, LATERAL JOIN, streams, tasks, stored procedures.'],
+    ['DAY 146','BigQuery Deep Dive','Partitioned/clustered tables, nested records, cost estimation, slots, reservations.'],
+    ['DAY 147','Performance Tuning','Query profiling, materialized views, caching, auto-clustering, result cache.'],
+    ['DAY 148','Loading & Integration','COPY INTO (Snowflake), bq load, Fivetran/Airbyte connectors, external tables.'],
+    ['DAY 149','Project: DWH Build','Design a star schema, load raw data, build 5 analytical queries, optimize costs.'],
+   ]},
+  {id:'sk20', num:'20', name:'ETL / ELT Pipelines',    wk:'WK 26', days:6, hrs:48, start:150,
+   schedule:[
+    ['DAY 150','ETL vs ELT Concepts','Architecture differences, when to use each, idempotency, incremental patterns.'],
+    ['DAY 151','Airbyte / Fivetran','Set up Airbyte locally. Connect Postgres source → Snowflake destination. Schedule sync.'],
+    ['DAY 152','Change Data Capture','Debezium for CDC from Postgres. Capture inserts/updates/deletes as events.'],
+    ['DAY 153','Incremental Loading','Full refresh vs incremental, watermarks, deduplication, merge strategies.'],
+    ['DAY 154','Error Handling','Dead-letter queues, retry logic, data reconciliation, pipeline alerting patterns.'],
+    ['DAY 155','Complete ELT Pipeline','Airbyte (ingest) → Snowflake (store) → dbt (transform) → BI tool (serve). Full run.'],
+   ]},
+  {id:'sk21', num:'21', name:'Apache Airflow',          wk:'WK 27', days:7, hrs:56, start:156,
+   schedule:[
+    ['DAY 156','Airflow Architecture','Scheduler, webserver, metadata DB, workers. Run Airflow with Docker Compose.'],
+    ['DAY 157','DAG Basics','Operators (Python, Bash, SQL), task dependencies, schedule intervals, backfilling.'],
+    ['DAY 158','TaskFlow API','@task decorator, XCom, dynamic task mapping (Airflow 2.3+), task groups.'],
+    ['DAY 159','Sensors & Hooks','FileSensor, HttpSensor, S3Sensor. Database hooks, custom hooks for Snowflake.'],
+    ['DAY 160','Testing DAGs','pytest for Airflow, DAG import tests, task unit tests, integration tests.'],
+    ['DAY 161','Production Airflow','K8sExecutor, CeleryExecutor, variables, connections, pools, SLAs, alerting.'],
+    ['DAY 162','Project: Orchestrated Pipeline','Build a DAG that: checks S3 → runs Spark job → loads to Snowflake → runs dbt.'],
+   ]},
+  {id:'sk22', num:'22', name:'dbt',                     wk:'WK 28', days:5, hrs:40, start:163,
+   schedule:[
+    ['DAY 163','dbt Basics','Models (SELECT statements), ref(), source(), materializations. dbt init on Snowflake.'],
+    ['DAY 164','Tests & Documentation','unique, not_null, accepted_values, relationships tests. YAML docs. dbt docs generate.'],
+    ['DAY 165','Jinja & Macros','Jinja templating in SQL, custom macros, dbt-utils package, dispatch.'],
+    ['DAY 166','Snapshots & Seeds','Type 2 SCD with dbt snapshots, seed CSV files, incremental models deep dive.'],
+    ['DAY 167','Project: dbt on real data','Build a full dbt project: staging → intermediate → marts. Run in Airflow DAG.'],
+   ]},
+  {id:'sk23', num:'23', name:'Dimensional Modeling',    wk:'WK 28–29', days:6, hrs:48, start:168,
+   schedule:[
+    ['DAY 168','Kimball Fundamentals','Fact tables, dimension tables, grain definition, star schema design.'],
+    ['DAY 169','Dimension Types','Conformed, degenerate, junk, outrigger, role-playing dimensions.'],
+    ['DAY 170','Slowly Changing Dimensions','SCD Type 0, 1, 2, 3, 4, 6. Implement Type 2 with dbt snapshots.'],
+    ['DAY 171','Fact Table Types','Transaction, periodic snapshot, accumulating snapshot. Factless facts.'],
+    ['DAY 172','Real-World Schema Design','Design an e-commerce DWH schema from requirements. Justify every decision.'],
+    ['DAY 173','Project: Model a Business','Take raw operational data, design a complete star schema, implement in dbt.'],
+   ]},
+  {id:'sk24', num:'24', name:'NoSQL Databases',         wk:'WK 29–30', days:6, hrs:48, start:174,
+   schedule:[
+    ['DAY 174','MongoDB CRUD','Documents, collections, BSON, insertOne/Many, find, updateOne, deleteOne.'],
+    ['DAY 175','MongoDB Aggregation','Pipeline stages: $match, $group, $project, $lookup, $unwind, $sort.'],
+    ['DAY 176','MongoDB Indexing','Single/compound/text/geospatial indexes. explain() for query analysis.'],
+    ['DAY 177','Redis Deep Dive','Strings, lists, sets, sorted sets, hashes. Caching patterns. Pub/Sub. Lua scripts.'],
+    ['DAY 178','Cassandra Basics','Wide-column model, partition key design, CQL, replication, consistency levels.'],
+    ['DAY 179','When to Use Which','Decision framework: relational vs document vs wide-column vs key-value vs graph.'],
+   ]},
+  {id:'sk25', num:'25', name:'Data Quality & Testing',  wk:'WK 30', days:4, hrs:32, start:180,
+   schedule:[
+    ['DAY 180','Quality Dimensions','Completeness, accuracy, consistency, timeliness, uniqueness. Build a quality dashboard.'],
+    ['DAY 181','Great Expectations','Expectations, data docs, checkpoints. Add GX to the Airflow pipeline.'],
+    ['DAY 182','dbt Tests Advanced','Custom singular tests, custom generic tests, store_failures. Test coverage strategy.'],
+    ['DAY 183','Data Contracts','Define producer/consumer contracts, schema registries, enforcement patterns.'],
+   ]},
+  {id:'sk26', num:'26', name:'Cloud Platforms (AWS)',   wk:'WK 31–32', days:8, hrs:64, start:184,
+   schedule:[
+    ['DAY 184','AWS Core Services','EC2, S3, VPC, IAM, RDS, Route53. Create your first cloud architecture on free tier.'],
+    ['DAY 185','S3 Deep Dive','Bucket policies, lifecycle rules, versioning, event notifications, S3 Select.'],
+    ['DAY 186','AWS Compute','Lambda (serverless), ECS (containers), EKS (K8s). Deploy a function + container.'],
+    ['DAY 187','AWS Data Services','Glue, Athena, Kinesis, EMR, Redshift. Map each to your DE skill set.'],
+    ['DAY 188','AWS Networking','VPC, subnets, security groups, NACLs, VPN, Transit Gateway, PrivateLink.'],
+    ['DAY 189','AWS IAM & Security','Roles, policies, assume-role, resource-based policies, KMS, Secrets Manager.'],
+    ['DAY 190','Infrastructure as Code','Terraform: providers, resources, variables, state, modules. Deploy a full VPC.'],
+    ['DAY 191','Cloud Project','Deploy your complete data pipeline (Airflow + Spark + Snowflake) to AWS. Cost < $5.'],
+   ]},
+];
+
+const deSprintDays = [
+  ['DAY 192','🏗 DE Sprint Day 1','Architecture design: streaming pipeline. Kafka → Spark Streaming → Snowflake → dbt. Draw it, justify every choice.'],
+  ['DAY 193','🏗 DE Sprint Day 2','Implement Kafka producers (Python) and Spark Streaming consumer. Get data flowing.'],
+  ['DAY 194','🏗 DE Sprint Day 3','Load processed data to Snowflake. Build dbt models on top. Write Great Expectations checks.'],
+  ['DAY 195','🏗 DE Sprint Day 4','Orchestrate entire pipeline in Airflow. Add CI/CD for dbt. Write README documentation.'],
+  ['DAY 196','🏗 DE Sprint Day 5','Performance test, optimize Spark jobs, monitor with logs. Push to GitHub. DE Phase DONE.'],
+];
+</script>
+
+<!-- DE compact skill blocks generated by script below -->
+<div id="de-skills-container"></div>
+
+<!-- ═══ PHASE: AI/ML ═══ -->
+<div class="phase-heading" id="phase-ml">
+  <span class="ph-title">Phase 4 — AI / ML Engineering Core</span>
+  <span class="ph-badge ml">WEEKS 34–46</span>
+  <span class="ph-total">73 days · 584 hrs</span>
+</div>
+
+<div id="ml-skills-container"></div>
+
+<!-- ═══ PHASE: SPECIALIZATION ═══ -->
+<div class="phase-heading" id="phase-spec">
+  <span class="ph-title">Phase 5 — Specialization</span>
+  <span class="ph-badge spec">WEEKS 47–57</span>
+  <span class="ph-total">70 days · 560 hrs</span>
+</div>
+
+<div id="spec-skills-container"></div>
+
+</main>
+</div>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ── TOGGLE ──
+function tog(h){ h.parentElement.classList.toggle('open'); }
+
+// ── FILTER ──
+function filter(ph,btn){
+  document.querySelectorAll('.ph-item').forEach(e=>e.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.skill-block').forEach(b=>{
+    b.classList.toggle('hidden', ph!=='all' && b.dataset.phase!==ph);
+  });
+}
+
+// ── JUMP ──
+function jump(id){
+  const el=document.getElementById(id);
+  if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); el.classList.add('open'); }
+  document.querySelectorAll('.sb-link').forEach(l=>l.classList.remove('active'));
+  event.target.closest('.sb-link').classList.add('active');
+}
+
+// ── PROGRESS BAR ──
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  const pct=d.scrollTop/(d.scrollHeight-d.clientHeight)*100;
+  document.getElementById('pl').style.width=pct+'%';
+  document.getElementById('btt').classList.toggle('vis',d.scrollTop>400);
+});
+
+// ── SIDEBAR AUTO-HIGHLIGHT ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      document.querySelectorAll('.sb-link').forEach(l=>{
+        const oc=l.getAttribute('onclick')||'';
+        l.classList.toggle('active',oc.includes(`'${id}'`));
+      });
+    }
+  });
+},{rootMargin:'-15% 0px -70% 0px'});
+
+document.querySelectorAll('.skill-block').forEach(c=>obs.observe(c));
+
+// ── GENERATE DE SKILLS ──
+const deContainer = document.getElementById('de-skills-container');
+deSkills.forEach(sk => {
+  const block = document.createElement('div');
+  block.className = 'skill-block phase-de';
+  block.id = sk.id;
+  block.dataset.phase = 'de';
+  const rows = sk.schedule;
+  const weekRows = [];
+  for(let i=0;i<rows.length;i+=5){
+    const chunk=rows.slice(i,Math.min(i+5,rows.length));
+    const cells=chunk.map(d=>`<div class="day-cell"><span class="day-num">${d[0]}</span><div class="day-topic">${d[1]}</div><div class="day-detail">${d[2]}</div><div class="day-hours">8 hrs</div></div>`).join('');
+    const empties='<div class="day-cell rest"></div>'.repeat(5-chunk.length);
+    weekRows.push(`<div class="week-row"><div class="week-label">Days ${chunk[0][0].replace('DAY ','')}-${chunk[chunk.length-1][0].replace('DAY ','')}</div>${cells}${empties}<div class="day-cell rest"><span class="day-num">SUN</span><div class="day-detail" style="color:var(--dim)">Rest</div></div></div>`);
+  }
+  block.innerHTML=`<div class="phase-bar"></div>
+    <div class="skill-head" onclick="tog(this)">
+      <span class="sk-num">${sk.num}</span><span class="sk-dot"></span>
+      <span class="sk-name">${sk.name}</span>
+      <div class="sk-meta"><span class="sk-week-badge">${sk.wk}</span><span class="sk-days-badge">${sk.days} days</span><span class="sk-hrs-badge">${sk.hrs} hrs</span></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="skill-body">
+      <div class="day-header-row"><div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SUN</div></div>
+      ${weekRows.join('')}
+    </div>`;
+  deContainer.appendChild(block);
+  obs.observe(block);
+});
+
+// Add DE Sprint
+const deS=document.createElement('div');
+deS.className='skill-block phase-sprint';
+deS.id='sk26s';
+deS.dataset.phase='de';
+deS.innerHTML=`<div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">★</span><span class="sk-dot"></span>
+    <span class="sk-name">Data Engineering Project Sprint</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 33</span><span class="sk-days-badge">5 days</span><span class="sk-hrs-badge">40 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row"><div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SUN</div></div>
+    <div class="week-row">
+      <div class="week-label">WK 33<br/>Days 192–196</div>
+      ${deSprintDays.map(d=>`<div class="day-cell"><span class="day-num">${d[0]}</span><div class="day-topic">${d[1]}</div><div class="day-detail">${d[2]}</div><div class="day-hours">8 hrs</div></div>`).join('')}
+      <div class="day-cell rest"><span class="day-num">SUN</span><div class="day-detail" style="color:var(--dim)">Rest. DE done!</div></div>
+    </div>
+  </div>`;
+deContainer.appendChild(deS);
+obs.observe(deS);
+
+// ── ML SKILLS DATA ──
+const mlSkills=[
+  {id:'sk27',num:'27',name:'Classical Machine Learning',wk:'WK 34–35',days:10,hrs:80,phase:'ml',start:197,
+   schedule:[
+    ['DAY 197','Linear/Logistic Regression','Gradient descent intuition, loss functions, regularization (L1/L2). Implement from scratch with NumPy.'],
+    ['DAY 198','Decision Trees','Gini impurity, information gain, tree depth/pruning. Sklearn DecisionTreeClassifier.'],
+    ['DAY 199','Ensemble Methods','Bagging (Random Forest), Boosting (AdaBoost, Gradient Boost, XGBoost). Feature importance.'],
+    ['DAY 200','SVMs','Hyperplane, margin, kernel trick (RBF, polynomial). Support vectors intuition. Sklearn SVC.'],
+    ['DAY 201','Clustering','k-Means, DBSCAN, hierarchical clustering. Elbow method, silhouette score.'],
+    ['DAY 202','Dimensionality Reduction','PCA (revisit), t-SNE for visualization, UMAP. When to reduce dimensions.'],
+    ['DAY 203','Sklearn Pipeline API','Pipeline, ColumnTransformer, StandardScaler, GridSearchCV, cross_val_score.'],
+    ['DAY 204','Model Selection','Bias-variance tradeoff, learning curves, validation curves, nested cross-validation.'],
+    ['DAY 205','Kaggle Competition Day','Submit to a Kaggle tabular competition. XGBoost + feature engineering. Top 30% target.'],
+    ['DAY 206','Review & Consolidation','StatQuest review pass. Cheat sheet of all algorithms. When to use which.'],
+   ]},
+  {id:'sk28',num:'28',name:'Deep Learning Fundamentals',wk:'WK 36–37',days:10,hrs:80,phase:'ml',start:207,
+   schedule:[
+    ['DAY 207','Perceptrons & Neural Nets','Single perceptron, multi-layer, activation functions (ReLU, sigmoid, tanh, GELU).'],
+    ['DAY 208','Forward Pass','Matrix operations in neural nets, output layer (softmax, linear, sigmoid for different tasks).'],
+    ['DAY 209','Backpropagation','Chain rule, computing gradients, vanishing gradient problem. Implement manually in NumPy.'],
+    ['DAY 210','Optimizers','SGD, momentum, RMSProp, Adam. Learning rate schedules. Loss landscape intuition.'],
+    ['DAY 211','Karpathy Day 1','"Neural Networks: Zero to Hero" — micrograd (autograd from scratch). Watch + implement.'],
+    ['DAY 212','Karpathy Day 2','makemore Part 1–2: bigram language model, implementing backprop from first principles.'],
+    ['DAY 213','Regularization Techniques','Dropout, batch normalization, weight decay, early stopping, data augmentation.'],
+    ['DAY 214','Deep Learning Debugging','Loss not decreasing, NaN losses, gradient clipping, weight initialization strategies.'],
+    ['DAY 215','Multi-class Classification','Softmax cross-entropy, one-hot encoding, MNIST from scratch with NumPy.'],
+    ['DAY 216','Framework Transition','Reproduce NumPy nets in PyTorch. Understand what autograd does automatically.'],
+   ]},
+  {id:'sk29',num:'29',name:'PyTorch',wk:'WK 38–39',days:8,hrs:64,phase:'ml',start:217,
+   schedule:[
+    ['DAY 217','Tensors','Creation, indexing, slicing, broadcasting, in-place ops, device management (CUDA).'],
+    ['DAY 218','Autograd','requires_grad, backward(), grad, detach(), no_grad(). Custom autograd functions.'],
+    ['DAY 219','nn.Module','Layers, parameters, buffers, forward(), named_modules, state_dict, save/load.'],
+    ['DAY 220','DataLoader','Dataset class, DataLoader, collate_fn, transforms, iterable datasets.'],
+    ['DAY 221','Training Loop','optimizer.zero_grad(), loss.backward(), optimizer.step(), lr_scheduler, progress bars.'],
+    ['DAY 222','GPU Training','.to(device), DataParallel basics, CUDA memory management, mixed precision (torch.amp).'],
+    ['DAY 223','PyTorch Lightning','LightningModule, Trainer, callbacks, logging, checkpointing. Refactor existing model.'],
+    ['DAY 224','Project: Image Classifier','CIFAR-10 classifier: custom Dataset → CNN → train loop → evaluate → save model.'],
+   ]},
+  {id:'sk30',num:'30',name:'CNNs & Computer Vision',wk:'WK 39–40',days:7,hrs:56,phase:'ml',start:225,
+   schedule:[
+    ['DAY 225','Convolution Operation','Filters, feature maps, stride, padding, receptive field. Implement 2D conv in NumPy.'],
+    ['DAY 226','CNN Architectures','LeNet → AlexNet → VGG → ResNet (skip connections) → EfficientNet. Implement ResNet block.'],
+    ['DAY 227','Transfer Learning','Freeze layers, fine-tuning strategies, feature extraction. ImageNet pretrained models.'],
+    ['DAY 228','Data Augmentation','torchvision.transforms, albumentations, random crop/flip/color jitter, test-time augmentation.'],
+    ['DAY 229','Object Detection','YOLO v8 inference, Faster R-CNN concepts, bounding box regression, IoU, mAP.'],
+    ['DAY 230','Semantic Segmentation','FCN, U-Net architecture, pixel-wise classification. Implement U-Net in PyTorch.'],
+    ['DAY 231','Vision Project','Fine-tune ResNet50 on a custom dataset. Achieve 90%+ accuracy. Deploy as FastAPI endpoint.'],
+   ]},
+  {id:'sk31',num:'31',name:'Transformers & NLP',wk:'WK 41–42',days:8,hrs:64,phase:'ml',start:232,
+   schedule:[
+    ['DAY 232','Attention Mechanism','Self-attention from scratch. Query, Key, Value matrices. Scaled dot-product attention.'],
+    ['DAY 233','Transformer Architecture','Multi-head attention, positional encoding, encoder, decoder, feed-forward sublayer.'],
+    ['DAY 234','BERT','Masked language modeling, next sentence prediction, [CLS] token for classification.'],
+    ['DAY 235','GPT Family','Causal language modeling, autoregressive generation, temperature/top-k sampling.'],
+    ['DAY 236','Tokenization','BPE, WordPiece, SentencePiece. Implement a BPE tokenizer from scratch.'],
+    ['DAY 237','HuggingFace Pipeline API','pipeline(), AutoModel, AutoTokenizer, model hub. 10 NLP tasks in 1 day.'],
+    ['DAY 238','Fine-Tuning BERT','Text classification with Trainer API. Custom dataset, training args, evaluate.'],
+    ['DAY 239','NLP Project','Sentiment analysis API: fine-tune DistilBERT → FastAPI serving → Docker → deploy.'],
+   ]},
+  {id:'sk32',num:'32',name:'Model Evaluation & Metrics',wk:'WK 42',days:4,hrs:32,phase:'ml',start:240,
+   schedule:[
+    ['DAY 240','Classification Metrics','Precision, recall, F1, AUC-ROC, AUC-PR. When each matters. StatQuest videos.'],
+    ['DAY 241','Regression & Ranking Metrics','MAE, MSE, RMSE, R², NDCG, MRR. Implement all metrics from scratch.'],
+    ['DAY 242','Cross-Validation','k-fold, stratified, time-series split, nested CV. Compare models with statistical tests.'],
+    ['DAY 243','Production Evaluation','A/B testing, shadow deployment, evaluation slices (demographic/segment analysis).'],
+   ]},
+  {id:'sk33',num:'33',name:'Feature Engineering',wk:'WK 43',days:5,hrs:40,phase:'ml',start:244,
+   schedule:[
+    ['DAY 244','Numerical Features','Scaling, binning, log transforms, polynomial features, interactions.'],
+    ['DAY 245','Categorical Features','One-hot, label, ordinal, target encoding, frequency encoding, hash encoding.'],
+    ['DAY 246','Date/Time Features','Cyclical encoding (sin/cos), lag features, rolling windows, time-since features.'],
+    ['DAY 247','Text Features','TF-IDF, word embeddings (Word2Vec, FastText), sentence embeddings. Feature importance.'],
+    ['DAY 248','Feature Selection','Mutual information, RFE, SHAP-based selection. Build automated feature pipeline.'],
+   ]},
+  {id:'sk34',num:'34',name:'Experiment Tracking (MLflow/W&B)',wk:'WK 43',days:3,hrs:24,phase:'ml',start:249,
+   schedule:[
+    ['DAY 249','MLflow Setup','Tracking server, runs, parameters, metrics, artifacts. Log a full training run.'],
+    ['DAY 250','Model Registry','Register models, stage transitions (Staging → Production), model versioning.'],
+    ['DAY 251','W&B Sweeps','Hyperparameter search with W&B: define sweep config, run agents, analyze results.'],
+   ]},
+  {id:'sk35',num:'35',name:'HuggingFace Ecosystem',wk:'WK 44',days:5,hrs:40,phase:'ml',start:252,
+   schedule:[
+    ['DAY 252','Transformers Library','AutoModel, AutoTokenizer, pipeline API. Explore 10 different model types on Hub.'],
+    ['DAY 253','Datasets Library','load_dataset, map(), filter(), Dataset.from_pandas(), push_to_hub.'],
+    ['DAY 254','PEFT Library','LoRA, QLoRA, prefix tuning, prompt tuning. Apply PEFT to fine-tune LLaMA 3.2-1B.'],
+    ['DAY 255','Accelerate & Training','Trainer API deep dive, custom training loop with Accelerate, multi-GPU setup.'],
+    ['DAY 256','Spaces & Gradio','Build a Gradio demo for your NLP model. Deploy to HuggingFace Spaces. Share publicly.'],
+   ]},
+  {id:'sk36',num:'36',name:'MLOps & Model Deployment',wk:'WK 45–46',days:8,hrs:64,phase:'ml',start:257,
+   schedule:[
+    ['DAY 257','Model Serialization','pickle, joblib, ONNX export, TorchScript, model versioning strategies.'],
+    ['DAY 258','FastAPI Model Serving','Wrap any model in FastAPI: /predict endpoint, input validation, batch inference.'],
+    ['DAY 259','BentoML','Bentos, runners, services, containerization. Deploy a model as a production BentoML service.'],
+    ['DAY 260','Model Monitoring','Predict drift (input/output distributions), concept drift detection, retraining triggers.'],
+    ['DAY 261','Feature Store (Feast)','Offline store, online store, feature retrieval at serving time. Integrate with pipeline.'],
+    ['DAY 262','CI/CD for ML','Automated retraining on data trigger, model evaluation gate, staged rollout. GitHub Actions.'],
+    ['DAY 263','A/B Testing Models','Traffic splitting, shadow mode, champion/challenger framework. Measure business metric.'],
+    ['DAY 264','MLOps Project','Full MLOps system: data → features → train (MLflow) → validate → deploy (BentoML) → monitor.'],
+   ]},
+];
+
+const mlContainer=document.getElementById('ml-skills-container');
+mlSkills.forEach(sk=>{
+  const block=document.createElement('div');
+  block.className=`skill-block phase-${sk.phase}`;
+  block.id=sk.id;
+  block.dataset.phase=sk.phase;
+  const rows=sk.schedule;
+  const weekRows=[];
+  for(let i=0;i<rows.length;i+=5){
+    const chunk=rows.slice(i,Math.min(i+5,rows.length));
+    const cells=chunk.map(d=>`<div class="day-cell"><span class="day-num">${d[0]}</span><div class="day-topic">${d[1]}</div><div class="day-detail">${d[2]}</div><div class="day-hours">8 hrs</div></div>`).join('');
+    const empties='<div class="day-cell rest"></div>'.repeat(5-chunk.length);
+    weekRows.push(`<div class="week-row"><div class="week-label">Days ${chunk[0][0].replace('DAY ','')}-${chunk[chunk.length-1][0].replace('DAY ','')}</div>${cells}${empties}<div class="day-cell rest"><span class="day-num">SUN</span><div class="day-detail" style="color:var(--dim)">Rest</div></div></div>`);
+  }
+  block.innerHTML=`<div class="phase-bar"></div>
+    <div class="skill-head" onclick="tog(this)">
+      <span class="sk-num">${sk.num}</span><span class="sk-dot"></span>
+      <span class="sk-name">${sk.name}</span>
+      <div class="sk-meta"><span class="sk-week-badge">${sk.wk}</span><span class="sk-days-badge">${sk.days} days</span><span class="sk-hrs-badge">${sk.hrs} hrs</span></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="skill-body">
+      <div class="day-header-row"><div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SUN</div></div>
+      ${weekRows.join('')}
+    </div>`;
+  mlContainer.appendChild(block);
+  obs.observe(block);
+});
+
+// ML Sprint
+const mlS=document.createElement('div');
+mlS.className='skill-block phase-sprint';
+mlS.id='sk36s';
+mlS.dataset.phase='ml';
+mlS.innerHTML=`<div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">★</span><span class="sk-dot"></span>
+    <span class="sk-name">AI/ML Project Sprint — Recommendation Engine</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 46</span><span class="sk-days-badge">5 days</span><span class="sk-hrs-badge">40 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row"><div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SUN</div></div>
+    <div class="week-row">
+      <div class="week-label">WK 46<br/>Days 265–269</div>
+      <div class="day-cell"><span class="day-num">DAY 265</span><div class="day-topic">🏗 Design</div><div class="day-detail">Collaborative filtering + content-based hybrid. Design feature pipeline, model architecture, serving API.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 266</span><div class="day-topic">🏗 Data Pipeline</div><div class="day-detail">Build feature pipeline: user events → Spark → feature store → training dataset. Log with MLflow.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 267</span><div class="day-topic">🏗 Model Training</div><div class="day-detail">Train two-tower model in PyTorch. Track experiments. Pick best model. Export to ONNX.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 268</span><div class="day-topic">🏗 Serving</div><div class="day-detail">FastAPI serving endpoint. Redis cache for hot recommendations. Docker + deploy to cloud.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell"><span class="day-num">DAY 269</span><div class="day-topic">🏗 Monitor & Demo</div><div class="day-detail">Add prediction monitoring. Write technical README. Present to yourself: explain every component.</div><div class="day-hours">8 hrs</div></div>
+      <div class="day-cell rest"><span class="day-num">SUN</span><div class="day-detail" style="color:var(--dim)">Rest. ML Phase done!</div></div>
+    </div>
+  </div>`;
+mlContainer.appendChild(mlS);
+obs.observe(mlS);
+
+// ── SPECIALIZATION SKILLS ──
+const specSkills=[
+  {id:'sk37',num:'37',name:'LLMs & Fine-Tuning (LoRA/RLHF)',wk:'WK 47–48',days:10,hrs:80,phase:'spec',
+   schedule:[
+    ['DAY 270','LLM Foundations','Pretraining, scaling laws, emergent abilities, tokenization. Read Karpathy GPT paper walkthrough.'],
+    ['DAY 271','Build a GPT from Scratch','Karpathy "Let\'s build GPT" video (3.5 hrs). Implement every line. Understand the full architecture.'],
+    ['DAY 272','Instruction Fine-Tuning','Supervised fine-tuning (SFT) on instruction datasets. HuggingFace Trainer on LLaMA 3.2-1B.'],
+    ['DAY 273','LoRA Deep Dive','Low-rank matrices, rank decomposition, PEFT library. QLoRA for 4-bit fine-tuning on consumer GPU.'],
+    ['DAY 274','RLHF Pipeline','Reward model training, PPO basics, DPO (simpler alternative to RLHF). trl library.'],
+    ['DAY 275','Prompt Engineering','Zero/few-shot, chain-of-thought, ReAct, tool use patterns. System prompts. OpenAI API.'],
+    ['DAY 276','Quantization','GPTQ, AWQ, bitsandbytes 4-bit/8-bit. Run quantized LLaMA on local machine.'],
+    ['DAY 277','LLM Evaluation','MMLU, HellaSwag, TruthfulQA, domain-specific evals. lm-evaluation-harness.'],
+    ['DAY 278','Fine-Tuning Project Day 1','Choose a task (customer support, code generation, document analysis). Prepare dataset.'],
+    ['DAY 279','Fine-Tuning Project Day 2','Run QLoRA fine-tuning. Evaluate before/after. Deploy as API. Compare to GPT-4.'],
+   ]},
+  {id:'sk38',num:'38',name:'RAG & Vector Databases',wk:'WK 49',days:7,hrs:56,phase:'spec',
+   schedule:[
+    ['DAY 280','Embeddings Deep Dive','Sentence transformers, OpenAI embeddings, cosine similarity, approximate nearest neighbor.'],
+    ['DAY 281','Vector Databases','Pinecone, Weaviate, Qdrant, pgvector. Index 10k documents. Benchmark query speed.'],
+    ['DAY 282','Basic RAG Pipeline','Document loading, chunking (fixed/semantic), embedding, storage, retrieval, generation.'],
+    ['DAY 283','Advanced RAG Patterns','HyDE, re-ranking (cross-encoders), contextual compression, parent-child chunking, RAPTOR.'],
+    ['DAY 284','LlamaIndex Deep Dive','Index types, query engines, node parsers, response synthesizers. RouterQueryEngine.'],
+    ['DAY 285','RAG Evaluation','RAGAS framework: faithfulness, answer relevancy, context recall, context precision.'],
+    ['DAY 286','RAG Project','Build a document Q&A system: PDF ingestion → chunk → embed → Pinecone → GPT-4 generation → eval.'],
+   ]},
+  {id:'sk39',num:'39',name:'Distributed Training',wk:'WK 50',days:7,hrs:56,phase:'spec',
+   schedule:[
+    ['DAY 287','Data Parallelism','DDP (DistributedDataParallel), process groups, all-reduce gradient sync. Multi-GPU training.'],
+    ['DAY 288','Model Parallelism','Tensor parallelism, pipeline parallelism. When models don\'t fit on single GPU.'],
+    ['DAY 289','DeepSpeed','ZeRO Stage 1/2/3, offloading to CPU/NVMe. Integrate DeepSpeed with HuggingFace Trainer.'],
+    ['DAY 290','FSDP','Fully Sharded Data Parallel, wrapping policies, mixed precision, activation checkpointing.'],
+    ['DAY 291','HuggingFace Accelerate','Multi-GPU training with Accelerate. Launch scripts, device placement, gradient accumulation.'],
+    ['DAY 292','Profiling & Optimization','PyTorch Profiler, GPU utilization, memory bottlenecks, gradient checkpointing, throughput math.'],
+    ['DAY 293','Distributed Training Project','Train a BERT-base on a classification task using DDP on 2 GPUs (or simulate). Log with W&B.'],
+   ]},
+  {id:'sk40',num:'40',name:'Distributed Systems (Advanced)',wk:'WK 50–52',days:10,hrs:80,phase:'spec',
+   schedule:[
+    ['DAY 294','Replication','Leader-follower, multi-leader, leaderless (Dynamo-style). Read Kleppmann Ch.5.'],
+    ['DAY 295','Partitioning','Hash partitioning, range partitioning, consistent hashing, rebalancing. Kleppmann Ch.6.'],
+    ['DAY 296','Transactions Deep Dive','ACID, isolation levels (read committed, repeatable read, serializable). Kleppmann Ch.7.'],
+    ['DAY 297','Distributed Transactions','Two-phase commit (2PC), Saga pattern, distributed deadlocks.'],
+    ['DAY 298','Consensus','Raft algorithm in depth. Leader election, log replication, snapshots. MIT 6.824 Lab 2.'],
+    ['DAY 299','Fault Tolerance','Circuit breakers, bulkheads, timeout strategies, chaos engineering principles.'],
+    ['DAY 300','Geo-Distribution','Multi-region active-active vs active-passive, CRDT, conflict resolution strategies.'],
+    ['DAY 301','Design: Google Spanner','Globally distributed SQL: TrueTime, external consistency, Paxos groups.'],
+    ['DAY 302','Design: Amazon DynamoDB','Consistent hashing, eventual consistency, vector clocks, anti-entropy reconciliation.'],
+    ['DAY 303','Mock System Design','2 advanced system design interviews (timed 45 min each). Focus on distributed tradeoffs.'],
+   ]},
+  {id:'sk41',num:'41',name:'Streaming Systems (Flink/Spark Streaming)',wk:'WK 52–53',days:8,hrs:64,phase:'spec',
+   schedule:[
+    ['DAY 304','Event Time vs Processing Time','Watermarks, late data, out-of-order events. Read Streaming Systems Ch.1–2.'],
+    ['DAY 305','Windowing','Tumbling, sliding, session windows. Trigger policies, accumulation modes.'],
+    ['DAY 306','Flink DataStream API','Sources, transformations (map, filter, flatMap, keyBy), sinks. Deploy on Docker.'],
+    ['DAY 307','Flink Stateful Processing','Keyed state, operator state, state backends (RocksDB), checkpointing, savepoints.'],
+    ['DAY 308','Flink Table API & SQL','Flink SQL for streaming aggregations, temporal joins, pattern matching (CEP).'],
+    ['DAY 309','Spark Structured Streaming','readStream, writeStream, watermarks, stateful aggregations, forEachBatch.'],
+    ['DAY 310','Lambda vs Kappa Architecture','When to use each. Implement same pipeline in both architectures, compare.'],
+    ['DAY 311','Streaming Project','Real-time fraud detection: Kafka → Flink stateful processing → alert API → monitoring.'],
+   ]},
+  {id:'sk42',num:'42',name:'Data Lakehouse (Iceberg / Delta Lake)',wk:'WK 54',days:6,hrs:48,phase:'spec',
+   schedule:[
+    ['DAY 312','Lakehouse Architecture','Data lake + warehouse = lakehouse. History: Parquet → Delta → Iceberg. Trade-offs.'],
+    ['DAY 313','Apache Iceberg','Table spec, metadata layer, manifest files, partition evolution, hidden partitioning.'],
+    ['DAY 314','Iceberg + Spark','Read/write Iceberg tables with PySpark. MERGE INTO, time travel, schema evolution.'],
+    ['DAY 315','Delta Lake','ACID on S3, Delta log, VACUUM, OPTIMIZE, ZORDER clustering. Databricks Autoloader.'],
+    ['DAY 316','Table Format Comparison','Iceberg vs Delta vs Hudi: feature matrix, ecosystem support, when to pick each.'],
+    ['DAY 317','Lakehouse Project','Build a full lakehouse: S3 raw → Iceberg tables → Spark transforms → Trino queries → BI.'],
+   ]},
+  {id:'sk43',num:'43',name:'Observability & Monitoring',wk:'WK 54–55',days:5,hrs:40,phase:'spec',
+   schedule:[
+    ['DAY 318','Three Pillars','Logs (structured JSON), metrics (counters/gauges/histograms), traces (spans/context). SRE Book Ch.6.'],
+    ['DAY 319','Prometheus + Grafana','Instrument a Python app with prometheus-client. Build 5 dashboards. Set alert rules.'],
+    ['DAY 320','Distributed Tracing','OpenTelemetry SDK, Jaeger, trace context propagation across microservices.'],
+    ['DAY 321','SLOs & Error Budgets','Define SLOs for your projects. Calculate error budgets. SRE Book Ch.4.'],
+    ['DAY 322','ML Monitoring','Evidently AI for data drift, prediction drift, model performance degradation. Grafana dashboards.'],
+   ]},
+  {id:'sk44',num:'44',name:'Kubernetes Advanced / Helm',wk:'WK 55–56',days:7,hrs:56,phase:'spec',
+   schedule:[
+    ['DAY 323','Helm Charts','Chart structure, templates, values, helpers. Package your FastAPI app as a Helm chart.'],
+    ['DAY 324','Advanced K8s Resources','StatefulSets, DaemonSets, Jobs, CronJobs, PodDisruptionBudgets, PriorityClasses.'],
+    ['DAY 325','K8s Networking Deep Dive','Network policies, service meshes (Istio/Linkerd basics), DNS, Ingress controllers.'],
+    ['DAY 326','Security (RBAC + Secrets)','ServiceAccounts, Roles, ClusterRoles, RoleBindings. External Secrets Operator.'],
+    ['DAY 327','GitOps with ArgoCD','App-of-apps pattern, sync policies, ApplicationSets, progressive delivery.'],
+    ['DAY 328','Autoscaling','HPA (CPU/custom metrics), VPA, KEDA (event-driven scaling). Scale on Kafka lag.'],
+    ['DAY 329','CKA Mock Exam','Full 2-hour timed CKA exam simulation. Identify gaps. Practice weak areas.'],
+   ]},
+];
+
+const specContainer=document.getElementById('spec-skills-container');
+specSkills.forEach(sk=>{
+  const block=document.createElement('div');
+  block.className='skill-block phase-spec';
+  block.id=sk.id;
+  block.dataset.phase='spec';
+  const rows=sk.schedule;
+  const weekRows=[];
+  for(let i=0;i<rows.length;i+=5){
+    const chunk=rows.slice(i,Math.min(i+5,rows.length));
+    const cells=chunk.map(d=>`<div class="day-cell"><span class="day-num">${d[0]}</span><div class="day-topic">${d[1]}</div><div class="day-detail">${d[2]}</div><div class="day-hours">8 hrs</div></div>`).join('');
+    const empties='<div class="day-cell rest"></div>'.repeat(5-chunk.length);
+    weekRows.push(`<div class="week-row"><div class="week-label">Days ${chunk[0][0].replace('DAY ','')}-${chunk[chunk.length-1][0].replace('DAY ','')}</div>${cells}${empties}<div class="day-cell rest"><span class="day-num">SUN</span><div class="day-detail" style="color:var(--dim)">Rest</div></div></div>`);
+  }
+  block.innerHTML=`<div class="phase-bar"></div>
+    <div class="skill-head" onclick="tog(this)">
+      <span class="sk-num">${sk.num}</span><span class="sk-dot"></span>
+      <span class="sk-name">${sk.name}</span>
+      <div class="sk-meta"><span class="sk-week-badge">${sk.wk}</span><span class="sk-days-badge">${sk.days} days</span><span class="sk-hrs-badge">${sk.hrs} hrs</span></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="skill-body">
+      <div class="day-header-row"><div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SUN</div></div>
+      ${weekRows.join('')}
+    </div>`;
+  specContainer.appendChild(block);
+  obs.observe(block);
+});
+
+// Final Capstone Sprint
+const capStone=document.createElement('div');
+capStone.className='skill-block phase-sprint';
+capStone.id='sk44s';
+capStone.dataset.phase='spec';
+const capstoneDays=[
+  ['DAY 330','🏗 Design','Architecture for full AI platform: data → pipelines → model → serving → monitoring. Draw the full diagram.'],
+  ['DAY 331','🏗 Data Layer','Kafka ingestion + Spark processing + Iceberg tables + dbt transformations. Running end-to-end.'],
+  ['DAY 332','🏗 ML Layer','Feature store + training pipeline + MLflow tracking + model registry. Best model promoted.'],
+  ['DAY 333','🏗 LLM Feature','Add a RAG component: document ingestion → vector DB → LLM API → contextual responses.'],
+  ['DAY 334','🏗 Serving Layer','FastAPI + BentoML. Kubernetes deployment with Helm chart. CI/CD pipeline automated.'],
+  ['DAY 335','🏗 Observability','Prometheus + Grafana dashboards. Evidently AI ML monitoring. Alert rules configured.'],
+  ['DAY 336','🏗 Performance','Load test with Locust. Optimize bottlenecks. Add Redis caching. HPA on K8s.'],
+  ['DAY 337','🏗 Security','Audit full stack: auth, input validation, K8s RBAC, secrets management, dependency scan.'],
+  ['DAY 338','🏗 Documentation','Full README, architecture diagrams, API docs, runbooks. Record a 10-min demo video.'],
+  ['DAY 339','🏗 Final Review','Present project to yourself as if in a senior engineer interview. You are ready.'],
+];
+const capstoneCells=capstoneDays.map(d=>`<div class="day-cell"><span class="day-num">${d[0]}</span><div class="day-topic">${d[1]}</div><div class="day-detail">${d[2]}</div><div class="day-hours">8 hrs</div></div>`).join('');
+capStone.innerHTML=`<div class="phase-bar"></div>
+  <div class="skill-head" onclick="tog(this)">
+    <span class="sk-num">★</span><span class="sk-dot"></span>
+    <span class="sk-name">FINAL CAPSTONE SPRINT — Full-Stack AI Platform</span>
+    <div class="sk-meta"><span class="sk-week-badge">WK 56–57</span><span class="sk-days-badge">10 days</span><span class="sk-hrs-badge">80 hrs</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="day-header-row"><div class="dhr-cell">WEEK</div><div class="dhr-cell">MON</div><div class="dhr-cell">TUE</div><div class="dhr-cell">WED</div><div class="dhr-cell">THU</div><div class="dhr-cell">FRI</div><div class="dhr-cell rest-head">SUN</div></div>
+    <div class="week-row"><div class="week-label">WK 56<br/>Days 330–334</div>${capstoneDays.slice(0,5).map(d=>`<div class="day-cell"><span class="day-num">${d[0]}</span><div class="day-topic">${d[1]}</div><div class="day-detail">${d[2]}</div><div class="day-hours">8 hrs</div></div>`).join('')}<div class="day-cell rest"><span class="day-num">SUN</span><div class="day-detail" style="color:var(--dim)">Rest</div></div></div>
+    <div class="week-row"><div class="week-label">WK 57<br/>Days 335–339</div>${capstoneDays.slice(5).map(d=>`<div class="day-cell"><span class="day-num">${d[0]}</span><div class="day-topic">${d[1]}</div><div class="day-detail">${d[2]}</div><div class="day-hours">8 hrs</div></div>`).join('')}<div class="day-cell rest"><span class="day-num">🎉</span><div class="day-topic" style="color:var(--foundation);font-size:13px;">COMPLETE</div><div class="day-detail" style="color:var(--dim)">Day 339. You are a Unified Engineer.</div></div></div>
+  </div>`;
+specContainer.appendChild(capStone);
+obs.observe(capStone);
+
+// ── BUILD SUMMARY TABLE ──
+const allSkills=[
+  {num:'01',name:'Python Programming',phase:'foundation',cls:'f',days:14,hrs:112,weekStart:1,weekEnd:2},
+  {num:'02',name:'SQL',phase:'foundation',cls:'f',days:10,hrs:80,weekStart:3,weekEnd:4},
+  {num:'03',name:'Linear Algebra',phase:'foundation',cls:'f',days:7,hrs:56,weekStart:5,weekEnd:5},
+  {num:'04',name:'Probability & Statistics',phase:'foundation',cls:'f',days:7,hrs:56,weekStart:6,weekEnd:7},
+  {num:'05',name:'Git & Version Control',phase:'foundation',cls:'f',days:3,hrs:24,weekStart:7,weekEnd:7},
+  {num:'06',name:'Linux / Command Line',phase:'foundation',cls:'f',days:4,hrs:32,weekStart:7,weekEnd:8},
+  {num:'07',name:'Data Structures',phase:'foundation',cls:'f',days:10,hrs:80,weekStart:8,weekEnd:9},
+  {num:'08',name:'Algorithms & Big-O',phase:'foundation',cls:'f',days:12,hrs:96,weekStart:10,weekEnd:11},
+  {num:'★',name:'Foundation Sprint',phase:'sprint',cls:'sp',days:3,hrs:24,weekStart:12,weekEnd:12},
+  {num:'09',name:'Design Patterns & SOLID',phase:'swe',cls:'s',days:6,hrs:48,weekStart:13,weekEnd:13},
+  {num:'10',name:'Web Frameworks (FastAPI)',phase:'swe',cls:'s',days:8,hrs:64,weekStart:14,weekEnd:15},
+  {num:'11',name:'Testing & TDD',phase:'swe',cls:'s',days:5,hrs:40,weekStart:15,weekEnd:16},
+  {num:'12',name:'Docker & Kubernetes',phase:'swe',cls:'s',days:7,hrs:56,weekStart:16,weekEnd:17},
+  {num:'13',name:'CI/CD Pipelines',phase:'swe',cls:'s',days:4,hrs:32,weekStart:17,weekEnd:18},
+  {num:'14',name:'Security (OWASP/Auth)',phase:'swe',cls:'s',days:5,hrs:40,weekStart:18,weekEnd:18},
+  {num:'15',name:'Async Programming',phase:'swe',cls:'s',days:5,hrs:40,weekStart:19,weekEnd:19},
+  {num:'16',name:'System Design',phase:'swe',cls:'s',days:10,hrs:80,weekStart:19,weekEnd:21},
+  {num:'★',name:'SWE Sprint',phase:'sprint',cls:'sp',days:4,hrs:32,weekStart:21,weekEnd:21},
+  {num:'17',name:'Apache Spark / PySpark',phase:'de',cls:'d',days:10,hrs:80,weekStart:22,weekEnd:23},
+  {num:'18',name:'Apache Kafka',phase:'de',cls:'d',days:8,hrs:64,weekStart:23,weekEnd:24},
+  {num:'19',name:'Data Warehouses',phase:'de',cls:'d',days:7,hrs:56,weekStart:25,weekEnd:25},
+  {num:'20',name:'ETL / ELT Pipelines',phase:'de',cls:'d',days:6,hrs:48,weekStart:26,weekEnd:26},
+  {num:'21',name:'Apache Airflow',phase:'de',cls:'d',days:7,hrs:56,weekStart:27,weekEnd:27},
+  {num:'22',name:'dbt',phase:'de',cls:'d',days:5,hrs:40,weekStart:28,weekEnd:28},
+  {num:'23',name:'Dimensional Modeling',phase:'de',cls:'d',days:6,hrs:48,weekStart:28,weekEnd:29},
+  {num:'24',name:'NoSQL Databases',phase:'de',cls:'d',days:6,hrs:48,weekStart:29,weekEnd:30},
+  {num:'25',name:'Data Quality & Testing',phase:'de',cls:'d',days:4,hrs:32,weekStart:30,weekEnd:30},
+  {num:'26',name:'Cloud Platforms (AWS)',phase:'de',cls:'d',days:8,hrs:64,weekStart:31,weekEnd:32},
+  {num:'★',name:'DE Sprint',phase:'sprint',cls:'sp',days:5,hrs:40,weekStart:33,weekEnd:33},
+  {num:'27',name:'Classical Machine Learning',phase:'ml',cls:'m',days:10,hrs:80,weekStart:34,weekEnd:35},
+  {num:'28',name:'Deep Learning Fundamentals',phase:'ml',cls:'m',days:10,hrs:80,weekStart:36,weekEnd:37},
+  {num:'29',name:'PyTorch',phase:'ml',cls:'m',days:8,hrs:64,weekStart:38,weekEnd:39},
+  {num:'30',name:'CNNs & Computer Vision',phase:'ml',cls:'m',days:7,hrs:56,weekStart:39,weekEnd:40},
+  {num:'31',name:'Transformers & NLP',phase:'ml',cls:'m',days:8,hrs:64,weekStart:41,weekEnd:42},
+  {num:'32',name:'Model Evaluation & Metrics',phase:'ml',cls:'m',days:4,hrs:32,weekStart:42,weekEnd:42},
+  {num:'33',name:'Feature Engineering',phase:'ml',cls:'m',days:5,hrs:40,weekStart:43,weekEnd:43},
+  {num:'34',name:'Experiment Tracking',phase:'ml',cls:'m',days:3,hrs:24,weekStart:43,weekEnd:43},
+  {num:'35',name:'HuggingFace Ecosystem',phase:'ml',cls:'m',days:5,hrs:40,weekStart:44,weekEnd:44},
+  {num:'36',name:'MLOps & Model Deployment',phase:'ml',cls:'m',days:8,hrs:64,weekStart:45,weekEnd:46},
+  {num:'★',name:'ML Sprint',phase:'sprint',cls:'sp',days:5,hrs:40,weekStart:46,weekEnd:46},
+  {num:'37',name:'LLMs & Fine-Tuning',phase:'spec',cls:'p',days:10,hrs:80,weekStart:47,weekEnd:48},
+  {num:'38',name:'RAG & Vector Databases',phase:'spec',cls:'p',days:7,hrs:56,weekStart:49,weekEnd:49},
+  {num:'39',name:'Distributed Training',phase:'spec',cls:'p',days:7,hrs:56,weekStart:50,weekEnd:50},
+  {num:'40',name:'Distributed Systems (Advanced)',phase:'spec',cls:'p',days:10,hrs:80,weekStart:50,weekEnd:52},
+  {num:'41',name:'Streaming Systems',phase:'spec',cls:'p',days:8,hrs:64,weekStart:52,weekEnd:53},
+  {num:'42',name:'Data Lakehouse',phase:'spec',cls:'p',days:6,hrs:48,weekStart:54,weekEnd:54},
+  {num:'43',name:'Observability & Monitoring',phase:'spec',cls:'p',days:5,hrs:40,weekStart:54,weekEnd:55},
+  {num:'44',name:'Kubernetes Advanced',phase:'spec',cls:'p',days:7,hrs:56,weekStart:55,weekEnd:56},
+  {num:'★',name:'Final Capstone',phase:'sprint',cls:'sp',days:10,hrs:80,weekStart:56,weekEnd:57},
+];
+
+const maxDays=14;
+const tbody=document.getElementById('summary-body');
+allSkills.forEach(sk=>{
+  const tr=document.createElement('tr');
+  const barCls=sk.cls==='sp'?'sp':sk.cls==='rv'?'rv':sk.cls;
+  const phaseCls=sk.cls==='sp'?'st-sprint':sk.cls==='rv'?'st-review':`st-phase ${sk.cls}`;
+  const phaseLabel=sk.phase==='foundation'?'FOUND':sk.phase==='swe'?'SWE':sk.phase==='de'?'DATA ENG':sk.phase==='ml'?'AI/ML':sk.phase==='spec'?'SPEC':'SPRINT';
+  tr.innerHTML=`
+    <td><span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--dim)">${sk.num}</span></td>
+    <td><span class="st-skill">${sk.name}</span></td>
+    <td><span class="${phaseCls}">${phaseLabel}</span></td>
+    <td><span class="st-days">${sk.days}d</span></td>
+    <td><span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">${sk.hrs}h</span></td>
+    <td><span class="st-week">Wk ${sk.weekStart}–${sk.weekEnd}</span></td>
+    <td><div class="st-bar-wrap"><div class="st-bar ${barCls}" style="width:${Math.round(sk.days/maxDays*100)}%"></div></div></td>
+  `;
+  tbody.appendChild(tr);
+});
+</script>
+
+</body>
+</html>

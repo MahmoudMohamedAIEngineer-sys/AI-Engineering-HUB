@@ -1,0 +1,2776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Perfect Resource — 44 Skills, 132 Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,500&family=Fira+Code:wght@300;400;500&family=Fira+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #111;
+  --surface: #1a1a1a;
+  --surface2: #222;
+  --border: #2e2e2e;
+  --border2: #3a3a3a;
+  --text: #e8e4da;
+  --muted: #888;
+  --dim: #555;
+  --gold: #d4a843;
+  --gold2: #f0c878;
+  --swe: #4a9eff;
+  --de: #ff6b35;
+  --ml: #4dbb82;
+  --uni: #c084fc;
+  --book-clr: #f9c74f;
+  --free-clr: #43aa8b;
+  --paid-clr: #f94144;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* SCANLINE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.site-logo {
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-count {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ── SEARCH ── */
+.search-wrap {
+  position: relative;
+}
+
+#search {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 6px 14px 6px 32px;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  width: 220px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#search:focus { border-color: var(--gold); }
+#search::placeholder { color: var(--dim); }
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dim);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 60px 48px 48px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '132';
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  font-family: 'Fraunces', serif;
+  font-size: 14rem;
+  font-weight: 900;
+  color: rgba(212,168,67,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.hero-desc {
+  font-size: 13px;
+  color: #aaa;
+  max-width: 600px;
+  line-height: 1.8;
+  border-left: 2px solid var(--gold);
+  padding-left: 16px;
+}
+
+/* ── LEGEND ── */
+.legend {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  margin: 28px 48px 0;
+  max-width: 840px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.leg-item {
+  flex: 1;
+  padding: 9px 14px;
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: background 0.15s;
+  user-select: none;
+}
+.leg-item:last-child { border-right: none; }
+.leg-item:hover { background: var(--surface2); }
+.leg-item.active { background: var(--surface2); }
+
+.leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.leg-item.all-filter .leg-dot { background: var(--gold); }
+.leg-item.swe-filter .leg-dot { background: var(--swe); }
+.leg-item.de-filter  .leg-dot { background: var(--de);  }
+.leg-item.ml-filter  .leg-dot { background: var(--ml);  }
+.leg-item.uni-filter .leg-dot { background: var(--uni); }
+
+.leg-item.all-filter { color: var(--gold); }
+.leg-item.swe-filter { color: var(--swe); }
+.leg-item.de-filter  { color: var(--de);  }
+.leg-item.ml-filter  { color: var(--ml);  }
+.leg-item.uni-filter { color: var(--uni); }
+
+/* ── RESOURCE TYPE LEGEND ── */
+.type-legend {
+  display: flex;
+  gap: 20px;
+  margin: 16px 48px 0;
+  flex-wrap: wrap;
+}
+
+.type-item {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+}
+
+.type-badge-demo {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+}
+.book-demo { background: rgba(249,199,79,0.15); color: var(--book-clr); border: 1px solid rgba(249,199,79,0.3); }
+.free-demo { background: rgba(67,170,139,0.15); color: var(--free-clr); border: 1px solid rgba(67,170,139,0.3); }
+.paid-demo { background: rgba(249,65,68,0.15);  color: var(--paid-clr); border: 1px solid rgba(249,65,68,0.3); }
+
+/* ── MAIN LAYOUT ── */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: calc(100vh - 56px);
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  padding: 16px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border2); }
+
+.sidebar-section {
+  margin-bottom: 4px;
+}
+
+.sidebar-group {
+  font-family: 'Fira Code', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 10px 20px 6px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 20px;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.1s;
+  border-left: 2px solid transparent;
+  line-height: 1.3;
+}
+
+.sidebar-link:hover { color: var(--text); background: var(--surface); }
+.sidebar-link.active { color: var(--text); border-left-color: var(--gold); background: var(--surface); }
+
+.sidebar-link .num {
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  color: var(--dim);
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.sidebar-link .dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+}
+.sidebar-link.swe-s  .dot { background: var(--swe); }
+.sidebar-link.de-s   .dot { background: var(--de);  }
+.sidebar-link.ml-s   .dot { background: var(--ml);  }
+.sidebar-link.uni-s  .dot { background: var(--uni); }
+
+/* ── CONTENT ── */
+.content {
+  padding: 32px 40px 80px;
+}
+
+/* ── PHASE TITLE ── */
+.phase-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.phase-heading:first-child { margin-top: 0; }
+
+.phase-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.phase-badge {
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  padding: 4px 12px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.badge-foundation { background: rgba(212,168,67,0.12); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); }
+.badge-swe        { background: rgba(74,158,255,0.1);  color: var(--swe); border: 1px solid rgba(74,158,255,0.25); }
+.badge-de         { background: rgba(255,107,53,0.1);  color: var(--de);  border: 1px solid rgba(255,107,53,0.25); }
+.badge-ml         { background: rgba(77,187,130,0.1);  color: var(--ml);  border: 1px solid rgba(77,187,130,0.25); }
+.badge-spec       { background: rgba(192,132,252,0.1); color: var(--uni); border: 1px solid rgba(192,132,252,0.25); }
+
+/* ── SKILL CARD ── */
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.skill-card:hover { border-color: var(--border2); }
+
+.skill-card.hidden { display: none; }
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.skill-header:hover { background: var(--surface2); }
+.skill-card.open .skill-header {
+  border-bottom-color: var(--border);
+  background: var(--surface2);
+}
+
+.skill-num {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--dim);
+  flex-shrink: 0;
+  width: 28px;
+}
+
+.skill-track-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.track-foundation .skill-track-dot { background: var(--gold); }
+.track-swe        .skill-track-dot { background: var(--swe);  }
+.track-de         .skill-track-dot { background: var(--de);   }
+.track-ml         .skill-track-dot { background: var(--ml);   }
+.track-spec       .skill-track-dot { background: var(--uni);  }
+
+.skill-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  flex: 1;
+  line-height: 1.3;
+}
+
+.skill-tags {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.skill-tag {
+  font-family: 'Fira Code', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+}
+
+.tag-phase {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  color: var(--dim);
+}
+
+.chevron {
+  color: var(--dim);
+  font-size: 12px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.skill-card.open .chevron { transform: rotate(180deg); }
+
+/* ── SKILL BODY ── */
+.skill-body {
+  display: none;
+  padding: 22px;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.skill-card.open .skill-body { display: flex; }
+
+/* ── WHAT YOU LEARN ── */
+.what-box {
+  font-size: 12px;
+  color: #bbb;
+  line-height: 1.7;
+  font-style: italic;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 4px;
+  border-left: 2px solid var(--border2);
+}
+
+/* ── RESOURCE ENTRIES ── */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.resource-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.resource-card:hover { border-color: var(--border2); }
+
+.res-type-bar {
+  height: 3px;
+}
+.res-book .res-type-bar  { background: var(--book-clr); }
+.res-free .res-type-bar  { background: var(--free-clr); }
+.res-paid .res-type-bar  { background: var(--paid-clr); }
+
+.res-body {
+  padding: 14px 16px;
+}
+
+.res-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.res-badge {
+  font-family: 'Fira Code', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+}
+.res-book .res-badge { background: rgba(249,199,79,0.15); color: var(--book-clr); border: 1px solid rgba(249,199,79,0.3); }
+.res-free .res-badge { background: rgba(67,170,139,0.15); color: var(--free-clr); border: 1px solid rgba(67,170,139,0.3); }
+.res-paid .res-badge { background: rgba(249,65,68,0.15);  color: var(--paid-clr); border: 1px solid rgba(249,65,68,0.3); }
+
+.res-platform {
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+  color: var(--dim);
+}
+
+.res-title {
+  font-family: 'Fraunces', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.res-author {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.res-why {
+  font-size: 11px;
+  color: #999;
+  line-height: 1.6;
+}
+
+.res-why strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── NO RESULTS ── */
+#no-results {
+  display: none;
+  text-align: center;
+  padding: 80px 40px;
+  color: var(--dim);
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+}
+
+/* ── PROGRESS BAR ── */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--gold);
+  z-index: 9999;
+  transition: width 0.1s;
+  width: 0%;
+}
+
+/* ── BACK TO TOP ── */
+.btt {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--gold);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 100;
+}
+.btt.visible { opacity: 1; }
+.btt:hover { background: var(--border2); }
+
+/* ── EXPAND ALL ── */
+.expand-btn {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.05em;
+}
+.expand-btn:hover { color: var(--text); border-color: var(--gold); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+  .resources-grid { grid-template-columns: 1fr; }
+  .hero, .content { padding-left: 20px; padding-right: 20px; }
+  .legend, .type-legend { margin-left: 20px; margin-right: 20px; }
+  .hero::after { display: none; }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <span class="site-logo">// PERFECT RESOURCES</span>
+  <div class="header-right">
+    <span class="skill-count" id="visible-count">44 skills · 132 resources</span>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="search" placeholder="search skills..." autocomplete="off">
+    </div>
+    <button class="expand-btn" id="expand-all-btn" onclick="toggleAll()">expand all</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">SWE × Data Engineering × AI/ML — Complete Resource Index</div>
+  <h1>The <em>Perfect</em><br>Resource for<br>Every Skill.</h1>
+  <p class="hero-sub">44 skills · 1 book · 1 free course · 1 paid course · each</p>
+  <p class="hero-desc">
+    Every skill from the unified roadmap — given one sufficient, detailed book
+    and two video/course resources (one free, one paid). No redundancy.
+    Each resource chosen for its depth, not its popularity.
+  </p>
+</div>
+
+<div class="legend">
+  <div class="leg-item all-filter active" onclick="filterTrack('all', this)"><span class="leg-dot"></span>All 44</div>
+  <div class="leg-item swe-filter" onclick="filterTrack('swe', this)"><span class="leg-dot"></span>SWE (10)</div>
+  <div class="leg-item de-filter"  onclick="filterTrack('de',  this)"><span class="leg-dot"></span>Data Eng (10)</div>
+  <div class="leg-item ml-filter"  onclick="filterTrack('ml',  this)"><span class="leg-dot"></span>AI/ML (10)</div>
+  <div class="leg-item uni-filter" onclick="filterTrack('spec', this)"><span class="leg-dot"></span>Specialization (6)</div>
+</div>
+
+<div class="type-legend">
+  <div class="type-item"><span class="type-badge-demo book-demo">BOOK</span>One canonical book</div>
+  <div class="type-item"><span class="type-badge-demo free-demo">FREE</span>Best free course/resource</div>
+  <div class="type-item"><span class="type-badge-demo paid-demo">PAID</span>Best paid course</div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-group">Foundation (8)</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s1')"><span class="num">01</span><span class="dot"></span>Python Programming</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s2')"><span class="num">02</span><span class="dot"></span>SQL</div>
+    <div class="sidebar-link ml-s"  onclick="scrollTo('s3')"><span class="num">03</span><span class="dot"></span>Linear Algebra</div>
+    <div class="sidebar-link ml-s"  onclick="scrollTo('s4')"><span class="num">04</span><span class="dot"></span>Probability & Statistics</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s5')"><span class="num">05</span><span class="dot"></span>Git & Version Control</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s6')"><span class="num">06</span><span class="dot"></span>Linux / Command Line</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s7')"><span class="num">07</span><span class="dot"></span>Data Structures</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s8')"><span class="num">08</span><span class="dot"></span>Algorithms & Big-O</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-group">SWE Core (8)</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s9')"> <span class="num">09</span><span class="dot"></span>Design Patterns</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s10')"><span class="num">10</span><span class="dot"></span>Web Frameworks</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s11')"><span class="num">11</span><span class="dot"></span>Testing & TDD</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s12')"><span class="num">12</span><span class="dot"></span>Docker & Kubernetes</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s13')"><span class="num">13</span><span class="dot"></span>CI/CD Pipelines</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s14')"><span class="num">14</span><span class="dot"></span>Security (OWASP/Auth)</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s15')"><span class="num">15</span><span class="dot"></span>Async Programming</div>
+    <div class="sidebar-link swe-s" onclick="scrollTo('s16')"><span class="num">16</span><span class="dot"></span>System Design</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-group">Data Eng Core (10)</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s17')"><span class="num">17</span><span class="dot"></span>Apache Spark / PySpark</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s18')"><span class="num">18</span><span class="dot"></span>Apache Kafka</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s19')"><span class="num">19</span><span class="dot"></span>Data Warehouses</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s20')"><span class="num">20</span><span class="dot"></span>ETL / ELT Pipelines</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s21')"><span class="num">21</span><span class="dot"></span>Apache Airflow</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s22')"><span class="num">22</span><span class="dot"></span>dbt</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s23')"><span class="num">23</span><span class="dot"></span>Dimensional Modeling</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s24')"><span class="num">24</span><span class="dot"></span>NoSQL Databases</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s25')"><span class="num">25</span><span class="dot"></span>Data Quality & Testing</div>
+    <div class="sidebar-link de-s" onclick="scrollTo('s26')"><span class="num">26</span><span class="dot"></span>Cloud Platforms</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-group">AI/ML Core (10)</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s27')"><span class="num">27</span><span class="dot"></span>Classical ML</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s28')"><span class="num">28</span><span class="dot"></span>Deep Learning Fundamentals</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s29')"><span class="num">29</span><span class="dot"></span>PyTorch</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s30')"><span class="num">30</span><span class="dot"></span>CNNs & Computer Vision</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s31')"><span class="num">31</span><span class="dot"></span>Transformers & NLP</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s32')"><span class="num">32</span><span class="dot"></span>Model Evaluation & Metrics</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s33')"><span class="num">33</span><span class="dot"></span>Feature Engineering</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s34')"><span class="num">34</span><span class="dot"></span>Experiment Tracking</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s35')"><span class="num">35</span><span class="dot"></span>HuggingFace Ecosystem</div>
+    <div class="sidebar-link ml-s" onclick="scrollTo('s36')"><span class="num">36</span><span class="dot"></span>MLOps & Model Deployment</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-group">Specialization (8)</div>
+    <div class="sidebar-link uni-s" onclick="scrollTo('s37')"><span class="num">37</span><span class="dot"></span>LLMs & Fine-Tuning</div>
+    <div class="sidebar-link uni-s" onclick="scrollTo('s38')"><span class="num">38</span><span class="dot"></span>RAG & Vector Databases</div>
+    <div class="sidebar-link uni-s" onclick="scrollTo('s39')"><span class="num">39</span><span class="dot"></span>Distributed Training</div>
+    <div class="sidebar-link uni-s" onclick="scrollTo('s40')"><span class="num">40</span><span class="dot"></span>Distributed Systems</div>
+    <div class="sidebar-link uni-s" onclick="scrollTo('s41')"><span class="num">41</span><span class="dot"></span>Streaming Systems</div>
+    <div class="sidebar-link uni-s" onclick="scrollTo('s42')"><span class="num">42</span><span class="dot"></span>Data Lakehouse</div>
+    <div class="sidebar-link uni-s" onclick="scrollTo('s43')"><span class="num">43</span><span class="dot"></span>Observability & Monitoring</div>
+    <div class="sidebar-link uni-s" onclick="scrollTo('s44')"><span class="num">44</span><span class="dot"></span>Kubernetes Advanced</div>
+  </div>
+</aside>
+
+<!-- CONTENT -->
+<main class="content">
+<div id="no-results">No skills match your search.</div>
+
+<!-- ════════════════════════════════
+     PHASE: FOUNDATION
+════════════════════════════════ -->
+<div class="phase-heading">
+  <span class="phase-name">Foundation Phase</span>
+  <span class="phase-badge badge-foundation">Months 0–5 · All Tracks</span>
+</div>
+
+<!-- SKILL 01 -->
+<div class="skill-card track-foundation" id="s1" data-track="foundation" data-name="python programming">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">01</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Python Programming</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">FOUNDATION</span><span class="skill-tag tag-phase">ALL TRACKS</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: variables, loops, functions, OOP, file I/O, modules, error handling, list comprehensions, virtual environments, package management with pip. The goal is to write clean, idiomatic Python that runs correctly and can be read by others.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">No Starch Press</span></div>
+          <div class="res-title">Python Crash Course, 3rd Edition</div>
+          <div class="res-author">Eric Matthes · 2023</div>
+          <div class="res-why">The clearest beginner Python book in print. Covers all fundamentals through three complete projects (game, data viz, web app). Used in university intro CS courses worldwide. <strong>Don't substitute this.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Harvard / edX</span></div>
+          <div class="res-title">CS50P — Introduction to Programming with Python</div>
+          <div class="res-author">David Malan · Harvard University</div>
+          <div class="res-why"><strong>Best free Python course that exists.</strong> Problem sets are genuinely hard, feedback is immediate. The pacing and rigor are university-grade. Available entirely free on cs50.harvard.edu.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">100 Days of Code: The Complete Python Pro Bootcamp</div>
+          <div class="res-author">Dr. Angela Yu · App Brewery</div>
+          <div class="res-why"><strong>Best paid Python course for project-based learners.</strong> 100 projects, builds habit through daily practice. Angela Yu's teaching style is exceptionally clear. ~$15–20 on Udemy sale.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 02 -->
+<div class="skill-card track-foundation" id="s2" data-track="foundation" data-name="sql">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">02</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">SQL</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">FOUNDATION</span><span class="skill-tag tag-phase">ALL TRACKS</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: SELECT, filtering, JOINs (inner/left/right/full), GROUP BY, aggregations, subqueries, CTEs (WITH clauses), window functions (ROW_NUMBER, LAG, LEAD, RANK), query optimization basics, indexes, and EXPLAIN plans.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">No Starch Press</span></div>
+          <div class="res-title">Practical SQL, 2nd Edition</div>
+          <div class="res-author">Anthony DeBarros · 2022</div>
+          <div class="res-why">Uses real datasets (US census, crime data) to teach SQL through actual analysis. Covers PostgreSQL deeply including geospatial, full-text search, and performance tuning. <strong>The most practical SQL book in print.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Mode / SQLZoo</span></div>
+          <div class="res-title">SQLZoo + Mode SQL Tutorial</div>
+          <div class="res-author">SQLZoo.net · Mode Analytics</div>
+          <div class="res-why"><strong>SQLZoo</strong> is the best interactive SQL practice environment for beginners. <strong>Mode's tutorial</strong> (mode.com/sql-tutorial) covers intermediate and advanced topics including window functions. Use both together.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">DataCamp</span></div>
+          <div class="res-title">SQL Fundamentals Track</div>
+          <div class="res-author">DataCamp · Multiple instructors</div>
+          <div class="res-why">Covers beginner through advanced SQL including window functions, query optimization, and database design. DataCamp's in-browser SQL editor means zero setup friction. <strong>Best for structured, guided SQL learning.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 03 -->
+<div class="skill-card track-foundation" id="s3" data-track="foundation" data-name="linear algebra">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">03</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Linear Algebra</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">FOUNDATION</span><span class="skill-tag tag-phase">ML CRITICAL</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: vectors and vector spaces, matrix operations (add, multiply, transpose), linear transformations, eigenvalues and eigenvectors, matrix decomposition (SVD, PCA), dot products, norms, and how these operations map to neural network computations.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Cambridge UP · FREE PDF</span></div>
+          <div class="res-title">Mathematics for Machine Learning</div>
+          <div class="res-author">Deisenroth, Faisal & Ong · 2020</div>
+          <div class="res-why">The only math book that connects linear algebra directly to ML algorithms. Chapters 2–4 cover everything needed. <strong>Free legally at mml-book.github.io.</strong> Used at Imperial College London and Cambridge.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / 3Blue1Brown</span></div>
+          <div class="res-title">Essence of Linear Algebra</div>
+          <div class="res-author">Grant Sanderson · 3Blue1Brown</div>
+          <div class="res-why"><strong>The best visual intuition for linear algebra ever made.</strong> 15 videos (~3hrs total). Every abstract concept is animated geometrically. Watch before reading the MML book — it makes the abstractions click immediately.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Coursera</span></div>
+          <div class="res-title">Mathematics for Machine Learning: Linear Algebra</div>
+          <div class="res-author">Imperial College London · Coursera</div>
+          <div class="res-why">Taught by David Dye of Imperial College. Builds directly toward ML applications. Includes programming assignments in Python/NumPy. <strong>Best structured paid course connecting math to ML code.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 04 -->
+<div class="skill-card track-foundation" id="s4" data-track="foundation" data-name="probability statistics">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">04</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Probability & Statistics</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">FOUNDATION</span><span class="skill-tag tag-phase">ML CRITICAL</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: probability rules, conditional probability, Bayes' theorem, common distributions (Normal, Binomial, Poisson), expectation and variance, hypothesis testing, p-values, confidence intervals, maximum likelihood estimation, and statistical intuition for ML models.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Naked Statistics: Stripping the Dread from the Data</div>
+          <div class="res-author">Charles Wheelan · 2013</div>
+          <div class="res-why">Builds genuine statistical intuition without calculus. After Naked Statistics, pair with <strong>StatQuest's videos</strong> for the ML-specific depth. This book removes the fear of statistics before you need to formalize it.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / StatQuest</span></div>
+          <div class="res-title">StatQuest with Josh Starmer</div>
+          <div class="res-author">Josh Starmer · YouTube</div>
+          <div class="res-why"><strong>The single best free resource for statistics and ML concepts.</strong> Every video explains one concept from first principles with custom visuals. Covers Bayes, distributions, hypothesis testing, and all ML-relevant stats. Hundreds of free videos.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Coursera</span></div>
+          <div class="res-title">Statistics with Python Specialization</div>
+          <div class="res-author">University of Michigan · Coursera</div>
+          <div class="res-why">3-course specialization covering understanding, visualizing, and inferential statistics — all implemented in Python. <strong>Bridges statistical theory to Python code</strong> in a way most courses skip. Strong capstone project.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 05 -->
+<div class="skill-card track-foundation" id="s5" data-track="foundation" data-name="git version control">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">05</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Git & Version Control</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">FOUNDATION</span><span class="skill-tag tag-phase">ALL TRACKS</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: init, add, commit, push/pull, branches, merge vs rebase, resolving conflicts, pull request workflow, cherry-pick, interactive rebase, stash, tags, GitHub/GitLab best practices, commit message conventions, and .gitignore strategies.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly · FREE online</span></div>
+          <div class="res-title">Pro Git, 2nd Edition</div>
+          <div class="res-author">Scott Chacon & Ben Straub · Free at git-scm.com</div>
+          <div class="res-why">The official, comprehensive Git reference. Written by GitHub co-founders. Covers everything from basics to Git internals. <strong>Completely free online at git-scm.com/book.</strong> Chapter 2 alone is worth more than most Git courses.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">learngitbranching.js.org</span></div>
+          <div class="res-title">Learn Git Branching (Interactive)</div>
+          <div class="res-author">Peter Cottle · learngitbranching.js.org</div>
+          <div class="res-why"><strong>Best interactive Git visualizer in existence.</strong> Every branch, merge, and rebase is animated in real-time. Builds muscle memory for complex workflows. Free. No install. 30 levels of increasing complexity.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Git & GitHub — The Complete Git Guide</div>
+          <div class="res-author">Maximilian Schwarzmüller · Academind</div>
+          <div class="res-why">Covers Git from zero to advanced workflows including rebase strategies, team workflows, GitHub Actions integration, and real project scenarios. Schwarzmüller's explanations are exceptionally structured. <strong>Best for learning team Git workflows.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 06 -->
+<div class="skill-card track-foundation" id="s6" data-track="foundation" data-name="linux command line bash">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">06</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Linux / Command Line</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">FOUNDATION</span><span class="skill-tag tag-phase">ALL TRACKS</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: filesystem navigation, file manipulation (cp/mv/rm/chmod), pipes and redirection, grep/awk/sed, environment variables, bash scripting (conditionals, loops, functions), process management (ps/kill/top), SSH, cron jobs, and package management (apt/brew).</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">No Starch Press</span></div>
+          <div class="res-title">The Linux Command Line, 2nd Edition</div>
+          <div class="res-author">William Shotts · Free at linuxcommand.org</div>
+          <div class="res-why">The most complete introduction to the Linux CLI. Covers shells, scripting, package management, and system administration. <strong>Completely free online at linuxcommand.org.</strong> Used as the standard reference in Linux sysadmin courses.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">MIT OpenCourseWare</span></div>
+          <div class="res-title">The Missing Semester of Your CS Education</div>
+          <div class="res-author">MIT CSAIL · missing.csail.mit.edu</div>
+          <div class="res-why"><strong>The most practical CS skills course that universities don't teach.</strong> Covers shell, Vim, Git, tmux, SSH, and debugging tools in 12 focused lectures. All free. Every professional engineer eventually finds this and wishes they had it earlier.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Linux Command Line Bootcamp: Beginner to Power User</div>
+          <div class="res-author">Colt Steele · Udemy</div>
+          <div class="res-why">Colt Steele's teaching clarity is exceptional. Covers all practical Linux skills with real-world exercises and a built-in terminal emulator. <strong>Best for learners who want structured progression with video explanation.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 07 -->
+<div class="skill-card track-foundation" id="s7" data-track="foundation" data-name="data structures">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">07</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Data Structures</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">FOUNDATION</span><span class="skill-tag tag-phase">SWE CRITICAL</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: arrays, dynamic arrays, linked lists (single/double), stacks, queues, hash maps, sets, trees (binary, BST, AVL), heaps (min/max), graphs (adjacency list/matrix), tries, and when to use each. Implement from scratch in Python before using built-ins.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">MIT Press</span></div>
+          <div class="res-title">Introduction to Algorithms (CLRS), 4th Edition</div>
+          <div class="res-author">Cormen, Leiserson, Rivest & Stein</div>
+          <div class="res-why">The canonical algorithms textbook. Used at MIT, Stanford, CMU. Chapters 10–14 cover all fundamental data structures with full proofs. <strong>Don't read cover-to-cover — use it as a reference and study specific chapters.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / NeetCode</span></div>
+          <div class="res-title">NeetCode Data Structures & Algorithms for Beginners</div>
+          <div class="res-author">NeetCode · neetcode.io / YouTube</div>
+          <div class="res-why"><strong>Best free visual DSA course for interview preparation.</strong> Each video covers one structure with code implementation and complexity analysis. Pairs perfectly with LeetCode. NeetCode's animations make abstract structures concrete instantly.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Python Data Structures & Algorithms + LEETCODE Exercises</div>
+          <div class="res-author">Scott Barrett · Udemy</div>
+          <div class="res-why">The most complete paid DSA course using Python. Every data structure is implemented from scratch with full explanation. Includes 100+ LeetCode problems mapped to each structure. <strong>Best for building a complete, tested implementation library.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 08 -->
+<div class="skill-card track-foundation" id="s8" data-track="foundation" data-name="algorithms big-o complexity">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">08</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Algorithms & Big-O</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">FOUNDATION</span><span class="skill-tag tag-phase">SWE CRITICAL</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: time and space complexity analysis, O(1)/O(log n)/O(n)/O(n log n)/O(n²) intuition, sorting algorithms (merge, quick, heap), searching (binary search, BFS, DFS), dynamic programming, greedy algorithms, backtracking, and two-pointer / sliding window patterns.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Manning</span></div>
+          <div class="res-title">Grokking Algorithms, 2nd Edition</div>
+          <div class="res-author">Aditya Bhargava · 2024</div>
+          <div class="res-why">The most approachable algorithms book ever written. Every algorithm is illustrated with hand-drawn visuals. Covers Big-O, recursion, dynamic programming, and graphs. <strong>Read this before CLRS</strong> — it builds the right mental models first.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">MIT OpenCourseWare</span></div>
+          <div class="res-title">6.006 — Introduction to Algorithms</div>
+          <div class="res-author">MIT OpenCourseWare · ocw.mit.edu</div>
+          <div class="res-why"><strong>Free MIT algorithm lectures.</strong> Full lecture videos, problem sets, and exams. The most rigorous free algorithms course available. Taught by Erik Demaine (MIT). Covers sorting, hashing, dynamic programming, and graph algorithms with proofs.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">AlgoExpert</span></div>
+          <div class="res-title">AlgoExpert — Algorithms & Coding Interview Prep</div>
+          <div class="res-author">Clement Mihailescu · AlgoExpert.io</div>
+          <div class="res-why">160+ curated algorithm problems with video explanations (not just solutions). Every problem comes with a walkthrough of the thought process. <strong>Best for systematically preparing for technical interviews</strong> while learning algorithms simultaneously.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     PHASE: SWE CORE
+════════════════════════════════ -->
+<div class="phase-heading">
+  <span class="phase-name">Software Engineering Core</span>
+  <span class="phase-badge badge-swe">Months 5–18 · SWE Track</span>
+</div>
+
+<!-- SKILL 09 -->
+<div class="skill-card track-swe" id="s9" data-track="swe" data-name="design patterns solid gof">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">09</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Design Patterns & SOLID</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SWE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: SOLID principles (Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion), GoF patterns (Factory, Strategy, Observer, Decorator, Singleton, Command, Adapter, Facade), and when to apply or intentionally avoid each.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Prentice Hall</span></div>
+          <div class="res-title">Clean Code: A Handbook of Agile Software Craftsmanship</div>
+          <div class="res-author">Robert C. Martin (Uncle Bob) · 2008</div>
+          <div class="res-why">Sets the professional standard for code quality and SOLID principles. The SOLID chapter alone transforms how you write code. <strong>Read once, re-read every 2 years.</strong> Every senior engineer at FAANG references this implicitly in code reviews.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / ArjanCodes</span></div>
+          <div class="res-title">ArjanCodes — Design Patterns in Python</div>
+          <div class="res-author">Arjan Egges · ArjanCodes YouTube</div>
+          <div class="res-why"><strong>Best free Python-specific design patterns resource.</strong> Arjan implements every GoF pattern and SOLID principle in real Python projects, showing both the before and after refactor. Shows patterns in the context of realistic code, not toy examples.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Design Patterns in Python</div>
+          <div class="res-author">Dmitri Nesteruk · Udemy</div>
+          <div class="res-why">All 23 GoF patterns implemented in Python with real-world use cases. Nesteruk provides clear rationale for when to use each pattern and the anti-patterns to avoid. <strong>Most complete paid design patterns course for Python developers.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 10 -->
+<div class="skill-card track-swe" id="s10" data-track="swe" data-name="web frameworks fastapi django flask">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">10</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Web Frameworks (FastAPI / Django)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SWE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: RESTful API design, routing, request/response lifecycle, middleware, dependency injection (FastAPI), ORM and database migrations, authentication/sessions, background tasks, OpenAPI/Swagger auto-docs, and deploying Python web apps to production.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">FastAPI: Modern Python Web Development</div>
+          <div class="res-author">Bill Lubanovic · O'Reilly · 2024</div>
+          <div class="res-why">FastAPI is the current industry standard for Python APIs (used at Uber, Netflix, Microsoft). This book covers async APIs, database integration, authentication, testing, and deployment end-to-end. <strong>FastAPI is the right default in 2024 — learn it over Django for new API projects.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">FastAPI Official Docs</span></div>
+          <div class="res-title">FastAPI Official Tutorial & Documentation</div>
+          <div class="res-author">Sebastián Ramírez · fastapi.tiangolo.com</div>
+          <div class="res-why"><strong>The FastAPI docs are so well-written they function as a course.</strong> Tiangolo (creator) wrote them to be tutorial-quality. The tutorial section alone covers 80% of what you need. Frequently cited as the best framework documentation in Python.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">FastAPI — The Complete Course 2024 (Beginner + Advanced)</div>
+          <div class="res-author">Eric Roby & Chad Darby · Udemy</div>
+          <div class="res-why">Full coverage from routing through JWT auth, PostgreSQL integration, Docker deployment, and testing. Builds a complete production-ready application. <strong>Best structured video course for FastAPI in a real production context.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 11 -->
+<div class="skill-card track-swe" id="s11" data-track="swe" data-name="testing tdd pytest unit integration">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">11</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Testing & TDD</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SWE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: unit vs integration vs end-to-end tests, pytest fixtures, parametrize, mocking with unittest.mock, test coverage, property-based testing with Hypothesis, TDD red-green-refactor cycle, testing FastAPI/Django endpoints, and writing tests that don't break with every refactor.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Python Testing with pytest, 2nd Edition</div>
+          <div class="res-author">Brian Okken · 2022</div>
+          <div class="res-why">The most complete pytest reference available. Covers fixtures, plugins, parametrization, mocking, and integration testing. Brian Okken created the Python Test Podcast. <strong>After this book, pytest has no surprises for you.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / ArjanCodes</span></div>
+          <div class="res-title">Unit Testing and TDD in Python — ArjanCodes</div>
+          <div class="res-author">Arjan Egges · YouTube</div>
+          <div class="res-why"><strong>Best free TDD tutorial for Python engineers.</strong> Arjan shows the full TDD cycle on real Python projects, demonstrates common pitfalls, and explains what makes a good test vs a brittle one. Several videos covering different testing patterns.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">TestDriven.io</span></div>
+          <div class="res-title">Test-Driven Development with FastAPI and Docker</div>
+          <div class="res-author">Michael Herman · testdriven.io</div>
+          <div class="res-why">Builds a complete FastAPI application using strict TDD from the first line of code. Covers pytest, mocking, test containerization, and CI integration. <strong>Best paid resource for TDD in a production Python context.</strong> ~$40 one-time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 12 -->
+<div class="skill-card track-swe" id="s12" data-track="swe" data-name="docker kubernetes containers">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">12</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Docker & Kubernetes</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SWE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: Dockerfile authoring, image layers, docker-compose for multi-service apps, container networking, volumes, environment management, Kubernetes pods/deployments/services, ConfigMaps/Secrets, ingress controllers, resource limits, and basic cluster operations with kubectl.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Manning</span></div>
+          <div class="res-title">Docker Deep Dive</div>
+          <div class="res-author">Nigel Poulton · 2023 Edition</div>
+          <div class="res-why">The most concise, complete Docker book available. Poulton also wrote "The Kubernetes Book" — buy both. Clear explanations of images, containers, networking, and compose. <strong>Readable in a weekend, comprehensive enough to last years.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">KodeKloud / YouTube</span></div>
+          <div class="res-title">Docker Training Course for the Absolute Beginner</div>
+          <div class="res-author">Mumshad Mannambeth · KodeKloud (free tier)</div>
+          <div class="res-why">KodeKloud's free Docker course includes interactive labs in a real browser-based environment — no local Docker install needed. <strong>Best for hands-on learning without setup friction.</strong> Mumshad is known for the CKA Kubernetes certification course.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Docker & Kubernetes: The Practical Guide (2024)</div>
+          <div class="res-author">Maximilian Schwarzmüller · Academind</div>
+          <div class="res-why">Covers Docker and Kubernetes together in one course — the only pair that makes sense since Kubernetes orchestrates Docker containers. Builds a complete multi-service application. <strong>Most comprehensive paid course combining both tools with practical projects.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 13 -->
+<div class="skill-card track-swe" id="s13" data-track="swe" data-name="cicd pipelines github actions jenkins devops">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">13</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">CI/CD Pipelines</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SWE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: GitHub Actions workflow YAML, triggers (push/PR/schedule), job dependencies, secrets management, build-test-deploy automation, Docker image build and push, environment-specific deployments, rollback strategies, and blue-green/canary deployment concepts.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Learning GitHub Actions</div>
+          <div class="res-author">Brent Laster · O'Reilly · 2023</div>
+          <div class="res-why">The most complete GitHub Actions reference. Covers workflows, runners, reusable actions, secrets, environments, and deployment automation. GitHub Actions is the dominant CI/CD tool for new projects. <strong>This book covers everything from basic pipelines to complex matrix builds.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">GitHub Docs / YouTube</span></div>
+          <div class="res-title">GitHub Actions Official Documentation + TechWorld with Nana</div>
+          <div class="res-author">GitHub · Nana Janashia (YouTube)</div>
+          <div class="res-why"><strong>GitHub's own docs are tutorial-quality.</strong> Pair with TechWorld with Nana's CI/CD YouTube series for visual walkthroughs. Nana covers GitHub Actions, Jenkins, and ArgoCD in the context of real DevOps workflows. Free and regularly updated.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">GitHub Actions — The Complete Guide</div>
+          <div class="res-author">Maximilian Schwarzmüller · Academind</div>
+          <div class="res-why">Builds real CI/CD pipelines for Node, Python, and Docker projects. Covers caching, reusable workflows, matrix strategies, and deployment to cloud providers. <strong>Best structured video course for GitHub Actions in production contexts.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 14 -->
+<div class="skill-card track-swe" id="s14" data-track="swe" data-name="security owasp authentication jwt oauth">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">14</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Security (OWASP / Auth)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SWE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: OWASP Top 10 (injection, XSS, broken auth, IDOR, etc.), JWT structure and validation, OAuth 2.0 flows, API key management, password hashing (bcrypt/argon2), HTTPS/TLS basics, CORS, input validation/sanitization, and secure coding practices.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">No Starch Press</span></div>
+          <div class="res-title">The Web Application Hacker's Handbook, 2nd Ed.</div>
+          <div class="res-author">Stuttard & Pinto · 2011 (still canonical)</div>
+          <div class="res-why">Understanding attacks is the prerequisite for defense. This book explains every web vulnerability from the attacker's perspective — teaching you exactly how SQL injection, XSS, and CSRF work so you can eliminate them. <strong>The most direct path to security thinking.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">OWASP / PortSwigger</span></div>
+          <div class="res-title">PortSwigger Web Security Academy</div>
+          <div class="res-author">PortSwigger · portswigger.net/web-security</div>
+          <div class="res-why"><strong>The best free web security training resource in existence.</strong> Built by the creators of Burp Suite. Covers every OWASP vulnerability with interactive labs where you actually exploit the vulnerability to understand how to prevent it. Completely free.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Web Security & Bug Bounty: Learn Penetration Testing</div>
+          <div class="res-author">Zaid Sabih · z-Security</div>
+          <div class="res-why">Practical offensive security course covering XSS, SQL injection, CSRF, file upload vulnerabilities, and authentication flaws — all in controlled lab environments. <strong>Best paid course for engineers who want to understand attacks before defending against them.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 15 -->
+<div class="skill-card track-swe" id="s15" data-track="swe" data-name="async programming asyncio event loop concurrency">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">15</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Async Programming</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SWE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: Python asyncio, async/await syntax, event loops, coroutines vs threads vs processes, concurrent.futures, aiohttp for async HTTP, async database drivers, task groups, semaphores for concurrency limiting, and when to use async vs threading vs multiprocessing.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Using Asyncio in Python</div>
+          <div class="res-author">Caleb Hattingh · O'Reilly · 2020</div>
+          <div class="res-why">The clearest explanation of Python's asyncio model. Hattingh removes the confusion around async/await, event loops, and coroutines. <strong>Short and focused — 150 pages that eliminate the fog around async Python</strong> better than any tutorial.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / mCoding</span></div>
+          <div class="res-title">Asyncio in Python — mCoding YouTube Series</div>
+          <div class="res-author">James Murphy · mCoding YouTube</div>
+          <div class="res-why"><strong>The most technically accurate free asyncio resource.</strong> James Murphy (PhD mathematician, senior engineer) explains Python's async model precisely, including the differences between coroutines, tasks, and futures. Zero hand-waving.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Concurrency & Multithreading in Python (threading, asyncio, multiprocessing)</div>
+          <div class="res-author">Artem Zaika · Udemy</div>
+          <div class="res-why">Covers threading, multiprocessing, and asyncio together — which is essential because the choice between them determines performance. <strong>Best paid course for understanding Python concurrency as a whole system</strong>, not just asyncio in isolation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 16 -->
+<div class="skill-card track-swe" id="s16" data-track="swe" data-name="system design distributed load balancing cache">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">16</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">System Design</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SWE CORE</span><span class="skill-tag tag-phase">INTERVIEW CRITICAL</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: load balancing (L4/L7), horizontal vs vertical scaling, caching strategies (CDN, Redis, write-through/around/back), database sharding, consistent hashing, CAP theorem, SQL vs NoSQL trade-offs, message queues, rate limiting, and designing real systems (URL shortener, YouTube, Twitter).</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">ByteByteGo</span></div>
+          <div class="res-title">System Design Interview: An Insider's Guide (Vol 1 & 2)</div>
+          <div class="res-author">Alex Xu · ByteByteGo · 2020–2022</div>
+          <div class="res-why">The industry standard prep resource for system design interviews at FAANG. Vol 1 covers foundational patterns; Vol 2 covers advanced designs (Google Maps, Nearby Friends, distributed message queues). <strong>Buy both. Read before any senior SWE interview.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">GitHub</span></div>
+          <div class="res-title">System Design Primer</div>
+          <div class="res-author">Donne Martin · github.com/donnemartin/system-design-primer</div>
+          <div class="res-why"><strong>250k+ GitHub stars. The most comprehensive free system design resource.</strong> Covers every concept with diagrams, trade-off analysis, and links to source material. Used by engineers at every major company to prepare for system design rounds.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">ByteByteGo / Educative</span></div>
+          <div class="res-title">Grokking Modern System Design Interview</div>
+          <div class="res-author">Design Gurus · educative.io</div>
+          <div class="res-why">Interactive text-based course with diagrams for 20+ real system designs. Includes mock interview scenarios and structured frameworks for the interview itself. <strong>Best paid resource for building a systematic, repeatable approach to system design interviews.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     PHASE: DATA ENGINEERING CORE
+════════════════════════════════ -->
+<div class="phase-heading">
+  <span class="phase-name">Data Engineering Core</span>
+  <span class="phase-badge badge-de">Months 5–18 · Data Engineering Track</span>
+</div>
+
+<!-- SKILL 17 -->
+<div class="skill-card track-de" id="s17" data-track="de" data-name="apache spark pyspark distributed data processing">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">17</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Apache Spark / PySpark</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: Spark architecture (driver/executors/DAG), RDDs vs DataFrames vs Datasets, transformations vs actions, lazy evaluation, PySpark DataFrame API, Spark SQL, partitioning strategies, shuffle optimization, reading/writing Parquet/Delta, and running Spark on YARN/Kubernetes.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly · FREE</span></div>
+          <div class="res-title">Learning Spark: Lightning-Fast Data Analytics, 2nd Ed.</div>
+          <div class="res-author">Damji, Wenig, Das & Lee · 2020 · Free PDF from Databricks</div>
+          <div class="res-why">Written by Databricks engineers (who built Spark). Covers Spark 3.0, DataFrames, Spark SQL, structured streaming, and Delta Lake. <strong>Free PDF available from databricks.com/resources/ebook/learning-spark-lightning-fast-data-analytics.</strong> The definitive Spark reference.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">DataTalks.Club</span></div>
+          <div class="res-title">Data Engineering Zoomcamp — Spark Module</div>
+          <div class="res-author">Alexey Grigorev · DataTalks.Club · GitHub</div>
+          <div class="res-why"><strong>Best free hands-on Spark course available.</strong> Part of the full Data Engineering Zoomcamp. Teaches PySpark through a real project pipeline. All materials, videos, and Jupyter notebooks are free on GitHub. Community Discord for Q&A.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Apache Spark 3 & Python 3 — Hands On with Big Data!</div>
+          <div class="res-author">Frank Kane · Sundog Education</div>
+          <div class="res-why">Frank Kane worked at Amazon building large-scale recommendation systems. This course covers Spark 3 from basics to MLlib and streaming. <strong>Best paid Spark course for engineers coming from a Python/data background.</strong> Practical focus throughout.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 18 -->
+<div class="skill-card track-de" id="s18" data-track="de" data-name="apache kafka streaming events producers consumers">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">18</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Apache Kafka</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: Kafka architecture (brokers, topics, partitions, offsets), producer/consumer APIs, consumer groups, replication and fault tolerance, Kafka Connect for source/sink connectors, Kafka Streams for lightweight stream processing, schema registry with Avro, and deploying Kafka with Docker.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Kafka: The Definitive Guide, 2nd Edition</div>
+          <div class="res-author">Shapira, Palino, Sivaram & Petty · 2021</div>
+          <div class="res-why">Written by Confluent engineers (who built commercial Kafka). Covers architecture, producers, consumers, streams, Connect, and operations. <strong>Free PDF available on Confluent's website.</strong> The authoritative reference for Kafka engineering.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Confluent Developer</span></div>
+          <div class="res-title">Apache Kafka 101 — Confluent Developer Course</div>
+          <div class="res-author">Confluent · developer.confluent.io</div>
+          <div class="res-why"><strong>Official Kafka courses from the company that maintains it.</strong> "Apache Kafka 101" is the best starting point — covers all core concepts with short, focused video lessons and interactive exercises. Free. No registration required to access most content.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Apache Kafka Series — Learn Apache Kafka for Beginners v3</div>
+          <div class="res-author">Stéphane Maarek · Udemy</div>
+          <div class="res-why">Maarek is a Confluent Kafka Certified Engineer and the most trusted Kafka instructor on Udemy. His entire Kafka series (Beginners → Streams → Connect → Schema Registry) is the de facto learning path. <strong>Best-in-class paid Kafka curriculum, start with Beginners v3.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 19 -->
+<div class="skill-card track-de" id="s19" data-track="de" data-name="data warehouse snowflake bigquery redshift cloud dwh">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">19</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Data Warehouses (Snowflake / BigQuery / Redshift)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: MPP (massively parallel processing) architecture, columnar storage, partitioning and clustering, query optimization for analytical workloads, virtual warehouses (Snowflake), materialized views, Time Travel, data sharing, cost optimization, and warehouse vs data lake trade-offs.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Snowflake: The Definitive Guide</div>
+          <div class="res-author">Joyce Kay Avila · O'Reilly · 2022</div>
+          <div class="res-why">Snowflake holds the largest market share in cloud data warehousing. Avila covers architecture, virtual warehouses, semi-structured data, performance tuning, and security. <strong>Snowflake proficiency is the most marketable DE skill in 2024 — this is the book to own it.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Snowflake / Google</span></div>
+          <div class="res-title">Snowflake University + Google BigQuery free tier</div>
+          <div class="res-author">Snowflake Training · learn.snowflake.com</div>
+          <div class="res-why"><strong>Snowflake University offers free certification prep courses.</strong> "Badge 1: Data Warehousing Workshop" covers all core concepts. Pair with Google's BigQuery sandbox (free tier, no credit card needed) for hands-on practice. Both are free with account creation.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Complete Snowflake Masterclass: Zero to Hero</div>
+          <div class="res-author">Nikolai Schuler · Udemy</div>
+          <div class="res-why">Comprehensive Snowflake course covering architecture, SQL, performance optimization, dbt integration, and Snowpark (Python in Snowflake). Regularly updated for Snowflake's rapid feature releases. <strong>Best single paid resource for practical Snowflake engineering.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 20 -->
+<div class="skill-card track-de" id="s20" data-track="de" data-name="etl elt pipeline design data ingestion">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">20</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">ETL / ELT Pipelines</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: ETL vs ELT architectural differences, incremental vs full-load strategies, idempotency and exactly-once semantics, CDC (change data capture), Airbyte and Fivetran for ingestion, data lineage, backfilling strategies, error handling and dead-letter queues, and pipeline observability.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Fundamentals of Data Engineering</div>
+          <div class="res-author">Joe Reis & Matt Housley · O'Reilly · 2022</div>
+          <div class="res-why">Chapters 8–9 cover the full data ingestion and transformation lifecycle in depth. This book defines the modern DE field. <strong>The pipeline design chapters are the best treatment of ETL/ELT patterns written for practitioners</strong> — not academics.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">DataTalks.Club</span></div>
+          <div class="res-title">Data Engineering Zoomcamp — Full Pipeline Module</div>
+          <div class="res-author">Alexey Grigorev · DataTalks.Club</div>
+          <div class="res-why"><strong>Best free end-to-end pipeline course.</strong> Builds a complete ETL pipeline from ingestion (Postgres → GCS/S3) through transformation (dbt) to serving (BigQuery). All code, videos, and homework on GitHub. Completely free.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">The Complete Hands-On Introduction to Apache Airflow</div>
+          <div class="res-author">Marc Lamberti · Udemy</div>
+          <div class="res-why">Covers the full pipeline orchestration picture: Airflow DAGs, sensors, hooks, XCom, TaskFlow API, and best practices for production pipelines. Lamberti is the most respected Airflow instructor. <strong>Best paid course for building orchestrated ETL pipelines end-to-end.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 21 -->
+<div class="skill-card track-de" id="s21" data-track="de" data-name="apache airflow workflow orchestration dag">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">21</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Apache Airflow</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: DAG structure (operators, tasks, dependencies), TaskFlow API, schedulers, sensors (FileSensor, HttpSensor), hooks (database connections), XCom for task communication, dynamic DAGs, testing DAGs with pytest, deploying on Docker/K8s, and Airflow 2.x best practices.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Manning</span></div>
+          <div class="res-title">Data Pipelines with Apache Airflow</div>
+          <div class="res-author">Harenslak & de Ruiter · Manning · 2021</div>
+          <div class="res-why">The only comprehensive Airflow book in print. Covers DAG design patterns, testing, scaling, and real production deployments. Includes chapters on Kubernetes executor and cloud deployment. <strong>The reference book for serious Airflow engineering.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / Astronomer</span></div>
+          <div class="res-title">Astronomer Academy — Airflow Fundamentals (Free)</div>
+          <div class="res-author">Astronomer · astronomer.io/events/webinars</div>
+          <div class="res-why"><strong>Astronomer is the commercial company behind Apache Airflow.</strong> Their free courses and webinars are authoritative. The "Airflow Fundamentals" certification prep course is free and covers everything from DAG basics to production deployment patterns.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">The Complete Hands-On Course to Master Apache Airflow</div>
+          <div class="res-author">Marc Lamberti · Udemy</div>
+          <div class="res-why">Marc Lamberti is the Airflow community's most recognized instructor. This course covers Airflow 2.x, TaskFlow API, custom operators, testing, and Kubernetes deployment. <strong>The de facto standard paid Airflow course — 50,000+ students.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 22 -->
+<div class="skill-card track-de" id="s22" data-track="de" data-name="dbt data build tool sql transformations analytics">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">22</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">dbt (data build tool)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: dbt project structure, models (SQL SELECT statements as tables/views), ref() and source() macros, materializations (table/view/incremental/ephemeral), tests (unique, not_null, accepted_values, relationships), documentation, Jinja templating, seeds, snapshots, and dbt Cloud vs dbt Core.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Analytics Engineering with SQL and dbt</div>
+          <div class="res-author">Rui Machado & Hélder Russa · O'Reilly · 2023</div>
+          <div class="res-why">The most complete dbt book. Covers the full analytics engineering workflow from raw data to final BI models using dbt. Includes real project walkthroughs with Snowflake and BigQuery. <strong>The best resource for learning dbt in a production analytics context.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">dbt Learn</span></div>
+          <div class="res-title">dbt Fundamentals — Official dbt Course</div>
+          <div class="res-author">dbt Labs · learn.getdbt.com</div>
+          <div class="res-why"><strong>Official free course by dbt Labs (who built dbt).</strong> Covers models, sources, tests, documentation, and deployment. Includes hands-on exercises in dbt Cloud. The "dbt Fundamentals" certification from this course is recognized in job postings. Completely free.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Complete dbt (Data Build Tool) Bootcamp: Zero to Hero</div>
+          <div class="res-author">Zoltan Toth & Miklos Petridisz · Udemy</div>
+          <div class="res-why">Builds a complete dbt project on Snowflake from scratch, covering advanced features like packages, hooks, macros, and CI/CD integration. <strong>Best paid course for engineers building production-grade dbt projects end-to-end.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 23 -->
+<div class="skill-card track-de" id="s23" data-track="de" data-name="dimensional modeling kimball star schema data warehouse design">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">23</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Dimensional Modeling (Kimball)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: fact vs dimension tables, star schema vs snowflake schema, slowly changing dimensions (SCD Types 1/2/3), grain definition, degenerate dimensions, junk dimensions, date dimensions, bridge tables, factless fact tables, and the Kimball lifecycle methodology.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Wiley</span></div>
+          <div class="res-title">The Data Warehouse Toolkit, 3rd Edition</div>
+          <div class="res-author">Ralph Kimball & Margy Ross · 2013</div>
+          <div class="res-why">The Bible of dimensional modeling. 25 years old, still the definitive reference used by every data warehouse architect. Covers retail, procurement, HR, education, and healthcare schemas. <strong>Don't skim — every page is applicable to real projects.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube</span></div>
+          <div class="res-title">Kahan Data Solutions — Dimensional Modeling Series</div>
+          <div class="res-author">Kahan Data Solutions · YouTube</div>
+          <div class="res-why"><strong>Best free visual introduction to dimensional modeling and data vault.</strong> Clear explanations of star schemas, SCD types, and real modeling decisions with diagrams. Pairs perfectly with the Kimball book by visualizing concepts that the book describes in text.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Data Warehouse — The Ultimate Guide</div>
+          <div class="res-author">Nikolai Schuler · Udemy</div>
+          <div class="res-why">Covers dimensional modeling, data vault, and modern cloud warehouse implementation using Snowflake and dbt. Includes hands-on schema design exercises for multiple business domains. <strong>Best paid course connecting Kimball theory to modern cloud warehouse implementation.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 24 -->
+<div class="skill-card track-de" id="s24" data-track="de" data-name="nosql databases mongodb cassandra redis dynamodb">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">24</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">NoSQL Databases</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: document stores (MongoDB — CRUD, aggregation pipeline, indexing), wide-column stores (Cassandra — CQL, partition key design, replication), key-value stores (Redis — data types, TTL, pub/sub, caching patterns), and the CAP theorem trade-offs that determine which to use.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Seven Databases in Seven Weeks, 2nd Edition</div>
+          <div class="res-author">Luc Perkins, Eric Redmond & Jim Wilson · 2018</div>
+          <div class="res-why">Covers PostgreSQL, Redis, HBase, MongoDB, CouchDB, Cassandra, and Neo4j in one book. The approach of comparing databases side-by-side teaches you <strong>when to use which</strong> — the most valuable NoSQL skill. No other book builds this comparative intuition.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">MongoDB University</span></div>
+          <div class="res-title">MongoDB for Developers — M101 (Free)</div>
+          <div class="res-author">MongoDB University · university.mongodb.com</div>
+          <div class="res-why"><strong>Official free MongoDB courses from MongoDB Inc.</strong> "M001: MongoDB Basics" and "M101: MongoDB for Developers" cover document model, CRUD, aggregation pipelines, and indexing. Pair with Redis University (redis.io/university) which is also free. Both are official certification prep.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">MongoDB — The Complete Developer's Guide 2024</div>
+          <div class="res-author">Maximilian Schwarzmüller · Academind</div>
+          <div class="res-why">Most comprehensive MongoDB course — covers CRUD, aggregation, indexing, transactions, Atlas, and integration with Node/Python apps. <strong>Best paid resource for MongoDB depth</strong> before adding Redis and Cassandra for the broader NoSQL picture.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 25 -->
+<div class="skill-card track-de" id="s25" data-track="de" data-name="data quality testing great expectations validation">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">25</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Data Quality & Testing</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: data quality dimensions (completeness, accuracy, consistency, timeliness), Great Expectations (expectations, data docs, checkpoints), dbt tests, Soda Core for SQL-based quality checks, anomaly detection, data contracts, and building quality gates into pipelines before data reaches downstream consumers.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Fundamentals of Data Engineering (Ch. 9 — Data Quality)</div>
+          <div class="res-author">Joe Reis & Matt Housley · O'Reilly · 2022</div>
+          <div class="res-why">No standalone book covers data quality as well as Reis & Housley's treatment in Chapter 9. For tool-specific depth, pair with the <strong>Great Expectations documentation</strong> (docs.greatexpectations.io) which is tutorial-quality. Together these cover the theory and practice completely.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Great Expectations Docs</span></div>
+          <div class="res-title">Great Expectations Official Documentation & Tutorials</div>
+          <div class="res-author">Superconductive · docs.greatexpectations.io</div>
+          <div class="res-why"><strong>GX documentation is written as a practical tutorial series.</strong> The "Getting Started" through "How-to Guides" sections cover everything from first expectations to production data docs. Completely free, maintained by the GX team, includes Spark and SQL engine integrations.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">DataCamp</span></div>
+          <div class="res-title">Introduction to Data Quality in Python</div>
+          <div class="res-author">DataCamp · Multiple instructors</div>
+          <div class="res-why">Covers data quality assessment, profiling with pandas-profiling, validation with Great Expectations, and building quality pipelines. <strong>Best structured paid course for engineers new to data quality as a discipline</strong> rather than an afterthought.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 26 -->
+<div class="skill-card track-de" id="s26" data-track="de" data-name="cloud platforms aws gcp azure cloud computing">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">26</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Cloud Platforms (AWS / GCP / Azure)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">DE CORE</span><span class="skill-tag tag-phase">ALL TRACKS</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: core compute (EC2/Cloud Run/VMs), object storage (S3/GCS/ADLS), IAM and permissions, networking (VPC, subnets, security groups), managed databases (RDS/Cloud SQL), serverless functions (Lambda/Cloud Functions), container registries, and cost management basics. Pick one cloud deeply.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">AWS Certified Solutions Architect Study Guide</div>
+          <div class="res-author">Ben Piper & David Clinton · Sybex · 2023</div>
+          <div class="res-why">AWS holds 31% cloud market share — learning AWS first maximizes job options. This study guide covers every core AWS service with architecture trade-offs. <strong>Even if you don't take the certification, this book gives you a complete mental model of cloud infrastructure.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">AWS / Google</span></div>
+          <div class="res-title">AWS Skill Builder + Google Cloud Skills Boost (Free Tier)</div>
+          <div class="res-author">AWS Training · Google Cloud</div>
+          <div class="res-why"><strong>Both AWS Skill Builder and Google Cloud Skills Boost offer free foundational courses.</strong> AWS has "Cloud Practitioner Essentials" free. Google offers free labs on core GCP services. Both include free tier sandbox environments to practice with real services.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Ultimate AWS Certified Solutions Architect Associate SAA-C03</div>
+          <div class="res-author">Stephane Maarek · Udemy</div>
+          <div class="res-why">Maarek is the top AWS instructor on Udemy with multiple AWS certifications. This course covers every AWS service with hands-on labs. <strong>Most engineers use this both to learn AWS and to pass the SAA-C03 exam</strong> — two outcomes for one course.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     PHASE: AI/ML CORE
+════════════════════════════════ -->
+<div class="phase-heading">
+  <span class="phase-name">AI / ML Engineering Core</span>
+  <span class="phase-badge badge-ml">Months 5–18 · ML Track</span>
+</div>
+
+<!-- SKILL 27 -->
+<div class="skill-card track-ml" id="s27" data-track="ml" data-name="classical machine learning scikit-learn regression classification clustering">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">27</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Classical Machine Learning</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: linear/logistic regression, decision trees, random forests, gradient boosting (XGBoost/LightGBM), SVMs, k-means clustering, PCA, cross-validation, regularization (L1/L2), hyperparameter tuning with Scikit-learn's Pipeline API, and when to reach for deep learning vs classical methods.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow, 3rd Ed.</div>
+          <div class="res-author">Aurélien Géron · O'Reilly · 2022</div>
+          <div class="res-why">The best ML book for practitioners. Part 1 covers all classical ML algorithms through Scikit-learn. <strong>Géron's intuitive explanations are why this book is used in Google AI residency prep.</strong> The only ML book you need for classical methods — comprehensive and practical.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / StatQuest</span></div>
+          <div class="res-title">StatQuest Machine Learning Series</div>
+          <div class="res-author">Josh Starmer · StatQuest YouTube</div>
+          <div class="res-why"><strong>Every classical ML algorithm explained from mathematical first principles with animations.</strong> Josh covers regression, decision trees, random forests, gradient boosting, SVMs, PCA, clustering — all free. Watch the video for each algorithm before the Géron chapter on it.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Coursera</span></div>
+          <div class="res-title">Machine Learning Specialization</div>
+          <div class="res-author">Andrew Ng · DeepLearning.AI · Stanford</div>
+          <div class="res-why">The most trusted ML course in the world. 3.6 million learners. Andrew Ng's intuition-first teaching style builds conceptual understanding before math. <strong>If you only take one paid ML course, this is it.</strong> Updated 2022 to include modern tools and Python.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 28 -->
+<div class="skill-card track-ml" id="s28" data-track="ml" data-name="deep learning neural networks backpropagation">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">28</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Deep Learning Fundamentals</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: perceptrons, activation functions (ReLU, sigmoid, softmax), forward pass, loss functions (MSE, cross-entropy), backpropagation chain rule, gradient descent (SGD, momentum, Adam, RMSprop), batch normalization, dropout, learning rate scheduling, and vanishing/exploding gradients.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">MIT Press · FREE online</span></div>
+          <div class="res-title">Deep Learning</div>
+          <div class="res-author">Goodfellow, Bengio & Courville · 2016 · Free at deeplearningbook.org</div>
+          <div class="res-why">The academic foundation of deep learning. Dense and mathematical — use it as a reference, not a cover-to-cover read. <strong>Chapters 6–9 on feedforward networks, backprop, and regularization are the canonical source</strong> for these topics. Free online legally.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / Andrej Karpathy</span></div>
+          <div class="res-title">Neural Networks: Zero to Hero</div>
+          <div class="res-author">Andrej Karpathy · YouTube (karpathy.ai)</div>
+          <div class="res-why"><strong>The best free deep learning course ever created.</strong> Karpathy (former Tesla AI Director, OpenAI) builds neural networks from scratch in pure Python/NumPy, then PyTorch, including a GPT from scratch. Every video is dense with insights that take years to acquire otherwise.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Coursera</span></div>
+          <div class="res-title">Deep Learning Specialization</div>
+          <div class="res-author">Andrew Ng · DeepLearning.AI</div>
+          <div class="res-why">5 courses covering neural networks, optimization, hyperparameter tuning, CNNs, RNNs, and sequence models. <strong>500,000+ completions. The most structured paid deep learning curriculum.</strong> Programming assignments in Python/NumPy build every component manually before using frameworks.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 29 -->
+<div class="skill-card track-ml" id="s29" data-track="ml" data-name="pytorch tensors autograd neural network training">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">29</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">PyTorch</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: tensors (creation, manipulation, broadcasting), autograd and computational graphs, nn.Module and nn.Sequential, custom Dataset and DataLoader, training loops with optimizer.step(), model saving/loading, moving models to GPU, torchvision, and debugging PyTorch models.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Manning</span></div>
+          <div class="res-title">Deep Learning with PyTorch</div>
+          <div class="res-author">Stevens, Antiga & Viehmann · Manning · 2020 · Free PDF</div>
+          <div class="res-why">Written by PyTorch core contributors. Covers tensors, autograd, neural net construction, and real applications (image classification, NLP, generative models). <strong>Free PDF available from Manning's website with free account.</strong> The authoritative PyTorch book written by people who built it.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">learnpytorch.io</span></div>
+          <div class="res-title">Learn PyTorch for Deep Learning — Zero to Mastery</div>
+          <div class="res-author">Daniel Bourke · learnpytorch.io (free book + YouTube)</div>
+          <div class="res-why"><strong>The best free PyTorch course/book available.</strong> Bourke builds every PyTorch concept with runnable Colab notebooks and a companion YouTube video series. Covers tensors through transformers. Free, continually updated, and structured as a complete course.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">PyTorch for Deep Learning Bootcamp</div>
+          <div class="res-author">Jose Portilla · Pierian Training</div>
+          <div class="res-why">Covers PyTorch from tensors through CNNs, RNNs, and GANs with Jupyter notebooks for every section. Portilla's courses are known for clarity and depth. <strong>Best structured paid PyTorch course for engineers who learn best through video + notebooks.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 30 -->
+<div class="skill-card track-ml" id="s30" data-track="ml" data-name="cnn convolutional neural network computer vision image classification">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">30</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">CNNs & Computer Vision</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: convolution operation, filters/feature maps, pooling, CNN architectures (LeNet, VGG, ResNet, EfficientNet), transfer learning (freezing layers, fine-tuning), data augmentation with torchvision/albumentations, object detection (YOLO, Faster R-CNN), and image segmentation basics.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Programming PyTorch for Deep Learning (CV chapters)</div>
+          <div class="res-author">Ian Pointer · O'Reilly · 2019</div>
+          <div class="res-why">Chapters 3–6 cover CNNs and transfer learning in PyTorch with complete working code. Pair with Stanford's CS231n lecture notes for theoretical depth. <strong>For pure CV depth, the fast.ai book (free) is also excellent</strong> and goes further into practical techniques.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Stanford / YouTube</span></div>
+          <div class="res-title">CS231n: Convolutional Neural Networks for Visual Recognition</div>
+          <div class="res-author">Fei-Fei Li, Andrej Karpathy et al. · Stanford · cs231n.github.io</div>
+          <div class="res-why"><strong>The most cited deep learning course for computer vision.</strong> Full lecture notes, slides, and assignments available free at cs231n.github.io. Covers CNNs, optimization, visualization, object detection, and segmentation. Written by the team that created ImageNet.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Coursera</span></div>
+          <div class="res-title">Convolutional Neural Networks (Course 4 of Deep Learning Specialization)</div>
+          <div class="res-author">Andrew Ng · DeepLearning.AI</div>
+          <div class="res-why">Covers CNN architectures, object detection (YOLO), face recognition, and neural style transfer with programming assignments in TensorFlow/Keras. <strong>Best structured paid CV course — practical assignments build real systems, not just train toy models.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 31 -->
+<div class="skill-card track-ml" id="s31" data-track="ml" data-name="transformers nlp bert gpt attention mechanism huggingface">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">31</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Transformers & NLP</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: self-attention mechanism, positional encoding, encoder-decoder architecture, BERT (masked language modeling, next sentence prediction), GPT (causal language modeling, autoregressive generation), tokenization (BPE, WordPiece), and fine-tuning pretrained models with HuggingFace.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Natural Language Processing with Transformers (Revised Ed.)</div>
+          <div class="res-author">Tunstall, von Werra & Wolf · O'Reilly · 2022</div>
+          <div class="res-why">Written by HuggingFace engineers. Covers text classification, NER, QA, summarization, translation, and generation — all using the HuggingFace Transformers library. <strong>The definitive practical guide to transformers in production NLP pipelines.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">HuggingFace</span></div>
+          <div class="res-title">HuggingFace NLP Course</div>
+          <div class="res-author">HuggingFace · huggingface.co/learn/nlp-course</div>
+          <div class="res-why"><strong>Official free course from the team that built the Transformers library.</strong> Covers tokenizers, models, fine-tuning, and the HuggingFace Hub. Every chapter has free Colab notebooks. This is the most up-to-date free transformer resource because it's maintained by HuggingFace itself.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Coursera</span></div>
+          <div class="res-title">Natural Language Processing Specialization</div>
+          <div class="res-author">DeepLearning.AI · Coursera</div>
+          <div class="res-why">4 courses covering NLP with classification, probabilistic models, sequence models, and attention mechanisms. Builds from word vectors through transformers. <strong>Best structured paid curriculum for building NLP intuition before diving into HuggingFace.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 32 -->
+<div class="skill-card track-ml" id="s32" data-track="ml" data-name="model evaluation metrics auc roc precision recall f1">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">32</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Model Evaluation & Metrics</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: classification metrics (accuracy, precision, recall, F1, AUC-ROC, AUC-PR), regression metrics (MAE, MSE, RMSE, R²), confusion matrix, cross-validation strategies (k-fold, stratified, time-series), calibration, statistical significance testing for model comparisons, and offline vs online evaluation frameworks.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Hands-On Machine Learning (Ch. 3 — Classification) + Designing ML Systems (Ch. 6)</div>
+          <div class="res-author">Géron (O'Reilly) + Huyen (O'Reilly)</div>
+          <div class="res-why">No single book covers evaluation as well as these two chapters combined. Géron's Chapter 3 (Classification) is the best treatment of metrics for classical ML; Huyen's Chapter 6 covers evaluation for production ML systems including A/B testing and shadow deployment. <strong>Read both.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / StatQuest</span></div>
+          <div class="res-title">StatQuest — ROC and AUC, Precision/Recall, Confusion Matrices</div>
+          <div class="res-author">Josh Starmer · StatQuest YouTube</div>
+          <div class="res-why"><strong>Josh Starmer's videos on AUC-ROC and precision/recall are the clearest explanations of these concepts.</strong> His "ROC and AUC, Clearly Explained!" video (3M+ views) builds the geometric intuition that makes these metrics feel obvious rather than arbitrary.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Coursera</span></div>
+          <div class="res-title">Machine Learning in Production (MLOps Specialization — Course 1)</div>
+          <div class="res-author">Andrew Ng · DeepLearning.AI</div>
+          <div class="res-why">The first course of the MLOps specialization covers model evaluation in production — not just on a test set. Covers data drift, concept drift, slicing analysis, and evaluation infrastructure. <strong>Best paid resource for evaluation as a production engineering discipline.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 33 -->
+<div class="skill-card track-ml" id="s33" data-track="ml" data-name="feature engineering feature store feast preprocessing">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">33</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Feature Engineering</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: encoding categoricals (one-hot, target, embedding), scaling (standard, min-max, robust), handling missing data strategies, creating interaction features, time-series features (lag, rolling, Fourier), feature selection (mutual information, RFE), and feature stores (Feast, Tecton) for online/offline consistency.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Feature Engineering for Machine Learning</div>
+          <div class="res-author">Alice Zheng & Amanda Casari · O'Reilly · 2018</div>
+          <div class="res-why">The only book entirely dedicated to feature engineering. Covers numerical, categorical, text, and image features with worked examples. Alice Zheng was a research scientist at Microsoft and Google. <strong>This skill determines model performance more than architecture choices — own it completely.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Kaggle</span></div>
+          <div class="res-title">Feature Engineering Course — Kaggle Learn</div>
+          <div class="res-author">Ryan Holbrook · Kaggle.com/learn</div>
+          <div class="res-why"><strong>Kaggle's free feature engineering course is practical and immediately applicable.</strong> Covers mutual information, creating features from domain knowledge, target encoding, and principal component analysis. Interactive Jupyter notebooks. Completely free. 4 hours to complete.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Feature Engineering for Machine Learning</div>
+          <div class="res-author">Soledad Galli · Train in Data · Udemy</div>
+          <div class="res-why">Soledad Galli (former HSBC quantitative analyst) is the leading educator on feature engineering. Covers every encoding and imputation technique with Python. <strong>Most comprehensive paid feature engineering course, especially strong for tabular/financial data.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 34 -->
+<div class="skill-card track-ml" id="s34" data-track="ml" data-name="experiment tracking mlflow weights biases wandb reproducibility">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">34</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Experiment Tracking (MLflow / W&B)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: logging hyperparameters, metrics, and artifacts, run comparison and visualization, model registry (MLflow), tagging and filtering experiments, integration with PyTorch/Scikit-learn training loops, hyperparameter sweeps (W&B Sweeps / MLflow Projects), and deploying a self-hosted MLflow tracking server.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Designing Machine Learning Systems (Ch. 6 — Model Development)</div>
+          <div class="res-author">Chip Huyen · O'Reilly · 2022</div>
+          <div class="res-why">Huyen's Chapter 6 is the most thorough treatment of experiment management as a production engineering discipline. <strong>No standalone book covers MLflow + W&B as well as DMLS Chapter 6</strong> combined with the official MLflow documentation (mlflow.org/docs), which is tutorial-quality.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Weights & Biases</span></div>
+          <div class="res-title">W&B Courses — Effective MLOps: Model Development</div>
+          <div class="res-author">Weights & Biases · wandb.ai/fully-connected</div>
+          <div class="res-why"><strong>Weights & Biases offers free courses built on their own platform.</strong> "Effective MLOps: Model Development" covers experiment tracking, model versioning, and sweeps using W&B. Best for engineers targeting companies that use W&B (OpenAI, NVIDIA, etc.). Completely free.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">DataCamp</span></div>
+          <div class="res-title">MLflow for ML Experiment Tracking</div>
+          <div class="res-author">DataCamp · Multiple instructors</div>
+          <div class="res-why">Covers MLflow tracking, projects, models, and registry with hands-on Python exercises. Includes deployment patterns. <strong>Best paid structured course for MLflow specifically</strong> — used more than W&B in enterprise/open-source production environments.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 35 -->
+<div class="skill-card track-ml" id="s35" data-track="ml" data-name="huggingface transformers library datasets hub tokenizers">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">35</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">HuggingFace Ecosystem</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: Transformers library (pipeline API, AutoModel/AutoTokenizer, Trainer API), Datasets library for efficient data loading, HuggingFace Hub (uploading/sharing models and datasets), PEFT library for efficient fine-tuning, Accelerate for distributed training, and Spaces for deploying Gradio/Streamlit ML demos.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Natural Language Processing with Transformers (Revised Ed.)</div>
+          <div class="res-author">Tunstall, von Werra & Wolf · O'Reilly · 2022</div>
+          <div class="res-why">Written by HuggingFace engineers. Every code example uses the HuggingFace ecosystem. Chapter code available free on GitHub (github.com/nlp-with-transformers). <strong>This book IS the HuggingFace ecosystem book</strong> — the authors built the library being taught.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">HuggingFace</span></div>
+          <div class="res-title">HuggingFace Deep RL Course + NLP Course</div>
+          <div class="res-author">HuggingFace · huggingface.co/learn</div>
+          <div class="res-why"><strong>HuggingFace's own learn.huggingface.co offers multiple free courses.</strong> The NLP course and Deep RL course both use the HuggingFace ecosystem throughout. Always up to date with the latest library versions. Free, with free GPU compute via Colab integration.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Complete Generative AI Course With Langchain and HuggingFace</div>
+          <div class="res-author">Krish Naik · Udemy</div>
+          <div class="res-why">Covers HuggingFace Transformers, PEFT fine-tuning, LangChain integration, and deployment. Naik is one of the most active AI educators in the community. <strong>Best paid course for applying the HuggingFace ecosystem to real LLM applications</strong> beyond basic NLP tasks.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 36 -->
+<div class="skill-card track-ml" id="s36" data-track="ml" data-name="mlops model deployment serving inference production">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">36</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">MLOps & Model Deployment</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">ML CORE</span><span class="skill-tag tag-phase">CONVERGENCE</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: model serialization (pickle, ONNX, TorchScript), serving frameworks (TorchServe, TF Serving, BentoML, FastAPI wrapper), containerizing models with Docker, monitoring predictions for drift, A/B testing model variants, shadow deployment, model registry workflows, and CI/CD for ML models.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Designing Machine Learning Systems</div>
+          <div class="res-author">Chip Huyen · O'Reilly · 2022</div>
+          <div class="res-why">The best book on taking ML from prototype to production. Covers data pipelines, feature stores, model development, deployment, monitoring, and infrastructure. <strong>Every ML engineer needs to read this book.</strong> Chip Huyen advised companies including Snorkel AI, NVIDIA, and Netflix on ML systems.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Made With ML</span></div>
+          <div class="res-title">Made With ML — MLOps Course</div>
+          <div class="res-author">Goku Mohandas · madewithml.com</div>
+          <div class="res-why"><strong>The best free end-to-end MLOps course.</strong> Goku Mohandas (former Apple, Google) builds a complete ML service from data annotation through model serving, monitoring, and CI/CD — all free. Covers FastAPI serving, Docker, testing ML code, and GitHub Actions for ML. Over 40,000 students.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Coursera</span></div>
+          <div class="res-title">Machine Learning Engineering for Production (MLOps) Specialization</div>
+          <div class="res-author">Andrew Ng · DeepLearning.AI</div>
+          <div class="res-why">4 courses covering ML pipelines, feature engineering for production, model deployment, and model monitoring. Uses TFX (Google's production ML framework) with real industry patterns. <strong>The most systematic paid curriculum for ML production engineering.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     PHASE: SPECIALIZATION
+════════════════════════════════ -->
+<div class="phase-heading">
+  <span class="phase-name">Specialization</span>
+  <span class="phase-badge badge-spec">Months 18–42 · Advanced / Convergence</span>
+</div>
+
+<!-- SKILL 37 -->
+<div class="skill-card track-spec" id="s37" data-track="spec" data-name="llm large language models fine-tuning lora rlhf instruction tuning">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">37</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">LLMs & Fine-Tuning (LoRA / RLHF)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SPECIALIZATION</span><span class="skill-tag tag-phase">HIGHEST DEMAND</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: LLM pretraining concepts (next-token prediction, tokenization, scaling laws), instruction fine-tuning, LoRA/QLoRA (low-rank adaptation for efficient fine-tuning), RLHF pipeline (reward model, PPO), PEFT library, quantization (4-bit, 8-bit), Axolotl/LLaMA-Factory for fine-tuning, and evaluating fine-tuned models.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Manning (2024)</span></div>
+          <div class="res-title">Build a Large Language Model (From Scratch)</div>
+          <div class="res-author">Sebastian Raschka · Manning · 2024</div>
+          <div class="res-why">Builds a GPT-style LLM from scratch in Python/PyTorch — pretraining, instruction fine-tuning, and RLHF. Raschka is a research scientist at Lightning AI. <strong>The most technically rigorous LLM book for engineers who want to understand the full stack</strong>, not just use the API.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / Andrej Karpathy</span></div>
+          <div class="res-title">Let's build GPT: from scratch, in code, spelled out</div>
+          <div class="res-author">Andrej Karpathy · YouTube · 2023</div>
+          <div class="res-why"><strong>The most watched and cited LLM tutorial.</strong> Karpathy builds a character-level GPT from scratch, explaining every line of code. Companion to his "Neural Networks: Zero to Hero" series. After this video, the Transformer architecture has no mystery. 3 hours, completely free.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Finetuning Large Language Models</div>
+          <div class="res-author">Sharon Zhou · DeepLearning.AI (short course, low cost)</div>
+          <div class="res-why">Covers full fine-tuning, LoRA, and RLHF concepts with hands-on Jupyter notebooks. Sharon Zhou (Stanford PhD, Lamini AI CEO) is the leading educator on LLM fine-tuning. <strong>Best paid practical course for LoRA/RLHF fine-tuning with working code.</strong> ~$49 on DeepLearning.AI.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 38 -->
+<div class="skill-card track-spec" id="s38" data-track="spec" data-name="rag retrieval augmented generation vector database pinecone weaviate embeddings">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">38</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">RAG & Vector Databases</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SPECIALIZATION</span><span class="skill-tag tag-phase">LLM APPS</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: embedding models (sentence-transformers, OpenAI embeddings), vector similarity search (cosine, dot product, L2), chunking strategies, vector databases (Pinecone, Weaviate, Chroma, pgvector), RAG pipeline architecture (retrieve → augment → generate), reranking, hybrid search, and evaluating RAG quality (RAGAS framework).</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly · 2024</span></div>
+          <div class="res-title">Building LLM Apps: A Practitioner's Guide</div>
+          <div class="res-author">Valentina Alto · Packt · 2024</div>
+          <div class="res-why">Covers RAG architectures, vector stores, LangChain, LlamaIndex, and evaluation frameworks for LLM applications. <strong>Most complete practical book for RAG pipeline engineering in 2024.</strong> Pair with the LlamaIndex documentation (docs.llamaindex.ai) which is excellent and free.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">DeepLearning.AI</span></div>
+          <div class="res-title">Building and Evaluating Advanced RAG — DeepLearning.AI Short Course</div>
+          <div class="res-author">DeepLearning.AI + LlamaIndex · deeplearning.ai/short-courses</div>
+          <div class="res-why"><strong>Free short course from DeepLearning.AI covering advanced RAG patterns.</strong> Builds sentence window retrieval, auto-merging retrieval, and RAG evaluation with RAGAS. All short courses on DeepLearning.AI are free. This is one of the most practical immediately applicable.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">LangChain & Vector Databases in Production</div>
+          <div class="res-author">Activeloop Team · Udemy / learn.activeloop.ai</div>
+          <div class="res-why">Covers LangChain, vector databases (Deep Lake, Pinecone, Weaviate), embeddings, and building production RAG pipelines. <strong>Best paid course for end-to-end RAG application development</strong> with multiple vector DB options covered.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 39 -->
+<div class="skill-card track-spec" id="s39" data-track="spec" data-name="distributed training gpu cluster pytorch ddp fsdp deepspeed">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">39</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Distributed Training</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SPECIALIZATION</span><span class="skill-tag tag-phase">ADVANCED ML</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: data parallelism (DDP — DistributedDataParallel), model parallelism (tensor/pipeline parallelism), ZeRO optimization stages (DeepSpeed), FSDP (Fully Sharded Data Parallel), gradient accumulation, mixed precision training (FP16/BF16), checkpoint sharding, and multi-node training on GPU clusters.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Manning · 2024</span></div>
+          <div class="res-title">Build a Large Language Model (From Scratch) — Ch. on Training at Scale</div>
+          <div class="res-author">Sebastian Raschka · Manning · 2024</div>
+          <div class="res-why">Raschka's book includes dedicated sections on distributed training with PyTorch's DDP and FSDP. <strong>Pair with the DeepSpeed documentation (deepspeed.ai/docs) and PyTorch's official distributed training tutorials</strong> — together these three free/paid resources cover all distributed training scenarios.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">HuggingFace / PyTorch</span></div>
+          <div class="res-title">HuggingFace Accelerate Documentation + PyTorch DDP Tutorial</div>
+          <div class="res-author">HuggingFace · PyTorch Official Docs</div>
+          <div class="res-why"><strong>HuggingFace Accelerate abstracts DDP/FSDP/DeepSpeed into a unified API</strong> — it's what most engineers actually use. The Accelerate docs are tutorial-quality. Pair with PyTorch's official DDP tutorial (pytorch.org/tutorials) for the underlying mechanics. Both free.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Weights & Biases</span></div>
+          <div class="res-title">Training & Fine-tuning LLMs for Production (LLM Engineering)</div>
+          <div class="res-author">Weights & Biases · wandb.ai/courses</div>
+          <div class="res-why">Covers distributed fine-tuning of LLMs using DeepSpeed, FSDP, and QLoRA with W&B for tracking. Built by W&B engineers for production GPU cluster workflows. <strong>Best paid course for distributed training in the context of LLMs specifically.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 40 -->
+<div class="skill-card track-spec" id="s40" data-track="spec" data-name="distributed systems raft consensus cap theorem replication">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">40</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Distributed Systems (Advanced)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SPECIALIZATION</span><span class="skill-tag tag-phase">SYSTEMS CRITICAL</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: CAP theorem in practice, consistency models (linearizability, eventual, causal), distributed transactions (2PC, Saga), consensus algorithms (Raft, Paxos intuition), leader election, distributed clocks (vector clocks, Lamport timestamps), partition handling strategies, and designing for failure (circuit breakers, bulkheads, timeouts).</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Designing Data-Intensive Applications</div>
+          <div class="res-author">Martin Kleppmann · O'Reilly · 2017</div>
+          <div class="res-why">Part 2 (Chapters 5–9) is the best treatment of distributed systems for practitioners ever written. Covers replication, partitioning, transactions, consistency, and consensus with real-world examples. <strong>This book is mandatory for any engineer targeting staff-level roles at Google, Meta, or Amazon.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">MIT / CMU</span></div>
+          <div class="res-title">MIT 6.824: Distributed Systems</div>
+          <div class="res-author">Robert Morris et al. · MIT · pdos.csail.mit.edu/6.824</div>
+          <div class="res-why"><strong>The most rigorous free distributed systems course available.</strong> Lecture videos, reading list (GFS, MapReduce, Raft, Spanner papers), and Go programming labs that implement Raft from scratch. Used as reference by Google and Amazon engineers preparing for staff-level interviews.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Educative.io</span></div>
+          <div class="res-title">Grokking the Principles and Practices of Advanced System Design</div>
+          <div class="res-author">Design Gurus · educative.io</div>
+          <div class="res-why">Covers advanced distributed systems patterns — consistent hashing, distributed caching, coordination services, and real architectures (Dynamo, Cassandra, Spanner). <strong>Best paid resource for engineers transitioning from system design basics to distributed systems depth.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 41 -->
+<div class="skill-card track-spec" id="s41" data-track="spec" data-name="streaming systems flink spark structured streaming real-time processing">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">41</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Streaming Systems (Flink / Spark Streaming)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SPECIALIZATION</span><span class="skill-tag tag-phase">DE ADVANCED</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: streaming vs micro-batch architecture, event time vs processing time, watermarks and late data handling, windows (tumbling, sliding, session), stateful stream processing, Apache Flink (DataStream API, Table API), Spark Structured Streaming, exactly-once semantics, and stream-table join patterns.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly</span></div>
+          <div class="res-title">Streaming Systems</div>
+          <div class="res-author">Tyler Akidau, Slava Chernyak & Reuven Lax · O'Reilly · 2018</div>
+          <div class="res-why">Written by the Google Dataflow team — the people who invented the streaming model. Covers the Beam model (windows, watermarks, triggers, accumulation) in depth. <strong>This is the theoretical foundation for all streaming systems including Flink and Spark Structured Streaming.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Apache Flink / YouTube</span></div>
+          <div class="res-title">Apache Flink Official Training + Flink Forward Talks</div>
+          <div class="res-author">Apache Flink · nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink</div>
+          <div class="res-why"><strong>Apache Flink's official training documentation is tutorial-quality</strong> and free. The "Learn Flink" section covers DataStream API from basics to stateful processing. Supplement with Flink Forward conference talks on YouTube for production patterns used at Uber, Netflix, and Alibaba.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Apache Flink — Real-Time Data Engineering</div>
+          <div class="res-author">Lior Gavish · Udemy</div>
+          <div class="res-why">Covers Flink DataStream API, Table API, Kafka integration, stateful processing, and deployment on Kubernetes. <strong>Best paid course for Flink specifically</strong>, covering the full stack from source to sink with real use cases (fraud detection, real-time analytics).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 42 -->
+<div class="skill-card track-spec" id="s42" data-track="spec" data-name="data lakehouse apache iceberg delta lake hudi open table format">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">42</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Data Lakehouse (Iceberg / Delta Lake)</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SPECIALIZATION</span><span class="skill-tag tag-phase">DE ADVANCED</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: data lake vs data warehouse vs lakehouse architecture, open table formats (Apache Iceberg, Delta Lake, Apache Hudi), ACID transactions on object storage, schema evolution, time travel / table versioning, partition evolution, metadata management, and connecting lakehouse tables to Spark/Flink/Trino.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly · 2024</span></div>
+          <div class="res-title">Apache Iceberg: The Definitive Guide</div>
+          <div class="res-author">Tomer Shiran, Jason Hughes & Alex Merced · O'Reilly · 2024</div>
+          <div class="res-why">Written by Dremio engineers — the leading Iceberg contributors. Covers Iceberg architecture, table evolution, time travel, Spark/Flink integration, and comparison with Delta Lake and Hudi. <strong>Iceberg is winning the open table format war — this is the book to own it deeply.</strong></div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">Databricks</span></div>
+          <div class="res-title">Delta Lake Documentation + Databricks Academy Free Courses</div>
+          <div class="res-author">Databricks · docs.delta.io / academy.databricks.com</div>
+          <div class="res-why"><strong>Delta Lake documentation is tutorial-quality and free.</strong> Databricks Academy offers free "Data Engineering with Databricks" modules that cover Delta Lake, Unity Catalog, and lakehouse architecture. Free with account registration. Regularly updated for new Databricks features.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Apache Iceberg Crash Course: Data Lakehouse with Dremio & Spark</div>
+          <div class="res-author">Alex Merced · Udemy</div>
+          <div class="res-why">Alex Merced is a Developer Advocate at Dremio — he's one of the primary Iceberg educators in the community. Covers Iceberg with Spark, Flink, and Dremio hands-on. <strong>Best practical paid course for Iceberg specifically</strong>, taught by someone who works on it professionally.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 43 -->
+<div class="skill-card track-spec" id="s43" data-track="spec" data-name="observability monitoring prometheus grafana opentelemetry logging tracing">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">43</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Observability & Monitoring</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SPECIALIZATION</span><span class="skill-tag tag-phase">SRE / DEVOPS</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: the three pillars (logs, metrics, traces), Prometheus metrics collection and PromQL, Grafana dashboards and alerting, structured logging with JSON, distributed tracing with Jaeger/Zipkin, OpenTelemetry instrumentation, SLOs and error budgets, on-call runbooks, and ML-specific monitoring (data drift, prediction drift, model performance degradation).</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">O'Reilly · FREE online</span></div>
+          <div class="res-title">Site Reliability Engineering (Google SRE Book)</div>
+          <div class="res-author">Beyer, Jones, Petoff & Murphy · Google · Free at sre.google/books</div>
+          <div class="res-why">The foundational text for monitoring, SLOs, and operational excellence. Chapters 4 (SLOs), 6 (Monitoring), and 12 (On-call) are the most referenced. <strong>Completely free at sre.google/books.</strong> How Google operates services at scale — monitoring is central to the entire SRE discipline.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">YouTube / TechWorld with Nana</span></div>
+          <div class="res-title">Prometheus & Grafana Complete Tutorial</div>
+          <div class="res-author">TechWorld with Nana · YouTube</div>
+          <div class="res-why"><strong>Best free video tutorial for setting up Prometheus + Grafana.</strong> Nana covers metrics collection, exporters, PromQL, alert rules, and dashboard creation in a Kubernetes environment. Her videos are exceptionally clear and practical. Pair with the OpenTelemetry documentation for distributed tracing.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">Udemy</span></div>
+          <div class="res-title">Monitoring and Alerting with Prometheus</div>
+          <div class="res-author">James Spurin · Udemy</div>
+          <div class="res-why">Covers Prometheus architecture, exporters, alertmanager, PromQL, recording rules, and Grafana integration with a Docker/Kubernetes lab environment. <strong>Best paid course for building a complete Prometheus-based observability stack</strong> from scratch in a real environment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL 44 -->
+<div class="skill-card track-spec" id="s44" data-track="spec" data-name="kubernetes advanced helm operators gitops argocd rbac cluster management">
+  <div class="skill-header" onclick="toggle(this)">
+    <span class="skill-num">44</span>
+    <span class="skill-track-dot"></span>
+    <span class="skill-name">Kubernetes Advanced / Helm</span>
+    <div class="skill-tags"><span class="skill-tag tag-phase">SPECIALIZATION</span><span class="skill-tag tag-phase">PLATFORM ENG</span></div>
+    <span class="chevron">▾</span>
+  </div>
+  <div class="skill-body">
+    <div class="what-box">What you learn: Helm chart authoring, templating, values files, chart repositories, RBAC (service accounts, roles, cluster roles), network policies, StatefulSets, persistent volumes, HPA/VPA for autoscaling, Kubernetes operators, GitOps with ArgoCD/Flux, admission controllers, and securing production clusters.</div>
+    <div class="resources-grid">
+      <div class="resource-card res-book">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">BOOK</span><span class="res-platform">Manning</span></div>
+          <div class="res-title">The Kubernetes Book (2024 Edition)</div>
+          <div class="res-author">Nigel Poulton · 2024</div>
+          <div class="res-why">Updated annually. The most concise yet complete Kubernetes reference. Covers pods, deployments, services, storage, security, and Helm. <strong>Poulton's annual updates keep this the freshest Kubernetes book</strong> — critical in a fast-moving ecosystem. Pair with Helm's official documentation for chart authoring depth.</div>
+        </div>
+      </div>
+      <div class="resource-card res-free">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">FREE</span><span class="res-platform">KodeKloud</span></div>
+          <div class="res-title">Kubernetes for Beginners + CKA Course Preview (KodeKloud Free)</div>
+          <div class="res-author">Mumshad Mannambeth · KodeKloud.com</div>
+          <div class="res-why"><strong>KodeKloud has the best Kubernetes labs environment.</strong> The free tier includes Kubernetes fundamentals with a browser-based lab. Mumshad's CKA prep course is the most trusted Kubernetes certification resource. The lab environment simulates real cluster operations without any local setup.</div>
+        </div>
+      </div>
+      <div class="resource-card res-paid">
+        <div class="res-type-bar"></div>
+        <div class="res-body">
+          <div class="res-badge-row"><span class="res-badge">PAID</span><span class="res-platform">KodeKloud / Udemy</span></div>
+          <div class="res-title">Certified Kubernetes Administrator (CKA) with Practice Tests</div>
+          <div class="res-author">Mumshad Mannambeth · KodeKloud</div>
+          <div class="res-why">The CKA is the most respected Kubernetes certification. Mumshad's prep course covers all exam objectives plus advanced topics (Helm, operators, GitOps). <strong>The CKA itself validates advanced Kubernetes skills</strong> — this course both teaches and certifies simultaneously. Best ROI of any DevOps paid course.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+</div>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Toggle skill card open/close
+function toggle(header) {
+  const card = header.parentElement;
+  card.classList.toggle('open');
+}
+
+// Expand/collapse all
+let allExpanded = false;
+function toggleAll() {
+  allExpanded = !allExpanded;
+  document.querySelectorAll('.skill-card').forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.toggle('open', allExpanded);
+    }
+  });
+  document.getElementById('expand-all-btn').textContent = allExpanded ? 'collapse all' : 'expand all';
+}
+
+// Scroll to skill
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!el.classList.contains('open')) el.classList.add('open');
+  }
+  // Update active sidebar link
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  event.target.closest('.sidebar-link').classList.add('active');
+}
+
+// Filter by track
+function filterTrack(track, btn) {
+  document.querySelectorAll('.leg-item').forEach(l => l.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const cards = document.querySelectorAll('.skill-card');
+  let visible = 0;
+  cards.forEach(c => {
+    if (track === 'all' || c.dataset.track === track || (track === 'spec' && c.dataset.track === 'spec')) {
+      c.classList.remove('hidden');
+      visible++;
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+  document.getElementById('visible-count').textContent = `${visible} skills · ${visible * 3} resources`;
+  
+  const nr = document.getElementById('no-results');
+  nr.style.display = visible === 0 ? 'block' : 'none';
+}
+
+// Search
+const searchInput = document.getElementById('search');
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.skill-card');
+  let visible = 0;
+  cards.forEach(c => {
+    const name = c.dataset.name || '';
+    if (q === '' || name.includes(q)) {
+      c.classList.remove('hidden');
+      visible++;
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+  document.getElementById('visible-count').textContent = q
+    ? `${visible} match${visible !== 1 ? 'es' : ''} for "${q}"`
+    : `44 skills · 132 resources`;
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  // reset filter
+  document.querySelectorAll('.leg-item').forEach(l => l.classList.remove('active'));
+  document.querySelector('.all-filter').classList.add('active');
+});
+
+// Progress bar
+window.addEventListener('scroll', () => {
+  const doc = document.documentElement;
+  const scrolled = doc.scrollTop;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const pct = total > 0 ? (scrolled / total) * 100 : 0;
+  document.getElementById('progress').style.width = pct + '%';
+  document.getElementById('btt').classList.toggle('visible', scrolled > 400);
+});
+
+// Auto-highlight sidebar on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      document.querySelectorAll('.sidebar-link').forEach(l => {
+        l.classList.toggle('active', l.getAttribute('onclick')?.includes(`'${id}'`));
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+
+document.querySelectorAll('.skill-card').forEach(c => observer.observe(c));
+</script>
+</body>
+</html>
