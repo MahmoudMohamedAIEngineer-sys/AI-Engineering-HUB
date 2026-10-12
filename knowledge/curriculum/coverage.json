@@ -7,19 +7,20 @@
       "competencies": 82,
       "roadmap_skills": 44,
       "source_sections_mapped": 81,
-      "lessons": 0,
+      "lessons": 3,
       "verified_lessons": 0
     },
     "competency_coverage_counts": {
-      "sourced_no_lessons": 23,
+      "sourced_no_lessons": 20,
+      "lessons_exist_not_all_verified": 3,
       "partially_sourced_no_lessons": 7,
       "no_source_supplied": 52
     },
     "by_domain": {
       "MATH": {
         "competencies": 19,
-        "sourced": 18,
-        "partial": 1,
+        "sourced": 17,
+        "partial": 2,
         "none": 0
       },
       "PROG": {
@@ -80,12 +81,12 @@
   },
   "inputs": {
     "curriculum/domains.json": "8a660407fe94d49ede35e132fd069947df10fb18ca7ab88cb7e18ee0a32e8476",
-    "curriculum/competencies.json": "4945dd3690f08e46d80e2f292267d707e2b97ca91d57ca9b162cee762f4a93f1",
+    "curriculum/competencies.json": "e95c76e3926a196e85ef6230720e7f60f554415d4e992dd5d42688306138475c",
     "curriculum/skill-competency-map.json": "e6f299308d9aba48293d41257daf4cc0df68f555c605ec4a5ce9c23602909ac8",
-    "sources/mml/section-concept-map.json": "9a9e6cac5f09493dcbffdebd94b7df75d04dcefea13d45604699cbf205b5d16c",
+    "sources/mml/section-concept-map.json": "ae89fd0cecdb65cd5ed0d14ef365b8ddddbe85c2e9565d38acdcaefbba594613",
     "sources/mml/structure.json": "4afe6fe36f18de1401ac44b2b7e6ee246423ce4c7001511bd85bbd71a8da1c23",
     "sources/mml/inventory.json": "086d02ff5d74f0d61766aa36f4e726da9df1e882d989baf653f5febbb3f8c726",
-    "lessons/registry.json": "4d9b91c10588b8f33715a76ab5ced6a84af8f9cc5b40e27e0df29a204a6bfa32"
+    "lessons/registry.json": "7c668f2004ce0d46465302184322a0939cc7462a61020d80ade511946055caf4"
   },
   "competencies": [
     {
@@ -269,9 +270,11 @@
       "roadmap_skills": [
         "SK-03"
       ],
-      "lessons": [],
+      "lessons": [
+        "LSN-MATH-06-01"
+      ],
       "verified_lessons": [],
-      "computed_coverage": "sourced_no_lessons",
+      "computed_coverage": "lessons_exist_not_all_verified",
       "supplemental_needed": []
     },
     {
@@ -300,9 +303,11 @@
       "roadmap_skills": [
         "SK-03"
       ],
-      "lessons": [],
+      "lessons": [
+        "LSN-MATH-07-01"
+      ],
       "verified_lessons": [],
-      "computed_coverage": "sourced_no_lessons",
+      "computed_coverage": "lessons_exist_not_all_verified",
       "supplemental_needed": [
         "Cost and stability comparison of the algorithms that compute these decompositions"
       ]
@@ -312,7 +317,7 @@
       "name": "Low-rank approximation and compression",
       "domain": "MATH",
       "target_level": "applied",
-      "declared_source_status": "sourced",
+      "declared_source_status": "partial",
       "mml_sections_declared": [
         "4.6",
         "10.2",
@@ -329,10 +334,15 @@
       "roadmap_skills": [
         "SK-03"
       ],
-      "lessons": [],
+      "lessons": [
+        "LSN-MATH-08-01"
+      ],
       "verified_lessons": [],
-      "computed_coverage": "sourced_no_lessons",
-      "supplemental_needed": []
+      "computed_coverage": "lessons_exist_not_all_verified",
+      "supplemental_needed": [
+        "Optimality of the truncated SVD in the Frobenius norm: the supplied text states the Eckart-Young result for the spectral norm only and never mentions the Frobenius norm (verified by search across the supplied markdown), so the proof of the Frobenius case must come from a numerical-linear-algebra source.",
+        "Numerical rank and truncation thresholds: choosing k when no singular value is exactly zero."
+      ]
     },
     {
       "competency_id": "MATH-09",

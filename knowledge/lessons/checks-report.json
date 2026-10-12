@@ -1,0 +1,188 @@
+{
+  "generated_by": "tools/run_content_checks.py",
+  "generated_at": "2026-10-12 13:44:37Z",
+  "environment": {
+    "python": "3.11.2",
+    "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "yaml": "6.0.3"
+  },
+  "checks_directory_hash": "7bd49d0a61b4ade2e8fbe0d9ce52071fbd17e559e1b563dac94a62cf96d902c6",
+  "summary": {
+    "checks": 24,
+    "passed": 24,
+    "failed": 0
+  },
+  "results": [
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_ex01_determinant_two_ways",
+      "status": "passed",
+      "evidence": "Sarrus = 18, Laplace = 18, sympy det(B) = 18, numpy det(B) = 18.0; three independent methods agree and det != 0, so B is invertible.",
+      "stdout": null
+    },
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_ex02_zero_determinant_reasons",
+      "status": "passed",
+      "evidence": "det = 0 for all three structures: two identical rows, a row equal to twice another row (rank 3 < 4), and a zero column (rank 2 < 3). In every case the rank check confirms the determinant is zero for a stated reason.",
+      "stdout": null
+    },
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_ex03_eigenpairs",
+      "status": "passed",
+      "evidence": "A: eigenvalues 4, 2 with eigenspaces span{(1,1)} and span{(1,-1)}; C: eigenvalues 4, 1 with eigenspaces span{(1,1)} and span{(2,-1)}. Each eigenpair verified by exact substitution, and trace/determinant invariants hold for both matrices (4 = 4, 3 = 4*1 for C: trace 5 = 5, det 4 = 4*1).",
+      "stdout": null
+    },
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_ex04_invertible_vs_diagonalisable",
+      "status": "passed",
+      "evidence": "1  shear            [[1,1],[0,1]]: det=1, invertible=True, diagonalisable over C=False, over R=False [lambda=1: algebraic 2, geometric 1]\n2  nilpotent        [[0,1],[0,0]]: det=0, invertible=False, diagonalisable over C=False, over R=False [lambda=0: algebraic 2, geometric 1]\n3  scaled identity  [[2,0],[0,2]]: det=4, invertible=True, diagonalisable over C=True, over R=True [lambda=2: algebraic 2, geometric 2]\n4  rotation 90      [[0,-1],[1,0]]: det=1, invertible=True, diagonalisable over C=True, over R=False [lambda=-I: algebraic 1, geometric 1, lambda=I: algebraic 1, geometric 1]\n5  projection       [[1,0],[0,0]]: det=0, invertible=False, diagonalisable over C=True, over R=True [lambda=0: algebraic 1, geometric 1, lambda=1: algebraic 1, geometric 1]",
+      "stdout": null
+    },
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_ex05_power_rule_and_converse",
+      "status": "passed",
+      "evidence": "Power rule verified exactly for A=[[2,1],[1,2]], v=(1,1), k in {1,2,3,5,8}: A^k v = 3^k v. Converse counterexample: R=[[0,-1],[1,0]] has R^2 = -I, whose real eigenvalue -1 is not the square of any real eigenvalue of R, because R has none. Over C, R has eigenvalues i and -i, and (-i)^2 = i^2 = -1, so the converse does hold in the complex sense — which is precisely the point of the exercise.",
+      "stdout": null
+    },
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_ex06_odd_degree_real_eigenvalue",
+      "status": "passed",
+      "evidence": "[[0,-1,0],[1,0,0],[0,0,2]] has det(A - lambda I) = -(lambda-2)(lambda^2+1): exactly one real eigenvalue (2) and a complex conjugate pair (+/- i). In 2D the rotation [[0,-1],[1,0]] has characteristic polynomial lambda^2+1 with no real roots, confirming that the odd-degree argument has no even-dimensional analogue.",
+      "stdout": null
+    },
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_ex07_reference_implementation",
+      "status": "passed",
+      "evidence": "Reference implementation ran on 1000 random 2x2 matrices. Maximum residual ||A v - lambda v|| = 3.803e-15 (matrix [[0.985382, -0.090241], [-0.246666, 2.032241]]). Maximum residual among matrices with complex eigenvalues = 8.680e-16. For the nearly defective matrix [[1,1],[0,1+1e-10]], residual = 2.500e-21: the eigenvalues are almost equal, the two eigenvectors are almost parallel, and the residual itself stays small while the eigenvector directions become unreliable. Agreement with numpy establishes consistency between two implementations; it is the residual, not the agreement, that establishes that each returned pair solves Av = lambda v.",
+      "stdout": null
+    },
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_lesson_numbers_used_in_prose",
+      "status": "passed",
+      "evidence": "Prose numbers verified exactly: det[[2,1],[1,2]] = 3, trace = 4, characteristic polynomial (lambda-3)(lambda-1), the section 2.6 identity A^k(2,0) = 3^k(1,1) + (1,-1) for k = 1..4, the section 2.5(c) factorisation (lambda-2)^2(1-lambda) with rank(B-2I) = 1, the parallelogram-area identity (a+b)(c+d) - ac - bd - 2bc = ad - bc, and the worked example's own factorisation.",
+      "stdout": null
+    },
+    {
+      "module": "math06_eigen_checks.py",
+      "check": "check_trace_determinant_invariants_random",
+      "status": "passed",
+      "evidence": "('Over 100 random matrices of sizes 2, 3, 5 and 8: maximum |sum(eigenvalues) - trace| = 1.243e-14, maximum |prod(eigenvalues) - det| = 1.478e-12. Both invariants hold to floating-point precision, which is the tolerance they are true to.',)",
+      "stdout": null
+    },
+    {
+      "module": "math07_svd_checks.py",
+      "check": "check_ex01_cholesky_by_hand",
+      "status": "passed",
+      "evidence": "L = [[3,0,0],[2,1,0],[1,0,1]] satisfies LL' = A exactly. Leading principal minors of A are [9, 9, 9], all positive, and sympy confirms positive definiteness. Lowering A[3,3] from 2 to 1 makes det A = 0 and the matrix positive semi-definite but not definite: the third pivot becomes sqrt(0) = 0, so the factorisation exists but has a zero on the diagonal instead of a positive entry. Lowering it to 0 makes det A = -9 and the matrix indefinite, and the square root that the formulas demand is that of a negative number. That is the whole content of the existence condition: every pivot must stay positive.",
+      "stdout": null
+    },
+    {
+      "module": "math07_svd_checks.py",
+      "check": "check_ex02_full_svd_3x2",
+      "status": "passed",
+      "evidence": "A'A = [[2,1],[1,2]] with eigenvalues 3 and 1, so sigma = (sqrt(3), 1) exactly. v1 = (1,1)/sqrt(2), v2 = (1,-1)/sqrt(2); u1 = (1,1,sqrt(2))/sqrt(3) = (1,1,2)/sqrt(6), u2 = (1,-1,0)/sqrt(2); the third left direction completing U is (1,1,-1)/sqrt(3), orthogonal to both. U Sigma V' reproduces A exactly, U is orthogonal, and numpy returns the same singular values to 1e-12.",
+      "stdout": null
+    },
+    {
+      "module": "math07_svd_checks.py",
+      "check": "check_ex03_existence_conditions",
+      "status": "passed",
+      "evidence": "Cholesky: [[1,2],[2,1]] is symmetric with eigenvalues 3 and -1, so it is not positive definite, and numpy.linalg.cholesky raises LinAlgError (Matrix is not positive definite). Eigendecomposition: [[1,1],[0,1]] is defective; numpy.eig returns eigenvalues [1. 1.] with eigenvector matrix [[1.0, -1.0], [0.0, 0.0]], which has rank 1, so there is no basis of eigenvectors and no A = PDP^-1. SVD: no counterexample exists; over 15 matrices of shapes (3,5), (5,3), (4,4), (6,2), (2,6) including rank-deficient and zero matrices, the maximum reconstruction error was 3.06e-15.",
+      "stdout": null
+    },
+    {
+      "module": "math07_svd_checks.py",
+      "check": "check_ex04_norm_identities",
+      "status": "passed",
+      "evidence": "Over 200 random matrices: maximum |sum(sigma^2) - ||A||_F^2| = 2.84e-14; maximum violation of ||Ax|| <= sigma_1||x|| over 800 random vectors = 0.00e+00; and | ||A v_1|| - sigma_1 | <= 4.44e-15, so the bound is attained exactly at the first right-singular vector — which is why sigma_1 is the operator (spectral) norm.",
+      "stdout": null
+    },
+    {
+      "module": "math07_svd_checks.py",
+      "check": "check_ex05_zero_eigenvalue_multiplicities",
+      "status": "passed",
+      "evidence": "For A = [[1,0],[0,1],[0,0]] (3x2, rank 2): A'A = I(2) has no zero eigenvalue, while AA' = diag(1,1,0) has a zero eigenvalue of multiplicity 1. So A'A and AA' share their nonzero eigenvalues (both {1,1}) but not the multiplicity of zero: the null spaces have dimensions 0 for A'A (equal to dim ker A) and 1 for AA' (equal to dim ker A' = m - rank A). Verified symbolically for random integer matrices of shapes (3,2), (2,3) and (4,2): dim ker(A'A) = dim ker(A) in every case.",
+      "stdout": null
+    },
+    {
+      "module": "math07_svd_checks.py",
+      "check": "check_ex06_two_square_roots",
+      "status": "passed",
+      "evidence": "For A = [[2,1],[1,2]]: the Cholesky factor is L = [[sqrt(2), 0], [1/sqrt(2), sqrt(3/2)]] and the symmetric square root is S = Q Lambda^(1/2) Q' = [[1/2 + sqrt(3)/2, -1/2 + sqrt(3)/2], [-1/2 + sqrt(3)/2, 1/2 + sqrt(3)/2]]. Both satisfy (.)(.)' = A exactly, and they differ: S is symmetric and has no zero entries, L is triangular. The general-form relation L = Q Lambda^(1/2) W' holds exactly with W = [[-1/2, sqrt(3)/2], [sqrt(3)/2, 1/2]], which is orthogonal, so the triangularity of the Cholesky factor is an extra requirement rather than a consequence of the decomposition. Reflecting S by diag(1, -1) gives a third square root, which is neither symmetric nor triangular, confirming that square roots are not unique.",
+      "stdout": null
+    },
+    {
+      "module": "math07_svd_checks.py",
+      "check": "check_ex07_gram_svd_accuracy",
+      "status": "passed",
+      "evidence": "Well-conditioned case: over 100 random matrices of size 3-11, the maximum relative difference in singular values between the textbook construction and numpy is 4.30e-13 — the construction is correct. Ill-conditioned case: a 40x40 matrix with singular values from 1 down to 1e-8. numpy's smallest singular value is 1.000e-08 (relative error 4.7e-10); the A'A construction gives 1.080e-08 (relative error 8.0e-02). Sweep of loss against the ratio of extreme singular values: ratio 1e-2: relative error 1.2e-13, ratio 1e-4: relative error 2.5e-09, ratio 1e-6: relative error 1.9e-06, ratio 1e-8: relative error 8.0e-02, ratio 1e-10: relative error 1.0e+00, ratio 1e-12: relative error 1.0e+00, ratio 1e-16: relative error 1.0e+00. The pattern is the point: forming A'A squares the ratio, so the small singular values lose roughly half their significant digits, and the loss grows without bound as the ratio grows.",
+      "stdout": null
+    },
+    {
+      "module": "math07_svd_checks.py",
+      "check": "check_lesson_worked_examples",
+      "status": "passed",
+      "evidence": "Section 3.4: A'A = [[5,3],[3,5]] with characteristic polynomial (lambda-8)(lambda-2) for lambda = sigma^2, so sigma = 2sqrt(2) and sqrt(2); U Sigma V' reproduces A exactly with det U = -1 and det V = -1, so det A = 4 = (2sqrt(2))(sqrt(2)) = |det A| as claimed. The eigenvalues of A are complex (discriminant -7, characteristic polynomial lambda^2 - 3lambda + 4), which is the counterexample to 'singular values are eigenvalues'. Section 1.3: the leading minors of [[9,6,3],[6,5,2],[3,2,2]] are 9, 9 and 9.",
+      "stdout": null
+    },
+    {
+      "module": "math08_lowrank_checks.py",
+      "check": "check_ex01_best_rank_one",
+      "status": "passed",
+      "evidence": "A'A = [[25,20],[20,25]] with eigenvalues 45 and 5, so sigma = (3sqrt(5), sqrt(5)); u1 = (1,3)/sqrt(10) and v1 = (1,1)/sqrt(2). The best rank-1 term is sigma_1 u_1 v_1' = (3/2)[[1,1],[3,3]]. The residual is exactly (1/2)[[3,-3],[-1,1]], which is rank 1 with C'C = (5/2)[[1,-1],[-1,1]] and characteristic polynomial lambda(lambda-5): its single singular value is sqrt(5) = sigma_2, so the spectral error is sqrt(5) and the squared Frobenius error is 5 — the truncation error contains exactly the discarded singular value, which is the theorem visible in a 2x2 example. det A = 15 = (3sqrt(5))(sqrt(5)) as a consistency check.",
+      "stdout": null
+    },
+    {
+      "module": "math08_lowrank_checks.py",
+      "check": "check_ex02_optimality_bound",
+      "status": "passed",
+      "evidence": "Over 80 random matrices with shapes up to 8x7 and k from 1 to 3, the truncation's spectral error equalled sigma_(k+1) to 1e-10 in every case, and 200 random rank-k candidates per matrix never beat it: the smallest deficit found was 2.078e-02 above sigma_(k+1) (equality is attained by the truncation itself, so any correct candidate matches it). A random search cannot prove the bound — the proof is the dimension argument in the lesson: dim ker(B) >= n - k and dim span(v_1..v_(k+1)) = k+1 force a non-zero unit vector in both, on which ||Ax|| >= sigma_(k+1) while Bx = 0.",
+      "stdout": null
+    },
+    {
+      "module": "math08_lowrank_checks.py",
+      "check": "check_ex03_demo_error_identities",
+      "status": "passed",
+      "evidence": "The demonstration file's recorded figures were recomputed from its own stored SVD for k = 1, 2, 3, 5, 8, 12 and 18 and agree to 8.9e-07 (the file's storage precision is six decimals, which is the reason agreement is not exact). k=1: relative Frobenius error 0.4213, energy 0.822464, spectral error 2.038 = sigma_2; k=2: relative Frobenius error 0.3091, energy 0.904461, spectral error 1.352 = sigma_3; k=3: relative Frobenius error 0.2438, energy 0.940561, spectral error 0.901 = sigma_4; k=5: relative Frobenius error 0.1669, energy 0.972136, spectral error 0.873 = sigma_6; k=8: relative Frobenius error 0.0555, energy 0.996916, spectral error 0.330 = sigma_9; k=12: relative Frobenius error 0.0048, energy 0.999977, spectral error 0.030 = sigma_13; k=18: relative Frobenius error 0.0003, energy 1.000000, spectral error 0.002 = sigma_19. In every case the relative Frobenius error equals sqrt(discarded energy fraction) and the spectral error equals the next singular value, so the interface cannot display a figure that the theorem does not produce.",
+      "stdout": null
+    },
+    {
+      "module": "math08_lowrank_checks.py",
+      "check": "check_ex04_storage_breakeven",
+      "status": "passed",
+      "evidence": "Solving k(m + n + 1) = mn gives k = mn/(m + n + 1) exactly. For a 1432x1910 matrix (2,735,120 entries) the largest compressing k is 818, with storage ratios 0.061 at k = 50 and 0.244 at k = 200. For the 24x24 demonstration matrix the break-even k is 11, which is why its recorded storage ratio exceeds 1 at k = 12. The ratios recorded in the demo file agree with this rule to 1e-4.",
+      "stdout": null
+    },
+    {
+      "module": "math08_lowrank_checks.py",
+      "check": "check_ex05_numerical_rank_is_a_decision",
+      "status": "passed",
+      "evidence": "For a 6x6 matrix with singular values [1, 1e-1, 1e-2, 1e-3, 1e-8, 1e-14], the reported rank is 3 at a threshold of 1e-3, 4 at 1e-8 and 5 at 1e-12 relative to sigma_1. numpy's default threshold (max(m,n)·eps·sigma_1) reports the full rank 6. The induced relative Frobenius errors are 9.9e-04 at k = 3, 9.9e-09 at k = 4, 1.4e-14 at k = 5. One matrix, three defensible ranks: the rank is a decision about acceptable error, and the error column is what makes it defensible.",
+      "stdout": null
+    },
+    {
+      "module": "math08_lowrank_checks.py",
+      "check": "check_ex06_selection_criteria",
+      "status": "passed",
+      "evidence": "On the 24x24 demonstration matrix: 99% energy needs k = 7, which retains 99.4689% of the energy and has a relative Frobenius error of 0.0729; a 1% relative error needs k = 11, which retains 99.995328% of the energy. Storage is 60% of the full matrix at k = 7 and 94% at k = 11. The two criteria differ by a factor of more than three in k, which is the practical point: '99% of the energy' and '1% error' are not the same requirement, and neither knows anything about the downstream task or about which of the discarded components carry signal.",
+      "stdout": null
+    },
+    {
+      "module": "math08_lowrank_checks.py",
+      "check": "check_gram_matrix_and_demo_integrity",
+      "status": "passed",
+      "evidence": "The stored factors are a genuine SVD of the stored matrix: U and V are orthogonal to 1.4e-06 (limited by the six-decimal storage, which is stated rather than hidden by a loose tolerance), singular values decrease, the reconstruction residual from the stored values is 1.7e-05 and A'A = V diag(sigma^2) V' to 8.7e-05 — both limited by the six-decimal storage, while the builder's own residual for the unrounded factors is 0.0e+00 — and numpy's rank agrees with the recorded rank (24). Values are stored to six decimal places, which is the source of the 1e-6 tolerances; the interface therefore shows no more digits than the data supports.",
+      "stdout": null
+    }
+  ],
+  "what_this_establishes": "That each check function ran to completion and produced the reported evidence. It does not establish source fidelity or pedagogical quality, which are separate checks in the lesson's verification record."
+}

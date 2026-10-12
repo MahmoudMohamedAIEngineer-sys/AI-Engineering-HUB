@@ -1,0 +1,96 @@
+{
+  "id": "VER-LSN-MATH-06-01-01",
+  "lesson_id": "LSN-MATH-06-01",
+  "reviewed_on": "2026-10-12",
+  "reviewer": "authoring agent, on Arena.ai; no second human reviewer",
+  "outcome": "needs_revision",
+  "outcome_explanation": "The technical and mathematical checks pass. The outcome is NOT 'verified' because two of the required checks have not been performed at all: source fidelity by a person who has read the source section, and editorial review of the prose. Marking this verified would assert something that did not happen. It becomes 'verified' when those two are done, or when the platform's own policy is revised to allow an explicitly agent-authored verification with that limitation stated on the lesson.",
+  "checks": [
+    {
+      "name": "source_fidelity",
+      "status": "not_run",
+      "method": "Not performed by a human reader. The lesson was written against the indexed source sections (MML 4.1 printed pp.99-104 and 4.2 printed pp.105-113) with the section text available during writing.",
+      "evidence": "The lesson cites Definition 4.4, Definition 4.5, Definition 4.9, Definition 4.10, Theorem 4.12, Theorem 4.15 and Figure 4.7 by their source identifiers. Those identifiers were checked to exist in knowledge/sources/mml/inventory.json, which is automated (see the citation_integrity check below). Whether the surrounding explanation is a fair representation of the source has not been independently reviewed.",
+      "not_checked": "Whether a reader of the source would agree with every emphasis and omission in the lesson."
+    },
+    {
+      "name": "technical_correctness",
+      "status": "passed",
+      "method": "Every numerical and algebraic claim in the lesson and in its solutions was recomputed by content/checks/math06_eigen_checks.py using sympy (exact) and numpy (floating point), and the checks were executed with tools/run_content_checks.py.",
+      "evidence": "9 checks, 9 passed, 0 failed. Recorded output: knowledge/lessons/checks-report.json, generated 2026-10-12 with numpy 2.4.6 and sympy 1.14.0. Notable measured values: det([[2,0,3],[1,4,-1],[0,2,1]]) = 18 from three independent methods; the 1000-matrix residual experiment returned a maximum of 3.803e-15.",
+      "not_checked": "Claims that are not numerical, such as the judgement that a particular misconception is 'the most common'. That phrasing was removed during checking for exactly this reason."
+    },
+    {
+      "name": "mathematical_validity",
+      "status": "passed",
+      "method": "Derivations were checked step by step and their results re-derived symbolically: the 2x2 area identity, the trace and determinant invariants, the characteristic-polynomial factorisations, the power rule for eigenpairs (exact for k in {1,2,3,5,8}), and the counterexamples (rotation, defective shear, near-defective perturbation).",
+      "evidence": "See checks check_lesson_numbers_used_in_prose, check_ex05_power_rule_and_converse, check_ex06_odd_degree_real_eigenvalue and check_trace_determinant_invariants_random in the checks report.",
+      "not_checked": "The proof of the spectral theorem is cited from the source rather than proved in the lesson, so its correctness rests on the source rather than on a check here. This is stated in the lesson."
+    },
+    {
+      "name": "pedagogical_completeness",
+      "status": "partial",
+      "method": "Mapped each of the lesson's three declared outcomes to the sections that teach it and to at least one exercise that assesses it.",
+      "evidence": "Outcome 1 (compute eigenvalues by hand and verify by substitution) is taught in sections 2.2-2.3 and assessed by exercises 3 and 7. Outcome 2 (determinant, volume scaling, sign, invertibility) is taught in sections 1.1-1.3 and assessed by exercises 1 and 2. Outcome 3 (diagonalisability and what failure means) is taught in sections 2.5-2.6 and assessed by exercises 4 and 5. The third outcome as written in the competency also asks what failure 'means'; the lesson answers this geometrically for the shear case only, and not for every defective matrix. Recorded as partial rather than passed.",
+      "not_checked": "Whether the difficulty progression is right for a learner who has just finished the prerequisites. That is an empirical question."
+    },
+    {
+      "name": "prerequisite_integrity",
+      "status": "passed",
+      "method": "Listed the three prerequisite competencies and named the specific fact taken from each; checked that each prerequisite is defined in the framework and is not marked as unsourced in a way that would leave the learner stuck.",
+      "evidence": "MATH-01, MATH-02 and MATH-03 are defined, are among the 23 competencies the supplied book fully sources, and are covered by earlier sections of the same book (2.4-2.8 precede 4.1). No prerequisite is assumed without a stated route to it.",
+      "not_checked": "Whether the learner has actually completed those prerequisites; the platform records completion, it cannot verify it."
+    },
+    {
+      "name": "assessment_integrity",
+      "status": "passed",
+      "method": "Every exercise has a stated expected outcome, a difficulty level, a declared origin and a solution; every solution names the method used and the verification that was run.",
+      "evidence": "7 exercises: 4 marked original, 3 marked adapted with the source page and item number recorded (MML 4.3 p.139, MML 4.5 p.138). Exercise 7 carries a rubric instead of a single answer. All solutions are in content/solutions/MATH-06-01-solutions.md and were checked by the same check suite.",
+      "not_checked": "Whether the exercises are unambiguous to a reader other than the author. Two exercises (5 and 7) involve a choice of example, which the solutions acknowledge."
+    },
+    {
+      "name": "citation_integrity",
+      "status": "passed",
+      "method": "Programmatic check that every source identifier cited by the lesson exists in the generated source index, and that cited printed pages match the table of contents.",
+      "evidence": "tools/validate_knowledge.py check lesson-source-section-exists, plus manual comparison of the cited printed pages (99-113) against knowledge/sources/mml/structure.json entries for sections 4.1 and 4.2.",
+      "not_checked": "Whether the source says what the citation is being used to support. That is source_fidelity, which is not run."
+    },
+    {
+      "name": "interactive_correctness",
+      "status": "not_applicable",
+      "method": "This lesson contains no interactive component.",
+      "evidence": "The only generated asset is a static SVG diagram, content/assets/MATH-06-01-parallelogram.svg, whose coordinates were computed from the matrix in the lesson and whose stated area (3) equals the determinant of that matrix.",
+      "not_checked": "Nothing in this category applies."
+    },
+    {
+      "name": "publication_integrity",
+      "status": "not_run",
+      "method": "Not performed: no interface renders this lesson yet. The front matter is validated by tools/validate_knowledge.py and the content pipeline builds a registry from it, which is a build-time check, not a rendering check.",
+      "evidence": "tools/validate_knowledge.py passes for this lesson's registry entry; mathematics rendering, internal links and small-screen usability are untested.",
+      "not_checked": "Rendering of the displayed equations, the SVG asset, and the exercise table at mobile width."
+    }
+  ],
+  "unresolved_issues": [
+    {
+      "issue": "No human has read the source section and compared it against this lesson.",
+      "next_action": "A reviewer with the book open reads MML 4.1-4.2 alongside the lesson and records agreement or disagreement per section, then sets source_fidelity accordingly.",
+      "severity": "blocking"
+    },
+    {
+      "issue": "The third declared outcome ('what failure to be diagonalisable means') is answered geometrically only for the shear example.",
+      "next_action": "Either extend section 2.5(a) with the general geometric statement, or narrow the lesson's declared coverage of that outcome and let the eigendecomposition lesson complete it.",
+      "severity": "minor"
+    },
+    {
+      "issue": "No interface exists, so publication integrity is untested.",
+      "next_action": "Once the interface renders lessons, run the rendering checks and update this record; until then the lesson must be shown as unverified.",
+      "severity": "minor"
+    }
+  ],
+  "evidence_files": {
+    "checks_report": "knowledge/lessons/checks-report.json",
+    "checks_source": "content/checks/math06_eigen_checks.py",
+    "solutions": "content/solutions/MATH-06-01-solutions.md",
+    "source_index": "knowledge/sources/mml/structure.json"
+  }
+}

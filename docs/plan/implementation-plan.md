@@ -66,26 +66,55 @@ what it needs is the material.
 learner needs: objectives, prerequisites, a real explanation, derivations, worked examples,
 implementation, practice, solutions and a verification record.
 
-**Proposed scope** (to be confirmed): matrix decompositions and the low-rank approximation —
-MML 4.1-4.6 — because it has 12 source exercise items, both derivation and algorithm content, a
-genuine geometric payoff (the SVD as rotation-scaling-rotation), and a direct downstream use in
-PCA and compression. Alternative: probability and the Gaussian (MML 6.1-6.5).
+**Scope, as executed.** Matrix decompositions and the low-rank approximation, MML 4.1-4.6, covering
+competencies MATH-06, MATH-07 and MATH-08, delivered as three lessons:
+
+| Lesson | Source | Competency | Exercises |
+| --- | --- | --- | --- |
+| `LSN-MATH-06-01` determinants, eigenvalues, eigenvectors | MML 4.1-4.2, printed pp.99-113 | MATH-06 | 7 |
+| `LSN-MATH-07-01` matrix decompositions and the SVD | MML 4.3-4.5, 4.7, printed pp.114-134 | MATH-07 | 7 |
+| `LSN-MATH-08-01` low-rank approximation | MML 4.6, 10.4, printed pp.129-134, 333-335 | MATH-08 | 6 |
 
 **Acceptance criteria**
 
-- [ ] Every lesson objective traced to a specific section and printed page of the source.
-- [ ] At least one full derivation written out step by step, with the steps checked independently
-      (numerically or symbolically) and the check recorded.
-- [ ] At least one implementation, executed and tested in this environment, with its output
-      captured.
-- [ ] Exercises with declared origin: source items keep their numbering and page; authored items
-      are labelled `original`.
-- [ ] Every solution verified by a method named in the verification record, including which checks
-      could not be run.
-- [ ] A verification record per lesson naming the checks, the methods and the results.
-- [ ] A written statement of what the lesson does not cover and where the source is silent.
+- [x] Every lesson objective traced to a specific section and printed page of the source
+      (`source_anchors` in each lesson's front matter, validated against the source index).
+- [x] At least one full derivation written out step by step, with the steps checked independently
+      (numerically or symbolically) and the check recorded. All three lessons qualify: the
+      trace/determinant invariants and the diagonalisation criterion; the constructive SVD proof
+      with its five steps; and the optimality proof of the Eckart-Young theorem by a dimension
+      argument, which the supplied source states but does not prove.
+- [x] At least one implementation, executed and tested in this environment, with its output
+      captured. `content/checks/` holds 24 checks; the measured outputs (including the accuracy
+      collapse of the textbook SVD construction at a singular-value ratio of 1e10) are recorded in
+      `knowledge/lessons/checks-report.json`.
+- [x] Exercises with declared origin: source items keep their numbering and page; authored items
+      are labelled `original`; material adapted from a source item records the item, the page and
+      what was changed.
+- [x] Every solution verified by a method named in the verification record, including which checks
+      could not be run. Each lesson's record lists the checks that were *not* performed.
+- [x] A verification record per lesson naming the checks, the methods and the results
+      (`content/verification/LSN-MATH-06-01.json`, `-07-01`, `-08-01`).
+- [x] A written statement of what the lesson does not cover and where the source is silent. Two
+      substantive findings came out of this: the supplied text never states the spectral-norm form
+      of the Eckart-Young theorem's Frobenius companion (the word "Frobenius" does not occur in it),
+      and the SVD is derived from `A'A` without any discussion of computation — so the numerical
+      material is recorded as a gap rather than filled from memory.
+- [x] A placeholder layer for what cannot be written yet: 59 competencies with no source get a
+      generated, visibly incomplete entry stating their scope, prerequisites, position in the
+      learner's own roadmap and the source they are waiting for
+      (`content/curriculum/placeholders.json`), with no invented content.
+- [x] The engine refuses to overstate: a lesson's displayed state is derived from its verification
+      record, and the validator fails if a lesson claims a state its record does not support.
 
-**Not before:** the pilot must not become a template that every later lesson is forced into.
+**Status: complete.** Three lessons, 20 exercises, 24 executable checks, three verification records.
+None of the three lessons is marked verified, and the records say why: source fidelity needs a human
+reader with the book open, and two of the lessons reference material the supplied source does not
+contain. The home page counts zero verified lessons accordingly.
+
+**Not before:** the pilot must not become a template that every later lesson is forced into. The
+three lessons differ in structure deliberately — one is derivation-led, one proof-led, one
+measurement-led — while sharing only the metadata and evidence machinery.
 
 ---
 
@@ -94,19 +123,39 @@ PCA and compression. Alternative: probability and the Gaussian (MML 6.1-6.5).
 **Objective.** Build the real interface over the content model: curriculum map, source library,
 lesson rendering with mathematics, exercises and feedback, prerequisite navigation, progress.
 
+**What exists.** A Next.js App Router application (ADR 0002) that reads `knowledge/` and `content/`
+at build time and pre-renders 92 pages: home, curriculum index and one page per competency, lesson
+index, lesson pages, source library, roadmap inventory, method. No course content is hardcoded in
+the interface; when a file it needs is missing, the loader fails with the name of the file rather
+than falling back to invented defaults.
+
 **Acceptance criteria**
 
-- [ ] The interface renders lesson, curriculum, source and reference data from the knowledge base;
+- [x] The interface renders lesson, curriculum, source and reference data from the knowledge base;
       no hardcoded course content.
-- [ ] Verification badges derive from `publication_state`; a lesson with no verification record
-      renders as unverified, and the platform says so.
-- [ ] Mathematics renders correctly (display and inline), including the source's notation, with a
-      documented convention where the source's conventions collide.
+- [x] Verification badges derive from the verification record (stricter than `publication_state`: a
+      record whose outcome is `needs_revision` cannot render as verified), and the home page counts
+      zero verified lessons because that is what the evidence says.
+- [x] Mathematics renders (display and inline) through KaTeX, with the source's notation preserved
+      inside the mathematics. The convention where the two systems collide is documented in
+      `docs/notation.md` and summarised on the method page.
+- [x] Loading, empty and error states exist: the lesson index names every competency with no lesson
+      and why, the placeholder cards state what is missing, and missing knowledge files raise a named
+      error instead of rendering a blank page.
+- [x] The two original roadmap pages are reachable unmodified: they are served verbatim from
+      `public/` and the validator fails the build if either served copy stops being byte-identical to
+      the file the learner supplied.
+- [x] Interactive components are islands loaded on demand, and the only one shipped is the
+      rank-truncation demonstration, which shows the size/error trade-off that the text can only
+      tabulate.
 - [ ] Keyboard navigation, visible focus, contrast, reduced-motion support and responsive layout
-      checked on desktop and mobile widths.
-- [ ] Loading, empty and error states exist for every data-driven view — including the empty
-      state that this repository is actually in today.
-- [ ] The two original roadmap pages remain reachable and unmodified.
+      verified in a real browser. The CSS implements all five (skip link, `:focus-visible`, relative
+      colour, `prefers-reduced-motion`, a mobile breakpoint), and a type check and a production build
+      pass — but **no browser test has been run**, so this criterion is not met and no claim is made
+      that it is.
+
+**Status: implemented, with the browser-verification criterion explicitly unmet.** The remaining work
+is Phase 5's job: browser checks through Playwright, which is not installed in this environment.
 
 ---
 

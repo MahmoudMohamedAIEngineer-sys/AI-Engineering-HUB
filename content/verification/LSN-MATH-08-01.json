@@ -1,0 +1,97 @@
+{
+  "id": "VER-LSN-MATH-08-01-01",
+  "lesson_id": "LSN-MATH-08-01",
+  "reviewed_on": "2026-10-12",
+  "reviewer": "authoring agent, on Arena.ai; no second human reviewer",
+  "outcome": "needs_revision",
+  "outcome_explanation": "All automated checks pass, including the optimality bound, the error identities on the matrix used by the interactive component, and the storage arithmetic. The lesson is not marked verified because (a) source fidelity has not been checked by a human reader, and (b) the Frobenius-norm half of the competency's own outcome is NOT supported by the supplied source — the word 'Frobenius' does not occur in it — so the lesson states the Frobenius result with its source recorded and flags the gap. That is a substantive open item, not a formality.",
+  "checks": [
+    {
+      "name": "source_fidelity",
+      "status": "not_run",
+      "method": "Not performed by a human reader. The lesson was written against MML section 4.6 (printed pp.129-134) and section 10.4 (printed pp.333-335) with the section text available during writing.",
+      "evidence": "Automated citation checks pass: equation 4.90, Theorem 4.24, Theorem 4.25 with equations 4.94 and 4.95, and Figure 4.11 all exist in knowledge/sources/mml/inventory.json at the recorded sections. The lesson also records the negative finding that the supplied text states Theorem 4.25 for the spectral norm only.",
+      "not_checked": "Whether a reader of MML agrees that the source's use of the outer-product form has been represented faithfully, and whether the connection drawn to section 10.4 matches the source's own framing."
+    },
+    {
+      "name": "technical_correctness",
+      "status": "passed",
+      "method": "Every numerical claim in the lesson and its solutions was recomputed by content/checks/math08_lowrank_checks.py using sympy (exact) and numpy (floating point), including all figures recorded in content/demos/rank-truncation.json, which the interactive component displays.",
+      "evidence": "7 checks in this module, all passing; 24 checks in the suite, 0 failures. Recorded output: knowledge/lessons/checks-report.json. The demo file's recorded figures reproduce the theorem to 3.2e-8, limited by the file's six-decimal storage rather than by the mathematics.",
+      "not_checked": "The experiments sample random matrices and one synthetic teaching matrix; nothing here establishes behaviour on real data."
+    },
+    {
+      "name": "mathematical_validity",
+      "status": "passed",
+      "method": "The optimality proof for the spectral norm is written out in the lesson and its constituent claims were checked: the dimension count, the inequality ||Ax|| >= sigma_{k+1} on the intersection, and the attainment of the bound by the truncation. The achievement identities (spectral error = sigma_{k+1}, squared Frobenius error = sum of discarded sigma^2) were verified exactly on the exercise matrix and numerically on the demo matrix.",
+      "evidence": "check_ex02_optimality_bound (the truncation attains the bound to 1e-10 on 80 random matrices and no sampled rank-k candidate beat it), check_ex01_best_rank_one (the residual of the 2x2 example has characteristic polynomial lambda(lambda-5), showing the discarded singular value in the residual), check_ex03_demo_error_identities.",
+      "not_checked": "The Frobenius-norm optimality statement is NOT proved here: it requires the von Neumann trace inequality, which is not in the supplied source and was not reconstructed. The lesson says exactly this, and the coverage report records it as the reason MATH-08 is partly sourced."
+    },
+    {
+      "name": "pedagogical_completeness",
+      "status": "partial",
+      "method": "Mapped the three declared outcomes to the sections that teach them and the exercises that assess them.",
+      "evidence": "Outcome 1 (derive the best rank-k approximation in the Frobenius norm and state the error) is taught in Parts 1 and 3 and assessed by exercises 1, 2 and 3 — but its Frobenius-optimality half is taught as a cited result with the achievement half proved, because the source does not establish it. Outcome 2 (apply rank truncation to a data matrix and interpret the components) is taught in Part 5 and assessed by exercises 3 and 6. Outcome 3 (the size-error trade-off) is taught in Part 4 with the measured table and assessed by exercises 4 and 6.",
+      "not_checked": "Whether the reader finds the interactive component useful rather than distracting; that is an empirical question about learners."
+    },
+    {
+      "name": "prerequisite_integrity",
+      "status": "passed",
+      "method": "Listed the prerequisites and the specific fact each supplies, and checked that both are defined and fully sourced.",
+      "evidence": "MATH-07 (the SVD and its outer-product form, covered by LSN-MATH-07-01) and MATH-04 (orthogonality and norms, MML sections 3.1-3.6). MATH-07 is declared sourced; the lesson's Part 2 proof uses ||M||_2 = sigma_1 from MATH-07 exercise 4.",
+      "not_checked": "Whether the learner has completed them."
+    },
+    {
+      "name": "assessment_integrity",
+      "status": "passed",
+      "method": "Every exercise has an expected outcome, a difficulty, a declared origin and a solution; exercise 6 carries a rubric instead of a single right answer, and the rubric's requirements are specific and checkable.",
+      "evidence": "6 exercises: 5 original, 1 adapted from MML exercise 4.10 (printed p.138) with a different matrix so the source's own problem stays available. MML 4.10 is listed as deliberately left unsolved for that reason.",
+      "not_checked": "Whether the exercises are unambiguous to another reader; the writer of exercise 6 chooses its own threshold, which the rubric anticipates."
+    },
+    {
+      "name": "citation_integrity",
+      "status": "passed",
+      "method": "Automated checks that every cited section and numbered object exists in the source index and that recorded printed pages match it.",
+      "evidence": "tools/validate_knowledge.py: lesson-source-section-exists and lesson-source-anchor-page-matches-index pass for section 4.6 (p.129) and 10.4 (p.333). Eckart and Young (1936) is cited as the source's own reference; the paper was not retrieved, so no claim is made about its contents beyond the theorem's attribution.",
+      "not_checked": "Whether the source supports each claim; that is source_fidelity, which is not run."
+    },
+    {
+      "name": "interactive_correctness",
+      "status": "partial",
+      "method": "The demonstration's data was verified end to end: the stored factors were confirmed to be an orthogonal SVD of the stored matrix, and every figure the component displays (error, spectral error, storage ratio, energy) was recomputed and compared with the file. The component itself was type-checked, built, and confirmed to render its loader in the served page.",
+      "evidence": "check_gram_matrix_and_demo_integrity and check_ex03_demo_error_identities pass; the built page for LSN-MATH-08-01 contains the loader markup, and the component is behind a dynamic import so the 21 kB data file is not part of the lesson's initial payload. U and V orthogonality is 1.3e-6, limited by six-decimal storage and stated rather than hidden.",
+      "not_checked": "No browser test was run in this session. The slider interaction, canvas rendering at different device pixel ratios, and keyboard accessibility of the range input have not been exercised by anything other than a type check and a build."
+    },
+    {
+      "name": "publication_integrity",
+      "status": "partial",
+      "method": "The application was built and the lesson served; the rendered page was inspected for KaTeX output (14 display equations on this lesson), the exercise table, and the interactive loader. A production build was run and the route's payload size checked. Status is partial rather than passed because a build and an HTML inspection are not a visual review.",
+      "evidence": "HTTP 200 for the lesson route, KaTeX elements present in the served HTML, the trade-off table present, and the lesson's 24 mathematically checked figures match the content file. The reservation: no visual review was performed, so typography, table overflow at narrow widths, and the printed-page citations' readability are untested.",
+      "not_checked": "Visual review, responsive layout, and the internal anchor links from the practice table to the solution sections."
+    }
+  ],
+  "unresolved_issues": [
+    {
+      "issue": "The competency's second outcome asks for the best rank-k approximation in the Frobenius norm, and the supplied source does not state or prove the Frobenius case (the word 'Frobenius' does not occur in it).",
+      "next_action": "Obtain a numerical-linear-algebra source that proves the Frobenius-norm optimality (von Neumann trace inequality or equivalent) and either add the proof to this lesson or record the outcome as out of scope until then. Until that happens, MATH-08 remains partly sourced in coverage.json.",
+      "severity": "blocking"
+    },
+    {
+      "issue": "No human has read MML 4.6 and 10.4 against this lesson.",
+      "next_action": "A reviewer with the book open checks Part 1.3 and Part 5 against the source, in particular the claim that the source states Theorem 4.25 without proof and cites Eckart and Young for it.",
+      "severity": "blocking"
+    },
+    {
+      "issue": "The interactive component has not been tested in a browser.",
+      "next_action": "Load the lesson in a browser, move the slider across the full range including k = 0 and k = 24, and check the canvas at a high device pixel ratio and at a narrow viewport; then raise interactive_correctness from partial.",
+      "severity": "minor"
+    }
+  ],
+  "evidence_files": {
+    "checks_report": "knowledge/lessons/checks-report.json",
+    "checks_source": "content/checks/math08_lowrank_checks.py",
+    "solutions": "content/solutions/MATH-08-01-solutions.md",
+    "demo_data": "content/demos/rank-truncation.json",
+    "demo_builder": "tools/build_demo_data.py"
+  }
+}

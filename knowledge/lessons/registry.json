@@ -1,60 +1,890 @@
 {
   "version": "1.0.0",
-  "last_reviewed": "2026-10-12",
-  "purpose": "The registry of authored learning content. It is intentionally empty at this stage: the repository has indexed sources and a curriculum model, but no lesson has been written, so no lesson is claimed. Everything the platform displays about a lesson is meant to be derived from this file, including whether it is verified.",
-  "lesson_schema": {
-    "id": "LSN-<COMPETENCY-ID>-<NN>, e.g. LSN-MATH-07-01",
-    "title": "string",
-    "competencies": ["competency ids, at least one"],
-    "covers_outcomes": ["the exact outcome strings from the competency that this lesson assesses"],
-    "sources": [{"work_id": "SRC-MML", "sections": ["4.5"], "role": "primary | supporting", "pages": "printed page range where known"}],
-    "supplemental_references": ["reference ids from knowledge/references/external.json, or null"],
-    "prerequisites": ["competency or lesson ids the learner must have completed"],
-    "exercise_ids": ["EX-... ids, all defined in the exercises array"],
-    "estimated_effort": {"reading_minutes": 0, "exercise_minutes": 0},
-    "content_path": "relative path in the repository once written",
-    "publication_state": "one of the publication_state values in knowledge/states.json",
-    "verification_record_id": "null until a verification record exists",
-    "last_verified": null,
-    "provenance_note": "states explicitly which claims come from the source, which are established theory, and which examples are originally authored"
-  },
-  "exercise_schema": {
-    "id": "EX-<LESSON-ID>-<NN>",
-    "lesson_id": "string",
-    "competencies": ["competency ids assessed"],
-    "origin": "source | adapted | original | external",
-    "origin_detail": {
-      "work_id": "required when origin is source or adapted",
-      "section": "source section the item comes from",
-      "printed_page": "integer where known",
-      "source_item_id": "the source's own numbering, preserved rather than renumbered",
-      "external_url": "required when origin is external",
-      "licence_note": "required when origin is external"
+  "generated_by": "tools/build_content_index.py",
+  "generated_at": "2026-10-12",
+  "purpose": "The index the application reads. It is generated from the authored lesson files and verification records, so the interface cannot show a state that the files do not support.",
+  "publication_state_rule": "A lesson's display state comes from its verification record when one exists, and is 'draft' otherwise. A record whose outcome is 'needs_revision' cannot produce a 'verified' display, and the generator reports the contradiction instead of choosing.",
+  "lessons": [
+    {
+      "id": "LSN-MATH-06-01",
+      "title": "Determinants, eigenvalues and eigenvectors: what a matrix does to its own directions",
+      "competencies": [
+        "MATH-06"
+      ],
+      "covers_outcomes": [
+        "Compute eigenvalues and eigenvectors of a small matrix by hand and verify the result by substitution.",
+        "Explain what the determinant says about invertibility and volume scaling, including its sign.",
+        "Determine whether a matrix is diagonalisable and explain what failure to be diagonalisable means."
+      ],
+      "sources": [
+        {
+          "work_id": "SRC-MML",
+          "sections": [
+            "4.1",
+            "4.2"
+          ],
+          "pages": "99-113",
+          "role": "primary"
+        }
+      ],
+      "source_anchors": {
+        "sections": [
+          {
+            "id": "4.1",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3614,
+            "printed_page": 99
+          },
+          {
+            "id": "4.2",
+            "file": "Mathematics for ML part 1.md",
+            "line": 3818,
+            "printed_page": 105
+          }
+        ],
+        "numbered_objects": [
+          "Definition 4.4 (determinant)",
+          "Definition 4.5 (characteristic polynomial)",
+          "Definition 4.9 (algebraic multiplicity)",
+          "Definition 4.10 (eigenspace and eigenspectrum)",
+          "Theorem 4.12 (eigenvectors with distinct eigenvalues are linearly independent)",
+          "Theorem 4.15 (spectral theorem)",
+          "Figure 4.7 (eigendecomposition as sequential transformations)"
+        ]
+      },
+      "supplemental_references": [],
+      "prerequisites": [
+        {
+          "competency": "MATH-01",
+          "need": "Linear independence. The test for a nonzero solution of (A - λI)v = 0 is a statement about dependence of the columns."
+        },
+        {
+          "competency": "MATH-02",
+          "need": "Matrices as linear mappings. Without the mapping reading, 'the direction it does not rotate' is not a meaningful question."
+        },
+        {
+          "competency": "MATH-03",
+          "need": "Solvability of systems. You need the fact that a square homogeneous system has a nonzero solution exactly when its matrix is singular."
+        }
+      ],
+      "estimated_effort": {
+        "reading_minutes": 80,
+        "exercise_minutes": 150
+      },
+      "content_path": "content/lessons/MATH-06-01-determinants-and-eigen.md",
+      "publication_state": "draft",
+      "verification_record_id": "VER-LSN-MATH-06-01-01",
+      "last_verified": "2026-10-12",
+      "provenance": {
+        "source_supported": "The determinant as a volume-scaling and orientation factor, the characteristic polynomial, algebraic multiplicity, eigenspaces, the independence of eigenvectors with distinct eigenvalues, and the spectral theorem are all taken from MML sections 4.1 and 4.2, with the printed pages recorded above.\n",
+        "established_theory": "The derivation of the 2x2 determinant from the area of the image parallelogram, the trace and determinant invariants proved from the characteristic polynomial, the diagonalisation argument for repeated application, and the counterexamples in the misconception section are standard results written out here in full.\n",
+        "original_examples": "Every numerical instance used for teaching (the matrix [[2,1],[1,2]], the defective matrix [[1,1],[0,1]], the non-defective repeated-eigenvalue matrix, the exercise matrices, and all code) was chosen for this lesson. The book's own examples were not copied, and the book's figures are cited by number and page rather than reproduced.\n",
+        "not_covered_here": "Computation of the determinant of large matrices, numerical conditioning of eigenproblems (MATH-19), and the eigendecomposition as a tool (MATH-07, next lesson). The Cholesky decomposition (MML 4.3) is deliberately skipped here.\n"
+      },
+      "content_sha256": "e9eaa484a00d221106f7f68dd2d2435576d6332ab1a67820363274d5d7372e86",
+      "front_matter_exercises": 7,
+      "verification_record_outcome": "needs_revision"
     },
-    "difficulty": "recognition | guided | independent | multi_step | transfer | open_ended",
-    "prompt_path": "relative path",
-    "expected_outcome": "what a correct answer demonstrates",
-    "solution_path": "null until a solution exists; an exercise without one may not be marked verified",
-    "solution_verified_by": "verification method actually used (independent computation, execution, cross-check against a reference)",
-    "rubric": "required for open-ended items instead of a single solution"
+    {
+      "id": "LSN-MATH-07-01",
+      "title": "Matrix decompositions: Cholesky, eigendecomposition, and the SVD that works for every matrix",
+      "competencies": [
+        "MATH-07"
+      ],
+      "covers_outcomes": [
+        "State the existence conditions of the Cholesky, eigendecomposition and SVD, and give an example that violates each condition.",
+        "Use the SVD to describe the action of a matrix as rotation, scaling and rotation.",
+        "Relate the eigendecomposition of a symmetric positive-definite matrix to its Cholesky factor."
+      ],
+      "sources": [
+        {
+          "work_id": "SRC-MML",
+          "sections": [
+            "4.3",
+            "4.4",
+            "4.5",
+            "4.7"
+          ],
+          "pages": "114-134",
+          "role": "primary"
+        }
+      ],
+      "source_anchors": {
+        "sections": [
+          {
+            "id": "4.3",
+            "file": "Mathematics for ML part 1.md",
+            "line": 4216,
+            "printed_page": 114
+          },
+          {
+            "id": "4.4",
+            "file": "Mathematics for ML part 1.md",
+            "line": 4264,
+            "printed_page": 115
+          },
+          {
+            "id": "4.5",
+            "file": "Mathematics for ML part 1.md",
+            "line": 4423,
+            "printed_page": 119
+          },
+          {
+            "id": "4.7",
+            "file": "Mathematics for ML part 1.md",
+            "line": 6,
+            "printed_page": 134
+          }
+        ],
+        "numbered_objects": [
+          "Definition 4.19 (diagonalizable)",
+          "Definition 4.23 (spectral norm of a matrix)",
+          "Theorem 4.18 (Cholesky decomposition)",
+          "Theorem 4.20 (eigendecomposition)",
+          "Theorem 4.21 (a symmetric matrix can always be diagonalized)",
+          "Theorem 4.22 (SVD theorem)",
+          "Theorem 4.24 (the spectral norm of A is its largest singular value)",
+          "Figure 4.8 (SVD as sequential transformations)"
+        ]
+      },
+      "supplemental_references": [],
+      "prerequisites": [
+        {
+          "competency": "MATH-06",
+          "need": "Eigenvalues, eigenspaces and the spectral theorem. The SVD is constructed from the eigendecomposition of A'A, so the whole derivation rests on the symmetric case."
+        },
+        {
+          "competency": "MATH-04",
+          "need": "Inner products, orthogonality and orthonormal bases. Without them 'orthogonal matrices' and 'the columns of U are orthonormal' carry no meaning."
+        },
+        {
+          "competency": "MATH-02",
+          "need": "Matrices as linear mappings, for the interpretation of the SVD as basis change, scaling and basis change."
+        }
+      ],
+      "estimated_effort": {
+        "reading_minutes": 95,
+        "exercise_minutes": 165
+      },
+      "content_path": "content/lessons/MATH-07-01-matrix-decompositions.md",
+      "publication_state": "draft",
+      "verification_record_id": "VER-LSN-MATH-07-01-01",
+      "last_verified": "2026-10-12",
+      "provenance": {
+        "source_supported": "The Cholesky decomposition and its existence for symmetric positive-definite matrices (Theorem 4.18), the eigendecomposition and its existence conditions (Theorems 4.20, 4.21, Definition 4.19), the SVD theorem for any rectangular matrix (Theorem 4.22), the spectral norm as the largest singular value (Theorem 4.24) and the matrix phylogeny of section 4.7 are all taken from MML sections 4.3 to 4.7, with printed pages recorded above.\n",
+        "established_theory": "The constructive proof of the SVD from the eigendecomposition of A'A, the induction proving existence of the Cholesky factorisation, the uniqueness argument for the Cholesky factor, the fast powers-of-sigma bound used to derive the spectral norm, and the worked examples are standard results written out in full here. Where the source leaves a proof to the reader or states a result without proof, the lesson says so rather than presenting the gap as covered.\n",
+        "original_examples": "Every numerical instance (the 2x2 SPD matrix, the rectangular 3x2 matrix, the non-diagonalisable counterexample, the badly conditioned matrix in the code section, and all code) was produced for this lesson. The source's Figure 4.8 is cited by number and not reproduced, and the book's movie-ratings example is not reused.\n",
+        "not_covered_here": "Numerical computation of the SVD (Golub-Kahan bidiagonalisation), the cost and conditioning of each decomposition (MATH-19, no source in the repository), and the low-rank approximation theorem, which is the subject of LSN-MATH-08-01.\n"
+      },
+      "content_sha256": "8589cd77f50d7e50106572d29cd99a1449950ed6c9babebc309c30c2e8575544",
+      "front_matter_exercises": 7,
+      "verification_record_outcome": "needs_revision"
+    },
+    {
+      "id": "LSN-MATH-08-01",
+      "title": "Low-rank approximation: what to throw away, and what it costs",
+      "competencies": [
+        "MATH-08"
+      ],
+      "covers_outcomes": [
+        "Derive the best rank-k approximation in the Frobenius norm from the SVD and state the size of the error.",
+        "Apply rank truncation to a data matrix and interpret the retained components.",
+        "Explain the trade-off between representation size and reconstruction error."
+      ],
+      "sources": [
+        {
+          "work_id": "SRC-MML",
+          "sections": [
+            "4.6",
+            "10.4"
+          ],
+          "pages": "129-134, 333-335",
+          "role": "primary"
+        }
+      ],
+      "source_anchors": {
+        "sections": [
+          {
+            "id": "4.6",
+            "file": "Mathematics for ML part 1.md",
+            "line": 4763,
+            "printed_page": 129
+          },
+          {
+            "id": "10.4",
+            "file": "Mathematics for ML part 3.md",
+            "line": 1856,
+            "printed_page": 333
+          }
+        ],
+        "numbered_objects": [
+          "equation 4.90 (A as a sum of rank-1 matrices u_i v_i^T)",
+          "Theorem 4.24 (the spectral norm of A is its largest singular value)",
+          "Theorem 4.25 (Eckart-Young), equations 4.94 and 4.95",
+          "Figure 4.11 (outer products of an image, cited not reproduced)"
+        ]
+      },
+      "supplemental_references": [],
+      "prerequisites": [
+        {
+          "competency": "MATH-07",
+          "need": "The SVD, its outer-product form A = sum sigma_i u_i v_i^T, and the identity ||A||_2 = sigma_1. The truncation is defined by the first of these and its error is measured by the second."
+        },
+        {
+          "competency": "MATH-04",
+          "need": "Orthogonality and the norm identities, so that 'the best approximation in a norm' has a meaning you can compute with."
+        }
+      ],
+      "estimated_effort": {
+        "reading_minutes": 70,
+        "exercise_minutes": 150
+      },
+      "content_path": "content/lessons/MATH-08-01-low-rank-approximation.md",
+      "publication_state": "draft",
+      "verification_record_id": "VER-LSN-MATH-08-01-01",
+      "last_verified": "2026-10-12",
+      "interactive": {
+        "component": "rank-truncation",
+        "data_path": "content/demos/rank-truncation.json",
+        "serves": "The size-error trade-off is a curve, not a fact. The demonstration lets the reader move along it and watch which structure in the matrix survives."
+      },
+      "provenance": {
+        "source_supported": "The matrix as a sum of rank-1 outer products (MML equation 4.90), the Eckart-Young theorem for the spectral norm with equations 4.94 and 4.95, and the connection to eigenvector computation and low-rank approximations in PCA (MML section 10.4) are taken from the source, with printed pages recorded above.\n",
+        "established_theory": "The optimality proof for the spectral norm is written out in full here, including the interlacing step. The Frobenius-norm version of optimality is stated as a theorem with its source recorded, and the achievement half (the exact error of the truncated SVD) is proved here. The storage arithmetic, the energy criterion and the numerical-rank discussion are engineering consequences worked out here.\n",
+        "source_gap": "The supplied text states Theorem 4.25 for the spectral norm only, and the word 'Frobenius' does not occur anywhere in the supplied markdown. MATH-08's second outcome asks for the Frobenius-norm result, so that half of the competency is recorded as partly sourced in the coverage report, with a supplemental source required. The lesson says which parts are sourced and which are not, rather than blurring them.\n",
+        "original_examples": "The matrix used for teaching is synthetic and generated by tools/build_demo_data.py from three explicit formulas, stated in the lesson. The book's image example (Figure 4.11) is cited by number and size but not reproduced, and no real dataset is claimed.\n",
+        "not_covered_here": "Numerical rank thresholds in practice, randomised low-rank approximation for very large matrices, and the cost of computing an SVD at scale. These are recorded gaps (MATH-19).\n"
+      },
+      "content_sha256": "e9e03f48e70a5b92f288fedd2627e8983b1b7536f1e29bcecb57541ce49dd6e2",
+      "front_matter_exercises": 6,
+      "verification_record_outcome": "needs_revision"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "EX-LSN-MATH-06-01-01",
+      "competencies": [
+        "MATH-06"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "recognition",
+      "prompt": "For B = [[2, 0, 3], [1, 4, -1], [0, 2, 1]], compute the determinant twice: by Sarrus' rule and by Laplace expansion along the first row. Confirm that the two agree, and state whether B is invertible.",
+      "expected_outcome": "Correct determinant by two independent expansions, and the conclusion det B != 0 so B is invertible.",
+      "solution_path": "content/solutions/MATH-06-01-solutions.md#ex-01",
+      "solution_verified_by": "independent symbolic computation with sympy (tools/run_content_checks.py, check math06_ex01_determinant)",
+      "lesson_id": "LSN-MATH-06-01"
+    },
+    {
+      "id": "EX-LSN-MATH-06-01-02",
+      "competencies": [
+        "MATH-06"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "guided",
+      "prompt": "Explain, without a full expansion, why det([[1,2,3],[4,5,6],[1,2,3]]) = 0, and name the property of the determinant you used. Then construct a 4x4 matrix whose determinant is 0 for a different reason.",
+      "expected_outcome": "Identification of the alternating (or multilinearity) property when two rows coincide, plus a second, structurally different reason for a zero determinant.",
+      "solution_path": "content/solutions/MATH-06-01-solutions.md#ex-02",
+      "solution_verified_by": "independent symbolic computation with sympy and manual reasoning recorded in the solution",
+      "lesson_id": "LSN-MATH-06-01"
+    },
+    {
+      "id": "EX-LSN-MATH-06-01-03",
+      "competencies": [
+        "MATH-06"
+      ],
+      "origin": "adapted",
+      "origin_detail": {
+        "work_id": "SRC-MML",
+        "section": "4.3 exercises (printed p.139), exercise 4.3 in the source's numbering asks the same question for two 2x2 matrices",
+        "printed_page": 139,
+        "note": "The task is the source's; the matrices are ours, so that the book's own exercise remains unsolved here for independent practice."
+      },
+      "difficulty": "independent",
+      "prompt": "Compute all eigenvalues and the corresponding eigenspaces of A = [[3,1],[1,3]] and of C = [[2,2],[1,3]] by hand. Verify each eigenpair by substitution, and verify both eigenvalues against the trace and the determinant.",
+      "expected_outcome": "Four correct eigenpairs with eigenspaces given as spans, each verified by substitution and by the trace/determinant invariants.",
+      "solution_path": "content/solutions/MATH-06-01-solutions.md#ex-03",
+      "solution_verified_by": "independent symbolic computation with sympy (check math06_ex03_eigenpairs)",
+      "lesson_id": "LSN-MATH-06-01"
+    },
+    {
+      "id": "EX-LSN-MATH-06-01-04",
+      "competencies": [
+        "MATH-06"
+      ],
+      "origin": "adapted",
+      "origin_detail": {
+        "work_id": "SRC-MML",
+        "section": "4.5 exercises (printed p.138), exercise 4.5 in the source's numbering uses four matrices for the same question",
+        "printed_page": 138,
+        "note": "The question is the source's (diagonalisability is unrelated to invertibility); the five matrices are ours."
+      },
+      "difficulty": "multi_step",
+      "prompt": "Complete a 5x2 table for the matrices listed in the solution file: for each, decide whether it is invertible and whether it is diagonalisable over R, and give the reason for each answer. Two of the five require the same matrix to be invertible but not diagonalisable over R.",
+      "expected_outcome": "Correct invertibility from the determinant, correct diagonalisability from the algebraic-versus-geometric multiplicity comparison, and reasons that name the multiplicities rather than the eigenvalues alone.",
+      "solution_path": "content/solutions/MATH-06-01-solutions.md#ex-04",
+      "solution_verified_by": "independent computation of multiplicities with numpy/sympy and manual reasoning recorded in the solution",
+      "lesson_id": "LSN-MATH-06-01"
+    },
+    {
+      "id": "EX-LSN-MATH-06-01-05",
+      "competencies": [
+        "MATH-06"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "multi_step",
+      "prompt": "Prove that if v is an eigenvector of A with eigenvalue λ, then v is an eigenvector of A^k with eigenvalue λ^k for every k >= 1. Then show that the converse fails: give a real 2x2 matrix A for which A^2 has a real eigenvalue that is not the square of any real eigenvalue of A.",
+      "expected_outcome": "A correct induction argument, and a counterexample (a rotation matrix) together with the explanation that its eigenvalues are complex, which is what makes the real converse fail.",
+      "solution_path": "content/solutions/MATH-06-01-solutions.md#ex-05",
+      "solution_verified_by": "symbolic verification of the counterexample in sympy (check math06_ex05_converse)",
+      "lesson_id": "LSN-MATH-06-01"
+    },
+    {
+      "id": "EX-LSN-MATH-06-01-06",
+      "competencies": [
+        "MATH-06"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "transfer",
+      "prompt": "Show that every real 3x3 matrix has at least one real eigenvalue, and give an example of a real 3x3 matrix with exactly one. Explain how this argument changes in dimension 2.",
+      "expected_outcome": "The odd-degree real polynomial argument, a valid example (a rotation in a plane plus a scaling along the third axis), and the correct statement that the argument fails in even dimension with the rotation in 2D as the witness.",
+      "solution_path": "content/solutions/MATH-06-01-solutions.md#ex-06",
+      "solution_verified_by": "symbolic computation of the characteristic polynomials (check math06_ex06_odd_degree)",
+      "lesson_id": "LSN-MATH-06-01"
+    },
+    {
+      "id": "EX-LSN-MATH-06-01-07",
+      "competencies": [
+        "MATH-06"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "open_ended",
+      "prompt": "Implement a function eigen_2x2(A) that returns the eigenvalues and eigenvectors of a real 2x2 matrix using the quadratic formula rather than a library decomposition. Test it against numpy.linalg.eig on 1000 random matrices and report the maximum residual ||A v - λ v||. Explain which matrices make the residual large and why the comparison is being made against a library at all.",
+      "expected_outcome": "A working implementation, a measured residual, an identification of the ill-conditioned cases (nearly repeated eigenvalues), and a statement of what the test does and does not establish.",
+      "rubric": "Full credit requires: (1) the implementation handles both real and complex eigenvalue cases rather than ignoring one; (2) the residual is measured rather than asserted; (3) at least one concrete example of a matrix where the two disagree is shown, with the reason; (4) the answer states that agreement with numpy establishes consistency, not correctness, unless the mathematics is checked independently too.",
+      "solution_path": "content/solutions/MATH-06-01-solutions.md#ex-07",
+      "solution_verified_by": "the reference implementation was executed by check_ex07_reference_implementation; the reported residuals and the near-defective case are its recorded output",
+      "lesson_id": "LSN-MATH-06-01"
+    },
+    {
+      "id": "EX-LSN-MATH-07-01-01",
+      "competencies": [
+        "MATH-07"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "guided",
+      "prompt": "Compute the Cholesky factor of A = [[9, 6, 3], [6, 5, 2], [3, 2, 2]] by hand using the column formulas, verify LL' = A, and explain which of the three diagonal entries of L would be imaginary if a single entry of A were changed, and why the factorisation would then not exist over the reals.",
+      "expected_outcome": "A correct lower-triangular L with positive diagonal, an exact verification of LL' = A, and an explanation that the third pivot is the Schur complement whose positivity is exactly the positive-definiteness condition.",
+      "solution_path": "content/solutions/MATH-07-01-solutions.md#ex-01",
+      "solution_verified_by": "independent Cholesky computation with numpy.linalg.cholesky and exact symbolic verification of LL' = A",
+      "lesson_id": "LSN-MATH-07-01"
+    },
+    {
+      "id": "EX-LSN-MATH-07-01-02",
+      "competencies": [
+        "MATH-07"
+      ],
+      "origin": "adapted",
+      "origin_detail": {
+        "work_id": "SRC-MML",
+        "section": "Chapter 4 exercises 4.8 and 4.9 (printed p.138): 'Find the SVD of the matrix' / 'Find the singular value decomposition of'",
+        "printed_page": 138,
+        "note": "The task is the source's, which asks for the full SVD of a given matrix; the matrix here is a 3x2 rectangle chosen by this lesson so that U must be completed with a third orthogonal direction, a step the source's own matrices do not force."
+      },
+      "difficulty": "independent",
+      "prompt": "Compute the full SVD of A = [[1, 0], [0, 1], [1, 1]]. Work through the construction: form A'A, find its eigenvalues and an orthonormal eigenbasis, obtain the singular values and the right-singular vectors, then compute u_i = Av_i/sigma_i and extend the set to an orthonormal basis of the left space. Verify A = U Sigma V' by multiplying out, and state which singular values are zero and why.",
+      "expected_outcome": "sigma = (sqrt(3), 1), an explicit U (3x3, including the direction orthogonal to the columns of A), Sigma 3x2, V 2x2, a verified reconstruction, and the observation that no singular value is zero because the columns of A are independent.",
+      "solution_path": "content/solutions/MATH-07-01-solutions.md#ex-02",
+      "solution_verified_by": "exact symbolic reconstruction with sympy and comparison against numpy.linalg.svd",
+      "lesson_id": "LSN-MATH-07-01"
+    },
+    {
+      "id": "EX-LSN-MATH-07-01-03",
+      "competencies": [
+        "MATH-07"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "independent",
+      "prompt": "For each of the three decompositions in this lesson, give a matrix that violates its existence condition, with a one-line reason: a symmetric matrix with no Cholesky factor, a square matrix with no eigendecomposition, and — if you can — a matrix with no SVD. Then verify each failure numerically and explain what the failing computation actually does.",
+      "expected_outcome": "A valid non-positive-definite symmetric matrix, a defective square matrix, the correct statement that no matrix lacks an SVD, and observations about what the library routines return or raise in the failing cases.",
+      "solution_path": "content/solutions/MATH-07-01-solutions.md#ex-03",
+      "solution_verified_by": "the failures were executed and their outcomes recorded (numpy raises LinAlgError for the Cholesky failure; eig returns fewer independent eigenvectors)",
+      "lesson_id": "LSN-MATH-07-01"
+    },
+    {
+      "id": "EX-LSN-MATH-07-01-04",
+      "competencies": [
+        "MATH-07"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "multi_step",
+      "prompt": "Prove that ||A||_F^2 equals the sum of the squared singular values of A, and that ||A x|| <= sigma_1 ||x|| for every x. Use the SVD, not the entries. Then explain in one sentence why the second result is the reason sigma_1 is called the spectral norm.",
+      "expected_outcome": "Both derivations from the SVD expansion of A, correct handling of the orthogonality of U and V, and the identification of sigma_1 as the operator norm.",
+      "solution_path": "content/solutions/MATH-07-01-solutions.md#ex-04",
+      "solution_verified_by": "both identities checked numerically on 200 random matrices, recording the maximum deviation",
+      "lesson_id": "LSN-MATH-07-01"
+    },
+    {
+      "id": "EX-LSN-MATH-07-01-05",
+      "competencies": [
+        "MATH-07"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "multi_step",
+      "prompt": "A'A and AA' have the same nonzero eigenvalues (Chapter 4 exercise 4.11, printed p.138, which you should do separately). Instead, explain why their zero eigenvalues can differ in multiplicity: give a rectangular example where one of the two matrices is singular with a large null space and the other is not singular at all, and connect the null space of A'A to the null space of A.",
+      "expected_outcome": "A correct example (for instance a short-and-wide or tall-and-narrow full-rank matrix), the identity ker(A'A) = ker(A) proved in a line, and the resulting multiplicities counted.",
+      "solution_path": "content/solutions/MATH-07-01-solutions.md#ex-05",
+      "solution_verified_by": "null spaces and eigenvalue counts computed symbolically for the example",
+      "lesson_id": "LSN-MATH-07-01"
+    },
+    {
+      "id": "EX-LSN-MATH-07-01-06",
+      "competencies": [
+        "MATH-07"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "transfer",
+      "prompt": "Take an SPD matrix and compare two different square roots of it: the triangular Cholesky factor L and the symmetric square root A^{1/2} = Q Lambda^{1/2} Q'. Show both satisfy SS' = A, show they are different, and characterise every square root of A as Q Lambda^{1/2} W' for an orthogonal W. Then say which square root a sampling routine should use if it wants x = A^{1/2} z to have covariance A with the fewest operations, and why.",
+      "expected_outcome": "Both factors verified, the general form proved from the spectral decomposition, and the correct practical answer with a reason (the triangular factor is cheaper for a single solve, and its structure is what makes the sampling transform cheap).",
+      "solution_path": "content/solutions/MATH-07-01-solutions.md#ex-06",
+      "solution_verified_by": "both square roots computed exactly, the orthogonal W extracted from the relation and verified to be orthogonal, and both products confirmed to equal A",
+      "lesson_id": "LSN-MATH-07-01"
+    },
+    {
+      "id": "EX-LSN-MATH-07-01-07",
+      "competencies": [
+        "MATH-07"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "open_ended",
+      "prompt": "Implement the textbook construction of the SVD: eigen-decompose A'A, take square roots of the eigenvalues, and build U from Av_i/sigma_i. Compare with numpy's SVD on 100 random matrices, then on matrices whose singular values span a wide range (epsilon chosen so that the ratio is around 1e8). Report at which ratio the construction stops delivering accurate small singular values, and explain why forming A'A is the cause.",
+      "expected_outcome": "A working implementation, measured agreement on well-conditioned inputs, a measured loss of accuracy on ill-conditioned ones, and the explanation that forming A'A squares the ratio of largest to smallest singular value, which is exactly the information the small singular values carry.",
+      "rubric": "Full credit requires: (1) the implementation handles rectangular matrices, not only square ones; (2) the comparison is quantitative (relative error in each singular value, not just 'it matched'); (3) the ill-conditioned experiment is run with a stated epsilon and the resulting error is reported; (4) the answer states clearly that numpy does not use this construction, so agreement tells you the mathematics is right, not that the algorithm is good.",
+      "solution_path": "content/solutions/MATH-07-01-solutions.md#ex-07",
+      "solution_verified_by": "the reference implementation was executed and its measured relative errors are the recorded output of check_ex07_gram_svd_accuracy",
+      "lesson_id": "LSN-MATH-07-01"
+    },
+    {
+      "id": "EX-LSN-MATH-08-01-01",
+      "competencies": [
+        "MATH-08"
+      ],
+      "origin": "adapted",
+      "origin_detail": {
+        "work_id": "SRC-MML",
+        "section": "Chapter 4 exercise 4.10 (printed p.138): 'Find the rank-1 approximation of' a given matrix",
+        "printed_page": 138,
+        "note": "The task is the source's; the matrix is different, so the source's own matrix remains unsolved for independent practice."
+      },
+      "difficulty": "guided",
+      "prompt": "Find the best rank-1 approximation of A = [[3, 0], [4, 5]] by hand: compute the SVD, form sigma_1 u_1 v_1', and state the exact Frobenius and spectral norms of the residual. Then confirm that the singular values you found are consistent with det A and the trace of A'A.",
+      "expected_outcome": "sigma = (3*sqrt(5), sqrt(5)), the rank-1 term equal to (3/2)[[1,1],[3,3]], a residual whose spectral norm is sqrt(5) and whose squared Frobenius norm is 5.",
+      "solution_path": "content/solutions/MATH-08-01-solutions.md#ex-01",
+      "solution_verified_by": "exact symbolic computation of the SVD, the rank-1 term, and both residual norms",
+      "lesson_id": "LSN-MATH-08-01"
+    },
+    {
+      "id": "EX-LSN-MATH-08-01-02",
+      "competencies": [
+        "MATH-08"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "multi_step",
+      "prompt": "Write out the proof that no matrix of rank at most k can approximate A better than the truncated SVD in the spectral norm. The key step is a dimension argument: intersect the null space of the candidate with the span of the first k+1 right-singular vectors, and bound the norm of A on that intersection.",
+      "expected_outcome": "A complete proof: the intersection is non-trivial by dimension count, a unit vector in it satisfies ||Ax|| >= sigma_{k+1}, and the candidate annihilates it, so ||A - B||_2 >= sigma_{k+1}.",
+      "solution_path": "content/solutions/MATH-08-01-solutions.md#ex-02",
+      "solution_verified_by": "the dimension count and the inequality were checked symbolically on random rectangular matrices, and the bound was tested against random rank-k candidates",
+      "lesson_id": "LSN-MATH-08-01"
+    },
+    {
+      "id": "EX-LSN-MATH-08-01-03",
+      "competencies": [
+        "MATH-08"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "independent",
+      "prompt": "Using the recorded SVD in content/demos/rank-truncation.json, reconstruct the matrix at k = 1, 3, 8 and 12. Report the relative Frobenius error and the retained energy at each, and verify that the recorded values in the file match the theorem's prediction sum_{i>k} sigma_i^2.",
+      "expected_outcome": "Correct reconstructions, correct identification of the cumulative-energy relation, and the observation that the relative error is the square root of the discarded energy fraction.",
+      "solution_path": "content/solutions/MATH-08-01-solutions.md#ex-03",
+      "solution_verified_by": "the reconstruction and both error measures were computed and compared with the values recorded in the demo file",
+      "lesson_id": "LSN-MATH-08-01"
+    },
+    {
+      "id": "EX-LSN-MATH-08-01-04",
+      "competencies": [
+        "MATH-08"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "multi_step",
+      "prompt": "Derive the storage break-even rule for a rank-k factorisation of an m x n matrix: k(m + n + 1) < mn. Then compute the largest k that compresses a 1432 x 1910 image (the size of the matrix the source uses in its Figure 4.11 discussion) and the storage ratio for k = 50 and k = 200.",
+      "expected_outcome": "The rearranged inequality k < mn/(m+n+1), the largest integer k = 818 for that size, and the two ratios, with the observation that the rule is an upper bound that ignores metadata.",
+      "solution_path": "content/solutions/MATH-08-01-solutions.md#ex-04",
+      "solution_verified_by": "the arithmetic was computed exactly and the rule verified against the recorded storage table in the demo file",
+      "lesson_id": "LSN-MATH-08-01"
+    },
+    {
+      "id": "EX-LSN-MATH-08-01-05",
+      "competencies": [
+        "MATH-08"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "transfer",
+      "prompt": "Construct a 6x6 matrix whose singular values decay to 1e-14, and show that its numerical rank depends on the threshold: report the rank at thresholds 1e-3, 1e-8 and 1e-12 relative to sigma_1. Then write one paragraph on what a 'rank-deficient' matrix means when the singular values are tiny rather than zero, and why the truncation is still the right thing to do.",
+      "expected_outcome": "A constructed matrix, three different reported ranks for the same matrix, and an explanation that the rank decision is a modelling choice justified by the error it induces, not a property read off the matrix.",
+      "solution_path": "content/solutions/MATH-08-01-solutions.md#ex-05",
+      "solution_verified_by": "the ranks at each threshold were computed and the induced reconstruction errors reported",
+      "lesson_id": "LSN-MATH-08-01"
+    },
+    {
+      "id": "EX-LSN-MATH-08-01-06",
+      "competencies": [
+        "MATH-08"
+      ],
+      "origin": "original",
+      "origin_detail": {},
+      "difficulty": "open_ended",
+      "prompt": "Take the demo matrix and choose k by two different criteria: (a) the smallest k that retains 99% of the energy, and (b) the smallest k that keeps the relative Frobenius error below 1%. Report both values, both errors, and both storage ratios. Then argue which criterion you would use for a downstream linear model, and state explicitly what neither criterion captures.",
+      "expected_outcome": "Two different k values with their measured errors and costs, and an argument that goes beyond 'smaller error is better' — for instance that neither criterion knows anything about the downstream task or about noise in the small components.",
+      "rubric": "Full credit requires: (1) both k values computed rather than estimated; (2) the errors and storage ratios reported as numbers; (3) an argument that names at least one thing the energy criterion ignores, such as the possibility that a discarded component carries signal; (4) no claim that either criterion is optimal.",
+      "solution_path": "content/solutions/MATH-08-01-solutions.md#ex-06",
+      "solution_verified_by": "both criteria were evaluated on the recorded SVD and their k values, errors and costs are the recorded output of check_ex06_selection_criteria",
+      "lesson_id": "LSN-MATH-08-01"
+    }
+  ],
+  "verification_records": [
+    {
+      "id": "VER-LSN-MATH-06-01-01",
+      "lesson_id": "LSN-MATH-06-01",
+      "reviewed_on": "2026-10-12",
+      "reviewer": "authoring agent, on Arena.ai; no second human reviewer",
+      "outcome": "needs_revision",
+      "outcome_explanation": "The technical and mathematical checks pass. The outcome is NOT 'verified' because two of the required checks have not been performed at all: source fidelity by a person who has read the source section, and editorial review of the prose. Marking this verified would assert something that did not happen. It becomes 'verified' when those two are done, or when the platform's own policy is revised to allow an explicitly agent-authored verification with that limitation stated on the lesson.",
+      "checks": [
+        {
+          "name": "source_fidelity",
+          "status": "not_run",
+          "method": "Not performed by a human reader. The lesson was written against the indexed source sections (MML 4.1 printed pp.99-104 and 4.2 printed pp.105-113) with the section text available during writing.",
+          "evidence": "The lesson cites Definition 4.4, Definition 4.5, Definition 4.9, Definition 4.10, Theorem 4.12, Theorem 4.15 and Figure 4.7 by their source identifiers. Those identifiers were checked to exist in knowledge/sources/mml/inventory.json, which is automated (see the citation_integrity check below). Whether the surrounding explanation is a fair representation of the source has not been independently reviewed.",
+          "not_checked": "Whether a reader of the source would agree with every emphasis and omission in the lesson."
+        },
+        {
+          "name": "technical_correctness",
+          "status": "passed",
+          "method": "Every numerical and algebraic claim in the lesson and in its solutions was recomputed by content/checks/math06_eigen_checks.py using sympy (exact) and numpy (floating point), and the checks were executed with tools/run_content_checks.py.",
+          "evidence": "9 checks, 9 passed, 0 failed. Recorded output: knowledge/lessons/checks-report.json, generated 2026-10-12 with numpy 2.4.6 and sympy 1.14.0. Notable measured values: det([[2,0,3],[1,4,-1],[0,2,1]]) = 18 from three independent methods; the 1000-matrix residual experiment returned a maximum of 3.803e-15.",
+          "not_checked": "Claims that are not numerical, such as the judgement that a particular misconception is 'the most common'. That phrasing was removed during checking for exactly this reason."
+        },
+        {
+          "name": "mathematical_validity",
+          "status": "passed",
+          "method": "Derivations were checked step by step and their results re-derived symbolically: the 2x2 area identity, the trace and determinant invariants, the characteristic-polynomial factorisations, the power rule for eigenpairs (exact for k in {1,2,3,5,8}), and the counterexamples (rotation, defective shear, near-defective perturbation).",
+          "evidence": "See checks check_lesson_numbers_used_in_prose, check_ex05_power_rule_and_converse, check_ex06_odd_degree_real_eigenvalue and check_trace_determinant_invariants_random in the checks report.",
+          "not_checked": "The proof of the spectral theorem is cited from the source rather than proved in the lesson, so its correctness rests on the source rather than on a check here. This is stated in the lesson."
+        },
+        {
+          "name": "pedagogical_completeness",
+          "status": "partial",
+          "method": "Mapped each of the lesson's three declared outcomes to the sections that teach it and to at least one exercise that assesses it.",
+          "evidence": "Outcome 1 (compute eigenvalues by hand and verify by substitution) is taught in sections 2.2-2.3 and assessed by exercises 3 and 7. Outcome 2 (determinant, volume scaling, sign, invertibility) is taught in sections 1.1-1.3 and assessed by exercises 1 and 2. Outcome 3 (diagonalisability and what failure means) is taught in sections 2.5-2.6 and assessed by exercises 4 and 5. The third outcome as written in the competency also asks what failure 'means'; the lesson answers this geometrically for the shear case only, and not for every defective matrix. Recorded as partial rather than passed.",
+          "not_checked": "Whether the difficulty progression is right for a learner who has just finished the prerequisites. That is an empirical question."
+        },
+        {
+          "name": "prerequisite_integrity",
+          "status": "passed",
+          "method": "Listed the three prerequisite competencies and named the specific fact taken from each; checked that each prerequisite is defined in the framework and is not marked as unsourced in a way that would leave the learner stuck.",
+          "evidence": "MATH-01, MATH-02 and MATH-03 are defined, are among the 23 competencies the supplied book fully sources, and are covered by earlier sections of the same book (2.4-2.8 precede 4.1). No prerequisite is assumed without a stated route to it.",
+          "not_checked": "Whether the learner has actually completed those prerequisites; the platform records completion, it cannot verify it."
+        },
+        {
+          "name": "assessment_integrity",
+          "status": "passed",
+          "method": "Every exercise has a stated expected outcome, a difficulty level, a declared origin and a solution; every solution names the method used and the verification that was run.",
+          "evidence": "7 exercises: 4 marked original, 3 marked adapted with the source page and item number recorded (MML 4.3 p.139, MML 4.5 p.138). Exercise 7 carries a rubric instead of a single answer. All solutions are in content/solutions/MATH-06-01-solutions.md and were checked by the same check suite.",
+          "not_checked": "Whether the exercises are unambiguous to a reader other than the author. Two exercises (5 and 7) involve a choice of example, which the solutions acknowledge."
+        },
+        {
+          "name": "citation_integrity",
+          "status": "passed",
+          "method": "Programmatic check that every source identifier cited by the lesson exists in the generated source index, and that cited printed pages match the table of contents.",
+          "evidence": "tools/validate_knowledge.py check lesson-source-section-exists, plus manual comparison of the cited printed pages (99-113) against knowledge/sources/mml/structure.json entries for sections 4.1 and 4.2.",
+          "not_checked": "Whether the source says what the citation is being used to support. That is source_fidelity, which is not run."
+        },
+        {
+          "name": "interactive_correctness",
+          "status": "not_applicable",
+          "method": "This lesson contains no interactive component.",
+          "evidence": "The only generated asset is a static SVG diagram, content/assets/MATH-06-01-parallelogram.svg, whose coordinates were computed from the matrix in the lesson and whose stated area (3) equals the determinant of that matrix.",
+          "not_checked": "Nothing in this category applies."
+        },
+        {
+          "name": "publication_integrity",
+          "status": "not_run",
+          "method": "Not performed: no interface renders this lesson yet. The front matter is validated by tools/validate_knowledge.py and the content pipeline builds a registry from it, which is a build-time check, not a rendering check.",
+          "evidence": "tools/validate_knowledge.py passes for this lesson's registry entry; mathematics rendering, internal links and small-screen usability are untested.",
+          "not_checked": "Rendering of the displayed equations, the SVG asset, and the exercise table at mobile width."
+        }
+      ],
+      "unresolved_issues": [
+        {
+          "issue": "No human has read the source section and compared it against this lesson.",
+          "next_action": "A reviewer with the book open reads MML 4.1-4.2 alongside the lesson and records agreement or disagreement per section, then sets source_fidelity accordingly.",
+          "severity": "blocking"
+        },
+        {
+          "issue": "The third declared outcome ('what failure to be diagonalisable means') is answered geometrically only for the shear example.",
+          "next_action": "Either extend section 2.5(a) with the general geometric statement, or narrow the lesson's declared coverage of that outcome and let the eigendecomposition lesson complete it.",
+          "severity": "minor"
+        },
+        {
+          "issue": "No interface exists, so publication integrity is untested.",
+          "next_action": "Once the interface renders lessons, run the rendering checks and update this record; until then the lesson must be shown as unverified.",
+          "severity": "minor"
+        }
+      ],
+      "evidence_files": {
+        "checks_report": "knowledge/lessons/checks-report.json",
+        "checks_source": "content/checks/math06_eigen_checks.py",
+        "solutions": "content/solutions/MATH-06-01-solutions.md",
+        "source_index": "knowledge/sources/mml/structure.json"
+      },
+      "_file": "content/verification/LSN-MATH-06-01.json",
+      "_sha256": "69adedd2b76be8bda1a622cfe96fdc3aebe24a5ec3292d4d04ed65457fd15c5b"
+    },
+    {
+      "id": "VER-LSN-MATH-07-01-01",
+      "lesson_id": "LSN-MATH-07-01",
+      "reviewed_on": "2026-10-12",
+      "reviewer": "authoring agent, on Arena.ai; no second human reviewer",
+      "outcome": "needs_revision",
+      "outcome_explanation": "Every automated check passes, including the SVD construction, the existence-condition counterexamples, the norm identities, the square-root general form, and the measured breakdown of the A'A construction. The lesson is nevertheless NOT marked verified, because source fidelity has not been checked by a human reader and publication integrity is untested (no interface was rendering this lesson when the record was written). Marking it verified would assert something that did not happen.",
+      "checks": [
+        {
+          "name": "source_fidelity",
+          "status": "not_run",
+          "method": "Not performed by a human reader. The lesson was written against MML sections 4.3-4.5 and 4.7 (printed pp.114-134) with the section text available during writing, and it states explicitly where the source proves a result and where it leaves the proof to the reader (Cholesky existence, Theorem 4.18) or states it without proof (Eckart-Young, reserved for the next lesson).",
+          "evidence": "Cited identifiers were checked to exist in knowledge/sources/mml/inventory.json (Definitions 4.19, 4.23; Theorems 4.18, 4.20, 4.21, 4.22, 4.24; Figure 4.8), which is automated and passes. Whether the explanations are a fair representation of the source has not been independently reviewed.",
+          "not_checked": "Whether a reader of MML would agree with the emphasis and the omissions, in particular the decision to present the SVD derivation with the steps the source compresses."
+        },
+        {
+          "name": "technical_correctness",
+          "status": "passed",
+          "method": "Every numerical and algebraic claim in the lesson and its solutions was recomputed by content/checks/math07_svd_checks.py using sympy (exact) and numpy (floating point), and the checks were executed by tools/run_content_checks.py.",
+          "evidence": "8 checks in this module, all passing; 17 checks in the suite, 0 failures. Recorded output: knowledge/lessons/checks-report.json. Notable measured values: the textbook SVD construction matches numpy to 4.3e-13 on well-conditioned inputs and loses all digits at a singular-value ratio of 1e10.",
+          "not_checked": "The numerical experiments sample random matrices; they do not establish worst-case behaviour, which would require condition-number analysis rather than sampling."
+        },
+        {
+          "name": "mathematical_validity",
+          "status": "passed",
+          "method": "The constructive SVD proof was written out in full and its five steps checked against the objects they claim to construct: A'A is symmetric positive semi-definite and its eigenvalues are non-negative (verified symbolically), the u_i are orthonormal (verified exactly), AA'u_i = sigma_i^2 u_i (used and implied by the exact reconstruction test), U completes to an orthogonal basis (verified exactly), and U Sigma V' = A in exact arithmetic on two examples.",
+          "evidence": "check_ex02_full_svd_3x2 and check_lesson_worked_examples verify the 3x2 and the 2x2 examples exactly; check_ex01 verifies the Cholesky factor and the pivot argument; check_ex06 verifies the general square-root form exactly, including the orthogonality of W.",
+          "not_checked": "Two statements are cited rather than proved: the rank-nullity counting in exercise 5 uses rank(A'A) = rank(A), which is shown for the example and asserted in general; and the uniqueness of the triangular square root is asserted in the solution, which says so."
+        },
+        {
+          "name": "pedagogical_completeness",
+          "status": "passed",
+          "method": "Mapped each of the lesson's three declared outcomes to the sections that teach it and to exercises that assess it.",
+          "evidence": "Outcome 1 (existence conditions with counterexamples) is taught in sections 1.1, 2 and 4 and assessed by exercises 1 and 3. Outcome 2 (SVD as rotation, scaling, rotation) is taught in section 3.3 with the worked example in 3.4 and assessed by exercise 2. Outcome 3 (relating the SPD eigendecomposition to the Cholesky factor) is taught in section 2 and assessed by exercise 6, which establishes the precise relation rather than the common misstatement.",
+          "not_checked": "Whether the ordering serves a first-time reader; the lesson assumes the eigenvalue material is fresh."
+        },
+        {
+          "name": "prerequisite_integrity",
+          "status": "passed",
+          "method": "Listed the prerequisites and the specific fact each supplies, and checked that each is defined in the framework and fully sourced by the supplied book.",
+          "evidence": "MATH-06 (eigenvalues and the spectral theorem, covered by LSN-MATH-06-01), MATH-04 (orthogonality, MML sections 3.1-3.6) and MATH-02 (matrices as mappings, MML 2.2-2.8). All three are declared 'sourced' in coverage.json and precede section 4.3 in the book's own order.",
+          "not_checked": "Whether the learner has completed them."
+        },
+        {
+          "name": "assessment_integrity",
+          "status": "passed",
+          "method": "Every exercise has an expected outcome, a difficulty, a declared origin and a solution; every solution names its method and its verification.",
+          "evidence": "7 exercises: 6 original, 1 adapted with the source item recorded (MML exercises 4.8/4.9, printed p.138). Exercise 7 carries a rubric. Four source exercises (4.8, 4.9, 4.11, 4.12) and one that belongs to the next lesson (4.10) are listed as deliberately left unsolved, with the reason stated.",
+          "not_checked": "Whether a reader other than the author finds the exercises unambiguous."
+        },
+        {
+          "name": "citation_integrity",
+          "status": "passed",
+          "method": "Automated checks that every cited section and numbered object exists in the generated source index, and that every recorded printed page matches the index.",
+          "evidence": "tools/validate_knowledge.py checks lesson-source-section-exists, lesson-source-anchor-exists and lesson-source-anchor-page-matches-index all pass for this lesson.",
+          "not_checked": "Whether the source supports the claim being made; that is source_fidelity, which is not run."
+        },
+        {
+          "name": "interactive_correctness",
+          "status": "not_applicable",
+          "method": "This lesson contains no interactive component; the interactive rank-truncation demonstration belongs to LSN-MATH-08-01.",
+          "evidence": "The lesson contains display mathematics rendered by KaTeX and no client-side component.",
+          "not_checked": "Nothing in this category applies."
+        },
+        {
+          "name": "publication_integrity",
+          "status": "not_run",
+          "method": "Not performed when the record was written. The lesson is eligible for rendering (front matter validated, equations and links type-checked by the build), but no rendering test had been run against it.",
+          "evidence": "The application builds the lesson route without error and the registry validation passes, which is a build-time check only.",
+          "not_checked": "Equation rendering at small widths, the internal cross-links to LSN-MATH-06-01 and LSN-MATH-08-01, and whether the practice table's anchors land on the right solutions."
+        }
+      ],
+      "unresolved_issues": [
+        {
+          "issue": "No human has read MML 4.3-4.5 and 4.7 against this lesson.",
+          "next_action": "A reviewer with the book open checks particularly the SVD derivation's ordering against the source and the Cholesky existence sketch, then sets source_fidelity accordingly.",
+          "severity": "blocking"
+        },
+        {
+          "issue": "Two mathematical statements are used without proof in the solutions: rank(A'A) = rank(A) in general, and the uniqueness of the triangular square root.",
+          "next_action": "Either add the two short arguments, or keep the explicit admissions and treat them as exercises.",
+          "severity": "minor"
+        },
+        {
+          "issue": "The lesson references LSN-MATH-08-01 for the Eckart-Young theorem, which did not exist when this record was written.",
+          "next_action": "Once LSN-MATH-08-01 exists, confirm the cross-reference resolves and that the split of material between the two lessons is coherent.",
+          "severity": "minor"
+        }
+      ],
+      "evidence_files": {
+        "checks_report": "knowledge/lessons/checks-report.json",
+        "checks_source": "content/checks/math07_svd_checks.py",
+        "solutions": "content/solutions/MATH-07-01-solutions.md",
+        "source_index": "knowledge/sources/mml/structure.json"
+      },
+      "_file": "content/verification/LSN-MATH-07-01.json",
+      "_sha256": "2a7cfc82be164e01fab257f6d0d27453997929c1c05b98760b14f761f7063ef8"
+    },
+    {
+      "id": "VER-LSN-MATH-08-01-01",
+      "lesson_id": "LSN-MATH-08-01",
+      "reviewed_on": "2026-10-12",
+      "reviewer": "authoring agent, on Arena.ai; no second human reviewer",
+      "outcome": "needs_revision",
+      "outcome_explanation": "All automated checks pass, including the optimality bound, the error identities on the matrix used by the interactive component, and the storage arithmetic. The lesson is not marked verified because (a) source fidelity has not been checked by a human reader, and (b) the Frobenius-norm half of the competency's own outcome is NOT supported by the supplied source — the word 'Frobenius' does not occur in it — so the lesson states the Frobenius result with its source recorded and flags the gap. That is a substantive open item, not a formality.",
+      "checks": [
+        {
+          "name": "source_fidelity",
+          "status": "not_run",
+          "method": "Not performed by a human reader. The lesson was written against MML section 4.6 (printed pp.129-134) and section 10.4 (printed pp.333-335) with the section text available during writing.",
+          "evidence": "Automated citation checks pass: equation 4.90, Theorem 4.24, Theorem 4.25 with equations 4.94 and 4.95, and Figure 4.11 all exist in knowledge/sources/mml/inventory.json at the recorded sections. The lesson also records the negative finding that the supplied text states Theorem 4.25 for the spectral norm only.",
+          "not_checked": "Whether a reader of MML agrees that the source's use of the outer-product form has been represented faithfully, and whether the connection drawn to section 10.4 matches the source's own framing."
+        },
+        {
+          "name": "technical_correctness",
+          "status": "passed",
+          "method": "Every numerical claim in the lesson and its solutions was recomputed by content/checks/math08_lowrank_checks.py using sympy (exact) and numpy (floating point), including all figures recorded in content/demos/rank-truncation.json, which the interactive component displays.",
+          "evidence": "7 checks in this module, all passing; 24 checks in the suite, 0 failures. Recorded output: knowledge/lessons/checks-report.json. The demo file's recorded figures reproduce the theorem to 3.2e-8, limited by the file's six-decimal storage rather than by the mathematics.",
+          "not_checked": "The experiments sample random matrices and one synthetic teaching matrix; nothing here establishes behaviour on real data."
+        },
+        {
+          "name": "mathematical_validity",
+          "status": "passed",
+          "method": "The optimality proof for the spectral norm is written out in the lesson and its constituent claims were checked: the dimension count, the inequality ||Ax|| >= sigma_{k+1} on the intersection, and the attainment of the bound by the truncation. The achievement identities (spectral error = sigma_{k+1}, squared Frobenius error = sum of discarded sigma^2) were verified exactly on the exercise matrix and numerically on the demo matrix.",
+          "evidence": "check_ex02_optimality_bound (the truncation attains the bound to 1e-10 on 80 random matrices and no sampled rank-k candidate beat it), check_ex01_best_rank_one (the residual of the 2x2 example has characteristic polynomial lambda(lambda-5), showing the discarded singular value in the residual), check_ex03_demo_error_identities.",
+          "not_checked": "The Frobenius-norm optimality statement is NOT proved here: it requires the von Neumann trace inequality, which is not in the supplied source and was not reconstructed. The lesson says exactly this, and the coverage report records it as the reason MATH-08 is partly sourced."
+        },
+        {
+          "name": "pedagogical_completeness",
+          "status": "partial",
+          "method": "Mapped the three declared outcomes to the sections that teach them and the exercises that assess them.",
+          "evidence": "Outcome 1 (derive the best rank-k approximation in the Frobenius norm and state the error) is taught in Parts 1 and 3 and assessed by exercises 1, 2 and 3 — but its Frobenius-optimality half is taught as a cited result with the achievement half proved, because the source does not establish it. Outcome 2 (apply rank truncation to a data matrix and interpret the components) is taught in Part 5 and assessed by exercises 3 and 6. Outcome 3 (the size-error trade-off) is taught in Part 4 with the measured table and assessed by exercises 4 and 6.",
+          "not_checked": "Whether the reader finds the interactive component useful rather than distracting; that is an empirical question about learners."
+        },
+        {
+          "name": "prerequisite_integrity",
+          "status": "passed",
+          "method": "Listed the prerequisites and the specific fact each supplies, and checked that both are defined and fully sourced.",
+          "evidence": "MATH-07 (the SVD and its outer-product form, covered by LSN-MATH-07-01) and MATH-04 (orthogonality and norms, MML sections 3.1-3.6). MATH-07 is declared sourced; the lesson's Part 2 proof uses ||M||_2 = sigma_1 from MATH-07 exercise 4.",
+          "not_checked": "Whether the learner has completed them."
+        },
+        {
+          "name": "assessment_integrity",
+          "status": "passed",
+          "method": "Every exercise has an expected outcome, a difficulty, a declared origin and a solution; exercise 6 carries a rubric instead of a single right answer, and the rubric's requirements are specific and checkable.",
+          "evidence": "6 exercises: 5 original, 1 adapted from MML exercise 4.10 (printed p.138) with a different matrix so the source's own problem stays available. MML 4.10 is listed as deliberately left unsolved for that reason.",
+          "not_checked": "Whether the exercises are unambiguous to another reader; the writer of exercise 6 chooses its own threshold, which the rubric anticipates."
+        },
+        {
+          "name": "citation_integrity",
+          "status": "passed",
+          "method": "Automated checks that every cited section and numbered object exists in the source index and that recorded printed pages match it.",
+          "evidence": "tools/validate_knowledge.py: lesson-source-section-exists and lesson-source-anchor-page-matches-index pass for section 4.6 (p.129) and 10.4 (p.333). Eckart and Young (1936) is cited as the source's own reference; the paper was not retrieved, so no claim is made about its contents beyond the theorem's attribution.",
+          "not_checked": "Whether the source supports each claim; that is source_fidelity, which is not run."
+        },
+        {
+          "name": "interactive_correctness",
+          "status": "partial",
+          "method": "The demonstration's data was verified end to end: the stored factors were confirmed to be an orthogonal SVD of the stored matrix, and every figure the component displays (error, spectral error, storage ratio, energy) was recomputed and compared with the file. The component itself was type-checked, built, and confirmed to render its loader in the served page.",
+          "evidence": "check_gram_matrix_and_demo_integrity and check_ex03_demo_error_identities pass; the built page for LSN-MATH-08-01 contains the loader markup, and the component is behind a dynamic import so the 21 kB data file is not part of the lesson's initial payload. U and V orthogonality is 1.3e-6, limited by six-decimal storage and stated rather than hidden.",
+          "not_checked": "No browser test was run in this session. The slider interaction, canvas rendering at different device pixel ratios, and keyboard accessibility of the range input have not been exercised by anything other than a type check and a build."
+        },
+        {
+          "name": "publication_integrity",
+          "status": "partial",
+          "method": "The application was built and the lesson served; the rendered page was inspected for KaTeX output (14 display equations on this lesson), the exercise table, and the interactive loader. A production build was run and the route's payload size checked. Status is partial rather than passed because a build and an HTML inspection are not a visual review.",
+          "evidence": "HTTP 200 for the lesson route, KaTeX elements present in the served HTML, the trade-off table present, and the lesson's 24 mathematically checked figures match the content file. The reservation: no visual review was performed, so typography, table overflow at narrow widths, and the printed-page citations' readability are untested.",
+          "not_checked": "Visual review, responsive layout, and the internal anchor links from the practice table to the solution sections."
+        }
+      ],
+      "unresolved_issues": [
+        {
+          "issue": "The competency's second outcome asks for the best rank-k approximation in the Frobenius norm, and the supplied source does not state or prove the Frobenius case (the word 'Frobenius' does not occur in it).",
+          "next_action": "Obtain a numerical-linear-algebra source that proves the Frobenius-norm optimality (von Neumann trace inequality or equivalent) and either add the proof to this lesson or record the outcome as out of scope until then. Until that happens, MATH-08 remains partly sourced in coverage.json.",
+          "severity": "blocking"
+        },
+        {
+          "issue": "No human has read MML 4.6 and 10.4 against this lesson.",
+          "next_action": "A reviewer with the book open checks Part 1.3 and Part 5 against the source, in particular the claim that the source states Theorem 4.25 without proof and cites Eckart and Young for it.",
+          "severity": "blocking"
+        },
+        {
+          "issue": "The interactive component has not been tested in a browser.",
+          "next_action": "Load the lesson in a browser, move the slider across the full range including k = 0 and k = 24, and check the canvas at a high device pixel ratio and at a narrow viewport; then raise interactive_correctness from partial.",
+          "severity": "minor"
+        }
+      ],
+      "evidence_files": {
+        "checks_report": "knowledge/lessons/checks-report.json",
+        "checks_source": "content/checks/math08_lowrank_checks.py",
+        "solutions": "content/solutions/MATH-08-01-solutions.md",
+        "demo_data": "content/demos/rank-truncation.json",
+        "demo_builder": "tools/build_demo_data.py"
+      },
+      "_file": "content/verification/LSN-MATH-08-01.json",
+      "_sha256": "d950405804c0794bd4addde0fb58c5d43167a1de57b176092e7833fe9eb8619b"
+    }
+  ],
+  "placeholders": {
+    "path": "content/curriculum/placeholders.json",
+    "count": 59,
+    "by_domain": {
+      "PROG": 8,
+      "DATA": 10,
+      "CS": 4,
+      "MATH": 1,
+      "ML": 4,
+      "CAREER": 4,
+      "SWE": 7,
+      "PROD": 7,
+      "DL": 8,
+      "GEN": 6
+    }
   },
-  "verification_record_schema": {
-    "id": "VER-<LESSON-ID>-<NN>",
-    "lesson_id": "string",
-    "checks": [
-      {"name": "source_fidelity | technical_correctness | mathematical_validity | pedagogical_completeness | prerequisite_integrity | assessment_integrity | citation_integrity | interactive_correctness | publication_integrity", "status": "not_run | passed | failed | not_applicable | blocked", "method": "what was actually done", "evidence": "what the check produced", "not_checked": "what the method cannot establish"}
-    ],
-    "outcome": "verified | needs_revision",
-    "unresolved_issues": ["each with an owner-action and a next step"],
-    "reviewed_on": "date"
-  },
-  "lessons": [],
-  "exercises": [],
-  "verification_records": [],
   "current_state": {
-    "lessons_authored": 0,
-    "exercises_authored": 0,
+    "lessons_authored": 3,
+    "exercises_authored": 20,
+    "lessons_with_verification_records": 3,
     "lessons_verified": 0,
-    "note": "No lesson has been written. Any interface built in the next phase must render this state honestly rather than presenting the curriculum model as if it were course content."
-  }
+    "topics_with_placeholders": 59,
+    "note": "Read this before making any claim about the platform. 3 lesson(s) exist; 0 of them are verified. The rest are marked as needing revision because at least one core check — usually source fidelity, which needs a human reader — has not been performed."
+  },
+  "problems": []
 }

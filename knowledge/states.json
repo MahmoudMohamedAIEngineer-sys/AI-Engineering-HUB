@@ -40,17 +40,58 @@
       "out_of_scope": "Deliberately not part of the current learning path; the reason is recorded."
     },
     "allowed_transitions": {
-      "identified": ["gap_under_review", "awaiting_sources", "out_of_scope"],
-      "gap_under_review": ["awaiting_sources", "out_of_scope", "sources_indexed"],
-      "awaiting_sources": ["sources_indexed", "out_of_scope", "gap_under_review"],
-      "sources_indexed": ["content_in_development", "awaiting_sources", "stale"],
-      "content_in_development": ["in_verification", "needs_revision", "stale"],
-      "in_verification": ["verified", "needs_revision", "stale"],
-      "verified": ["published", "needs_revision", "stale"],
-      "published": ["needs_revision", "stale"],
-      "needs_revision": ["content_in_development", "in_verification", "stale"],
-      "stale": ["sources_indexed", "content_in_development", "in_verification"],
-      "out_of_scope": ["gap_under_review"]
+      "identified": [
+        "gap_under_review",
+        "awaiting_sources",
+        "out_of_scope"
+      ],
+      "gap_under_review": [
+        "awaiting_sources",
+        "out_of_scope",
+        "sources_indexed"
+      ],
+      "awaiting_sources": [
+        "sources_indexed",
+        "out_of_scope",
+        "gap_under_review"
+      ],
+      "sources_indexed": [
+        "content_in_development",
+        "awaiting_sources",
+        "stale"
+      ],
+      "content_in_development": [
+        "in_verification",
+        "needs_revision",
+        "stale"
+      ],
+      "in_verification": [
+        "verified",
+        "needs_revision",
+        "stale"
+      ],
+      "verified": [
+        "published",
+        "needs_revision",
+        "stale"
+      ],
+      "published": [
+        "needs_revision",
+        "stale"
+      ],
+      "needs_revision": [
+        "content_in_development",
+        "in_verification",
+        "stale"
+      ],
+      "stale": [
+        "sources_indexed",
+        "content_in_development",
+        "in_verification"
+      ],
+      "out_of_scope": [
+        "gap_under_review"
+      ]
     },
     "transition_rules": [
       "sources_indexed requires: at least one source registered in knowledge/sources with a hash, and a section-level mapping for the item.",
@@ -74,10 +115,18 @@
   },
   "verification_status": {
     "description": "Outcome of an individual check, so that partial verification is representable.",
-    "values": ["not_run", "passed", "failed", "not_applicable", "blocked"],
+    "values": [
+      "not_run",
+      "passed",
+      "failed",
+      "not_applicable",
+      "blocked",
+      "partial"
+    ],
     "blocked_examples": [
       "Code execution unavailable in the checking environment.",
       "A cited external source could not be retrieved; its content is not asserted."
-    ]
+    ],
+    "partial_definition": "Some of the check's criteria were met and the unmet part is named in the record. 'partial' is never treated as a pass: a verification record whose outcome is 'verified' may not contain a partial or not_run core check."
   }
 }

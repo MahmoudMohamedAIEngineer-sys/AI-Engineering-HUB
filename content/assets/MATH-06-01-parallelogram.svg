@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" width="360" height="300" role="img" aria-labelledby="title desc">
+  <title id="title">The unit square mapped by the matrix A with columns (2,1) and (1,2)</title>
+  <desc id="desc">The unit square has area 1. Its image under A is the parallelogram spanned by the
+  two columns, with area 3. The area has been multiplied by the determinant of A, which is 3.</desc>
+
+  <style>
+    .grid { stroke: #d8d8d2; stroke-width: 1; }
+    .axis { stroke: #9a9a92; stroke-width: 1.25; }
+    .unit { fill: rgba(37, 99, 235, 0.16); stroke: #2563eb; stroke-width: 1.75; }
+    .image { fill: rgba(217, 119, 6, 0.14); stroke: #d97706; stroke-width: 1.75; }
+    .label { font: 500 11px ui-sans-serif, system-ui, sans-serif; fill: #1c1917; }
+    .muted { font: 400 10.5px ui-sans-serif, system-ui, sans-serif; fill: #57534e; }
+    .vector { stroke-width: 1.75; }
+  </style>
+
+  <!-- grid -->
+  <g class="grid">
+    <line x1="60" y1="80" x2="60" y2="260"/><line x1="120" y1="80" x2="120" y2="260"/>
+    <line x1="180" y1="80" x2="180" y2="260"/><line x1="240" y1="80" x2="240" y2="260"/>
+    <line x1="300" y1="80" x2="300" y2="260"/>
+    <line x1="60" y1="80" x2="300" y2="80"/><line x1="60" y1="140" x2="300" y2="140"/>
+    <line x1="60" y1="200" x2="300" y2="200"/><line x1="60" y1="260" x2="300" y2="260"/>
+  </g>
+
+  <!-- axes -->
+  <g class="axis">
+    <line x1="60" y1="60" x2="60" y2="272"/>
+    <line x1="48" y1="260" x2="312" y2="260"/>
+  </g>
+  <text class="muted" x="316" y="264">x₁</text>
+  <text class="muted" x="46" y="56">x₂</text>
+
+  <!-- image parallelogram: vertices 0, u=(2,1), u+v=(3,3), v=(1,2) -->
+  <polygon class="image" points="60,260 180,200 240,80 120,140"/>
+
+  <!-- unit square -->
+  <polygon class="unit" points="60,260 120,260 120,200 60,200"/>
+
+  <!-- column vectors of A, drawn from the origin -->
+  <g class="vector">
+    <line x1="60" y1="260" x2="180" y2="200" stroke="#b45309"/>
+    <line x1="60" y1="260" x2="120" y2="140" stroke="#b45309"/>
+  </g>
+
+  <!-- labels -->
+  <text class="label" x="126" y="272">e₁</text>
+  <text class="label" x="52" y="192">e₂</text>
+
+  <text class="label" x="188" y="196" fill="#b45309">a₁ = (2, 1)</text>
+  <text class="label" x="60" y="128" fill="#b45309">a₂ = (1, 2)</text>
+
+  <text class="muted" x="62" y="284">unit square, area 1</text>
+  <text class="muted" x="62" y="296" fill="#b45309">image, area |det A| = 3</text>
+</svg>

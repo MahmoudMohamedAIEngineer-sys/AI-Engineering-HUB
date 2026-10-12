@@ -1,0 +1,2117 @@
+{
+  "version": "1.1.0",
+  "generated_by": "tools/build_content_index.py",
+  "generated_at": "2026-10-12",
+  "purpose": "Records every competency that cannot yet be taught, with the reason, the source it is waiting for, and its place in the user's own roadmap. These entries are what the interface shows while a topic has no material.",
+  "counts": {
+    "placeholders": 59,
+    "by_domain": {
+      "PROG": 8,
+      "DATA": 10,
+      "CS": 4,
+      "MATH": 1,
+      "ML": 4,
+      "CAREER": 4,
+      "SWE": 7,
+      "PROD": 7,
+      "DL": 8,
+      "GEN": 6
+    },
+    "unsourced_competencies_total": 60,
+    "unsourced_with_lessons": 1
+  },
+  "rule": "Placeholders cover every competency that is not fully sourced and has no lesson. A competency that is partly sourced and already has a lesson is listed under 'partly_covered_with_lessons' with what is still outstanding, because it is no longer an empty slot.",
+  "placeholders": [
+    {
+      "competency_id": "PROG-01",
+      "title": "Python language fundamentals and idioms",
+      "domain": "PROG",
+      "target_level": "applied",
+      "why_it_matters": "Python is the working language of nearly every AI role, and its idioms differ from those of the languages most learners arrive from.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A programming source (roadmap nominates Python Crash Course; the free Harvard CS50P and one paid course are also recorded)"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-01",
+          "name": "Python Programming",
+          "phase": "Foundation",
+          "study_days": 14,
+          "what_you_learn": "variables, loops, functions, OOP, file I/O, modules, error handling, list comprehensions, virtual environments, package management with pip. The goal is to write clean, idiomatic Python that runs correctly and can be read by others."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 1,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROG-03",
+      "title": "Error handling, debugging and logging",
+      "domain": "PROG",
+      "target_level": "applied",
+      "why_it_matters": "Failing clearly and diagnosing quickly is a larger part of professional work than writing new code.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A source covering Python exception design, the standard debugger and structured logging"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-01",
+          "name": "Python Programming",
+          "phase": "Foundation",
+          "study_days": 14,
+          "what_you_learn": "variables, loops, functions, OOP, file I/O, modules, error handling, list comprehensions, virtual environments, package management with pip. The goal is to write clean, idiomatic Python that runs correctly and can be read by others."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 1,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROG-08",
+      "title": "Functional programming tools in Python",
+      "domain": "PROG",
+      "target_level": "working",
+      "why_it_matters": "Mapping, filtering, reducing and immutability reduce whole classes of bugs in data-processing code.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Python functional-programming material"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-01",
+          "name": "Python Programming",
+          "phase": "Foundation",
+          "study_days": 14,
+          "what_you_learn": "variables, loops, functions, OOP, file I/O, modules, error handling, list comprehensions, virtual environments, package management with pip. The goal is to write clean, idiomatic Python that runs correctly and can be read by others."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 1,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-01",
+      "title": "SQL and query reasoning",
+      "domain": "DATA",
+      "target_level": "applied",
+      "why_it_matters": "Almost all data access in a production system ends in a query, and query correctness is a reasoning skill rather than a syntax skill.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A SQL source with real datasets (roadmap nominates Practical SQL, plus the SQLZoo and Mode tutorials)"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-02",
+          "name": "SQL",
+          "phase": "Foundation",
+          "study_days": 10,
+          "what_you_learn": "SELECT, filtering, JOINs (inner/left/right/full), GROUP BY, aggregations, subqueries, CTEs (WITH clauses), window functions (ROW_NUMBER, LAG, LEAD, RANK), query optimization basics, indexes, and EXPLAIN plans."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 2,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "CS-03",
+      "title": "Vectorised numeric computing",
+      "domain": "CS",
+      "target_level": "applied",
+      "why_it_matters": "Almost all machine-learning computation is expressed as array operations whose performance and correctness depend on shape and broadcasting rules.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "NumPy documentation and exercises"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-03",
+          "name": "Linear Algebra",
+          "phase": "Foundation",
+          "study_days": 7,
+          "what_you_learn": "vectors and vector spaces, matrix operations (add, multiply, transpose), linear transformations, eigenvalues and eigenvectors, matrix decomposition (SVD, PCA), dot products, norms, and how these operations map to neural network computations."
+        },
+        {
+          "skill": "SK-29",
+          "name": "PyTorch",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "tensors (creation, manipulation, broadcasting), autograd and computational graphs, nn.Module and nn.Sequential, custom Dataset and DataLoader, training loops with optimizer.step(), model saving/loading, moving models to GPU, torchvision, and debugging PyTorch models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 3,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "CS-04",
+      "title": "Implementing learning algorithms from first principles",
+      "domain": "CS",
+      "target_level": "applied",
+      "why_it_matters": "Implementing an algorithm once from its mathematics is what converts a definition into understanding, and it is the fastest way to find out whether you actually followed the derivation.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "None for the mathematics; the exercises must be authored, since the source's own exercise sets have no supplied solutions"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-03",
+          "name": "Linear Algebra",
+          "phase": "Foundation",
+          "study_days": 7,
+          "what_you_learn": "vectors and vector spaces, matrix operations (add, multiply, transpose), linear transformations, eigenvalues and eigenvectors, matrix decomposition (SVD, PCA), dot products, norms, and how these operations map to neural network computations."
+        },
+        {
+          "skill": "SK-27",
+          "name": "Classical Machine Learning",
+          "phase": "AI/ML Core",
+          "study_days": 10,
+          "what_you_learn": "linear/logistic regression, decision trees, random forests, gradient boosting (XGBoost/LightGBM), SVMs, k-means clustering, PCA, cross-validation, regularization (L1/L2), hyperparameter tuning with Scikit-learn's Pipeline API, and when to reach for deep learning vs classical methods."
+        },
+        {
+          "skill": "SK-29",
+          "name": "PyTorch",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "tensors (creation, manipulation, broadcasting), autograd and computational graphs, nn.Module and nn.Sequential, custom Dataset and DataLoader, training loops with optimizer.step(), model saving/loading, moving models to GPU, torchvision, and debugging PyTorch models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 3,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "MATH-19",
+      "title": "Numerical stability, conditioning and floating-point behaviour",
+      "domain": "MATH",
+      "target_level": "applied",
+      "why_it_matters": "The difference between a method that works on paper and one that works on a computer is conditioning, precision and algorithm cost.",
+      "declared_source_status": "partial",
+      "source_status_explanation": "The supplied book contributes to this topic but does not complete it. A supplemental source is required for the parts listed below.",
+      "supplemental_needed": [
+        "A numerical-linear-algebra reference covering floating-point analysis, condition numbers, pivoting and the cost of decompositions"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-03",
+          "name": "Linear Algebra",
+          "phase": "Foundation",
+          "study_days": 7,
+          "what_you_learn": "vectors and vector spaces, matrix operations (add, multiply, transpose), linear transformations, eigenvalues and eigenvectors, matrix decomposition (SVD, PCA), dot products, norms, and how these operations map to neural network computations."
+        },
+        {
+          "skill": "SK-08",
+          "name": "Algorithms & Big-O",
+          "phase": "Foundation",
+          "study_days": 12,
+          "what_you_learn": "time and space complexity analysis, O(1)/O(log n)/O(n)/O(n log n)/O(n²) intuition, sorting algorithms (merge, quick, heap), searching (binary search, BFS, DFS), dynamic programming, greedy algorithms, backtracking, and two-pointer / sliding window patterns."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 3,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "ML-03",
+      "title": "Evaluation metrics and their limitations",
+      "domain": "ML",
+      "target_level": "applied",
+      "why_it_matters": "Every metric encodes a value judgement, and an inappropriate metric produces a model that is good at the wrong thing.",
+      "declared_source_status": "partial",
+      "source_status_explanation": "The supplied book contributes to this topic but does not complete it. A supplemental source is required for the parts listed below.",
+      "supplemental_needed": [
+        "Calibration, ranking metrics, imbalanced-data metrics and class-threshold selection"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-04",
+          "name": "Probability & Statistics",
+          "phase": "Foundation",
+          "study_days": 7,
+          "what_you_learn": "probability rules, conditional probability, Bayes' theorem, common distributions (Normal, Binomial, Poisson), expectation and variance, hypothesis testing, p-values, confidence intervals, maximum likelihood estimation, and statistical intuition for ML models."
+        },
+        {
+          "skill": "SK-32",
+          "name": "Model Evaluation & Metrics",
+          "phase": "AI/ML Core",
+          "study_days": 4,
+          "what_you_learn": "classification metrics (accuracy, precision, recall, F1, AUC-ROC, AUC-PR), regression metrics (MAE, MSE, RMSE, R²), confusion matrix, cross-validation strategies (k-fold, stratified, time-series), calibration, statistical significance testing for model comparisons, and offline vs online evaluation frameworks."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 4,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "CAREER-02",
+      "title": "Code review and collaborative practice",
+      "domain": "CAREER",
+      "target_level": "working",
+      "why_it_matters": "Most professional code is written in a review loop, and the review is where design and correctness errors are caught cheaply.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Review practice guidance from a reputable engineering organization"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-05",
+          "name": "Git & Version Control",
+          "phase": "Foundation",
+          "study_days": 3,
+          "what_you_learn": "init, add, commit, push/pull, branches, merge vs rebase, resolving conflicts, pull request workflow, cherry-pick, interactive rebase, stash, tags, GitHub/GitLab best practices, commit message conventions, and .gitignore strategies."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 5,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROG-07",
+      "title": "Version control and collaborative workflow",
+      "domain": "PROG",
+      "target_level": "working",
+      "why_it_matters": "Every artefact of this platform, and of any real project, is managed through version control, including the reviewing of other people's changes.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A Git reference (the roadmap nominates Pro Git) plus the interactive branching tutorial"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-05",
+          "name": "Git & Version Control",
+          "phase": "Foundation",
+          "study_days": 3,
+          "what_you_learn": "init, add, commit, push/pull, branches, merge vs rebase, resolving conflicts, pull request workflow, cherry-pick, interactive rebase, stash, tags, GitHub/GitLab best practices, commit message conventions, and .gitignore strategies."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 5,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROG-04",
+      "title": "Environments, packaging and the shell",
+      "domain": "PROG",
+      "target_level": "working",
+      "why_it_matters": "Reproducing your own results a month later depends on controlling interpreters, dependencies and the command line.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Shell and Linux material, plus packaging tooling documentation"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-06",
+          "name": "Linux / Command Line",
+          "phase": "Foundation",
+          "study_days": 4,
+          "what_you_learn": "filesystem navigation, file manipulation (cp/mv/rm/chmod), pipes and redirection, grep/awk/sed, environment variables, bash scripting (conditionals, loops, functions), process management (ps/kill/top), SSH, cron jobs, and package management (apt/brew)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 6,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "CS-01",
+      "title": "Core data structures and their complexity",
+      "domain": "CS",
+      "target_level": "applied",
+      "why_it_matters": "Choosing the wrong container is one of the most common causes of slow code, and it is a standard interview screen.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A data-structures source, plus practice problems"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-07",
+          "name": "Data Structures",
+          "phase": "Foundation",
+          "study_days": 10,
+          "what_you_learn": "arrays, dynamic arrays, linked lists (single/double), stacks, queues, hash maps, sets, trees (binary, BST, AVL), heaps (min/max), graphs (adjacency list/matrix), tries, and when to use each. Implement from scratch in Python before using built-ins."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 7,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "CS-02",
+      "title": "Algorithm design paradigms and complexity analysis",
+      "domain": "CS",
+      "target_level": "applied",
+      "why_it_matters": "Complexity analysis predicts whether a pipeline or training loop will finish, before it is run at scale.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "An algorithms source and a problem-practice schedule"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-08",
+          "name": "Algorithms & Big-O",
+          "phase": "Foundation",
+          "study_days": 12,
+          "what_you_learn": "time and space complexity analysis, O(1)/O(log n)/O(n)/O(n log n)/O(n²) intuition, sorting algorithms (merge, quick, heap), searching (binary search, BFS, DFS), dynamic programming, greedy algorithms, backtracking, and two-pointer / sliding window patterns."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 8,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Foundation",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROG-02",
+      "title": "Modular design and the Python data model",
+      "domain": "PROG",
+      "target_level": "applied",
+      "why_it_matters": "Code that has to be read, tested and extended later needs explicit boundaries; design patterns are tools for that, not decoration.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A design-patterns source for Python (object-oriented and functional styles)"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-09",
+          "name": "Design Patterns & SOLID",
+          "phase": "SWE Core",
+          "study_days": 6,
+          "what_you_learn": "SOLID principles (Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion), GoF patterns (Factory, Strategy, Observer, Decorator, Singleton, Command, Adapter, Facade), and when to apply or intentionally avoid each."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 9,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "SWE-01",
+      "title": "Service and API design",
+      "domain": "SWE",
+      "target_level": "applied",
+      "why_it_matters": "An ML capability becomes useful only when another system can call it under load and get an answer it can act on.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Web framework documentation (the roadmap nominates FastAPI or Django) and an API-design reference"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-10",
+          "name": "Web Frameworks (FastAPI / Django)",
+          "phase": "SWE Core",
+          "study_days": 8,
+          "what_you_learn": "RESTful API design, routing, request/response lifecycle, middleware, dependency injection (FastAPI), ORM and database migrations, authentication/sessions, background tasks, OpenAPI/Swagger auto-docs, and deploying Python web apps to production."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 10,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROG-05",
+      "title": "Testing and test-driven development",
+      "domain": "PROG",
+      "target_level": "applied",
+      "why_it_matters": "Tests are the mechanism by which a claim about code becomes checkable, including for numerical code where correctness is not binary.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A testing source covering pytest and property-based testing"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-11",
+          "name": "Testing & TDD",
+          "phase": "SWE Core",
+          "study_days": 5,
+          "what_you_learn": "unit vs integration vs end-to-end tests, pytest fixtures, parametrize, mocking with unittest.mock, test coverage, property-based testing with Hypothesis, TDD red-green-refactor cycle, testing FastAPI/Django endpoints, and writing tests that don't break with every refactor."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 11,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "SWE-02",
+      "title": "Containers and reproducible runtime environments",
+      "domain": "SWE",
+      "target_level": "applied",
+      "why_it_matters": "A container is the unit in which a model, its dependencies and its runtime configuration travel together.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Docker documentation and an exercise on reproducing a training environment"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-12",
+          "name": "Docker & Kubernetes",
+          "phase": "SWE Core",
+          "study_days": 7,
+          "what_you_learn": "Dockerfile authoring, image layers, docker-compose for multi-service apps, container networking, volumes, environment management, Kubernetes pods/deployments/services, ConfigMaps/Secrets, ingress controllers, resource limits, and basic cluster operations with kubectl."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 12,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "SWE-07",
+      "title": "Container orchestration and deployment operations",
+      "domain": "SWE",
+      "target_level": "working",
+      "why_it_matters": "Serving a model at varying load requires scheduling, scaling and rollout control that a single container cannot provide.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Kubernetes documentation and a local-cluster exercise"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-12",
+          "name": "Docker & Kubernetes",
+          "phase": "SWE Core",
+          "study_days": 7,
+          "what_you_learn": "Dockerfile authoring, image layers, docker-compose for multi-service apps, container networking, volumes, environment management, Kubernetes pods/deployments/services, ConfigMaps/Secrets, ingress controllers, resource limits, and basic cluster operations with kubectl."
+        },
+        {
+          "skill": "SK-44",
+          "name": "Kubernetes Advanced / Helm",
+          "phase": "Specialization",
+          "study_days": 7,
+          "what_you_learn": "Helm chart authoring, templating, values files, chart repositories, RBAC (service accounts, roles, cluster roles), network policies, StatefulSets, persistent volumes, HPA/VPA for autoscaling, Kubernetes operators, GitOps with ArgoCD/Flux, admission controllers, and securing production clusters."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 12,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "SWE-03",
+      "title": "Continuous integration and delivery",
+      "domain": "SWE",
+      "target_level": "applied",
+      "why_it_matters": "Automatic checking is what makes it possible to keep changing a system without breaking it, including the educational content in this repository.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "CI/CD documentation and a worked pipeline"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-13",
+          "name": "CI/CD Pipelines",
+          "phase": "SWE Core",
+          "study_days": 4,
+          "what_you_learn": "GitHub Actions workflow YAML, triggers (push/PR/schedule), job dependencies, secrets management, build-test-deploy automation, Docker image build and push, environment-specific deployments, rollback strategies, and blue-green/canary deployment concepts."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 13,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROD-05",
+      "title": "Security, privacy and governance for AI systems",
+      "domain": "PROD",
+      "target_level": "working",
+      "why_it_matters": "AI systems process data with legal and ethical constraints, and the failure modes include prompt injection as well as classic data exposure.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "OWASP LLM guidance and current regulatory summaries, dated, with the caveat that this area changes"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-14",
+          "name": "Security (OWASP / Auth)",
+          "phase": "SWE Core",
+          "study_days": 5,
+          "what_you_learn": "OWASP Top 10 (injection, XSS, broken auth, IDOR, etc.), JWT structure and validation, OAuth 2.0 flows, API key management, password hashing (bcrypt/argon2), HTTPS/TLS basics, CORS, input validation/sanitization, and secure coding practices."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 14,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "SWE-04",
+      "title": "Application security and authentication",
+      "domain": "SWE",
+      "target_level": "working",
+      "why_it_matters": "Every deployed AI capability is an attack surface, and the failure of the most common web vulnerabilities is not subtle.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "OWASP material and framework authentication documentation"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-14",
+          "name": "Security (OWASP / Auth)",
+          "phase": "SWE Core",
+          "study_days": 5,
+          "what_you_learn": "OWASP Top 10 (injection, XSS, broken auth, IDOR, etc.), JWT structure and validation, OAuth 2.0 flows, API key management, password hashing (bcrypt/argon2), HTTPS/TLS basics, CORS, input validation/sanitization, and secure coding practices."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 14,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROG-06",
+      "title": "Concurrency, parallelism and asynchrony",
+      "domain": "PROG",
+      "target_level": "working",
+      "why_it_matters": "Data loading, serving and evaluation are all dominated by waiting; the wrong concurrency model wastes most of the available throughput.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Python concurrency material (asyncio, threading, multiprocessing) matching the current interpreter version"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-15",
+          "name": "Async Programming",
+          "phase": "SWE Core",
+          "study_days": 5,
+          "what_you_learn": "Python asyncio, async/await syntax, event loops, coroutines vs threads vs processes, concurrent.futures, aiohttp for async HTTP, async database drivers, task groups, semaphores for concurrency limiting, and when to use async vs threading vs multiprocessing."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 15,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "SWE-05",
+      "title": "Distributed systems reasoning",
+      "domain": "SWE",
+      "target_level": "working",
+      "why_it_matters": "Anything that has to survive a machine disappearing is a distributed system, whether or not it was designed as one.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A distributed-systems source; the roadmap places this in the specialisation phase"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-16",
+          "name": "System Design",
+          "phase": "SWE Core",
+          "study_days": 10,
+          "what_you_learn": "load balancing (L4/L7), horizontal vs vertical scaling, caching strategies (CDN, Redis, write-through/around/back), database sharding, consistent hashing, CAP theorem, SQL vs NoSQL trade-offs, message queues, rate limiting, and designing real systems (URL shortener, YouTube, Twitter)."
+        },
+        {
+          "skill": "SK-40",
+          "name": "Distributed Systems (Advanced)",
+          "phase": "Specialization",
+          "study_days": 10,
+          "what_you_learn": "CAP theorem in practice, consistency models (linearizability, eventual, causal), distributed transactions (2PC, Saga), consensus algorithms (Raft, Paxos intuition), leader election, distributed clocks (vector clocks, Lamport timestamps), partition handling strategies, and designing for failure (circuit breakers, bulkheads, timeouts)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 16,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "SWE-06",
+      "title": "System design for AI applications",
+      "domain": "SWE",
+      "target_level": "applied",
+      "why_it_matters": "The interview and the job both ask for a defensible end-to-end design, not a list of components.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "System-design material plus AI-specific case studies"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-16",
+          "name": "System Design",
+          "phase": "SWE Core",
+          "study_days": 10,
+          "what_you_learn": "load balancing (L4/L7), horizontal vs vertical scaling, caching strategies (CDN, Redis, write-through/around/back), database sharding, consistent hashing, CAP theorem, SQL vs NoSQL trade-offs, message queues, rate limiting, and designing real systems (URL shortener, YouTube, Twitter)."
+        },
+        {
+          "skill": "SK-40",
+          "name": "Distributed Systems (Advanced)",
+          "phase": "Specialization",
+          "study_days": 10,
+          "what_you_learn": "CAP theorem in practice, consistency models (linearizability, eventual, causal), distributed transactions (2PC, Saga), consensus algorithms (Raft, Paxos intuition), leader election, distributed clocks (vector clocks, Lamport timestamps), partition handling strategies, and designing for failure (circuit breakers, bulkheads, timeouts)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 16,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "SWE Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-05",
+      "title": "Distributed batch processing",
+      "domain": "DATA",
+      "target_level": "working",
+      "why_it_matters": "Data that does not fit on one machine requires reasoning about partitioning and shuffles rather than about Python.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Spark documentation and hands-on datasets"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-17",
+          "name": "Apache Spark / PySpark",
+          "phase": "Data Engineering",
+          "study_days": 10,
+          "what_you_learn": "Spark architecture (driver/executors/DAG), RDDs vs DataFrames vs Datasets, transformations vs actions, lazy evaluation, PySpark DataFrame API, Spark SQL, partitioning strategies, shuffle optimization, reading/writing Parquet/Delta, and running Spark on YARN/Kubernetes."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 17,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Data Engineering",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-06",
+      "title": "Streaming data systems",
+      "domain": "DATA",
+      "target_level": "working",
+      "why_it_matters": "Event-driven systems change the correctness question from 'is the batch complete' to 'how do I reason about time'.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Streaming material covering event time, windowing and delivery guarantees"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-18",
+          "name": "Apache Kafka",
+          "phase": "Data Engineering",
+          "study_days": 8,
+          "what_you_learn": "Kafka architecture (brokers, topics, partitions, offsets), producer/consumer APIs, consumer groups, replication and fault tolerance, Kafka Connect for source/sink connectors, Kafka Streams for lightweight stream processing, schema registry with Avro, and deploying Kafka with Docker."
+        },
+        {
+          "skill": "SK-41",
+          "name": "Streaming Systems (Flink / Spark Streaming)",
+          "phase": "Specialization",
+          "study_days": 8,
+          "what_you_learn": "streaming vs micro-batch architecture, event time vs processing time, watermarks and late data handling, windows (tumbling, sliding, session), stateful stream processing, Apache Flink (DataStream API, Table API), Spark Structured Streaming, exactly-once semantics, and stream-table join patterns."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 18,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Data Engineering",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-02",
+      "title": "Relational and dimensional data modelling",
+      "domain": "DATA",
+      "target_level": "working",
+      "why_it_matters": "The shape of the data model determines which questions can be answered cheaply and which become ambiguous.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A dimensional-modelling source (the roadmap nominates Kimball-style material)"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-23",
+          "name": "Dimensional Modeling (Kimball)",
+          "phase": "Data Engineering",
+          "study_days": 6,
+          "what_you_learn": "fact vs dimension tables, star schema vs snowflake schema, slowly changing dimensions (SCD Types 1/2/3), grain definition, degenerate dimensions, junk dimensions, date dimensions, bridge tables, factless fact tables, and the Kimball lifecycle methodology."
+        },
+        {
+          "skill": "SK-19",
+          "name": "Data Warehouses (Snowflake / BigQuery / Redshift)",
+          "phase": "Data Engineering",
+          "study_days": 7,
+          "what_you_learn": "MPP (massively parallel processing) architecture, columnar storage, partitioning and clustering, query optimization for analytical workloads, virtual warehouses (Snowflake), materialized views, Time Travel, data sharing, cost optimization, and warehouse vs data lake trade-offs."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 19,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Data Engineering",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-10",
+      "title": "Cloud platforms for data and ML",
+      "domain": "DATA",
+      "target_level": "working",
+      "why_it_matters": "The platform supplies identity, storage, compute and networking, and misconfiguring them is both a cost and a security problem.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Official cloud documentation for one provider, dated, plus a cost-modelling exercise"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-19",
+          "name": "Data Warehouses (Snowflake / BigQuery / Redshift)",
+          "phase": "Data Engineering",
+          "study_days": 7,
+          "what_you_learn": "MPP (massively parallel processing) architecture, columnar storage, partitioning and clustering, query optimization for analytical workloads, virtual warehouses (Snowflake), materialized views, Time Travel, data sharing, cost optimization, and warehouse vs data lake trade-offs."
+        },
+        {
+          "skill": "SK-26",
+          "name": "Cloud Platforms (AWS / GCP / Azure)",
+          "phase": "Data Engineering",
+          "study_days": 8,
+          "what_you_learn": "core compute (EC2/Cloud Run/VMs), object storage (S3/GCS/ADLS), IAM and permissions, networking (VPC, subnets, security groups), managed databases (RDS/Cloud SQL), serverless functions (Lambda/Cloud Functions), container registries, and cost management basics. Pick one cloud deeply."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 19,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Data Engineering",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-03",
+      "title": "Batch pipelines and ETL/ELT design",
+      "domain": "DATA",
+      "target_level": "applied",
+      "why_it_matters": "Most production data defects originate in the pipeline rather than in the model.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "An ELT/ETL source and orchestration tooling documentation"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-20",
+          "name": "ETL / ELT Pipelines",
+          "phase": "Data Engineering",
+          "study_days": 6,
+          "what_you_learn": "ETL vs ELT architectural differences, incremental vs full-load strategies, idempotency and exactly-once semantics, CDC (change data capture), Airbyte and Fivetran for ingestion, data lineage, backfilling strategies, error handling and dead-letter queues, and pipeline observability."
+        },
+        {
+          "skill": "SK-22",
+          "name": "dbt (data build tool)",
+          "phase": "Data Engineering",
+          "study_days": 5,
+          "what_you_learn": "dbt project structure, models (SQL SELECT statements as tables/views), ref() and source() macros, materializations (table/view/incremental/ephemeral), tests (unique, not_null, accepted_values, relationships), documentation, Jinja templating, seeds, snapshots, and dbt Cloud vs dbt Core."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 20,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Data Engineering",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-04",
+      "title": "Workflow orchestration and scheduling",
+      "domain": "DATA",
+      "target_level": "working",
+      "why_it_matters": "Production data work is a dependency graph running on a schedule, with failure and backfill as normal cases.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Airflow or equivalent orchestration documentation"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-21",
+          "name": "Apache Airflow",
+          "phase": "Data Engineering",
+          "study_days": 7,
+          "what_you_learn": "DAG structure (operators, tasks, dependencies), TaskFlow API, schedulers, sensors (FileSensor, HttpSensor), hooks (database connections), XCom for task communication, dynamic DAGs, testing DAGs with pytest, deploying on Docker/K8s, and Airflow 2.x best practices."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 21,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Data Engineering",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-07",
+      "title": "NoSQL and storage-engine selection",
+      "domain": "DATA",
+      "target_level": "awareness",
+      "why_it_matters": "Choosing a storage engine is choosing a consistency and access model, and the wrong choice cannot be fixed later.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A source covering document, key-value, wide-column and graph stores"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-24",
+          "name": "NoSQL Databases",
+          "phase": "Data Engineering",
+          "study_days": 6,
+          "what_you_learn": "document stores (MongoDB — CRUD, aggregation pipeline, indexing), wide-column stores (Cassandra — CQL, partition key design, replication), key-value stores (Redis — data types, TTL, pub/sub, caching patterns), and the CAP theorem trade-offs that determine which to use."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 24,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Data Engineering",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-08",
+      "title": "Data quality, validation and contracts",
+      "domain": "DATA",
+      "target_level": "applied",
+      "why_it_matters": "A model cannot be more trustworthy than the data it was fitted on, and silent data breaks are the most expensive failures in ML systems.",
+      "declared_source_status": "partial",
+      "source_status_explanation": "The supplied book contributes to this topic but does not complete it. A supplemental source is required for the parts listed below.",
+      "supplemental_needed": [
+        "Data-validation tooling and drift-detection methods"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-25",
+          "name": "Data Quality & Testing",
+          "phase": "Data Engineering",
+          "study_days": 4,
+          "what_you_learn": "data quality dimensions (completeness, accuracy, consistency, timeliness), Great Expectations (expectations, data docs, checkpoints), dbt tests, Soda Core for SQL-based quality checks, anomaly detection, data contracts, and building quality gates into pipelines before data reaches downstream consumers."
+        },
+        {
+          "skill": "SK-33",
+          "name": "Feature Engineering",
+          "phase": "AI/ML Core",
+          "study_days": 5,
+          "what_you_learn": "encoding categoricals (one-hot, target, embedding), scaling (standard, min-max, robust), handling missing data strategies, creating interaction features, time-series features (lag, rolling, Fourier), feature selection (mutual information, RFE), and feature stores (Feast, Tecton) for online/offline consistency."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 25,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Data Engineering",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "ML-02",
+      "title": "Supervised learning algorithms",
+      "domain": "ML",
+      "target_level": "applied",
+      "why_it_matters": "Choosing between linear regression, a margin-based classifier, a tree ensemble or a network is a decision with consequences that must be reasoned about.",
+      "declared_source_status": "partial",
+      "source_status_explanation": "The supplied book contributes to this topic but does not complete it. A supplemental source is required for the parts listed below.",
+      "supplemental_needed": [
+        "Tree-based ensembles, nearest-neighbour methods, and the applied comparison of classifiers; the book covers regression and SVM only"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-27",
+          "name": "Classical Machine Learning",
+          "phase": "AI/ML Core",
+          "study_days": 10,
+          "what_you_learn": "linear/logistic regression, decision trees, random forests, gradient boosting (XGBoost/LightGBM), SVMs, k-means clustering, PCA, cross-validation, regularization (L1/L2), hyperparameter tuning with Scikit-learn's Pipeline API, and when to reach for deep learning vs classical methods."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 27,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DL-01",
+      "title": "Neural network fundamentals",
+      "domain": "DL",
+      "target_level": "deep",
+      "why_it_matters": "A network is a composition of parameterised functions trained by gradient descent; without that reading, architecture diagrams are not interpretable.",
+      "declared_source_status": "partial",
+      "source_status_explanation": "The supplied book contributes to this topic but does not complete it. A supplemental source is required for the parts listed below.",
+      "supplemental_needed": [
+        "A deep-learning source covering architecture, training practice, activations and regularisation for networks"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-28",
+          "name": "Deep Learning Fundamentals",
+          "phase": "AI/ML Core",
+          "study_days": 10,
+          "what_you_learn": "perceptrons, activation functions (ReLU, sigmoid, softmax), forward pass, loss functions (MSE, cross-entropy), backpropagation chain rule, gradient descent (SGD, momentum, Adam, RMSprop), batch normalization, dropout, learning rate scheduling, and vanishing/exploding gradients."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 28,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DL-02",
+      "title": "Training dynamics and optimisation for deep networks",
+      "domain": "DL",
+      "target_level": "applied",
+      "why_it_matters": "Whether a model trains is governed by learning rates, initialisation, batch size and the shape of the loss surface.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A deep-learning source with an empirical treatment of optimisers, schedules and initialisation"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-28",
+          "name": "Deep Learning Fundamentals",
+          "phase": "AI/ML Core",
+          "study_days": 10,
+          "what_you_learn": "perceptrons, activation functions (ReLU, sigmoid, softmax), forward pass, loss functions (MSE, cross-entropy), backpropagation chain rule, gradient descent (SGD, momentum, Adam, RMSprop), batch normalization, dropout, learning rate scheduling, and vanishing/exploding gradients."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 28,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DL-03",
+      "title": "Deep learning frameworks and the training loop",
+      "domain": "DL",
+      "target_level": "applied",
+      "why_it_matters": "The framework is where the mathematics becomes a running system, including automatic differentiation, devices and data loading.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "PyTorch documentation and guided practice (the roadmap nominates PyTorch as a skill of its own)"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-29",
+          "name": "PyTorch",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "tensors (creation, manipulation, broadcasting), autograd and computational graphs, nn.Module and nn.Sequential, custom Dataset and DataLoader, training loops with optimizer.step(), model saving/loading, moving models to GPU, torchvision, and debugging PyTorch models."
+        },
+        {
+          "skill": "SK-35",
+          "name": "HuggingFace Ecosystem",
+          "phase": "AI/ML Core",
+          "study_days": 5,
+          "what_you_learn": "Transformers library (pipeline API, AutoModel/AutoTokenizer, Trainer API), Datasets library for efficient data loading, HuggingFace Hub (uploading/sharing models and datasets), PEFT library for efficient fine-tuning, Accelerate for distributed training, and Spaces for deploying Gradio/Streamlit ML demos."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 29,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DL-04",
+      "title": "Convolutional networks and computer vision",
+      "domain": "DL",
+      "target_level": "working",
+      "why_it_matters": "Vision models are the clearest case of architecture encoding an assumption about the data, which makes the inductive-bias reasoning transferable.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "A computer-vision source covering convolutional architectures, augmentation and transfer learning"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-30",
+          "name": "CNNs & Computer Vision",
+          "phase": "AI/ML Core",
+          "study_days": 7,
+          "what_you_learn": "convolution operation, filters/feature maps, pooling, CNN architectures (LeNet, VGG, ResNet, EfficientNet), transfer learning (freezing layers, fine-tuning), data augmentation with torchvision/albumentations, object detection (YOLO, Faster R-CNN), and image segmentation basics."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 30,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "ML-05",
+      "title": "Feature engineering and preprocessing",
+      "domain": "ML",
+      "target_level": "applied",
+      "why_it_matters": "The transformation applied to inputs often matters more than the choice of algorithm.",
+      "declared_source_status": "partial",
+      "source_status_explanation": "The supplied book contributes to this topic but does not complete it. A supplemental source is required for the parts listed below.",
+      "supplemental_needed": [
+        "Categorical encoding, scaling, text and time features; the book's treatment is mathematical rather than practical"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-30",
+          "name": "CNNs & Computer Vision",
+          "phase": "AI/ML Core",
+          "study_days": 7,
+          "what_you_learn": "convolution operation, filters/feature maps, pooling, CNN architectures (LeNet, VGG, ResNet, EfficientNet), transfer learning (freezing layers, fine-tuning), data augmentation with torchvision/albumentations, object detection (YOLO, Faster R-CNN), and image segmentation basics."
+        },
+        {
+          "skill": "SK-33",
+          "name": "Feature Engineering",
+          "phase": "AI/ML Core",
+          "study_days": 5,
+          "what_you_learn": "encoding categoricals (one-hot, target, embedding), scaling (standard, min-max, robust), handling missing data strategies, creating interaction features, time-series features (lag, rolling, Fourier), feature selection (mutual information, RFE), and feature stores (Feast, Tecton) for online/offline consistency."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 30,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DL-05",
+      "title": "Sequence modelling and attention",
+      "domain": "DL",
+      "target_level": "applied",
+      "why_it_matters": "Attention is the mechanism behind current language systems, and it is a learned, differentiable lookup rather than a mystery.",
+      "declared_source_status": "partial",
+      "source_status_explanation": "The supplied book contributes to this topic but does not complete it. A supplemental source is required for the parts listed below.",
+      "supplemental_needed": [
+        "A transformer reference: the original attention paper and a reputable architectural walkthrough, dated"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-31",
+          "name": "Transformers & NLP",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "self-attention mechanism, positional encoding, encoder-decoder architecture, BERT (masked language modeling, next sentence prediction), GPT (causal language modeling, autoregressive generation), tokenization (BPE, WordPiece), and fine-tuning pretrained models with HuggingFace."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 31,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DL-06",
+      "title": "Transformer architecture and language models",
+      "domain": "DL",
+      "target_level": "applied",
+      "why_it_matters": "The transformer is the architecture current language systems are built on, and its components each exist for a reason that can be explained.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Primary references for the transformer and for a current open model's configuration; both dated and version-recorded"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-31",
+          "name": "Transformers & NLP",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "self-attention mechanism, positional encoding, encoder-decoder architecture, BERT (masked language modeling, next sentence prediction), GPT (causal language modeling, autoregressive generation), tokenization (BPE, WordPiece), and fine-tuning pretrained models with HuggingFace."
+        },
+        {
+          "skill": "SK-37",
+          "name": "LLMs & Fine-Tuning (LoRA / RLHF)",
+          "phase": "Specialization",
+          "study_days": 10,
+          "what_you_learn": "LLM pretraining concepts (next-token prediction, tokenization, scaling laws), instruction fine-tuning, LoRA/QLoRA (low-rank adaptation for efficient fine-tuning), RLHF pipeline (reward model, PPO), PEFT library, quantization (4-bit, 8-bit), Axolotl/LLaMA-Factory for fine-tuning, and evaluating fine-tuned models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 31,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "GEN-04",
+      "title": "Evaluating and guarding generative systems",
+      "domain": "GEN",
+      "target_level": "applied",
+      "why_it_matters": "Generative outputs are not single labels, so evaluation must be designed rather than computed, and unsupported claims must be caught before a user sees them.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Evaluation methodology for free-form outputs, and safety guidance from a reputable source"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-32",
+          "name": "Model Evaluation & Metrics",
+          "phase": "AI/ML Core",
+          "study_days": 4,
+          "what_you_learn": "classification metrics (accuracy, precision, recall, F1, AUC-ROC, AUC-PR), regression metrics (MAE, MSE, RMSE, R²), confusion matrix, cross-validation strategies (k-fold, stratified, time-series), calibration, statistical significance testing for model comparisons, and offline vs online evaluation frameworks."
+        },
+        {
+          "skill": "SK-38",
+          "name": "RAG & Vector Databases",
+          "phase": "Specialization",
+          "study_days": 7,
+          "what_you_learn": "embedding models (sentence-transformers, OpenAI embeddings), vector similarity search (cosine, dot product, L2), chunking strategies, vector databases (Pinecone, Weaviate, Chroma, pgvector), RAG pipeline architecture (retrieve → augment → generate), reranking, hybrid search, and evaluating RAG quality (RAGAS framework)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 32,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "ML-08",
+      "title": "Experiment tracking and reproducibility",
+      "domain": "ML",
+      "target_level": "working",
+      "why_it_matters": "An experiment that cannot be reproduced cannot be built upon, and 'it worked last week' is not evidence.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Experiment-tracking tooling documentation and a reproducibility exercise"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-34",
+          "name": "Experiment Tracking (MLflow / W&B)",
+          "phase": "AI/ML Core",
+          "study_days": 3,
+          "what_you_learn": "logging hyperparameters, metrics, and artifacts, run comparison and visualization, model registry (MLflow), tagging and filtering experiments, integration with PyTorch/Scikit-learn training loops, hyperparameter sweeps (W&B Sweeps / MLflow Projects), and deploying a self-hosted MLflow tracking server."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 34,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DL-07",
+      "title": "Pre-training, fine-tuning and parameter-efficient adaptation",
+      "domain": "DL",
+      "target_level": "working",
+      "why_it_matters": "Choosing between prompting, retrieval and weight updates is an engineering decision about cost, data and control.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Parameter-efficient fine-tuning literature and framework documentation, dated"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-35",
+          "name": "HuggingFace Ecosystem",
+          "phase": "AI/ML Core",
+          "study_days": 5,
+          "what_you_learn": "Transformers library (pipeline API, AutoModel/AutoTokenizer, Trainer API), Datasets library for efficient data loading, HuggingFace Hub (uploading/sharing models and datasets), PEFT library for efficient fine-tuning, Accelerate for distributed training, and Spaces for deploying Gradio/Streamlit ML demos."
+        },
+        {
+          "skill": "SK-37",
+          "name": "LLMs & Fine-Tuning (LoRA / RLHF)",
+          "phase": "Specialization",
+          "study_days": 10,
+          "what_you_learn": "LLM pretraining concepts (next-token prediction, tokenization, scaling laws), instruction fine-tuning, LoRA/QLoRA (low-rank adaptation for efficient fine-tuning), RLHF pipeline (reward model, PPO), PEFT library, quantization (4-bit, 8-bit), Axolotl/LLaMA-Factory for fine-tuning, and evaluating fine-tuned models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 35,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "GEN-01",
+      "title": "How large language models behave",
+      "domain": "GEN",
+      "target_level": "applied",
+      "why_it_matters": "Predicting the next token explains the characteristic failures, the cost structure and why evaluation is hard.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Model-behaviour documentation and empirical exercises against a stated model version"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-35",
+          "name": "HuggingFace Ecosystem",
+          "phase": "AI/ML Core",
+          "study_days": 5,
+          "what_you_learn": "Transformers library (pipeline API, AutoModel/AutoTokenizer, Trainer API), Datasets library for efficient data loading, HuggingFace Hub (uploading/sharing models and datasets), PEFT library for efficient fine-tuning, Accelerate for distributed training, and Spaces for deploying Gradio/Streamlit ML demos."
+        },
+        {
+          "skill": "SK-37",
+          "name": "LLMs & Fine-Tuning (LoRA / RLHF)",
+          "phase": "Specialization",
+          "study_days": 10,
+          "what_you_learn": "LLM pretraining concepts (next-token prediction, tokenization, scaling laws), instruction fine-tuning, LoRA/QLoRA (low-rank adaptation for efficient fine-tuning), RLHF pipeline (reward model, PPO), PEFT library, quantization (4-bit, 8-bit), Axolotl/LLaMA-Factory for fine-tuning, and evaluating fine-tuned models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 35,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "GEN-06",
+      "title": "Cost, latency and context management",
+      "domain": "GEN",
+      "target_level": "working",
+      "why_it_matters": "For generative systems, unit economics and latency are product constraints as much as engineering ones.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Current provider pricing and latency documentation, dated, plus a measurement exercise"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-38",
+          "name": "RAG & Vector Databases",
+          "phase": "Specialization",
+          "study_days": 7,
+          "what_you_learn": "embedding models (sentence-transformers, OpenAI embeddings), vector similarity search (cosine, dot product, L2), chunking strategies, vector databases (Pinecone, Weaviate, Chroma, pgvector), RAG pipeline architecture (retrieve → augment → generate), reranking, hybrid search, and evaluating RAG quality (RAGAS framework)."
+        },
+        {
+          "skill": "SK-36",
+          "name": "MLOps & Model Deployment",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "model serialization (pickle, ONNX, TorchScript), serving frameworks (TorchServe, TF Serving, BentoML, FastAPI wrapper), containerizing models with Docker, monitoring predictions for drift, A/B testing model variants, shadow deployment, model registry workflows, and CI/CD for ML models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 36,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Specialization",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROD-01",
+      "title": "ML lifecycle and MLOps principles",
+      "domain": "PROD",
+      "target_level": "applied",
+      "why_it_matters": "The lifecycle, not the model, is what a team operates; without it, work is repeated and results are not comparable.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "MLOps principles and reference architecture, from a primary source such as the MLOps literature and current platform documentation"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-36",
+          "name": "MLOps & Model Deployment",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "model serialization (pickle, ONNX, TorchScript), serving frameworks (TorchServe, TF Serving, BentoML, FastAPI wrapper), containerizing models with Docker, monitoring predictions for drift, A/B testing model variants, shadow deployment, model registry workflows, and CI/CD for ML models."
+        },
+        {
+          "skill": "SK-43",
+          "name": "Observability & Monitoring",
+          "phase": "Specialization",
+          "study_days": 5,
+          "what_you_learn": "the three pillars (logs, metrics, traces), Prometheus metrics collection and PromQL, Grafana dashboards and alerting, structured logging with JSON, distributed tracing with Jaeger/Zipkin, OpenTelemetry instrumentation, SLOs and error budgets, on-call runbooks, and ML-specific monitoring (data drift, prediction drift, model performance degradation)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 36,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROD-02",
+      "title": "Model serving and deployment patterns",
+      "domain": "PROD",
+      "target_level": "applied",
+      "why_it_matters": "Deployment is where a model meets its latency budget, its batch size and its failure behaviour.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Serving framework documentation and a latency/throughput measurement exercise"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-36",
+          "name": "MLOps & Model Deployment",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "model serialization (pickle, ONNX, TorchScript), serving frameworks (TorchServe, TF Serving, BentoML, FastAPI wrapper), containerizing models with Docker, monitoring predictions for drift, A/B testing model variants, shadow deployment, model registry workflows, and CI/CD for ML models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 36,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROD-04",
+      "title": "Reliability, incident response and debugging in production",
+      "domain": "PROD",
+      "target_level": "working",
+      "why_it_matters": "Systems fail in ways that local testing does not reproduce, and the response determines the cost of the failure.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Site-reliability material and incident-review practice"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-43",
+          "name": "Observability & Monitoring",
+          "phase": "Specialization",
+          "study_days": 5,
+          "what_you_learn": "the three pillars (logs, metrics, traces), Prometheus metrics collection and PromQL, Grafana dashboards and alerting, structured logging with JSON, distributed tracing with Jaeger/Zipkin, OpenTelemetry instrumentation, SLOs and error budgets, on-call runbooks, and ML-specific monitoring (data drift, prediction drift, model performance degradation)."
+        },
+        {
+          "skill": "SK-36",
+          "name": "MLOps & Model Deployment",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "model serialization (pickle, ONNX, TorchScript), serving frameworks (TorchServe, TF Serving, BentoML, FastAPI wrapper), containerizing models with Docker, monitoring predictions for drift, A/B testing model variants, shadow deployment, model registry workflows, and CI/CD for ML models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 36,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Specialization",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROD-06",
+      "title": "Cost and performance engineering",
+      "domain": "PROD",
+      "target_level": "working",
+      "why_it_matters": "Inference and training cost is a product constraint, and measuring it is a distinct skill from optimising accuracy.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Hardware and serving performance material with measurement practice"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-36",
+          "name": "MLOps & Model Deployment",
+          "phase": "AI/ML Core",
+          "study_days": 8,
+          "what_you_learn": "model serialization (pickle, ONNX, TorchScript), serving frameworks (TorchServe, TF Serving, BentoML, FastAPI wrapper), containerizing models with Docker, monitoring predictions for drift, A/B testing model variants, shadow deployment, model registry workflows, and CI/CD for ML models."
+        },
+        {
+          "skill": "SK-43",
+          "name": "Observability & Monitoring",
+          "phase": "Specialization",
+          "study_days": 5,
+          "what_you_learn": "the three pillars (logs, metrics, traces), Prometheus metrics collection and PromQL, Grafana dashboards and alerting, structured logging with JSON, distributed tracing with Jaeger/Zipkin, OpenTelemetry instrumentation, SLOs and error budgets, on-call runbooks, and ML-specific monitoring (data drift, prediction drift, model performance degradation)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 36,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "AI/ML Core",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "GEN-02",
+      "title": "Prompting and context engineering",
+      "domain": "GEN",
+      "target_level": "applied",
+      "why_it_matters": "The context window is the only interface an application has to steer the model, and its allocation is an engineering budget.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Provider documentation current at the time of writing, plus evaluation harness practice"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-37",
+          "name": "LLMs & Fine-Tuning (LoRA / RLHF)",
+          "phase": "Specialization",
+          "study_days": 10,
+          "what_you_learn": "LLM pretraining concepts (next-token prediction, tokenization, scaling laws), instruction fine-tuning, LoRA/QLoRA (low-rank adaptation for efficient fine-tuning), RLHF pipeline (reward model, PPO), PEFT library, quantization (4-bit, 8-bit), Axolotl/LLaMA-Factory for fine-tuning, and evaluating fine-tuned models."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 37,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Specialization",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "GEN-03",
+      "title": "Retrieval-augmented generation and vector search",
+      "domain": "GEN",
+      "target_level": "applied",
+      "why_it_matters": "Retrieval is how a system uses knowledge it was not trained on, and its failures are traceable to retrieval before generation.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Vector-search documentation, embedding-model documentation, and evaluation methods for retrieval"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-38",
+          "name": "RAG & Vector Databases",
+          "phase": "Specialization",
+          "study_days": 7,
+          "what_you_learn": "embedding models (sentence-transformers, OpenAI embeddings), vector similarity search (cosine, dot product, L2), chunking strategies, vector databases (Pinecone, Weaviate, Chroma, pgvector), RAG pipeline architecture (retrieve → augment → generate), reranking, hybrid search, and evaluating RAG quality (RAGAS framework)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 38,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Specialization",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "GEN-05",
+      "title": "Agents and tool use",
+      "domain": "GEN",
+      "target_level": "working",
+      "why_it_matters": "Once a model can call tools, the engineering problem changes from text generation to control flow with unreliable components.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Tool-use documentation and case studies with explicit failure analysis"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-38",
+          "name": "RAG & Vector Databases",
+          "phase": "Specialization",
+          "study_days": 7,
+          "what_you_learn": "embedding models (sentence-transformers, OpenAI embeddings), vector similarity search (cosine, dot product, L2), chunking strategies, vector databases (Pinecone, Weaviate, Chroma, pgvector), RAG pipeline architecture (retrieve → augment → generate), reranking, hybrid search, and evaluating RAG quality (RAGAS framework)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 38,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Specialization",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DL-08",
+      "title": "Distributed and efficient training",
+      "domain": "DL",
+      "target_level": "awareness",
+      "why_it_matters": "Model and data scale determine which parallelism strategy is even possible, and the constraint is memory before it is compute.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Distributed-training documentation and a memory-accounting exercise"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-39",
+          "name": "Distributed Training",
+          "phase": "Specialization",
+          "study_days": 7,
+          "what_you_learn": "data parallelism (DDP — DistributedDataParallel), model parallelism (tensor/pipeline parallelism), ZeRO optimization stages (DeepSpeed), FSDP (Fully Sharded Data Parallel), gradient accumulation, mixed precision training (FP16/BF16), checkpoint sharding, and multi-node training on GPU clusters."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 39,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Specialization",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "DATA-09",
+      "title": "Lakehouse and table formats",
+      "domain": "DATA",
+      "target_level": "awareness",
+      "why_it_matters": "Open table formats change what is possible on cheap storage: transactions, schema evolution and time travel on top of object stores.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Documentation for an open table format and its concurrency model"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-42",
+          "name": "Data Lakehouse (Iceberg / Delta Lake)",
+          "phase": "Specialization",
+          "study_days": 6,
+          "what_you_learn": "data lake vs data warehouse vs lakehouse architecture, open table formats (Apache Iceberg, Delta Lake, Apache Hudi), ACID transactions on object storage, schema evolution, time travel / table versioning, partition evolution, metadata management, and connecting lakehouse tables to Spark/Flink/Trino."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 42,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Specialization",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROD-03",
+      "title": "Monitoring, drift detection and observability",
+      "domain": "PROD",
+      "target_level": "applied",
+      "why_it_matters": "A deployed model degrades silently; only instrumentation makes degradation visible before users report it.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Observability tooling documentation and drift-detection methods"
+      ],
+      "roadmap_skills": [
+        {
+          "skill": "SK-43",
+          "name": "Observability & Monitoring",
+          "phase": "Specialization",
+          "study_days": 5,
+          "what_you_learn": "the three pillars (logs, metrics, traces), Prometheus metrics collection and PromQL, Grafana dashboards and alerting, structured logging with JSON, distributed tracing with Jaeger/Zipkin, OpenTelemetry instrumentation, SLOs and error budgets, on-call runbooks, and ML-specific monitoring (data drift, prediction drift, model performance degradation)."
+        }
+      ],
+      "roadmap_order": {
+        "first_roadmap_position": 43,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": "Specialization",
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "CAREER-01",
+      "title": "Technical writing and explanation",
+      "domain": "CAREER",
+      "target_level": "applied",
+      "why_it_matters": "Technical work that cannot be explained to a colleague or an interviewer has limited effect.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Writing guidance from a reputable engineering organization"
+      ],
+      "roadmap_skills": [],
+      "roadmap_order": {
+        "first_roadmap_position": null,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": null,
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "CAREER-03",
+      "title": "Interview preparation and technical communication under constraint",
+      "domain": "CAREER",
+      "target_level": "applied",
+      "why_it_matters": "Interviews test a specific, time-boxed variant of the same competencies and are gated by an ability to reason aloud.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Practice problem sets with known sources; interview questions must never be fabricated and attributed to a real employer"
+      ],
+      "roadmap_skills": [],
+      "roadmap_order": {
+        "first_roadmap_position": null,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": null,
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "CAREER-04",
+      "title": "Project work and portfolio construction",
+      "domain": "CAREER",
+      "target_level": "applied",
+      "why_it_matters": "Employers screen on shipped work, and a project only demonstrates competence if its decisions are documented and its results are reproducible.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "None; the projects are authored, with rubrics"
+      ],
+      "roadmap_skills": [],
+      "roadmap_order": {
+        "first_roadmap_position": null,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": null,
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    },
+    {
+      "competency_id": "PROD-07",
+      "title": "Responsible AI, fairness and documentation",
+      "domain": "PROD",
+      "target_level": "working",
+      "why_it_matters": "A model that is accurate can still be harmful or unusable in a regulated context, and the obligations are increasingly explicit.",
+      "declared_source_status": "none",
+      "source_status_explanation": "No source for this topic is in the repository yet.",
+      "supplemental_needed": [
+        "Responsible-AI frameworks and model-card practice from reputable sources"
+      ],
+      "roadmap_skills": [],
+      "roadmap_order": {
+        "first_roadmap_position": null,
+        "note": "The platform does not invent a priority. This is the position of the topic in the user's own roadmap, which is the only ordering information available so far."
+      },
+      "phase": null,
+      "what_would_unblock_it": [
+        "A supplied primary source covering the outcomes listed for this competency, or a decision to teach it from an external source that the maintainer has reviewed.",
+        "Practice material: exercises with verified solutions, or a decision to author them (they would be labelled as original)."
+      ],
+      "status": "awaiting_sources",
+      "readiness_to_render": "placeholder",
+      "placeholder_means": "This entry may be shown in the interface as a planned topic with its prerequisites, its place in the plan and the source it is waiting for. It must never be shown with lesson content, exercises or a progress metric, because none exists."
+    }
+  ],
+  "partly_covered_with_lessons": [
+    {
+      "competency_id": "MATH-08",
+      "title": "Low-rank approximation and compression",
+      "domain": "MATH",
+      "lessons": [
+        "LSN-MATH-08-01"
+      ],
+      "still_missing": [
+        "Optimality of the truncated SVD in the Frobenius norm: the supplied text states the Eckart-Young result for the spectral norm only and never mentions the Frobenius norm (verified by search across the supplied markdown), so the proof of the Frobenius case must come from a numerical-linear-algebra source.",
+        "Numerical rank and truncation thresholds: choosing k when no singular value is exactly zero."
+      ],
+      "status": "partly_covered_by_lessons"
+    }
+  ]
+}

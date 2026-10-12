@@ -1,0 +1,96 @@
+{
+  "id": "VER-LSN-MATH-07-01-01",
+  "lesson_id": "LSN-MATH-07-01",
+  "reviewed_on": "2026-10-12",
+  "reviewer": "authoring agent, on Arena.ai; no second human reviewer",
+  "outcome": "needs_revision",
+  "outcome_explanation": "Every automated check passes, including the SVD construction, the existence-condition counterexamples, the norm identities, the square-root general form, and the measured breakdown of the A'A construction. The lesson is nevertheless NOT marked verified, because source fidelity has not been checked by a human reader and publication integrity is untested (no interface was rendering this lesson when the record was written). Marking it verified would assert something that did not happen.",
+  "checks": [
+    {
+      "name": "source_fidelity",
+      "status": "not_run",
+      "method": "Not performed by a human reader. The lesson was written against MML sections 4.3-4.5 and 4.7 (printed pp.114-134) with the section text available during writing, and it states explicitly where the source proves a result and where it leaves the proof to the reader (Cholesky existence, Theorem 4.18) or states it without proof (Eckart-Young, reserved for the next lesson).",
+      "evidence": "Cited identifiers were checked to exist in knowledge/sources/mml/inventory.json (Definitions 4.19, 4.23; Theorems 4.18, 4.20, 4.21, 4.22, 4.24; Figure 4.8), which is automated and passes. Whether the explanations are a fair representation of the source has not been independently reviewed.",
+      "not_checked": "Whether a reader of MML would agree with the emphasis and the omissions, in particular the decision to present the SVD derivation with the steps the source compresses."
+    },
+    {
+      "name": "technical_correctness",
+      "status": "passed",
+      "method": "Every numerical and algebraic claim in the lesson and its solutions was recomputed by content/checks/math07_svd_checks.py using sympy (exact) and numpy (floating point), and the checks were executed by tools/run_content_checks.py.",
+      "evidence": "8 checks in this module, all passing; 17 checks in the suite, 0 failures. Recorded output: knowledge/lessons/checks-report.json. Notable measured values: the textbook SVD construction matches numpy to 4.3e-13 on well-conditioned inputs and loses all digits at a singular-value ratio of 1e10.",
+      "not_checked": "The numerical experiments sample random matrices; they do not establish worst-case behaviour, which would require condition-number analysis rather than sampling."
+    },
+    {
+      "name": "mathematical_validity",
+      "status": "passed",
+      "method": "The constructive SVD proof was written out in full and its five steps checked against the objects they claim to construct: A'A is symmetric positive semi-definite and its eigenvalues are non-negative (verified symbolically), the u_i are orthonormal (verified exactly), AA'u_i = sigma_i^2 u_i (used and implied by the exact reconstruction test), U completes to an orthogonal basis (verified exactly), and U Sigma V' = A in exact arithmetic on two examples.",
+      "evidence": "check_ex02_full_svd_3x2 and check_lesson_worked_examples verify the 3x2 and the 2x2 examples exactly; check_ex01 verifies the Cholesky factor and the pivot argument; check_ex06 verifies the general square-root form exactly, including the orthogonality of W.",
+      "not_checked": "Two statements are cited rather than proved: the rank-nullity counting in exercise 5 uses rank(A'A) = rank(A), which is shown for the example and asserted in general; and the uniqueness of the triangular square root is asserted in the solution, which says so."
+    },
+    {
+      "name": "pedagogical_completeness",
+      "status": "passed",
+      "method": "Mapped each of the lesson's three declared outcomes to the sections that teach it and to exercises that assess it.",
+      "evidence": "Outcome 1 (existence conditions with counterexamples) is taught in sections 1.1, 2 and 4 and assessed by exercises 1 and 3. Outcome 2 (SVD as rotation, scaling, rotation) is taught in section 3.3 with the worked example in 3.4 and assessed by exercise 2. Outcome 3 (relating the SPD eigendecomposition to the Cholesky factor) is taught in section 2 and assessed by exercise 6, which establishes the precise relation rather than the common misstatement.",
+      "not_checked": "Whether the ordering serves a first-time reader; the lesson assumes the eigenvalue material is fresh."
+    },
+    {
+      "name": "prerequisite_integrity",
+      "status": "passed",
+      "method": "Listed the prerequisites and the specific fact each supplies, and checked that each is defined in the framework and fully sourced by the supplied book.",
+      "evidence": "MATH-06 (eigenvalues and the spectral theorem, covered by LSN-MATH-06-01), MATH-04 (orthogonality, MML sections 3.1-3.6) and MATH-02 (matrices as mappings, MML 2.2-2.8). All three are declared 'sourced' in coverage.json and precede section 4.3 in the book's own order.",
+      "not_checked": "Whether the learner has completed them."
+    },
+    {
+      "name": "assessment_integrity",
+      "status": "passed",
+      "method": "Every exercise has an expected outcome, a difficulty, a declared origin and a solution; every solution names its method and its verification.",
+      "evidence": "7 exercises: 6 original, 1 adapted with the source item recorded (MML exercises 4.8/4.9, printed p.138). Exercise 7 carries a rubric. Four source exercises (4.8, 4.9, 4.11, 4.12) and one that belongs to the next lesson (4.10) are listed as deliberately left unsolved, with the reason stated.",
+      "not_checked": "Whether a reader other than the author finds the exercises unambiguous."
+    },
+    {
+      "name": "citation_integrity",
+      "status": "passed",
+      "method": "Automated checks that every cited section and numbered object exists in the generated source index, and that every recorded printed page matches the index.",
+      "evidence": "tools/validate_knowledge.py checks lesson-source-section-exists, lesson-source-anchor-exists and lesson-source-anchor-page-matches-index all pass for this lesson.",
+      "not_checked": "Whether the source supports the claim being made; that is source_fidelity, which is not run."
+    },
+    {
+      "name": "interactive_correctness",
+      "status": "not_applicable",
+      "method": "This lesson contains no interactive component; the interactive rank-truncation demonstration belongs to LSN-MATH-08-01.",
+      "evidence": "The lesson contains display mathematics rendered by KaTeX and no client-side component.",
+      "not_checked": "Nothing in this category applies."
+    },
+    {
+      "name": "publication_integrity",
+      "status": "not_run",
+      "method": "Not performed when the record was written. The lesson is eligible for rendering (front matter validated, equations and links type-checked by the build), but no rendering test had been run against it.",
+      "evidence": "The application builds the lesson route without error and the registry validation passes, which is a build-time check only.",
+      "not_checked": "Equation rendering at small widths, the internal cross-links to LSN-MATH-06-01 and LSN-MATH-08-01, and whether the practice table's anchors land on the right solutions."
+    }
+  ],
+  "unresolved_issues": [
+    {
+      "issue": "No human has read MML 4.3-4.5 and 4.7 against this lesson.",
+      "next_action": "A reviewer with the book open checks particularly the SVD derivation's ordering against the source and the Cholesky existence sketch, then sets source_fidelity accordingly.",
+      "severity": "blocking"
+    },
+    {
+      "issue": "Two mathematical statements are used without proof in the solutions: rank(A'A) = rank(A) in general, and the uniqueness of the triangular square root.",
+      "next_action": "Either add the two short arguments, or keep the explicit admissions and treat them as exercises.",
+      "severity": "minor"
+    },
+    {
+      "issue": "The lesson references LSN-MATH-08-01 for the Eckart-Young theorem, which did not exist when this record was written.",
+      "next_action": "Once LSN-MATH-08-01 exists, confirm the cross-reference resolves and that the split of material between the two lessons is coherent.",
+      "severity": "minor"
+    }
+  ],
+  "evidence_files": {
+    "checks_report": "knowledge/lessons/checks-report.json",
+    "checks_source": "content/checks/math07_svd_checks.py",
+    "solutions": "content/solutions/MATH-07-01-solutions.md",
+    "source_index": "knowledge/sources/mml/structure.json"
+  }
+}

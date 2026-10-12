@@ -268,14 +268,17 @@
         "SK-03"
       ],
       "source_coverage": {
-        "status": "sourced",
+        "status": "partial",
         "mml_sections": [
           "4.6",
           "10.2",
           "10.4"
         ],
-        "supplemental_needed": [],
-        "notes": ""
+        "supplemental_needed": [
+          "Optimality of the truncated SVD in the Frobenius norm: the supplied text states the Eckart-Young result for the spectral norm only and never mentions the Frobenius norm (verified by search across the supplied markdown), so the proof of the Frobenius case must come from a numerical-linear-algebra source.",
+          "Numerical rank and truncation thresholds: choosing k when no singular value is exactly zero."
+        ],
+        "notes": "What the supplied source supports: the rank-k truncation as a sum of the k largest outer products, the exact error sigma_{k+1} in the spectral norm (Theorem 4.25, equations 4.94-4.95), and section 10.4's connection to eigenvector computation and low-rank approximations in PCA. What it does not support: the Frobenius-norm optimality statement and any guidance on choosing k numerically."
       }
     },
     {

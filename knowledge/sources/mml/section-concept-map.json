@@ -386,15 +386,15 @@
       "id": "4.6",
       "role": "derivation",
       "concepts": [
-        "best rank-k approximation and the Eckart-Young result",
-        "Frobenius-norm error of the truncation",
+        "best rank-k approximation and the Eckart-Young result, stated for the spectral norm",
+        "the matrix written as a sum of rank-1 outer products sigma_i u_i v_i^T",
         "low-rank approximation of a data matrix",
-        "compression as a trade-off between size and error"
+        "compression as a trade-off between representation size and reconstruction error"
       ],
       "competencies": [
         "MATH-08"
       ],
-      "notes": "Uses a worked movie-ratings example, which is a useful teaching case; our own example will be authored to avoid reproducing the book's tables."
+      "notes": "Correction made while writing LSN-MATH-08-01: an earlier version of this map listed a 'Frobenius-norm error of the truncation' here. The word 'Frobenius' does not occur anywhere in the supplied markdown (checked across all three parts), and Theorem 4.25 with equations 4.94-4.95 is stated for the spectral norm. The supplied text therefore establishes the achievement of the error sigma_{k+1} and the outer-product structure, but not the Frobenius-norm optimality that MATH-08's second outcome asks for. That gap is recorded in the competency and needs an external source."
     },
     {
       "id": "4.7",
