@@ -86,7 +86,7 @@
     "sources/mml/section-concept-map.json": "ae89fd0cecdb65cd5ed0d14ef365b8ddddbe85c2e9565d38acdcaefbba594613",
     "sources/mml/structure.json": "4afe6fe36f18de1401ac44b2b7e6ee246423ce4c7001511bd85bbd71a8da1c23",
     "sources/mml/inventory.json": "086d02ff5d74f0d61766aa36f4e726da9df1e882d989baf653f5febbb3f8c726",
-    "lessons/registry.json": "7c668f2004ce0d46465302184322a0939cc7462a61020d80ade511946055caf4"
+    "lessons/registry.json": "68408ae711c6498aa2ec4b728d620cde1b217a4a82145cc6bf6de5fa8fd47e18"
   },
   "competencies": [
     {

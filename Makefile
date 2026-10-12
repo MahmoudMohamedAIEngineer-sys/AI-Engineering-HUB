@@ -12,7 +12,7 @@
 PY  ?= python3
 VENV := .venv/bin/python
 
-.PHONY: help setup extract index verify-pdf sync content-index demo-data coverage content-checks validate check site report clean
+.PHONY: help setup install dev extract index verify-pdf sync content-index demo-data coverage content-checks validate check site start report clean
 
 help:
 	@echo "make setup          create .venv and install development tools"
@@ -26,7 +26,10 @@ help:
 	@echo "make content-checks run the executable checks behind the lessons (needs numpy, sympy)"
 	@echo "make validate       run the automated knowledge-base and content checks"
 	@echo "make check          run everything that can be automated, in dependency order"
+	@echo "make install        install the site's dependencies (npm install)"
+	@echo "make dev            run the site on http://localhost:3000 with live reload"
 	@echo "make site           type-check and build the Next.js application"
+	@echo "make start          serve the production build on http://localhost:3000"
 	@echo "make report         print the current curriculum and content state summary"
 
 setup:
@@ -67,12 +70,29 @@ validate:
 
 check: extract index sync demo-data content-index coverage content-checks validate
 	@echo "Automated checks finished. The PDF cross-check is separate: make verify-pdf"
+	@echo "Now run \`make dev\` (or \`make site\`) to see it; the site reads these files at build time."
 	@echo "Passing these checks does not mean any content is verified: lessons carry their own"
 	@echo "verification records, and a lesson with an unrun core check is shown as needing revision."
 
+install:
+	npm install
+
+# The interface reads knowledge/ and content/ at build time, so run `make check`
+# first if those have changed. Next.js will otherwise serve the previous snapshot.
+dev:
+	npm run dev
+
+# WARNING: `next dev` and `next build` both write .next/. Running the build while the dev
+# server is up corrupts the dev server's client manifest, and every page then fails with
+# "Could not find the module ... in the React Client Manifest" until .next is deleted and
+# the dev server restarted. Stop the dev server before building.
 site:
 	npm run typecheck
 	npm run build
+
+# Serves what `make site` produced. Requires `make site` to have run.
+start:
+	npm run start
 
 report:
 	@$(PY) -c "import json;\
