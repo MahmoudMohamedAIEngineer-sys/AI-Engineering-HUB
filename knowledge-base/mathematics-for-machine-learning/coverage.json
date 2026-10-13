@@ -305,8 +305,10 @@
    "level": 2,
    "source_words": 691,
    "kind": "content",
-   "status": "todo",
-   "topic_files": [],
+   "status": "covered",
+   "topic_files": [
+    "ch-02/topic-solving-systems-of-linear-equations.md"
+   ],
    "reason": "",
    "line": 756
   },
@@ -316,8 +318,10 @@
    "level": 2,
    "source_words": 951,
    "kind": "content",
-   "status": "todo",
-   "topic_files": [],
+   "status": "covered",
+   "topic_files": [
+    "ch-02/topic-particular-and-general-solution.md"
+   ],
    "reason": "",
    "line": 766
   },
@@ -327,9 +331,11 @@
    "level": 2,
    "source_words": 37,
    "kind": "content",
-   "status": "todo",
-   "topic_files": [],
-   "reason": "",
+   "status": "merged",
+   "topic_files": [
+    "ch-02/topic-solving-systems-of-linear-equations.md"
+   ],
+   "reason": "DEC-006: 37 source words, merged into parent 2.3 topic",
    "line": 822
   },
   {
@@ -338,9 +344,11 @@
    "level": 2,
    "source_words": 1073,
    "kind": "example",
-   "status": "todo",
-   "topic_files": [],
-   "reason": "",
+   "status": "merged",
+   "topic_files": [
+    "ch-02/topic-solving-systems-of-linear-equations.md"
+   ],
+   "reason": "worked example inside 2.3",
    "line": 836
   },
   {
@@ -349,9 +357,11 @@
    "level": 2,
    "source_words": 393,
    "kind": "example",
-   "status": "todo",
-   "topic_files": [],
-   "reason": "",
+   "status": "merged",
+   "topic_files": [
+    "ch-02/topic-minus-1-trick.md"
+   ],
+   "reason": "RREF example; used by 2.3.3",
    "line": 934
   },
   {
@@ -360,8 +370,10 @@
    "level": 2,
    "source_words": 422,
    "kind": "content",
-   "status": "todo",
-   "topic_files": [],
+   "status": "covered",
+   "topic_files": [
+    "ch-02/topic-minus-1-trick.md"
+   ],
    "reason": "",
    "line": 958
   },
@@ -371,9 +383,11 @@
    "level": 2,
    "source_words": 272,
    "kind": "example",
-   "status": "todo",
-   "topic_files": [],
-   "reason": "",
+   "status": "merged",
+   "topic_files": [
+    "ch-02/topic-minus-1-trick.md"
+   ],
+   "reason": "worked example inside 2.3.3",
    "line": 980
   },
   {
@@ -382,8 +396,10 @@
    "level": 2,
    "source_words": 561,
    "kind": "content",
-   "status": "todo",
-   "topic_files": [],
+   "status": "covered",
+   "topic_files": [
+    "ch-02/topic-computing-the-inverse-and-solving-algorithms.md"
+   ],
    "reason": "",
    "line": 1002
   },
@@ -393,8 +409,10 @@
    "level": 2,
    "source_words": 609,
    "kind": "content",
-   "status": "todo",
-   "topic_files": [],
+   "status": "covered",
+   "topic_files": [
+    "ch-02/topic-computing-the-inverse-and-solving-algorithms.md"
+   ],
    "reason": "",
    "line": 1040
   },

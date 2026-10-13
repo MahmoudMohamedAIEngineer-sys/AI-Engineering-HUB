@@ -18,3 +18,12 @@
 | Example 2.5 (Distributivity) | example | merged | ch-02/topic-matrices.md |
 | 2.2.4 Compact Representations of Systems of Linear Equations | content | merged (DEC-006, <300 words) | ch-02/topic-matrices.md |
 | 2.3 – 2.9 (all remaining headings) | content/example | todo | — (see coverage.json) |
+| 2.3 Solving Systems of Linear Equations | content | covered | ch-02/topic-solving-systems-of-linear-equations.md |
+| 2.3.1 Particular and General Solution | content | covered | ch-02/topic-particular-and-general-solution.md |
+| 2.3.2 Elementary Transformations | content | merged (DEC-006) | ch-02/topic-solving-systems-of-linear-equations.md |
+| Example 2.6 | example | merged | ch-02/topic-solving-systems-of-linear-equations.md |
+| Example 2.7 (RREF) | example | merged | ch-02/topic-minus-1-trick.md |
+| 2.3.3 The Minus-1 Trick | content | covered | ch-02/topic-minus-1-trick.md |
+| Example 2.8 (Minus-1 Trick) | example | merged | ch-02/topic-minus-1-trick.md |
+| Calculating the Inverse | content | covered | ch-02/topic-computing-the-inverse-and-solving-algorithms.md |
+| 2.3.4 Algorithms for Solving | content | covered | ch-02/topic-computing-the-inverse-and-solving-algorithms.md |
