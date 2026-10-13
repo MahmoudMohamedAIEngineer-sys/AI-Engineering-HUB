@@ -1,0 +1,23 @@
+INVENTORY
+books: 1 ['mathematics-for-machine-learning']
+book mathematics-for-machine-learning: headings_total=356 content+example=323 accounted=14 todo=309
+  ch1: accounted 3/3
+  ch2: accounted 11/51
+  ch3: accounted 0/31
+  ch4: accounted 0/25
+  ch5: accounted 0/23
+  ch6: accounted 0/53
+  ch7: accounted 0/20
+  ch8: accounted 0/36
+  ch9: accounted 0/23
+  ch10: accounted 0/23
+  ch11: accounted 0/20
+  ch12: accounted 0/15
+topic_files: 6
+practice_files: 6
+web_topic_files: 0
+practice_problems: 48
+modules_in_course_map: 0
+pdfs: 0 []
+skills_map_topics: total=70 must_know=51 good_to_know=19 skip=0
+progress.json: {  "current_phase": 2,  "books": {   "mathematics-for-machine-learning": {    "chapters_total": 12,    "chapters_done": [     1    ],    "topics_written": 6   }  },  "modules": {},  "books_needed": {},  "topic_source_status": {   "math.linalg.systems": "book_covered",   "math.linalg.matrices": "book_covered",   "math.linalg.vector-spaces": "book_covered",   "math.linalg.linear-maps": "book_covered

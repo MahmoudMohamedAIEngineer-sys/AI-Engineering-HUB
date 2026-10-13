@@ -1,0 +1,311 @@
+book=mathematics-for-machine-learning content+example headings accounted 14/323
+FAIL: todo: ch2 2.3 Solving Systems of Linear Equations
+FAIL: todo: ch2 2.3.1 Particular and General Solution
+FAIL: todo: ch2 2.3.2 Elementary Transformations
+FAIL: todo: ch2 Example 2.6
+FAIL: todo: ch2 Example 2.7 (Reduced Row Echelon Form)
+FAIL: todo: ch2 2.3.3 The Minus-1 Trick
+FAIL: todo: ch2 Example 2.8 (Minus-1 Trick)
+FAIL: todo: ch2 Calculating the Inverse
+FAIL: todo: ch2 2.3.4 Algorithms for Solving a System of Linear Equations
+FAIL: todo: ch2 2.4 Vector Spaces
+FAIL: todo: ch2 2.4.1 Groups
+FAIL: todo: ch2 Example 2.10 (Groups)
+FAIL: todo: ch2 2.4.2 Vector Spaces
+FAIL: todo: ch2 Example 2.11 (Vector Spaces)
+FAIL: todo: ch2 2.4.3 Vector Subspaces
+FAIL: todo: ch2 Example 2.12 (Vector Subspaces)
+FAIL: todo: ch2 2.5 Linear Independence
+FAIL: todo: ch2 Example 2.13 (Linearly Dependent Vectors)
+FAIL: todo: ch2 Example 2.14
+FAIL: todo: ch2 Example 2.15
+FAIL: todo: ch2 2.6 Basis and Rank
+FAIL: todo: ch2 2.6.1 Generating Set and Basis
+FAIL: todo: ch2 Example 2.16
+FAIL: todo: ch2 Example 2.17 (Determining a Basis)
+FAIL: todo: ch2 2.6.2 Rank
+FAIL: todo: ch2 2.7 Linear Mappings
+FAIL: todo: ch2 Example 2.19 (Homomorphism)
+FAIL: todo: ch2 2.7.1 Matrix Representation of Linear Mappings
+FAIL: todo: ch2 Example 2.20
+FAIL: todo: ch2 Example 2.21 (Transformation Matrix)
+FAIL: todo: ch2 Example 2.22 (Linear Transformations of Vectors)
+FAIL: todo: ch2 2.7.2 Basis Change
+FAIL: todo: ch2 Example 2.23 (Basis Change)
+FAIL: todo: ch2 Example 2.24 (Basis Change)
+FAIL: todo: ch2 2.7.3 Image and Kernel
+FAIL: todo: ch2 Example 2.25 (Image and Kernel of a Linear Mapping) The mapping
+FAIL: todo: ch2 2.8 Affine Spaces
+FAIL: todo: ch2 2.8.1 Affine Subspaces
+FAIL: todo: ch2 Example 2.26 (Affine Subspaces)
+FAIL: todo: ch2 2.8.2 Affine Mappings
+FAIL: todo: ch2 Analytic Geometry
+FAIL: todo: ch3 3.1 Norms
+FAIL: todo: ch3 Example 3.1 (Manhattan Norm)
+FAIL: todo: ch3 Example 3.2 (Euclidean Norm)
+FAIL: todo: ch3 3.2 Inner Products
+FAIL: todo: ch3 3.2.1 Dot Product
+FAIL: todo: ch3 3.2.2 General Inner Products
+FAIL: todo: ch3 Example 3.3 (Inner Product That Is Not the Dot Product)
+FAIL: todo: ch3 3.2.3 Symmetric, Positive Definite Matrices
+FAIL: todo: ch3 3.3 Lengths and Distances
+FAIL: todo: ch3 Example 3.5 (Lengths of Vectors Using Inner Products)
+FAIL: todo: ch3 3.4 Angles and Orthogonality
+FAIL: todo: ch3 Example 3.6 (Angle between Vectors)
+FAIL: todo: ch3 Example 3.7 (Orthogonal Vectors)
+FAIL: todo: ch3 3.5 Orthonormal Basis
+FAIL: todo: ch3 3.6 Orthogonal Complement
+FAIL: todo: ch3 Example 3.8 (Orthonormal Basis)
+FAIL: todo: ch3 3.7 Inner Product of Functions
+FAIL: todo: ch3 3.8 Orthogonal Projections
+FAIL: todo: ch3 Example 3.9 (Inner Product of Functions)
+FAIL: todo: ch3 3.8.1 Projection onto One-Dimensional Subspaces (Lines)
+FAIL: todo: ch3 Example 3.10 (Projection onto a Line)
+FAIL: todo: ch3 3.8.2 Projection onto General Subspaces
+FAIL: todo: ch3 Example 3.11 (Projection onto a Two-dimensional Subspace)
+FAIL: todo: ch3 3.8.3 Gram-Schmidt Orthogonalization
+FAIL: todo: ch3 Example 3.12 (Gram-Schmidt Orthogonalization)
+FAIL: todo: ch3 3.8.4 Projection onto Affine Subspaces
+FAIL: todo: ch3 3.9 Rotations
+FAIL: todo: ch3 3.9.2 Rotations in $\mathbb { R } ^ { 3 }$
+FAIL: todo: ch3 3.9.3 Rotations in n Dimensions
+FAIL: todo: ch3 3.9.4 Properties of Rotations
+FAIL: todo: ch4 Matrix Decompositions
+FAIL: todo: ch4 4.1 Determinant and Trace
+FAIL: todo: ch4 Example 4.1 (Testing for Matrix Invertibility)
+FAIL: todo: ch4 Example 4.2 (Determinants as Measures of Volume)
+FAIL: todo: ch4 Example 4.3 (Laplace Expansion)
+FAIL: todo: ch4 4.2 Eigenvalues and Eigenvectors
+FAIL: todo: ch4 Example 4.4 (The Case of the Identity Matrix)
+FAIL: todo: ch4 Example 4.6
+FAIL: todo: ch4 Graphical Intuition in Two Dimensions
+FAIL: todo: ch4 Example 4.7 (Eigenspectrum of a Biological Neural Network)
+FAIL: todo: ch4 Example 4.8
+FAIL: todo: ch4 Example 4.9 (Google’s PageRank – Webpages as Eigenvectors)
+FAIL: todo: ch4 4.3 Cholesky Decomposition
+FAIL: todo: ch4 4.4 Eigendecomposition and Diagonalization
+FAIL: todo: ch4 Geometric Intuition for the Eigendecomposition
+FAIL: todo: ch4 Example 4.11 (Eigendecomposition)
+FAIL: todo: ch4 4.5 Singular Value Decomposition
+FAIL: todo: ch4 4.5.1 Geometric Intuitions for the SVD
+FAIL: todo: ch4 Example 4.12 (Vectors and the SVD)
+FAIL: todo: ch4 4.5.2 Construction of the SVD
+FAIL: todo: ch4 Example 4.13 (Computing the SVD)
+FAIL: todo: ch4 4.5.3 Eigenvalue Decomposition vs. Singular Value Decomposition
+FAIL: todo: ch4 4.6 Matrix Approximation
+FAIL: todo: ch4 Example 4.15 (Finding Structure in Movie Ratings and Consumers (continued))
+FAIL: todo: ch4 4.7 Matrix Phylogeny
+FAIL: todo: ch5 Vector Calculus
+FAIL: todo: ch5 Example 5.1
+FAIL: todo: ch5 5.1 Differentiation of Univariate Functions
+FAIL: todo: ch5 Example 5.2 (Derivative of a Polynomial)
+FAIL: todo: ch5 5.1.1 Taylor Series
+FAIL: todo: ch5 Example 5.3 (Taylor Polynomial)
+FAIL: todo: ch5 Example 5.4 (Taylor Series)
+FAIL: todo: ch5 5.1.2 Differentiation Rules
+FAIL: todo: ch5 Example 5.5 (Chain Rule)
+FAIL: todo: ch5 5.2 Partial Differentiation and Gradients
+FAIL: todo: ch5 5.2.1 Basic Rules of Partial Differentiation
+FAIL: todo: ch5 5.2.2 Chain Rule
+FAIL: todo: ch5 Example 5.8
+FAIL: todo: ch5 5.3 Gradients of Vector-Valued Functions
+FAIL: todo: ch5 Example 5.9 (Gradient of a Vector-Valued Function)
+FAIL: todo: ch5 5.4 Gradients of Matrices
+FAIL: todo: ch5 5.5 Useful Identities for Computing Gradients
+FAIL: todo: ch5 5.6 Backpropagation and Automatic Differentiation
+FAIL: todo: ch5 5.6.1 Gradients in a Deep Network
+FAIL: todo: ch5 5.6.2 Automatic Differentiation
+FAIL: todo: ch5 Example 5.14
+FAIL: todo: ch5 5.7 Higher-Order Derivatives
+FAIL: todo: ch5 5.8 Linearization and Multivariate Taylor Series
+FAIL: todo: ch6 Probability and Distributions
+FAIL: todo: ch6 6.1 Construction of a Probability Space
+FAIL: todo: ch6 6.1.1 Philosophical Issues
+FAIL: todo: ch6 172
+FAIL: todo: ch6 6.1.2 Probability and Random Variables
+FAIL: todo: ch6 The sample space Ω
+FAIL: todo: ch6 The event space
+FAIL: todo: ch6 The probability P
+FAIL: todo: ch6 Example 6.1
+FAIL: todo: ch6 6.1.3 Statistics
+FAIL: todo: ch6 6.2 Discrete and Continuous Probabilities
+FAIL: todo: ch6 6.2.1 Discrete Probabilities
+FAIL: todo: ch6 Example 6.2
+FAIL: todo: ch6 6.2.2 Continuous Probabilities
+FAIL: todo: ch6 6.2.3 Contrasting Discrete and Continuous Distributions
+FAIL: todo: ch6 Example 6.3
+FAIL: todo: ch6 6.3 Sum Rule, Product Rule, and Bayes’ Theorem
+FAIL: todo: ch6 6.4 Summary Statistics and Independence
+FAIL: todo: ch6 6.4.1 Means and Covariances
+FAIL: todo: ch6 Example 6.4
+FAIL: todo: ch6 6.4.2 Empirical Means and Covariances
+FAIL: todo: ch6 6.4.3 Three Expressions for the Variance
+FAIL: todo: ch6 6.4.4 Sums and Transformations of Random Variables
+FAIL: todo: ch6 6.4.5 Statistical Independence
+FAIL: todo: ch6 Example 6.5
+FAIL: todo: ch6 6.4.6 Inner Products of Random Variables
+FAIL: todo: ch6 6.5 Gaussian Distribution
+FAIL: todo: ch6 6.5.1 Marginals and Conditionals of Gaussians are Gaussians
+FAIL: todo: ch6 Example 6.6
+FAIL: todo: ch6 6.5.2 Product of Gaussian Densities
+FAIL: todo: ch6 6.5.3 Sums and Linear Transformations
+FAIL: todo: ch6 Example 6.7
+FAIL: todo: ch6 6.5.4 Sampling from Multivariate Gaussian Distributions
+FAIL: todo: ch6 6.6 Conjugacy and the Exponential Family
+FAIL: todo: ch6 Example 6.8
+FAIL: todo: ch6 Example 6.9 (Binomial Distribution)
+FAIL: todo: ch6 Example 6.10 (Beta Distribution)
+FAIL: todo: ch6 6.6.1 Conjugacy
+FAIL: todo: ch6 Example 6.11 (Beta-Binomial Conjugacy)
+FAIL: todo: ch6 Example 6.12 (Beta-Bernoulli Conjugacy)
+FAIL: todo: ch6 6.6.2 Sufficient Statistics
+FAIL: todo: ch6 6.6.3 Exponential Family
+FAIL: todo: ch6 Example 6.13 (Gaussian as Exponential Family)
+FAIL: todo: ch6 Example 6.14 (Bernoulli as Exponential Family)
+FAIL: todo: ch6 Example 6.15
+FAIL: todo: ch6 6.7 Change of Variables/Inverse Transform
+FAIL: todo: ch6 6.7.1 Distribution Function Technique
+FAIL: todo: ch6 Example 6.16
+FAIL: todo: ch6 6.7.2 Change of Variables
+FAIL: todo: ch6 Example 6.17
+FAIL: todo: ch6 6.11 Iterated Expectations.
+FAIL: todo: ch6 6.12 Manipulation of Gaussian Random Variables.
+FAIL: todo: ch6 6.13 Probability Integral Transformation
+FAIL: todo: ch7 Continuous Optimization
+FAIL: todo: ch7 7.1 Optimization Using Gradient Descent
+FAIL: todo: ch7 Example 7.1
+FAIL: todo: ch7 7.1.1 Step-size
+FAIL: todo: ch7 Example 7.2 (Solving a Linear Equation System)
+FAIL: todo: ch7 7.1.2 Gradient Descent With Momentum
+FAIL: todo: ch7 7.1.3 Stochastic Gradient Descent
+FAIL: todo: ch7 7.2 Constrained Optimization and Lagrange Multipliers
+FAIL: todo: ch7 7.3 Convex Optimization
+FAIL: todo: ch7 Example 7.3
+FAIL: todo: ch7 Example 7.4
+FAIL: todo: ch7 7.3.1 Linear Programming
+FAIL: todo: ch7 Example 7.5 (Linear Program)
+FAIL: todo: ch7 7.3.2 Quadratic Programming
+FAIL: todo: ch7 Example 7.6 (Quadratic Program)
+FAIL: todo: ch7 7.3.3 Legendre–Fenchel Transform and Convex Conjugate
+FAIL: todo: ch7 Example 7.7 (Convex Conjugates)
+FAIL: todo: ch7 Example 7.8
+FAIL: todo: ch7 Example $7 . 9$
+FAIL: todo: ch7 7.1 Consider the univariate function
+FAIL: todo: ch8 When Models Meet Data
+FAIL: todo: ch8 8.1 Data, Models, and Learning
+FAIL: todo: ch8 8.1.1 Data as Vectors
+FAIL: todo: ch8 8.1.2 Models as Functions
+FAIL: todo: ch8 8.1.3 Models as Probability Distributions
+FAIL: todo: ch8 8.1.4 Learning is Finding Parameters
+FAIL: todo: ch8 1. Prediction or inference
+FAIL: todo: ch8 8.2 Empirical Risk Minimization
+FAIL: todo: ch8 8.2.1 Hypothesis Class of Functions
+FAIL: todo: ch8 Example 8.1
+FAIL: todo: ch8 8.2.2 Loss Function for Training
+FAIL: todo: ch8 Example 8.2 (Least-Squares Loss)
+FAIL: todo: ch8 8.2.3 Regularization to Reduce Overfitting
+FAIL: todo: ch8 Example 8.3 (Regularized Least Squares)
+FAIL: todo: ch8 8.2.4 Cross-Validation to Assess the Generalization Performance
+FAIL: todo: ch8 8.3 Parameter Estimation
+FAIL: todo: ch8 8.3.1 Maximum Likelihood Estimation
+FAIL: todo: ch8 Example 8.4
+FAIL: todo: ch8 Example 8.5
+FAIL: todo: ch8 8.3.2 Maximum A Posteriori Estimation
+FAIL: todo: ch8 Example 8.6
+FAIL: todo: ch8 8.3.3 Model Fitting
+FAIL: todo: ch8 8.4 Probabilistic Modeling and Inference
+FAIL: todo: ch8 8.4.1 Probabilistic Models
+FAIL: todo: ch8 8.4.2 Bayesian Inference
+FAIL: todo: ch8 8.4.3 Latent-Variable Models
+FAIL: todo: ch8 8.5 Directed Graphical Models
+FAIL: todo: ch8 8.5.1 Graph Semantics
+FAIL: todo: ch8 Example 8.7
+FAIL: todo: ch8 Example 8.8
+FAIL: todo: ch8 8.5.2 Conditional Independence and d-Separation
+FAIL: todo: ch8 Example 8.9 (Conditional Independence)
+FAIL: todo: ch8 8.6 Model Selection
+FAIL: todo: ch8 8.6.1 Nested Cross-Validation
+FAIL: todo: ch8 8.6.2 Bayesian Model Selection
+FAIL: todo: ch8 8.6.3 Bayes Factors for Model Comparison
+FAIL: todo: ch9 Linear Regression
+FAIL: todo: ch9 9.1 Problem Formulation
+FAIL: todo: ch9 Example 9.1
+FAIL: todo: ch9 9.2 Parameter Estimation
+FAIL: todo: ch9 9.2.1 Maximum Likelihood Estimation
+FAIL: todo: ch9 Example 9.2 (Fitting Lines)
+FAIL: todo: ch9 Maximum Likelihood Estimation with Features
+FAIL: todo: ch9 Example 9.3 (Polynomial Regression)
+FAIL: todo: ch9 Example 9.5 (Maximum Likelihood Polynomial Fit)
+FAIL: todo: ch9 Estimating the Noise Variance
+FAIL: todo: ch9 9.2.2 Overfitting in Linear Regression
+FAIL: todo: ch9 9.2.3 Maximum A Posteriori Estimation
+FAIL: todo: ch9 Example 9.6 (MAP Estimation for Polynomial Regression)
+FAIL: todo: ch9 9.2.4 MAP Estimation as Regularization
+FAIL: todo: ch9 9.3 Bayesian Linear Regression
+FAIL: todo: ch9 9.3.1 Model
+FAIL: todo: ch9 9.3.2 Prior Predictions
+FAIL: todo: ch9 Example 9.7 (Prior over Functions)
+FAIL: todo: ch9 9.3.3 Posterior Distribution
+FAIL: todo: ch9 9.3.4 Posterior Predictions
+FAIL: todo: ch9 Example 9.8 (Posterior over Functions)
+FAIL: todo: ch9 9.3.5 Computing the Marginal Likelihood
+FAIL: todo: ch9 9.4 Maximum Likelihood as Orthogonal Projection
+FAIL: todo: ch9 Dimensionality Reduction with Principal Component Analysis
+FAIL: todo: ch10 10.1 Problem Setting
+FAIL: todo: ch10 Example 10.1 (Coordinate Representation/Code)
+FAIL: todo: ch10 0123956389
+FAIL: todo: ch10 10.2 Maximum Variance Perspective
+FAIL: todo: ch10 10.2.2 M-dimensional Subspace with Maximal Variance
+FAIL: todo: ch10 Example 10.2 (Eigenvalues of MNIST “8”)
+FAIL: todo: ch10 10.3 Projection Perspective
+FAIL: todo: ch10 10.3.1 Setting and Objective
+FAIL: todo: ch10 10.3.2 Finding Optimal Coordinates
+FAIL: todo: ch10 10.3.3 Finding the Basis of the Principal Subspace
+FAIL: todo: ch10 Example 10.3 (MNIST Digits Embedding)
+FAIL: todo: ch10 10.4 Eigenvector Computation and Low-Rank Approximations
+FAIL: todo: ch10 10.4.1 PCA Using Low-Rank Matrix Approximations
+FAIL: todo: ch10 10.4.2 Practical Aspects
+FAIL: todo: ch10 10.5 PCA in High Dimensions
+FAIL: todo: ch10 10.6 Key Steps of PCA in Practice
+FAIL: todo: ch10 Example 10.4 (MNIST Digits: Reconstruction)
+FAIL: todo: ch10 10.7 Latent Variable Perspective
+FAIL: todo: ch10 10.7.1 Generative Process and Probabilistic Model
+FAIL: todo: ch10 Example 10.5 (Generating New Data Using Latent Variables)
+FAIL: todo: ch10 10.7.2 Likelihood and Joint Distribution
+FAIL: todo: ch10 10.7.3 Posterior Distribution
+FAIL: todo: ch10 Density Estimation with Gaussian Mixture Models
+FAIL: todo: ch11 11.1 Gaussian Mixture Model
+FAIL: todo: ch11 11.2 Parameter Learning via Maximum Likelihood
+FAIL: todo: ch11 Example 11.1 (Initial Setting)
+FAIL: todo: ch11 11.2.1 Responsibilities
+FAIL: todo: ch11 Example 11.2 (Responsibilities)
+FAIL: todo: ch11 11.2.2 Updating the Means
+FAIL: todo: ch11 Example 11.3 (Mean Updates)
+FAIL: todo: ch11 11.2.3 Updating the Covariances
+FAIL: todo: ch11 Example 11.4 (Variance Updates)
+FAIL: todo: ch11 11.2.4 Updating the Mixture Weights
+FAIL: todo: ch11 Example 11.5 (Weight Parameter Updates)
+FAIL: todo: ch11 11.3 EM Algorithm
+FAIL: todo: ch11 Example 11.6 (GMM Fit)
+FAIL: todo: ch11 11.4 Latent-Variable Perspective
+FAIL: todo: ch11 11.4.1 Generative Process and Probabilistic Model
+FAIL: todo: ch11 11.4.2 Likelihood
+FAIL: todo: ch11 11.4.3 Posterior Distribution
+FAIL: todo: ch11 11.4.4 Extension to a Full Dataset
+FAIL: todo: ch11 11.4.5 EM Algorithm Revisited
+FAIL: todo: ch12 Classification with Support Vector Machines
+FAIL: todo: ch12 370
+FAIL: todo: ch12 12.1 Separating Hyperplanes
+FAIL: todo: ch12 12.2 Primal Support Vector Machine
+FAIL: todo: ch12 12.2.1 Concept of the Margin
+FAIL: todo: ch12 12.2.2 Traditional Derivation of the Margin
+FAIL: todo: ch12 12.2.3 Why We Can Set the Margin to 1
+FAIL: todo: ch12 12.2.4 Soft Margin SVM: Geometric View
+FAIL: todo: ch12 12.2.5 Soft Margin SVM: Loss Function View
+FAIL: todo: ch12 12.3 Dual Support Vector Machine
+FAIL: todo: ch12 12.3.1 Convex Duality via Lagrange Multipliers
+FAIL: todo: ch12 12.3.2 Dual SVM: Convex Hull View
+FAIL: todo: ch12 12.4 Kernels
+FAIL: todo: ch12 12.5 Numerical Solution
+FAIL: todo: ch12 407
+coverage_check --book: FAIL (309)

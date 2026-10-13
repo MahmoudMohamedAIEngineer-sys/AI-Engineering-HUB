@@ -1,0 +1,74 @@
+# Coverage matrix (topic x book)
+
+| Topic | Tag | Source status | Source |
+|---|---|---|---|
+| math.linalg.systems | must_know | book_covered | mathematics-for-machine-learning |
+| math.linalg.matrices | must_know | book_covered | mathematics-for-machine-learning |
+| math.linalg.vector-spaces | must_know | book_covered | mathematics-for-machine-learning |
+| math.linalg.linear-maps | must_know | book_covered | mathematics-for-machine-learning |
+| math.linalg.geometry | must_know | book_covered | mathematics-for-machine-learning |
+| math.linalg.eigen | must_know | book_covered | mathematics-for-machine-learning |
+| math.linalg.matrix-approx | must_know | book_covered | mathematics-for-machine-learning |
+| math.prob.spaces | must_know | book_covered | mathematics-for-machine-learning |
+| math.prob.rules | must_know | book_covered | mathematics-for-machine-learning |
+| math.prob.expectation | must_know | book_covered | mathematics-for-machine-learning |
+| math.prob.gaussian | must_know | book_covered | mathematics-for-machine-learning |
+| math.prob.exp-family | good_to_know | book_covered | mathematics-for-machine-learning |
+| math.prob.change-var | good_to_know | book_covered | mathematics-for-machine-learning |
+| math.stats.estimation | must_know | book_covered | mathematics-for-machine-learning |
+| math.stats.sampling | good_to_know | book_needed | — |
+| math.calc.derivatives | must_know | book_covered | mathematics-for-machine-learning |
+| math.calc.gradients | must_know | book_covered | mathematics-for-machine-learning |
+| math.calc.chainrule | must_know | book_covered | mathematics-for-machine-learning |
+| math.calc.hessians | good_to_know | book_covered | mathematics-for-machine-learning |
+| math.opt.gradient-descent | must_know | book_covered | mathematics-for-machine-learning |
+| math.opt.constrained | must_know | book_covered | mathematics-for-machine-learning |
+| math.opt.convex | must_know | book_covered | mathematics-for-machine-learning |
+| prog.python.core | must_know | book_needed | — |
+| prog.python.numpy-pandas | must_know | book_needed | — |
+| prog.python.viz | good_to_know | book_needed | — |
+| prog.sql | must_know | book_needed | — |
+| prog.second-lang | good_to_know | book_needed | — |
+| data.cleaning | must_know | book_needed | — |
+| data.features | must_know | book_needed | — |
+| data.pipelines | good_to_know | book_needed | — |
+| data.storage | good_to_know | book_needed | — |
+| ml.supervised | must_know | book_covered | mathematics-for-machine-learning (ch.9 regression, ch.12 classification; general supervised taxonomy web_interim) |
+| ml.trees-ensembles | must_know | book_needed | — |
+| ml.evaluation | must_know | book_needed | — |
+| ml.unsupervised | must_know | book_covered | mathematics-for-machine-learning (ch.10 PCA, ch.11 GMM) |
+| ml.svm-kernels | good_to_know | book_covered | mathematics-for-machine-learning |
+| ml.gmm-em | good_to_know | book_covered | mathematics-for-machine-learning |
+| dl.nn-basics | must_know | book_needed | — |
+| dl.training | must_know | book_needed | — |
+| dl.pytorch | must_know | book_needed | — |
+| dl.architectures | good_to_know | book_needed | — |
+| dl.vision | good_to_know | book_needed | — |
+| nlp.text | must_know | book_needed | — |
+| llm.transformers | must_know | book_needed | — |
+| llm.pretraining | must_know | book_needed | — |
+| llm.finetuning | must_know | book_needed | — |
+| llm.apis | must_know | book_needed | — |
+| rag.retrieval | must_know | book_needed | — |
+| agents.tooluse | must_know | book_needed | — |
+| llm.evaluation | must_know | book_needed | — |
+| llm.serving | good_to_know | book_needed | — |
+| mlops.docker-api | must_know | book_needed | — |
+| mlops.cicd | must_know | book_needed | — |
+| mlops.monitoring | must_know | book_needed | — |
+| mlops.cloud | must_know | book_needed | — |
+| mlops.experiments | must_know | book_needed | — |
+| sysdesign.ml-systems | must_know | book_needed | — |
+| sysdesign.llm-systems | must_know | book_needed | — |
+| sysdesign.scale | good_to_know | book_needed | — |
+| swe.git | must_know | book_needed | — |
+| swe.testing | must_know | book_needed | — |
+| swe.design | good_to_know | book_needed | — |
+| interview.coding | must_know | book_needed | — |
+| interview.ml-theory | must_know | book_needed | — |
+| interview.system-design | must_know | book_needed | — |
+| interview.behavioral | must_know | book_needed | — |
+| emerging.multimodal | good_to_know | book_needed | — |
+| emerging.reasoning | good_to_know | book_needed | — |
+| emerging.small-models | good_to_know | book_needed | — |
+| emerging.ai-safety-evals | good_to_know | book_needed | — |

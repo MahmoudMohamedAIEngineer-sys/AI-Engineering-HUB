@@ -1,0 +1,666 @@
+{
+ "book_needed_topics": [
+  "math.stats.sampling",
+  "prog.python.core",
+  "prog.python.numpy-pandas",
+  "prog.python.viz",
+  "prog.sql",
+  "prog.second-lang",
+  "data.cleaning",
+  "data.features",
+  "data.pipelines",
+  "data.storage",
+  "ml.trees-ensembles",
+  "ml.evaluation",
+  "dl.nn-basics",
+  "dl.training",
+  "dl.pytorch",
+  "dl.architectures",
+  "dl.vision",
+  "nlp.text",
+  "llm.transformers",
+  "llm.pretraining",
+  "llm.finetuning",
+  "llm.apis",
+  "rag.retrieval",
+  "agents.tooluse",
+  "llm.evaluation",
+  "llm.serving",
+  "mlops.docker-api",
+  "mlops.cicd",
+  "mlops.monitoring",
+  "mlops.cloud",
+  "mlops.experiments",
+  "sysdesign.ml-systems",
+  "sysdesign.llm-systems",
+  "sysdesign.scale",
+  "swe.git",
+  "swe.testing",
+  "swe.design",
+  "interview.coding",
+  "interview.ml-theory",
+  "interview.system-design",
+  "interview.behavioral",
+  "emerging.multimodal",
+  "emerging.reasoning",
+  "emerging.small-models",
+  "emerging.ai-safety-evals"
+ ],
+ "reading_paths": [
+  {
+   "skill": "Linear Algebra",
+   "skill_id": "linear-algebra",
+   "status": "fully_covered",
+   "books": [
+    {
+     "title": "Mathematics for Machine Learning",
+     "authors": "Deisenroth, Faisal & Ong",
+     "edition": "1st edition, 2020 (Cambridge University Press) \u2014 ALREADY IN LIBRARY",
+     "role": "foundation",
+     "verified": true,
+     "verified_via": "https://mml-book.com/",
+     "covers_topics": [
+      "math.linalg.systems",
+      "math.linalg.matrices",
+      "math.linalg.vector-spaces",
+      "math.linalg.linear-maps",
+      "math.linalg.geometry",
+      "math.linalg.eigen",
+      "math.linalg.matrix-approx"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "math.linalg.systems",
+    "math.linalg.matrices",
+    "math.linalg.vector-spaces",
+    "math.linalg.linear-maps",
+    "math.linalg.geometry",
+    "math.linalg.eigen",
+    "math.linalg.matrix-approx"
+   ]
+  },
+  {
+   "skill": "Probability & Statistics",
+   "skill_id": "probability-&-statistics",
+   "status": "partially_covered",
+   "books": [
+    {
+     "title": "Mathematics for Machine Learning",
+     "authors": "Deisenroth, Faisal & Ong",
+     "edition": "1st edition, 2020 (Cambridge University Press) \u2014 ALREADY IN LIBRARY",
+     "role": "foundation",
+     "verified": true,
+     "verified_via": "https://mml-book.com/",
+     "covers_topics": [
+      "math.prob.spaces",
+      "math.prob.rules",
+      "math.prob.expectation",
+      "math.prob.gaussian",
+      "math.prob.exp-family",
+      "math.prob.change-var",
+      "math.stats.estimation",
+      "math.stats.sampling"
+     ]
+    },
+    {
+     "title": "Pattern Recognition and Machine Learning",
+     "authors": "Christopher M. Bishop",
+     "edition": "1st edition, 2006 (Springer)",
+     "role": "deepening",
+     "verified": true,
+     "verified_via": "https://freecomputerbooks.com/Pattern-Recognition-and-Machine-Learning.html (Springer 2006, ISBN 978-0387310732)",
+     "covers_topics": [
+      "math.prob.spaces",
+      "math.prob.rules",
+      "math.prob.expectation",
+      "math.prob.gaussian",
+      "math.prob.exp-family",
+      "math.prob.change-var",
+      "math.stats.estimation",
+      "math.stats.sampling"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "math.prob.spaces",
+    "math.prob.rules",
+    "math.prob.expectation",
+    "math.prob.gaussian",
+    "math.prob.exp-family",
+    "math.prob.change-var",
+    "math.stats.estimation",
+    "math.stats.sampling"
+   ]
+  },
+  {
+   "skill": "Calculus & Optimization",
+   "skill_id": "calculus-&-optimization",
+   "status": "fully_covered",
+   "books": [
+    {
+     "title": "Mathematics for Machine Learning",
+     "authors": "Deisenroth, Faisal & Ong",
+     "edition": "1st edition, 2020 (Cambridge University Press) \u2014 ALREADY IN LIBRARY",
+     "role": "foundation",
+     "verified": true,
+     "verified_via": "https://mml-book.com/",
+     "covers_topics": [
+      "math.calc.derivatives",
+      "math.calc.gradients",
+      "math.calc.chainrule",
+      "math.calc.hessians",
+      "math.opt.gradient-descent",
+      "math.opt.constrained",
+      "math.opt.convex"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "math.calc.derivatives",
+    "math.calc.gradients",
+    "math.calc.chainrule",
+    "math.calc.hessians",
+    "math.opt.gradient-descent",
+    "math.opt.constrained",
+    "math.opt.convex"
+   ]
+  },
+  {
+   "skill": "Python & Tooling",
+   "skill_id": "python-&-tooling",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Python Crash Course",
+     "authors": "Eric Matthes",
+     "edition": "3rd edition, 2023 (No Starch Press)",
+     "role": "foundation",
+     "verified": true,
+     "verified_via": "https://www.penguinrandomhouse.com/books/565564/python-crash-course-3rd-edition-by-eric-matthes/",
+     "covers_topics": [
+      "prog.python.core",
+      "prog.python.numpy-pandas",
+      "prog.python.viz",
+      "prog.sql",
+      "prog.second-lang"
+     ]
+    },
+    {
+     "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+     "authors": "Aur\u00e9lien G\u00e9ron",
+     "edition": "3rd edition, 2022 (O'Reilly)",
+     "role": "practice",
+     "verified": true,
+     "verified_via": "https://booksharbour.com/products/hands-on-machine-learning-scikit-learn-tensorflow-3rd-edition (O'Reilly 2022, ISBN 9781098125974)",
+     "covers_topics": [
+      "prog.python.core",
+      "prog.python.numpy-pandas",
+      "prog.python.viz",
+      "prog.sql",
+      "prog.second-lang"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "prog.python.core",
+    "prog.python.numpy-pandas",
+    "prog.python.viz",
+    "prog.sql",
+    "prog.second-lang"
+   ]
+  },
+  {
+   "skill": "Data Engineering for ML",
+   "skill_id": "data-engineering-for-ml",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+     "authors": "Aur\u00e9lien G\u00e9ron",
+     "edition": "3rd edition, 2022 (O'Reilly)",
+     "role": "core",
+     "verified": true,
+     "verified_via": "https://booksharbour.com/products/hands-on-machine-learning-scikit-learn-tensorflow-3rd-edition (O'Reilly 2022, ISBN 9781098125974)",
+     "covers_topics": [
+      "data.cleaning",
+      "data.features",
+      "data.pipelines",
+      "data.storage"
+     ]
+    },
+    {
+     "title": "Designing Machine Learning Systems",
+     "authors": "Chip Huyen",
+     "edition": "1st edition, 2022 (O'Reilly)",
+     "role": "deepening",
+     "verified": true,
+     "verified_via": "https://github.com/chiphuyen/dmls-book (author repo; O'Reilly 2022)",
+     "covers_topics": [
+      "data.cleaning",
+      "data.features",
+      "data.pipelines",
+      "data.storage"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "data.cleaning",
+    "data.features",
+    "data.pipelines",
+    "data.storage"
+   ]
+  },
+  {
+   "skill": "Classical Machine Learning",
+   "skill_id": "classical-machine-learning",
+   "status": "partially_covered",
+   "books": [
+    {
+     "title": "Mathematics for Machine Learning",
+     "authors": "Deisenroth, Faisal & Ong",
+     "edition": "1st edition, 2020 (Cambridge University Press) \u2014 ALREADY IN LIBRARY",
+     "role": "core (regression/PCA/GMM/SVM pillars)",
+     "verified": true,
+     "verified_via": "https://mml-book.com/",
+     "covers_topics": [
+      "ml.supervised",
+      "ml.trees-ensembles",
+      "ml.evaluation",
+      "ml.unsupervised",
+      "ml.svm-kernels",
+      "ml.gmm-em"
+     ]
+    },
+    {
+     "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+     "authors": "Aur\u00e9lien G\u00e9ron",
+     "edition": "3rd edition, 2022 (O'Reilly)",
+     "role": "core/practice",
+     "verified": true,
+     "verified_via": "https://booksharbour.com/products/hands-on-machine-learning-scikit-learn-tensorflow-3rd-edition (O'Reilly 2022, ISBN 9781098125974)",
+     "covers_topics": [
+      "ml.supervised",
+      "ml.trees-ensembles",
+      "ml.evaluation",
+      "ml.unsupervised",
+      "ml.svm-kernels",
+      "ml.gmm-em"
+     ]
+    },
+    {
+     "title": "Pattern Recognition and Machine Learning",
+     "authors": "Christopher M. Bishop",
+     "edition": "1st edition, 2006 (Springer)",
+     "role": "deepening/reference",
+     "verified": true,
+     "verified_via": "https://freecomputerbooks.com/Pattern-Recognition-and-Machine-Learning.html (Springer 2006, ISBN 978-0387310732)",
+     "covers_topics": [
+      "ml.supervised",
+      "ml.trees-ensembles",
+      "ml.evaluation",
+      "ml.unsupervised",
+      "ml.svm-kernels",
+      "ml.gmm-em"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "ml.supervised",
+    "ml.trees-ensembles",
+    "ml.evaluation",
+    "ml.unsupervised",
+    "ml.svm-kernels",
+    "ml.gmm-em"
+   ]
+  },
+  {
+   "skill": "Deep Learning",
+   "skill_id": "deep-learning",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Understanding Deep Learning",
+     "authors": "Simon J.D. Prince",
+     "edition": "1st edition, 2023 (MIT Press)",
+     "role": "foundation/core",
+     "verified": true,
+     "verified_via": "https://www.penguinrandomhouse.com/books/730887/understanding-deep-learning-by-simon-j-d-prince/",
+     "covers_topics": [
+      "dl.nn-basics",
+      "dl.training",
+      "dl.pytorch",
+      "dl.architectures",
+      "dl.vision"
+     ]
+    },
+    {
+     "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+     "authors": "Aur\u00e9lien G\u00e9ron",
+     "edition": "3rd edition, 2022 (O'Reilly)",
+     "role": "practice",
+     "verified": true,
+     "verified_via": "https://booksharbour.com/products/hands-on-machine-learning-scikit-learn-tensorflow-3rd-edition (O'Reilly 2022, ISBN 9781098125974)",
+     "covers_topics": [
+      "dl.nn-basics",
+      "dl.training",
+      "dl.pytorch",
+      "dl.architectures",
+      "dl.vision"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "dl.nn-basics",
+    "dl.training",
+    "dl.pytorch",
+    "dl.architectures",
+    "dl.vision"
+   ]
+  },
+  {
+   "skill": "NLP, Transformers & LLMs",
+   "skill_id": "nlp-transformers-&-llms",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Natural Language Processing with Transformers",
+     "authors": "Lewis Tunstall, Leandro von Werra, Thomas Wolf",
+     "edition": "Revised edition, 2022 (O'Reilly)",
+     "role": "core",
+     "verified": true,
+     "verified_via": "https://www.oreilly.com/library/view/natural-language-processing/9781098136789/",
+     "covers_topics": [
+      "nlp.text",
+      "llm.transformers",
+      "llm.pretraining",
+      "llm.finetuning",
+      "llm.apis"
+     ]
+    },
+    {
+     "title": "Understanding Deep Learning",
+     "authors": "Simon J.D. Prince",
+     "edition": "1st edition, 2023 (MIT Press)",
+     "role": "foundation (transformers chapters)",
+     "verified": true,
+     "verified_via": "https://www.penguinrandomhouse.com/books/730887/understanding-deep-learning-by-simon-j-d-prince/",
+     "covers_topics": [
+      "nlp.text",
+      "llm.transformers",
+      "llm.pretraining",
+      "llm.finetuning",
+      "llm.apis"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "nlp.text",
+    "llm.transformers",
+    "llm.pretraining",
+    "llm.finetuning",
+    "llm.apis"
+   ]
+  },
+  {
+   "skill": "RAG, Agents & Evaluation",
+   "skill_id": "rag-agents-&-evaluation",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Natural Language Processing with Transformers",
+     "authors": "Lewis Tunstall, Leandro von Werra, Thomas Wolf",
+     "edition": "Revised edition, 2022 (O'Reilly)",
+     "role": "core (embeddings/HF ecosystem)",
+     "verified": true,
+     "verified_via": "https://www.oreilly.com/library/view/natural-language-processing/9781098136789/",
+     "covers_topics": [
+      "rag.retrieval",
+      "agents.tooluse",
+      "llm.evaluation",
+      "llm.serving"
+     ]
+    },
+    {
+     "title": "Designing Machine Learning Systems",
+     "authors": "Chip Huyen",
+     "edition": "1st edition, 2022 (O'Reilly)",
+     "role": "deepening (production systems)",
+     "verified": true,
+     "verified_via": "https://github.com/chiphuyen/dmls-book (author repo; O'Reilly 2022)",
+     "covers_topics": [
+      "rag.retrieval",
+      "agents.tooluse",
+      "llm.evaluation",
+      "llm.serving"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "rag.retrieval",
+    "agents.tooluse",
+    "llm.evaluation",
+    "llm.serving"
+   ]
+  },
+  {
+   "skill": "MLOps & Deployment",
+   "skill_id": "mlops-&-deployment",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Designing Machine Learning Systems",
+     "authors": "Chip Huyen",
+     "edition": "1st edition, 2022 (O'Reilly)",
+     "role": "foundation/core",
+     "verified": true,
+     "verified_via": "https://github.com/chiphuyen/dmls-book (author repo; O'Reilly 2022)",
+     "covers_topics": [
+      "mlops.docker-api",
+      "mlops.cicd",
+      "mlops.monitoring",
+      "mlops.cloud",
+      "mlops.experiments"
+     ]
+    },
+    {
+     "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+     "authors": "Aur\u00e9lien G\u00e9ron",
+     "edition": "3rd edition, 2022 (O'Reilly)",
+     "role": "practice (deployment chapters)",
+     "verified": true,
+     "verified_via": "https://booksharbour.com/products/hands-on-machine-learning-scikit-learn-tensorflow-3rd-edition (O'Reilly 2022, ISBN 9781098125974)",
+     "covers_topics": [
+      "mlops.docker-api",
+      "mlops.cicd",
+      "mlops.monitoring",
+      "mlops.cloud",
+      "mlops.experiments"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "mlops.docker-api",
+    "mlops.cicd",
+    "mlops.monitoring",
+    "mlops.cloud",
+    "mlops.experiments"
+   ]
+  },
+  {
+   "skill": "AI System Design",
+   "skill_id": "ai-system-design",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Designing Machine Learning Systems",
+     "authors": "Chip Huyen",
+     "edition": "1st edition, 2022 (O'Reilly)",
+     "role": "foundation",
+     "verified": true,
+     "verified_via": "https://github.com/chiphuyen/dmls-book (author repo; O'Reilly 2022)",
+     "covers_topics": [
+      "sysdesign.ml-systems",
+      "sysdesign.llm-systems",
+      "sysdesign.scale"
+     ]
+    },
+    {
+     "title": "System Design Interview \u2013 An Insider's Guide",
+     "authors": "Alex Xu",
+     "edition": "Vol. 1, 2020 (ByteByteGo)",
+     "role": "interview practice",
+     "verified": true,
+     "verified_via": "https://interviewpilot.dev/tools/best-coding-interview-books (Vol.1/2 confirmed)",
+     "covers_topics": [
+      "sysdesign.ml-systems",
+      "sysdesign.llm-systems",
+      "sysdesign.scale"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "sysdesign.ml-systems",
+    "sysdesign.llm-systems",
+    "sysdesign.scale"
+   ]
+  },
+  {
+   "skill": "Software Engineering Practice",
+   "skill_id": "software-engineering-practice",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Python Crash Course",
+     "authors": "Eric Matthes",
+     "edition": "3rd edition, 2023 (No Starch Press)",
+     "role": "foundation (projects/testing habits)",
+     "verified": true,
+     "verified_via": "https://www.penguinrandomhouse.com/books/565564/python-crash-course-3rd-edition-by-eric-matthes/",
+     "covers_topics": [
+      "swe.git",
+      "swe.testing",
+      "swe.design"
+     ]
+    },
+    {
+     "title": "Cracking the Coding Interview",
+     "authors": "Gayle Laakmann McDowell",
+     "edition": "6th edition, 2015 (CareerCup) \u2014 dated for modern patterns; pair with web_interim drills sourced in Phase 3",
+     "role": "practice",
+     "verified": true,
+     "verified_via": "https://javarevisited.blogspot.com/2025/01/review-is-cracking-coding-interview-by.html (6th ed. 2015 confirmed)",
+     "covers_topics": [
+      "swe.git",
+      "swe.testing",
+      "swe.design"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "swe.git",
+    "swe.testing",
+    "swe.design"
+   ]
+  },
+  {
+   "skill": "Interview Skills",
+   "skill_id": "interview-skills",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Cracking the Coding Interview",
+     "authors": "Gayle Laakmann McDowell",
+     "edition": "6th edition, 2015 (CareerCup) \u2014 dated for modern patterns; pair with web_interim drills sourced in Phase 3",
+     "role": "core (coding)",
+     "verified": true,
+     "verified_via": "https://javarevisited.blogspot.com/2025/01/review-is-cracking-coding-interview-by.html (6th ed. 2015 confirmed)",
+     "covers_topics": [
+      "interview.coding",
+      "interview.ml-theory",
+      "interview.system-design",
+      "interview.behavioral"
+     ]
+    },
+    {
+     "title": "System Design Interview \u2013 An Insider's Guide",
+     "authors": "Alex Xu",
+     "edition": "Vol. 1, 2020 (ByteByteGo)",
+     "role": "core (system design)",
+     "verified": true,
+     "verified_via": "https://interviewpilot.dev/tools/best-coding-interview-books (Vol.1/2 confirmed)",
+     "covers_topics": [
+      "interview.coding",
+      "interview.ml-theory",
+      "interview.system-design",
+      "interview.behavioral"
+     ]
+    },
+    {
+     "title": "Designing Machine Learning Systems",
+     "authors": "Chip Huyen",
+     "edition": "1st edition, 2022 (O'Reilly)",
+     "role": "deepening (ML system design)",
+     "verified": true,
+     "verified_via": "https://github.com/chiphuyen/dmls-book (author repo; O'Reilly 2022)",
+     "covers_topics": [
+      "interview.coding",
+      "interview.ml-theory",
+      "interview.system-design",
+      "interview.behavioral"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "interview.coding",
+    "interview.ml-theory",
+    "interview.system-design",
+    "interview.behavioral"
+   ]
+  },
+  {
+   "skill": "Emerging Topics (2027)",
+   "skill_id": "emerging-topics-(2027)",
+   "status": "book_needed",
+   "books": [
+    {
+     "title": "Understanding Deep Learning",
+     "authors": "Simon J.D. Prince",
+     "edition": "1st edition, 2023 (MIT Press)",
+     "role": "foundation (diffusion/multimodal chapters)",
+     "verified": true,
+     "verified_via": "https://www.penguinrandomhouse.com/books/730887/understanding-deep-learning-by-simon-j-d-prince/",
+     "covers_topics": [
+      "emerging.multimodal",
+      "emerging.reasoning",
+      "emerging.small-models",
+      "emerging.ai-safety-evals"
+     ]
+    },
+    {
+     "title": "Natural Language Processing with Transformers",
+     "authors": "Lewis Tunstall, Leandro von Werra, Thomas Wolf",
+     "edition": "Revised edition, 2022 (O'Reilly)",
+     "role": "core (efficient LLM production)",
+     "verified": true,
+     "verified_via": "https://www.oreilly.com/library/view/natural-language-processing/9781098136789/",
+     "covers_topics": [
+      "emerging.multimodal",
+      "emerging.reasoning",
+      "emerging.small-models",
+      "emerging.ai-safety-evals"
+     ]
+    }
+   ],
+   "covers_topics": [
+    "emerging.multimodal",
+    "emerging.reasoning",
+    "emerging.small-models",
+    "emerging.ai-safety-evals"
+   ]
+  }
+ ],
+ "books_owned": [
+  "mathematics-for-machine-learning"
+ ]
+}

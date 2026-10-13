@@ -1,0 +1,635 @@
+{
+ "version": "2026-10-13",
+ "areas": [
+  {
+   "area": "Mathematics",
+   "skills": [
+    {
+     "skill": "Linear Algebra",
+     "topics": [
+      {
+       "id": "math.linalg.systems",
+       "name": "Systems of linear equations",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Every ML model solves or approximates linear systems"
+      },
+      {
+       "id": "math.linalg.matrices",
+       "name": "Matrices, inverse, transpose",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Data and parameters are matrices everywhere"
+      },
+      {
+       "id": "math.linalg.vector-spaces",
+       "name": "Vector spaces, subspaces, basis, rank",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Embeddings and feature spaces are vector spaces"
+      },
+      {
+       "id": "math.linalg.linear-maps",
+       "name": "Linear mappings, basis change, image/kernel",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Neural layers are affine/linear maps + nonlinearity"
+      },
+      {
+       "id": "math.linalg.geometry",
+       "name": "Norms, inner products, projections",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Similarity, distance and least squares are geometry"
+      },
+      {
+       "id": "math.linalg.eigen",
+       "name": "Eigenvalues, diagonalization, SVD",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "PCA, conditioning and embeddings depend on them"
+      },
+      {
+       "id": "math.linalg.matrix-approx",
+       "name": "Matrix approximation, low rank",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Compression and recommender latent factors"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Mathematics",
+   "skills": [
+    {
+     "skill": "Probability & Statistics",
+     "topics": [
+      {
+       "id": "math.prob.spaces",
+       "name": "Probability spaces, random variables",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "ML predictions are probabilistic claims"
+      },
+      {
+       "id": "math.prob.rules",
+       "name": "Sum/product rules, Bayes theorem",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Inference and classification start here"
+      },
+      {
+       "id": "math.prob.expectation",
+       "name": "Expectation, variance, covariance, independence",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Losses are expectations; features covary"
+      },
+      {
+       "id": "math.prob.gaussian",
+       "name": "Gaussian distribution and transformations",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Most-used continuous model in ML"
+      },
+      {
+       "id": "math.prob.exp-family",
+       "name": "Exponential family, conjugacy, sufficient statistics",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Unifies many model families elegantly"
+      },
+      {
+       "id": "math.prob.change-var",
+       "name": "Change of variables",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Needed for flows and density models"
+      },
+      {
+       "id": "math.stats.estimation",
+       "name": "MLE, MAP, Bayesian estimation",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "How parameters are learned from data"
+      },
+      {
+       "id": "math.stats.sampling",
+       "name": "Sampling and Monte Carlo basics",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Needed for generative models and evaluation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Mathematics",
+   "skills": [
+    {
+     "skill": "Calculus & Optimization",
+     "topics": [
+      {
+       "id": "math.calc.derivatives",
+       "name": "Derivatives, Taylor series",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Local approximation underlies training"
+      },
+      {
+       "id": "math.calc.gradients",
+       "name": "Partial derivatives, gradients, Jacobians",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Gradient-based learning needs them"
+      },
+      {
+       "id": "math.calc.chainrule",
+       "name": "Chain rule, backpropagation, autodiff",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Deep learning is the chain rule at scale"
+      },
+      {
+       "id": "math.calc.hessians",
+       "name": "Higher-order derivatives, Hessians",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Curvature, Newton methods, diagnostics"
+      },
+      {
+       "id": "math.opt.gradient-descent",
+       "name": "Gradient descent, SGD, momentum",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "The default training algorithm family"
+      },
+      {
+       "id": "math.opt.constrained",
+       "name": "Lagrange multipliers, constrained optimization",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "SVMs and regularized problems use it"
+      },
+      {
+       "id": "math.opt.convex",
+       "name": "Convexity, convex optimization, duality",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Guarantees and SVM duals rest on convexity"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Programming",
+   "skills": [
+    {
+     "skill": "Python & Tooling",
+     "topics": [
+      {
+       "id": "prog.python.core",
+       "name": "Python core: functions, OOP, typing, testing",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Primary language of AI engineering"
+      },
+      {
+       "id": "prog.python.numpy-pandas",
+       "name": "NumPy and pandas fluency",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "All data work flows through them"
+      },
+      {
+       "id": "prog.python.viz",
+       "name": "Matplotlib/plotting for analysis",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Communicating data findings"
+      },
+      {
+       "id": "prog.sql",
+       "name": "SQL: joins, aggregation, windows",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Real data lives in databases"
+      },
+      {
+       "id": "prog.second-lang",
+       "name": "Second stack: TypeScript or Go for services",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Production AI services are rarely Python-only"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Data",
+   "skills": [
+    {
+     "skill": "Data Engineering for ML",
+     "topics": [
+      {
+       "id": "data.cleaning",
+       "name": "Data cleaning and validation",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Model quality is capped by data quality"
+      },
+      {
+       "id": "data.features",
+       "name": "Feature engineering and leakage control",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Features decide classical ML outcomes"
+      },
+      {
+       "id": "data.pipelines",
+       "name": "ETL/pipelines basics (Airflow/dbt concepts)",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Feeding models reliably at scale"
+      },
+      {
+       "id": "data.storage",
+       "name": "Warehouses, lakes, NoSQL basics",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Choosing where ML data lives"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Classical ML",
+   "skills": [
+    {
+     "skill": "Classical Machine Learning",
+     "topics": [
+      {
+       "id": "ml.supervised",
+       "name": "Supervised learning: regression & classification",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Core predictive task framing"
+      },
+      {
+       "id": "ml.trees-ensembles",
+       "name": "Trees, forests, gradient boosting",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Strongest tabular baselines"
+      },
+      {
+       "id": "ml.evaluation",
+       "name": "Evaluation: metrics, CV, leakage-safe splits",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Honest measurement is the job"
+      },
+      {
+       "id": "ml.unsupervised",
+       "name": "Clustering and dimensionality reduction",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Structure discovery without labels"
+      },
+      {
+       "id": "ml.svm-kernels",
+       "name": "SVMs and kernels",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Margin theory and kernel methods"
+      },
+      {
+       "id": "ml.gmm-em",
+       "name": "Mixture models and EM",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Density estimation foundation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Deep Learning",
+   "skills": [
+    {
+     "skill": "Deep Learning",
+     "topics": [
+      {
+       "id": "dl.nn-basics",
+       "name": "Neural nets: layers, activations, losses",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "The substrate of modern AI"
+      },
+      {
+       "id": "dl.training",
+       "name": "Training dynamics: optimizers, regularization, initialization",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Making deep models actually learn"
+      },
+      {
+       "id": "dl.pytorch",
+       "name": "PyTorch (one framework deeply)",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Industry/research standard framework"
+      },
+      {
+       "id": "dl.architectures",
+       "name": "CNNs, RNNs, sequence models background",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Vision/sequence heritage still in use"
+      },
+      {
+       "id": "dl.vision",
+       "name": "Computer vision fundamentals",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Common specialization track"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "NLP & LLMs",
+   "skills": [
+    {
+     "skill": "NLP, Transformers & LLMs",
+     "topics": [
+      {
+       "id": "nlp.text",
+       "name": "Tokenization, embeddings, text representations",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "How text becomes vectors"
+      },
+      {
+       "id": "llm.transformers",
+       "name": "Transformer architecture and attention",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Every modern LLM is a transformer"
+      },
+      {
+       "id": "llm.pretraining",
+       "name": "Pretraining, scaling, instruction tuning concepts",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Explains what LLMs are and cost"
+      },
+      {
+       "id": "llm.finetuning",
+       "name": "Fine-tuning and PEFT/LoRA",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Adapting models is core job work"
+      },
+      {
+       "id": "llm.apis",
+       "name": "LLM APIs, structured outputs, prompting patterns",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Building products on models"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "LLM Systems",
+   "skills": [
+    {
+     "skill": "RAG, Agents & Evaluation",
+     "topics": [
+      {
+       "id": "rag.retrieval",
+       "name": "Embeddings, vector search, RAG pipelines",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Grounding LLMs in private data"
+      },
+      {
+       "id": "agents.tooluse",
+       "name": "Agents, tool/function calling, orchestration",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Fastest-growing AI product pattern"
+      },
+      {
+       "id": "llm.evaluation",
+       "name": "LLM evaluation, guardrails, observability",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Shipping LLM systems safely"
+      },
+      {
+       "id": "llm.serving",
+       "name": "LLM inference, latency/cost optimization",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Production economics of LLMs"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "MLOps",
+   "skills": [
+    {
+     "skill": "MLOps & Deployment",
+     "topics": [
+      {
+       "id": "mlops.docker-api",
+       "name": "Docker and API serving (FastAPI)",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "How models become services"
+      },
+      {
+       "id": "mlops.cicd",
+       "name": "CI/CD, testing and versioning for ML",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Reliable change in production"
+      },
+      {
+       "id": "mlops.monitoring",
+       "name": "Monitoring, drift, retraining triggers",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Models decay after deployment"
+      },
+      {
+       "id": "mlops.cloud",
+       "name": "One cloud platform end-to-end",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Where production AI runs"
+      },
+      {
+       "id": "mlops.experiments",
+       "name": "Experiment tracking and model registry",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Reproducibility of results"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "System Design",
+   "skills": [
+    {
+     "skill": "AI System Design",
+     "topics": [
+      {
+       "id": "sysdesign.ml-systems",
+       "name": "ML system design: data\u2192train\u2192serve\u2192monitor",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Senior interview and job core"
+      },
+      {
+       "id": "sysdesign.llm-systems",
+       "name": "LLM/RAG system design and trade-offs",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Modern AI product architecture"
+      },
+      {
+       "id": "sysdesign.scale",
+       "name": "Scaling, caching, queues, cost trade-offs",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Real systems under load"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Software Engineering",
+   "skills": [
+    {
+     "skill": "Software Engineering Practice",
+     "topics": [
+      {
+       "id": "swe.git",
+       "name": "Git and collaborative workflows",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "All professional code work"
+      },
+      {
+       "id": "swe.testing",
+       "name": "Testing, code review, clean code",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Production reliability"
+      },
+      {
+       "id": "swe.design",
+       "name": "APIs, design patterns, system basics",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Building maintainable services"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Interview Skills",
+   "skills": [
+    {
+     "skill": "Interview Skills",
+     "topics": [
+      {
+       "id": "interview.coding",
+       "name": "Coding rounds: DS&A in Python",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Gatekeeper round at most companies"
+      },
+      {
+       "id": "interview.ml-theory",
+       "name": "ML theory rounds: explain fundamentals",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Tests exactly this hub's depth"
+      },
+      {
+       "id": "interview.system-design",
+       "name": "ML/LLM system design rounds",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Seniority signal in interviews"
+      },
+      {
+       "id": "interview.behavioral",
+       "name": "Behavioral: project deep-dives and stories",
+       "tag": "must_know",
+       "emerging": false,
+       "reason": "Hiring decisions include them"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "area": "Emerging 2027",
+   "skills": [
+    {
+     "skill": "Emerging Topics (2027)",
+     "topics": [
+      {
+       "id": "emerging.multimodal",
+       "name": "Multimodal models (vision+language+audio)",
+       "tag": "good_to_know",
+       "emerging": false,
+       "reason": "Models increasingly multimodal"
+      },
+      {
+       "id": "emerging.reasoning",
+       "name": "Reasoning/test-time compute techniques",
+       "tag": "good_to_know",
+       "emerging": true,
+       "reason": "Defining frontier capability trend"
+      },
+      {
+       "id": "emerging.small-models",
+       "name": "Small/on-device models and distillation",
+       "tag": "good_to_know",
+       "emerging": true,
+       "reason": "Cost and edge deployment trend"
+      },
+      {
+       "id": "emerging.ai-safety-evals",
+       "name": "AI safety evaluation and red-teaming",
+       "tag": "good_to_know",
+       "emerging": true,
+       "reason": "Regulation and enterprise demand rising"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

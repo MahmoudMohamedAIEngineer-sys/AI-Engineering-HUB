@@ -1,0 +1,2 @@
+book_needed_topics=45 covered_by_paths=45 missing=0
+GATE 1B: PASS

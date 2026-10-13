@@ -1,0 +1,16 @@
+chapter 1: headings 3, todo 0
+$ scripts/depth_check.py --book mathematics-for-machine-learning
+parity ch1 1.1 Finding Words for Intuitions: 1290/611 = 2.11
+parity ch1 1.2 Two Ways to Read This Book: 1124/351 = 3.20
+parity ch2 2.1 Systems of Linear Equations: 1452/965 = 1.50
+parity ch2 2.2 Matrices: 1421/339 = 4.19
+parity ch2 2.2.1 Matrix Addition and Multiplication: 1477/504 = 2.93
+parity ch2 2.2.2 Inverse and Transpose: 1505/428 = 3.52
+topic files checked: 6
+depth_check: PASS
+
+$ scripts/code_check.py
+code blocks run: 6, failures: 0
+code_check: PASS
+
+GATE 2: PASS
